@@ -1,6 +1,18 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PpuController;
+use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\ArtikelController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\GlosariumController;
+use App\Http\Controllers\MonografiController;
+use App\Http\Controllers\InfografisController;
+use App\Http\Controllers\TulisanHukumController;
+use App\Http\Controllers\CatatanBeritaController;
+use App\Http\Controllers\PutusanPengadilanController;
+use App\Http\Controllers\MatriksPerbandinganController;
+use App\Http\Controllers\TerjemahanPeraturanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,6 +24,9 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/tentang', function () { // tentang page
+    return view('pages/profil/tentang');
+});
 
 Route::get('/', function () {
     return view('index');
@@ -62,12 +77,16 @@ Route::get('/layanan', function () {// layanan page
 // ===========================================================
 // ====================SECTION: INFORMASI=====================
 // ===========================================================
-Route::get('/berita', function () {// berita page
-    return view('pages/informasi/informasi');
-});
-Route::get('/detail_berita', function () {// detail berita page
-    return view('pages/informasi/detail_berita');
-});
+// Route::get('/berita', function () {// berita page
+//     return view('pages/informasi/informasi');
+// });
+Route::get('/berita', [BeritaController::class, 'index'])->name('berita.data');
+Route::get('/detail_berita/{id}', [BeritaController::class, 'GetBeritaDetail'])->name('detail_berita.data');
+// Route::get('/detail_berita', function () {// detail berita page
+//     return view('pages/informasi/detail_berita');
+// });
+
+
 
 // ===========================================================
 // ====================SECTION: KONTAK=======================

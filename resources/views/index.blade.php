@@ -825,7 +825,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                         </svg>
-                    </butto>
+                    </button>
                 </div>
             </div>
             <div class="bg-white rounded-md shadow-md p-8 w-full h-[30rem] overflow-y-scroll">
@@ -1099,8 +1099,7 @@
         </section>
         <!-- //copyright -->
     </footer>   
-    < src="{{ asset('assets/js/main.js"></') }}script>
-    
+    <script src="{{ asset('assets/js/main.js"></') }}"></script>
     <script>
         // When the user scrolls down 20px from the top of the document, show the button
         function topFunction() {
@@ -1128,7 +1127,7 @@
 
         
 
-    </script>    
+    </>    
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
