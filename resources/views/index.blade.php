@@ -545,7 +545,7 @@
             <div class="col-span-12 md:col-span-12 sm:col-span-12 mt-2 animate__animated animate__fadeInUp" id="detail_peraturan">
                 <div class="grid grid-cols-12 grid-forms md:grid-row gap-4">
                     <!-- ==================== CONTENT: PENGUMUMAN ========================== -->
-                    <div class="card row-span-3 col-span-4" data-aos="fade-left" data-aos-duration="600" data-aos-delay="400">
+                    <div class="card row-span-2 col-span-4" data-aos="fade-left" data-aos-duration="600" data-aos-delay="400">
                         <div class="top-banner w-full h-14 ">
                             <h2>PENGUMUMAN</h2>
                             <div class="dots">
@@ -556,51 +556,20 @@
                         </div>
                         <div class="content">
                             <div class="pt-5">
-                                <div class="pengumuman">
-                                    <h1 class="text-base tujuan-link">
-                                        <a href="/detail-pengumuman?id=coba">Ikhtisar Data Pendidikan Tahun 2022/2023</a>
-                                    </h1>
-                                    <div class="my-3 tujuan">
-                                        <p class="text-yellow-500 font-semibold start">Pendidikan</p>
-                                    </div>
-                                    <div class="border"></div>
-                                </div>
-                                <div class="pengumuman">
-                                    <h1 class="text-base tujuan-link">
-                                        <a href="/detail-pengumuman?id=coba">Statistika Kebudayaan</a>
-                                    </h1>
-                                    <div class="my-3 tujuan">
-                                        <p class="text-yellow-500 font-semibold start">Kebudayaan</p>
-                                    </div>
-                                    <div class="border"></div>
-                                </div>
-                                <div class="pengumuman">
-                                    <h1 class="text-base tujuan-link">
-                                        <a href="/detail-pengumuman?id=coba">Ikhtisar Data Pendidikan Tahun 2022/2023</a>
-                                    </h1>
-                                    <div class="my-3 tujuan">
-                                        <p class="text-yellow-500 font-semibold start">Pendidikan</p>
-                                    </div>
-                                    <div class="border"></div>
-                                </div>
-                                <div class="pengumuman">
-                                    <h1 class="text-base tujuan-link">
-                                        <a href="/detail-pengumuman?id=coba">APK/APM PAUD, SD, SMP, dan SM Tahun 2022/2023</a>
-                                    </h1>
-                                    <div class="my-3 tujuan">
-                                        <p class="text-yellow-500 font-semibold start">Pendidikan</p>
-                                    </div>
-                                    <div class="border"></div>
-                                </div>
-                                <div class="pengumuman">
-                                    <h1 class="text-base tujuan-link">
-                                        <a href="/detail-pengumuman?id=coba">Statistik Kebahasaan dan Kesastraan Tahun 2023</a>
-                                    </h1>
-                                    <div class="my-3 tujuan">
-                                        <p class="text-yellow-500 font-semibold start">Bahasa</p>
-                                    </div>
-                                    <div class="border"></div>
-                                </div>
+                                @php $countPengumuman = 0 @endphp
+                                @foreach ($pengumuman as $p)
+                                    @if ($countPengumuman < 4 )
+                                        <div class="pengumuman">
+                                            <h1 class="text-base tujuan-link">
+                                                <a href="/detail-pengumuman?id=coba">{{$p->judul_pengumuman}}</a>
+                                            </h1>
+                                            <div class="my-3 tujuan">
+                                                <p class="text-yellow-500 font-semibold start">{{$p->tema}}</p>
+                                            </div>
+                                            <div class="border"></div>
+                                        </div>
+                                    @endif
+                                @endforeach
                                 <div class="pengumuman">
                                     <h1 class="text-base tujuan-link">
                                         <a href="/statistika-peraturan">Statistik Peraturan Perundang-undangan</a>
@@ -626,63 +595,32 @@
                         <div class="content">
                             <div class="py-4">
                                 <div class="berita">
-                                    <div class="berita-content">
-                                        <div class="berita-img">
-                                            <img src="{{ asset('assets/img/media/berita-5') }}.jpg" alt="">
-                                        </div>
-                                        <div class="berita-text px-4 py-1">
-                                            <a href="/detail_berita?id=coba">
-                                                <h2>Peningkatan Pemahaman Advokasi Hukum dan Inventarisasi Permasalahan Hukum pada Perguruan Tinggi Negeri di Lingkungan Kemendikbudristek</h2>
-                                            </a>
-                                            <div class="berita-info mt-4">
-                                                <div class="">
-                                                    <span style="color:gray;font-weight:bold;">Advokasi Hukum</span>
+                                    {{-- menghitung berapa banyak count, jika lebih dari 3 akan berhenti --}}
+                                    @php $count = 0 @endphp 
+                                    @foreach ($berita as $b)
+                                        @if ($count < 3)
+                                            <div class="berita-content">
+                                                <div class="berita-img">
+                                                    <img src="{{ asset('assets/img/berita/'.$b->gambar_berita)}}" alt="">
                                                 </div>
-                                                <div class="">
-                                                    <p style="color:#C58529;font-weight:bold;">14 September 2023</p>
-                                                </div>
-                                            </div>
-                                            <div class="border-dark "></div>
-                                        </div>
-                                    </div>
-                                    <div class="berita-content">
-                                        <div class="berita-img">
-                                            <img src="{{ asset('assets/img/media/berita-5') }}.jpg" alt="">
-                                        </div>
-                                        <div class="berita-text px-4 py-1">
-                                            <a href="/detail_berita?id=coba">
-                                                <h2>Peningkatan Pemahaman Advokasi Hukum dan Inventarisasi Permasalahan Hukum pada Perguruan Tinggi Negeri di Lingkungan Kemendikbudristek</h2>
-                                            </a>
-                                            <div class="berita-info mt-4">
-                                                <div class="">
-                                                    <span style="color:gray;font-weight:bold;">Advokasi Hukum</span>
-                                                </div>
-                                                <div class="">
-                                                    <p style="color:#C58529;font-weight:bold;">14 September 2023</p>
+                                                <div class="berita-text px-4 py-1">
+                                                    <a href="/detail_berita?id=coba">
+                                                        <h2>{{$b->judul}}</h2>
+                                                    </a>
+                                                    <div class="berita-info mt-4">
+                                                        <div class="">
+                                                            <span style="color:gray;font-weight:bold;">{{$b->tema}}</span>
+                                                        </div>
+                                                        <div class="">
+                                                            <p style="color:#C58529;font-weight:bold;">14 September 2023</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="border-dark "></div>
                                                 </div>
                                             </div>
-                                            <div class="border-dark "></div>
-                                        </div>
-                                    </div>
-                                    <div class="berita-content">
-                                        <div class="berita-img">
-                                            <img src="{{ asset('assets/img/media/berita-5') }}.jpg" alt="">
-                                        </div>
-                                        <div class="berita-text px-4 py-1">
-                                            <a href="/detail_berita?id=coba">
-                                                <h2>Peningkatan Pemahaman Advokasi Hukum dan Inventarisasi Permasalahan Hukum pada Perguruan Tinggi Negeri di Lingkungan Kemendikbudristek</h2>
-                                            </a>
-                                            <div class="berita-info mt-4">
-                                                <div class="">
-                                                    <span style="color:gray;font-weight:bold;">Advokasi Hukum</span>
-                                                </div>
-                                                <div class="">
-                                                    <p style="color:#C58529;font-weight:bold;">14 September 2023</p>
-                                                </div>
-                                            </div>
-                                            <div class="border-dark "></div>
-                                        </div>
-                                    </div>
+                                            @php $count++ @endphp
+                                        @endif
+                                    @endforeach
                                 </div>
                             </div>
                         </div>

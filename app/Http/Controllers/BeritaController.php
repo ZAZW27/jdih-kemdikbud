@@ -13,7 +13,8 @@ class BeritaController extends Controller
      */
     public function index()
     {
-        $beritas = Berita::all();
+        $berita = new berita();
+        $beritas = $berita->LatestBerita();
 
         return view('pages.informasi.informasi', [
             'title' => 'Berita | JDIH BPK',

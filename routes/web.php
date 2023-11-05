@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PpuController;
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\MainPageController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GlosariumController;
@@ -24,13 +25,13 @@ use App\Http\Controllers\TerjemahanPeraturanController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/tentang', function () { // tentang page
-    return view('pages/profil/tentang');
-});
 
-Route::get('/', function () {
-    return view('index');
-});
+
+Route::get('/', [MainPageController::class, 'index'])->name('MainPage');
+
+// Route::get('/', function () {
+//     return view('index');
+// });
 
 // ===========================================================
 // =====================SECTION: PROFIL=======================
