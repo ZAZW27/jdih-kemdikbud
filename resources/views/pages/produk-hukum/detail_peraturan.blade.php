@@ -41,7 +41,7 @@
                                             <a class="bg-red-500 text-white text-sm ml-2 py-2 px-6 rounded-md">Abstraksi</a>
                                         </div>  
                                         <br><br>
-                                        <table class="table">
+                                        <table class="table" id="DataTable">
                                             <tbody >
                                                 <tr class="border-b-2 ">
                                                     <td class="lg:text-base md:text-sm sm:text-xs px-4 border-r-2 w-4">Tipe Dokumen</td>

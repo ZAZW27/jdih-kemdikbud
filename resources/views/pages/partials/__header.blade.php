@@ -7,15 +7,16 @@
     <link href="{{ asset('assets/css/root.css') }}" rel="stylesheet">
 
     <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/logo/TutWuriHandayani.png') }}">
+    {{-- TAILWIND CDN --}}
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!--     -->
+    {{-- FLOWBITE CDN --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
-    
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 </head>
 <body style="background-color: #F1F4FA;">
     
+
     <nav class="bg-white border-gray-200 shadow-md fixed top-0 w-full">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 h-24 ">
             <a href="/" class="flex items-center navbar-logos">
