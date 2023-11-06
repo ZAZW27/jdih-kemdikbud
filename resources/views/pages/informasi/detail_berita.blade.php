@@ -66,6 +66,26 @@
             </div>
             <div class="col-span-12 md:col-span-12 sm:col-span-12 mt-6 animate__animated animate__fadeInUp" id="detail_peraturan">
                 <div class="grid grid-cols-3 grid-forms md:grid-row gap-3 pb-12">
+                    @if ($berita_terkait != null)
+                        @foreach ($berita_terkait as $bt)
+                        <div class="p-4 card col-span-1">
+                            <div class="berita-pic w-full overflow-hidden rounded-md">
+                                <img src="{{asset('assets/img/media/berita-14.jpg')}}" alt="" >
+                            </div>
+                            <div class="berita-card p-4">
+                                <div class="information ">
+                                    <a href="#" class="hover:text-blue-800">
+                                        <p class="text-start text-[22px] font-semibold">Kemendikbudristek terbitkan Permendikbudristek tentang Penjaminan Mutu Pendidikan Tinggi</p>
+                                    </a>
+                                    <div class="detail-info flex justify-between mt-4 text-[14px]">
+                                        <p>Umum</p>
+                                        <p class="date-berita text-yellow-600">31 Agustus 2023</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                    @else
                     <div class="p-4 card col-span-1">
                         <div class="berita-pic w-full overflow-hidden rounded-md">
                             <img src="{{asset('assets/img/media/berita-14.jpg')}}" alt="" >
@@ -81,39 +101,8 @@
                                 </div>
                             </div>
                         </div>
-                   </div>
-                   <div class="p-4 card col-span-1">
-                        <div class="berita-pic w-full overflow-hidden rounded-md">
-                            <img src="{{asset('assets/img/media/berita-14.jpg')}}" alt="" >
-                        </div>
-                        <div class="berita-card p-4">
-                            <div class="information ">
-                                <a href="#" class="hover:text-blue-800">
-                                    <p class="text-start text-[22px] font-semibold">Kemendikbudristek terbitkan Permendikbudristek tentang Penjaminan Mutu Pendidikan Tinggi</p>
-                                </a>
-                                <div class="detail-info flex justify-between mt-4 text-[14px]">
-                                    <p>Umum</p>
-                                    <p class="date-berita text-yellow-600">31 Agustus 2023</p>
-                                </div>
-                            </div>
-                        </div>
-                   </div>
-                   <div class="p-4 card col-span-1">
-                        <div class="berita-pic w-full overflow-hidden rounded-md">
-                            <img src="{{asset('assets/img/media/berita-14.jpg')}}" alt="" >
-                        </div>
-                        <div class="berita-card p-4">
-                            <div class="information ">
-                                <a href="#" class="hover:text-blue-800">
-                                    <p class="text-start text-[22px] font-semibold">Kemendikbudristek terbitkan Permendikbudristek tentang Penjaminan Mutu Pendidikan Tinggi</p>
-                                </a>
-                                <div class="detail-info flex justify-between mt-4 text-[14px]">
-                                    <p>Umum</p>
-                                    <p class="date-berita text-yellow-600">31 Agustus 2023</p>
-                                </div>
-                            </div>
-                        </div>
                     </div>
+                    @endif
                 </div>
             </div>
         </div>

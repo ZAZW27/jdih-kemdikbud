@@ -29,8 +29,8 @@ return new class extends Migration
             $tbl->string('bahasa', 255);
             $tbl->string('lokasi', 255);
             $tbl->string('bidang_hukum', 255);
-            $tbl->integer('dilihat', 11);
-            $tbl->integer('diunduh', 11);
+            $tbl->integer('dilihat');
+            $tbl->integer('diunduh');
             $tbl->string('link_detail_status', 250);
             $tbl->timestamps();
         });

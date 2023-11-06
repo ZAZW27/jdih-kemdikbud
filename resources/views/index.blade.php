@@ -637,7 +637,7 @@
                             </div>
                         </div>
                         <div class="content" id="graphic-container">
-                            <div class="bg-black">
+                            <div class="graphic-container">
                                 <div class="select-year">
                                     <select name="" id="">
                                         <option value="">2023</option>
@@ -650,9 +650,9 @@
                                         <option value="">2016</option>
                                     </select>
                                 </div>
-                                <div class="graphic-container">
-                                    <div id="peraturan-chart" class="bg-red-500" style=""></div>
-                                </div>
+                                
+                                    <div id="peraturan-chart"style=""></div>
+                                
                             </div>
                         </div>
                     </div>
