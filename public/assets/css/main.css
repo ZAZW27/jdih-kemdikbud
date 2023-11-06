@@ -329,7 +329,7 @@ nav{
 
 .peraturan{
    width: 100%;
-   margin-bottom: 25px;
+   margin-bottom: 15px;
 }
 
 .peraturan .row{
@@ -342,7 +342,7 @@ nav{
 
 .peraturan .terbaru {
    text-align: start;
-   width: 110%;
+   width: 107%;
 }
 
 .peraturan .terbaru h6{
@@ -427,13 +427,31 @@ nav{
    flex-direction: row;
    justify-content: start;
    align-items: start;
-   margin-bottom: 2rem;
    width: 105%;
+
 }
 
-.berita .berita-content .berita-img{
-   width: 30rem;
+.berita-containers{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+   align-content: center;
+   align-items: center;
+   margin-bottom: 2rem;
+}
+
+.berita-img{
+   width: 20rem;
+   height: 100%;
    margin-left: -10px;
+   display: flex;
+   flex-direction: column;
+}
+
+.berita-image {
+   width: 100%;
+   background-size: cover;
+   object-fit: cover;
 }
 
 .berita .berita-content .berita-text{
@@ -704,10 +722,17 @@ footer .footer-format{
       padding: 0.3rem 1.5rem;
       width: 100%;
    }
+   .berita-containers{
+      flex-direction: column;
+   }
+   .berita-img{
+      width: 110%;
+   }
    .berita .berita-content{
       flex-direction: column;
-      margin-left: -40px;
-      width: 120%;
+      margin-top: 0.6rem;
+      /* margin-left: 140px; */
+      width: 110%;
    }
    .graphic .container{
       transform: scale(0.1) !important;

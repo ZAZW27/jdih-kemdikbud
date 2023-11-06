@@ -2,70 +2,31 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Berita;
 use App\Models\pengumuman;
-use App\Http\Requests\StorepengumumanRequest;
-use App\Http\Requests\UpdatepengumumanRequest;
+use App\Http\Requests\StoreBeritaRequest;
+use App\Http\Requests\UpdateBeritaRequest;
 
 class PengumumanController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    public function index($id)
     {
-        // $pengumuman = pengumuman::all();
-
-        // return view('index', [
-        //     'title' => 'KEMDIKBUD | Main Page', 
-        //     'pengumuman' => $pengumuman, 
-        // ]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StorepengumumanRequest $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(pengumuman $pengumuman)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(pengumuman $pengumuman)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdatepengumumanRequest $request, pengumuman $pengumuman)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(pengumuman $pengumuman)
-    {
-        //
+        // Assuming you want to fetch a specific Berita by its ID
+        $detail_pengumuman = Pengumuman::where('id', $id)->first();
+    
+        // You can also add more conditions as needed
+        // For example, if you want to fetch a specific Berita with a specific category
+        // $detail_pengumuman = Berita::where('id', $id)->where('category', 'your_category')->first();
+    
+        if (!$detail_pengumuman) {
+            // Handle the case where the Berita with the specified ID is not found
+            // You can return a 404 page or some other response.
+        }
+    
+        // Continue with your logic to display the Berita details
+        return view('pages.pengumuman.datail_pengumuman', [
+            'title' => 'JDIH KEMDIKBUD | Pengumuman',
+            'pengumuman' => $detail_pengumuman,
+        ]);
     }
 }

@@ -333,91 +333,29 @@
                         </div>
                         <div class="content">
                             <div class="pt-5">
-                                <a href="/detail-peraturan?id=coba">
-                                    <div class="peraturan">
-                                        <div class="row">
-                                            <div class="col-lg-1 col-md-1 col-sm-12">
-                                                <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="40px" viewBox="0 0 24 24" width="40px" fill="#000000"><rect fill="none" height="24" width="24"></rect><path d="M19,5v9l-5,0l0,5H5V5H19 M19,3H5C3.9,3,3,3.9,3,5v14c0,1.1,0.9,2,2,2h10l6-6V5C21,3.9,20.1,3,19,3z M12,14H7v-2h5V14z M17,10H7V8h10V10z"></path></svg>
+                                @php $countPeraturan = 0 @endphp
+                                @foreach ($peraturan as $per)
+                                    @if ($countPeraturan < 5)
+                                        <a href="{{route('detail_peraturan.data', ['id' => $per->id])}}">
+                                            <div class="peraturan">
+                                                <div class="row">
+                                                    <div class="col-lg-1 col-md-1 col-sm-12">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="40px" viewBox="0 0 24 24" width="40px" fill="#000000"><rect fill="none" height="24" width="24"></rect><path d="M19,5v9l-5,0l0,5H5V5H19 M19,3H5C3.9,3,3,3.9,3,5v14c0,1.1,0.9,2,2,2h10l6-6V5C21,3.9,20.1,3,19,3z M12,14H7v-2h5V14z M17,10H7V8h10V10z"></path></svg>
+                                                    </div>
+                                                    <div class="col-lg-11 col-md-11 col-sm-12">
+                                                        <div class="terbaru">
+                                                            <h6><span style="color: #696969;">{{ strtoupper($per->jenis_peraturan)}}</span> NOMOR {{$per->nomor_peraturan}} TAHUN {{$per->tahun_peraturan}}</h6>
+                                                            <h1 class="hover:text-blue-900">{{$per->judul_peraturan}}</h1>
+                                                            <span class="tgl-terbit-peraturan">{{ \Carbon\Carbon::parse($per->tanggal_penetapan)->format('d F Y') }}</span>
+                                                        </div>
+                                                    </div>
+                                                </div><!--row-->
+                                                <div class="bdr2"></div>
                                             </div>
-                                            <div class="col-lg-11 col-md-11 col-sm-12">
-                                                <div class="terbaru">
-                                                    <h6><span style="color: #696969;">SURAT EDARAN MENTERI</span> NOMOR 5 TAHUN 2023</h6>
-                                                    <h1 class="hover:text-blue-900">Surat Edaran Menteri Nomor 5 Tahun 2023 tentang Pembayaran Tunjangan Kinerja Pegawai di Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi</h1>
-                                                    <span class="tgl-terbit-peraturan">13 Oktober 2023</span>
-                                                </div>
-                                            </div>
-                                        </div><!--row-->
-                                        <div class="bdr2"></div>
-                                    </div>
-                                </a>
-                                <a href="/detail-peraturan?id=coba">
-                                    <div class="peraturan">
-                                        <div class="row">
-                                            <div class="col-lg-1 col-md-1 col-sm-12">
-                                                <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="40px" viewBox="0 0 24 24" width="40px" fill="#000000"><rect fill="none" height="24" width="24"></rect><path d="M19,5v9l-5,0l0,5H5V5H19 M19,3H5C3.9,3,3,3.9,3,5v14c0,1.1,0.9,2,2,2h10l6-6V5C21,3.9,20.1,3,19,3z M12,14H7v-2h5V14z M17,10H7V8h10V10z"></path></svg>
-                                            </div>
-                                            <div class="col-lg-11 col-md-11 col-sm-12">
-                                                <div class="terbaru">
-                                                    <h6><span style="color: #696969;">SURAT EDARAN MENTERI</span> NOMOR 5 TAHUN 2023</h6>
-                                                    <h1 class="hover:text-blue-900">Surat Edaran Menteri Nomor 5 Tahun 2023 tentang Pembayaran Tunjangan Kinerja Pegawai di Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi</h1>
-                                                    <span class="tgl-terbit-peraturan">13 Oktober 2023</span>
-                                                </div>
-                                            </div>
-                                        </div><!--row-->
-                                        <div class="bdr2"></div>
-                                    </div>
-                                </a>
-                                <a href="/detail-peraturan?id=coba">
-                                    <div class="peraturan">
-                                        <div class="row">
-                                            <div class="col-lg-1 col-md-1 col-sm-12">
-                                                <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="40px" viewBox="0 0 24 24" width="40px" fill="#000000"><rect fill="none" height="24" width="24"></rect><path d="M19,5v9l-5,0l0,5H5V5H19 M19,3H5C3.9,3,3,3.9,3,5v14c0,1.1,0.9,2,2,2h10l6-6V5C21,3.9,20.1,3,19,3z M12,14H7v-2h5V14z M17,10H7V8h10V10z"></path></svg>
-                                            </div>
-                                            <div class="col-lg-11 col-md-11 col-sm-12">
-                                                <div class="terbaru">
-                                                    <h6><span style="color: #696969;">SURAT EDARAN MENTERI</span> NOMOR 5 TAHUN 2023</h6>
-                                                    <h1 class="hover:text-blue-900">Surat Edaran Menteri Nomor 5 Tahun 2023 tentang Pembayaran Tunjangan Kinerja Pegawai di Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi</h1>
-                                                    <span class="tgl-terbit-peraturan">13 Oktober 2023</span>
-                                                </div>
-                                            </div>
-                                        </div><!--row-->
-                                        <div class="bdr2"></div>
-                                    </div>
-                                </a>
-                                <a href="/detail-peraturan?id=coba">
-                                    <div class="peraturan">
-                                        <div class="row">
-                                            <div class="col-lg-1 col-md-1 col-sm-12">
-                                                <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="40px" viewBox="0 0 24 24" width="40px" fill="#000000"><rect fill="none" height="24" width="24"></rect><path d="M19,5v9l-5,0l0,5H5V5H19 M19,3H5C3.9,3,3,3.9,3,5v14c0,1.1,0.9,2,2,2h10l6-6V5C21,3.9,20.1,3,19,3z M12,14H7v-2h5V14z M17,10H7V8h10V10z"></path></svg>
-                                            </div>
-                                            <div class="col-lg-11 col-md-11 col-sm-12">
-                                                <div class="terbaru">
-                                                    <h6><span style="color: #696969;">SURAT EDARAN MENTERI</span> NOMOR 5 TAHUN 2023</h6>
-                                                    <h1 class="hover:text-blue-900">Surat Edaran Menteri Nomor 5 Tahun 2023 tentang Pembayaran Tunjangan Kinerja Pegawai di Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi</h1>
-                                                    <span class="tgl-terbit-peraturan">13 Oktober 2023</span>
-                                                </div>
-                                            </div>
-                                        </div><!--row-->
-                                        <div class="bdr2"></div>
-                                    </div>
-                                </a>
-                                <a href="/detail-peraturan?id=coba">
-                                    <div class="peraturan">
-                                        <div class="row">
-                                            <div class="col-lg-1 col-md-1 col-sm-12">
-                                                <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="40px" viewBox="0 0 24 24" width="40px" fill="#000000"><rect fill="none" height="24" width="24"></rect><path d="M19,5v9l-5,0l0,5H5V5H19 M19,3H5C3.9,3,3,3.9,3,5v14c0,1.1,0.9,2,2,2h10l6-6V5C21,3.9,20.1,3,19,3z M12,14H7v-2h5V14z M17,10H7V8h10V10z"></path></svg>
-                                            </div>
-                                            <div class="col-lg-11 col-md-11 col-sm-12">
-                                                <div class="terbaru">
-                                                    <h6><span style="color: #696969;">SURAT EDARAN MENTERI</span> NOMOR 5 TAHUN 2023</h6>
-                                                    <h1 class="hover:text-blue-900">Surat Edaran Menteri Nomor 5 Tahun 2023 tentang Pembayaran Tunjangan Kinerja Pegawai di Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi</h1>
-                                                    <span class="tgl-terbit-peraturan">13 Oktober 2023</span>
-                                                </div>
-                                            </div>
-                                        </div><!--row-->
-                                        <div class="bdr2"></div>
-                                    </div>
-                                </a>
+                                        </a>
+                                        @php $countPeraturan++ @endphp
+                                    @endif
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -561,7 +499,7 @@
                                     @if ($countPengumuman < 4 )
                                         <div class="pengumuman">
                                             <h1 class="text-base tujuan-link">
-                                                <a href="/detail-pengumuman?id=coba">{{$p->judul_pengumuman}}</a>
+                                                <a href="{{ route('detail_pengumuman.data', ['id' => $p->id])}}">{{$p->judul}}</a>
                                             </h1>
                                             <div class="my-3 tujuan">
                                                 <p class="text-yellow-500 font-semibold start">{{$p->tema}}</p>
@@ -599,12 +537,14 @@
                                     @php $count = 0 @endphp 
                                     @foreach ($berita as $b)
                                         @if ($count < 3)
+                                        <div class="berita-containers">
+                                            
+                                            <div class="berita-img">
+                                                <img class="berita-image" src="{{ asset('assets/img/berita/'.$b->gambar_berita)}}" alt="">
+                                            </div>
                                             <div class="berita-content">
-                                                <div class="berita-img">
-                                                    <img src="{{ asset('assets/img/berita/'.$b->gambar_berita)}}" alt="">
-                                                </div>
                                                 <div class="berita-text px-4 py-1">
-                                                    <a href="/detail_berita?id=coba">
+                                                    <a href="{{route('detail_berita.data', ['id' => $b->id])}}">
                                                         <h2>{{$b->judul}}</h2>
                                                     </a>
                                                     <div class="berita-info mt-4">
@@ -618,6 +558,7 @@
                                                     <div class="border-dark "></div>
                                                 </div>
                                             </div>
+                                        </div>
                                             @php $count++ @endphp
                                         @endif
                                     @endforeach

@@ -22,13 +22,17 @@ return new class extends Migration
             $tbl->string('tempat_penetapan', 255);
             $tbl->date('tanggal_penetapan');
             $tbl->date('tanggal_pengundangan');
-            $tbl->string('sumber');
+            $tbl->string('sumber', 255);
             $tbl->string('subjek');
             $tbl->boolean('status_peraturan');
-            $tbl->string('detail_status');
-            $tbl->string('bahasa');
-            $tbl->string('lokasi');
-            $tbl->string('bidang_hukum');
+            $tbl->string('detail_status', 255);
+            $tbl->string('bahasa', 255);
+            $tbl->string('lokasi', 255);
+            $tbl->string('bidang_hukum', 255);
+            $tbl->integer('dilihat', 11);
+            $tbl->integer('diunduh', 11);
+            $tbl->string('link_detail_status', 250);
+            $tbl->timestamps();
         });
     }
 
@@ -37,6 +41,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tbl_peraturan');
+        Schema::dropIfExists('peraturans');
     }
 };

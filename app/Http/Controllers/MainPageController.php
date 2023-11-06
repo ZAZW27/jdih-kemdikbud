@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Berita;
-use App\Models\pengumuman;
+use App\Models\Pengumuman;
+use App\Models\Peraturan;
 use App\Http\Requests\StoreBeritaRequest;
 use App\Http\Requests\UpdateBeritaRequest;
 
@@ -17,13 +18,17 @@ class MainPageController extends Controller
         $berita = new berita(); // getting the berita
         $latestBerita = $berita->LatestBerita();
 
-        $pengumuman = new pengumuman(); // getting the pngumuman
+        $pengumuman = new Pengumuman(); // getting the pngumuman
         $LatestPengumuman = $pengumuman->LatestPengumuman();
+
+        $peraturan = new Peraturan();// getting peraturan
+        $LatestPeraturan = $peraturan->LatestPeraturan();
 
         return view('index', [
             'title' => 'Berita | JDIH BPK',
             'berita' => $latestBerita,
             'pengumuman' => $LatestPengumuman,
+            'peraturan' => $LatestPeraturan,
         ]);
     }
     /**

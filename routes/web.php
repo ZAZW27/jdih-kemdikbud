@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PpuController;
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\PengumumanController;
+use App\Http\Controllers\PeraturanController;
 use App\Http\Controllers\MainPageController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\DashboardController;
@@ -58,9 +60,9 @@ Route::get('/faq', function () {// faq page
 Route::get('/peraturan', function () {// peraturan page
     return view('pages/produk-hukum/peraturan');
 });
-Route::get('/detail-peraturan', function () {// detail peraturan page
-    return view('pages/produk-hukum/detail_peraturan');
-});
+
+Route::get('detail_peraturan/{id}', [PeraturanController::class, 'index'])->name('detail_peraturan.data');
+
 Route::get('/statistika-peraturan', function () {// statistika peraturan page
     return view('pages/produk-hukum/statistika');
 });
@@ -99,6 +101,4 @@ Route::get('/kontak', function () {// kontak page
 // ===========================================================
 // ====================SECTION: PENGUMUMAN====================
 // ===========================================================
-Route::get('/detail-pengumuman', function () {// detail pengumuman page
-    return view('pages/pengumuman/datail_pengumuman');
-});
+Route::get('/detail_pengumuman/{id}', [PengumumanController::class, 'index'])->name('detail_pengumuman.data');

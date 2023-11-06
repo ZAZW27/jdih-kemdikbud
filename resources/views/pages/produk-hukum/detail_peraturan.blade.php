@@ -1,4 +1,4 @@
-
+@php $nullRecord = "Tidak Ada" @endphp
 @include('pages.partials.__header')
     <div class="containers h-64 bkg-bg banner-small">
         <div class="page-routes">
@@ -40,93 +40,98 @@
                                             </a>
                                             <a class="bg-red-500 text-white text-sm ml-2 py-2 px-6 rounded-md">Abstraksi</a>
                                         </div>  
-                                        <table class="table ">
-                                            <tbody>
+                                        <br><br>
+                                        <table class="table">
+                                            <tbody >
                                                 <tr class="border-b-2 ">
-                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4 border-r-2" >Tipe Dokumen</td>
-                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4" style="border:none;">Peraturan Perundang-undangan</td>
+                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4 border-r-2 w-4">Tipe Dokumen</td>
+                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4" style="border:none;">{{$per->tipe_dokumen}}</td>
                                                 </tr>
                                                 <tr class="border-b-2 ">
-                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4 border-r-2">Judul</td>
-                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4">Keputusan Menteri Nomor 258/P/2023 tentang Penerima Dana Bantuan Operasional Sekolah Kinerja bagi Sekolah yang Melaksanakan Program Sekolah Penggerak dan Sekolah yang Memiliki Prestasi Tahun Anggaran 2023</td>
+                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4 border-r-2 w-4">Judul</td>
+                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4">{{$per->judul_peraturan}}</td>
                                                 </tr>
                                                 <tr class="border-b-2 ">
-                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4 border-r-2">Tajuk Entri Utama</td>
-                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4">Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi</td>
+                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4 border-r-2 w-4">Tajuk Entri Utama</td>
+                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4">{{$per->tajuk_entri_pertama}}</td>
                                                 </tr>
                                                 <tr class="border-b-2 ">
-                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4 border-r-2">Nomor Peraturan</td>
-                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4">258/P/2023</td>
+                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4 border-r-2 w-4">Nomor Peraturan</td>
+                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4">{{$per->nomor_peraturan}}</td>
                                                 </tr>
                                                 <tr class="border-b-2 ">
-                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4 border-r-2">Tahun Peraturan</td>
-                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4">2023</td>
+                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4 border-r-2 w-4">Tahun Peraturan</td>
+                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4">{{$per->tahun_peraturan}}</td>
                                                 </tr>
                                                 <tr class="border-b-2 ">
-                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4 border-r-2">Jenis Peraturan</td>
-                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4">Keputusan Menteri</td>
+                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4 border-r-2 w-4">Jenis Peraturan</td>
+                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4">{{$per->jenis_peraturan}}</td>
                                                 </tr>
                                                 <tr class="border-b-2 ">
-                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4 border-r-2">Tempat Penetapan</td>
-                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4">DKI Jakarta</td>
+                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4 border-r-2 w-4">Tempat Penetapan</td>
+                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4">{{$per->tempat_penetapan}}</td>
                                                 </tr>
                                                 <tr class="border-b-2 ">
-                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4 border-r-2">Tanggal Penetapan</td>
-                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4">21 Agustus 2023</td>
+                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4 border-r-2 w-4">Tanggal Penetapan</td>
+                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4">{{$per->tanggal_penetapan}}</td>
                                                 </tr>
                                                 <tr class="border-b-2 ">
-                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4 border-r-2">Tanggal Pengundangan</td>
-                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4">00  0000</td>
+                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4 border-r-2 w-4">Tanggal Pengundangan</td>
+                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4">{{$per->tanggal_pengundangan > 1 ?$per->tanggal_pengundangan : $nullRecord}}</td>
                                                 </tr>
                                                 <tr class="border-b-2 ">
-                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4 border-r-2">Sumber</td>
-                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4">Tidak Ada</td>
+                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4 border-r-2 w-4">Sumber</td>
+                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4">{{$per->sumber > 1 ? $per->sumber : $nullRecord}}</td>
                                                 </tr>
                                                 <tr class="border-b-2 ">
-                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4 border-r-2">Subjek</td>
+                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4 border-r-2 w-4">Subjek</td>
                                                     <td class="lg:text-base md:text-sm sm:text-xs p-4">
                                                         <form id="subjek" action="cari_peraturan" method="post">
                                                             <input type="hidden" name="subjek" value="Bantuan/Pendanaan Pendidikan">
                                                             <button type="submit" class="bg-yellow-400 text-base text-black px-4 py-2 rounded-full hover:bg-yellow-500">
-                                                                Bantuan/Pendanaan Pendidikan
+                                                                {{$per->subjek > 1 ? $per->subjek : $nullRecord}}
                                                             </button>
                                                         </form>
                                                     </td>
                                                 </tr>
                                                 <tr class="border-b-2 ">
-                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4 border-r-2">Status Peraturan</td>
-                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4">Berlaku</td>
-                                                </tr>
-                                                <tr class="border-b-2 ">
-                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4 border-r-2">Detail Status</td>
-                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4">     
-                                                    <button class="bg-yellow-400 hover:bg-yellow-500 text-black text-base px-4 py-2 rounded-full">Baru</button>
+                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4 border-r-2 w-4">Status Peraturan</td>
+                                                    {{-- <td class="lg:text-base md:text-sm sm:text-xs p-4">
+                                                        <p class="bg-yellow-400 text-base text-black px-4 py-2 rounded-full hover:bg-yellow-500">Berlaku</p>
+                                                    </td> --}}
+                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4">
+                                                        @if ($per->status_peraturan === 1)
+                                                            <button type="submit" class="bg-green-400 text-base text-black px-4 py-2 rounded-full hover:bg-green-500">
+                                                                Berlaku
+                                                            </button>
+                                                        @else
+                                                            <button type="submit" class="bg-red-500 text-base text-white px-4 py-2 rounded-full hover:bg-red-600">
+                                                                Tidak Berlaku
+                                                            </button>
+                                                        @endif
                                                     </td>
                                                 </tr>
                                                 <tr class="border-b-2 ">
-                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4 border-r-2">Bahasa</td>
-                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4">Indonesia</td>
+                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4 border-r-2 w-4">Detail Status</td>
+                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4">     
+                                                        @if ($per->detail_status === "Baru")
+                                                            <button class="bg-blue-300 hover:bg-blue-400 text-black text-base px-4 py-2 rounded-full">Baru</button>
+                                                        @else
+                                                            <button class="bg-yellow-400 hover:bg-yellow-500 text-black text-base px-4 py-2 rounded-full">{{$per->detail_status}}</button>
+                                                        @endif
+                                                    </td>
                                                 </tr>
                                                 <tr class="border-b-2 ">
-                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4 border-r-2">Lokasi</td>
-                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4">Biro Hukum. Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi.</td>
+                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4 border-r-2 w-4">Bahasa</td>
+                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4">{{strtoupper($per->bahasa)}}</td>
                                                 </tr>
                                                 <tr class="border-b-2 ">
-                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4 border-r-2">Bidang Hukum</td>
-                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4">Tidak Ada</td>
+                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4 border-r-2 w-4">Lokasi</td>
+                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4">{{$per->lokasi}}</td>
                                                 </tr>
-                                                <!-- <tr>
-                                                    <td class="p-4">Kata Kunci</td>
-                                                    <td class="p-4">
-                                                        <form id="kata_kunci" action="cari_peraturan" method="post">
-                                                            <input type="hidden" name="judul" value="BOS"> 
-                                                        </form> 
-                                                        <form id="kata_kunci" action="cari_peraturan" method="post">
-                                                            <input type="hidden" name="judul" value=" BOS KINERJA"> 
-                                                        </form> 
-                                                        <a href='javascript:;' onclick="document.getElementById('kata_kunci').submit();" class="btn btn-warning btn-sm" style='color:#000; border-radius:30px;'>BOS</a>                     
-                                                        <a href='javascript:;' onclick="document.getElementById('kata_kunci').submit();" class="btn btn-warning btn-sm" style='color:#000; border-radius:30px;'> BOS KINERJA</a>                                                                                                         
-                                                    </td>    -->
+                                                <tr class="border-b-2 ">
+                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4 border-r-2 w-4">Bidang Hukum</td>
+                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4">{{$per->bidang_hukum > 1 ? $per->bidang_hukum : $nullRecord}}</td>
                                                 </tr>
                                             </tbody>
                                         </table>
