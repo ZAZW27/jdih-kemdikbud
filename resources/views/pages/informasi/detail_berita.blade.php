@@ -25,7 +25,7 @@
                                             <div class="w-full">
                                                 <h1 class="text-3xl font-semibold font-sans text-start">{{$berita->judul}}</h1>
                                                 <div class="flex justify-between mt-4">
-                                                    <div class="font-bold text-yellow-600 ">{{$berita->tema}} | {{ \Carbon\Carbon::parse($berita->created_at)->format('d F Y') }}</div>
+                                                    <div class="font-bold text-yellow-600 ">{{$berita->tema}} | {{ \Carbon\Carbon::parse($berita->tanggal)->format('d F Y') }}</div>
                                                     <div class="flex view-info ">
                                                         <p class="views">
                                                             <svg style="margin-top:-3px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M12 6.5c3.79 0 7.17 2.13 8.82 5.5-1.65 3.37-5.02 5.5-8.82 5.5S4.83 15.37 3.18 12C4.83 8.63 8.21 6.5 12 6.5m0-2C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zm0 5c1.38 0 2.5 1.12 2.5 2.5s-1.12 2.5-2.5 2.5-2.5-1.12-2.5-2.5 1.12-2.5 2.5-2.5m0-2c-2.48 0-4.5 2.02-4.5 4.5s2.02 4.5 4.5 4.5 4.5-2.02 4.5-4.5-2.02-4.5-4.5-4.5z"></path></svg>
@@ -60,51 +60,39 @@
                 </div>
             </div>
         </div>
-        <div class="lg:-mt-[40rem]  lg:px-[6rem] px-4 mx-auto max-w-screen-xl text-center z-10 relative">
-            <div class="w-full flex justify-start">
-                <h1 class="text-2xl font-semibold">Berita Terkait</h1>
-            </div>
-            <div class="col-span-12 md:col-span-12 sm:col-span-12 mt-6 animate__animated animate__fadeInUp" id="detail_peraturan">
-                <div class="grid grid-cols-3 grid-forms md:grid-row gap-3 pb-12">
-                    @if ($berita_terkait != null)
+        
+        @if ($berita_terkait != null)
+            <div class="lg:-mt-[40rem]  lg:px-[6rem] px-4 mx-auto max-w-screen-xl text-center z-10 relative">
+                <div class="w-full flex justify-start">
+                    <h1 class="text-2xl font-semibold">Berita Terkait</h1>
+                    {{-- {{$berita_terkait->group_id}} --}}
+                </div>
+                <div class="col-span-12 md:col-span-12 sm:col-span-12 mt-6 animate__animated animate__fadeInUp" id="detail_peraturan">
+                    <div class="grid grid-cols-3 grid-forms md:grid-row gap-3 pb-12">
                         @foreach ($berita_terkait as $bt)
-                        <div class="p-4 card col-span-1">
-                            <div class="berita-pic w-full overflow-hidden rounded-md">
-                                <img src="{{asset('assets/img/media/berita-14.jpg')}}" alt="" >
-                            </div>
-                            <div class="berita-card p-4">
-                                <div class="information ">
-                                    <a href="#" class="hover:text-blue-800">
-                                        <p class="text-start text-[22px] font-semibold">Kemendikbudristek terbitkan Permendikbudristek tentang Penjaminan Mutu Pendidikan Tinggi</p>
-                                    </a>
-                                    <div class="detail-info flex justify-between mt-4 text-[14px]">
-                                        <p>Umum</p>
-                                        <p class="date-berita text-yellow-600">31 Agustus 2023</p>
+                            <div class="p-4 card col-span-1">
+                                <div class="berita-pic w-full overflow-hidden rounded-md">
+                                    <img src="{{ asset('assets/img/berita/'.$bt->gambar_berita) }}" alt="">
+                                </div>
+                                <div class="berita-card p-4">
+                                    <div class="information">
+                                        <a href="{{route('detail_berita.data', ['id'=> $bt->id])}}" class="hover:text-blue-800">
+                                            <p class="text-start text-[22px] font-semibold">{{ $bt->judul }}</p>
+                                        </a>
+                                        <div class="detail-info flex justify-between mt-4 text-[14px]">
+                                            <p>{{$bt->tema}}</p>
+                                            <p class="date-berita text-yellow-600">{{ \Carbon\Carbon::parse($bt->tanggal)->format('d F Y') }}</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
                         @endforeach
-                    @else
-                    <div class="p-4 card col-span-1">
-                        <div class="berita-pic w-full overflow-hidden rounded-md">
-                            <img src="{{asset('assets/img/media/berita-14.jpg')}}" alt="" >
-                        </div>
-                        <div class="berita-card p-4">
-                            <div class="information ">
-                                <a href="#" class="hover:text-blue-800">
-                                    <p class="text-start text-[22px] font-semibold">Kemendikbudristek terbitkan Permendikbudristek tentang Penjaminan Mutu Pendidikan Tinggi</p>
-                                </a>
-                                <div class="detail-info flex justify-between mt-4 text-[14px]">
-                                    <p>Umum</p>
-                                    <p class="date-berita text-yellow-600">31 Agustus 2023</p>
-                                </div>
-                            </div>
-                        </div>
                     </div>
-                    @endif
                 </div>
-            </div>
+            </div>   
+        @else
+        <div class="lg:-mt-[24rem]  lg:px-[6rem] px-4 mx-auto max-w-screen-xl text-center z-10 relative">
         </div>
+        @endif
     </div>
     @include('pages.partials.__footer')

@@ -650,9 +650,7 @@
                                         <option value="">2016</option>
                                     </select>
                                 </div>
-                                
-                                    <div id="peraturan-chart"style=""></div>
-                                
+                                    {{-- <div id="peraturan-chart"style=""></div> --}}
                             </div>
                         </div>
                     </div>
