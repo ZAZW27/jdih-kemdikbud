@@ -25,7 +25,7 @@ class MainPageController extends Controller
         $LatestPeraturan = $peraturan->LatestPeraturan();
 
         return view('index', [
-            'title' => 'Berita | JDIH BPK',
+            'title' => 'Main Page',
             'berita' => $latestBerita,
             'pengumuman' => $LatestPengumuman,
             'peraturan' => $LatestPeraturan,

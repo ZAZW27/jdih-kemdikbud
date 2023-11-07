@@ -34,7 +34,7 @@
                         </div>
                     </div>
                     <!-- ==================== CONTENT: LAYANAN ========================== -->
-                    <div class="card row-span-3 col-span-8 ">
+                    <div class="card row-span-3 col-span-8 reverse-pad">
                         <div class="content rounded-border-content">
                             <div class="layout text-justify pt-5 px-3 isi-profil ">
                                 <section class="pb-10">

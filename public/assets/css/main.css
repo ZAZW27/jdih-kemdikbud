@@ -43,6 +43,7 @@ body{
 
 .banner-small{
    height: 14rem !important;
+   margin-top: 4.8rem;
 }
 
 .page-routes{
@@ -736,6 +737,7 @@ footer .footer-format{
    }
    .berita-img{
       width: 110%;
+      margin-left: 3px;
    }
    .berita .berita-content{
       flex-direction: column;
@@ -793,20 +795,20 @@ footer .footer-format{
       padding: 5px 5px;
    }
    .card .content{
-      padding: 15px 40px;
+      padding: 15px 20px;
    }
-
+   
    .berita .berita-content {
       flex-direction: column;
-      margin-left: -24px;
-      width: 120%;
+      width: 105%;
   }
   .berita .berita-content .berita-text {
    text-align: start;
    font-weight: 600;
    font-size: 16px;
    padding: 0 1.6rem;
-   margin-left: -10px;
+   width: 105%;
+   margin-left: -8px;
    }
    .berita-img img{
       width: 90%;
