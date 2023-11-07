@@ -821,6 +821,31 @@ footer .footer-format{
       font-size: 24px !important;
    }
 }
+
+/* 
+|CHART SECTIONNNNSSS
+|
+*/
+.pengunjung-charts {
+   /* Center the chart horizontally within its parent container */
+   display: flex;
+   justify-content: center;
+   align-items: start;
+   /* Add other styles for the .pengunjung-charts container if needed */
+}
+
+.chart-container {
+   margin-top: -5rem;
+   /* Set a maximum width to contain the chart */
+   max-width: 900px; /* Adjust this value as needed */
+   max-height: 300px;
+}
+.chart-container-col {
+   margin-top: -7rem;
+   /* Set a maximum width to contain the chart */
+   max-width: 900px; /* Adjust this value as needed */
+   max-height: 5rem;
+}
 @media screen and (max-width: 1024px) {
    .containers {
        max-width: 100%;

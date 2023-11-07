@@ -23,12 +23,13 @@ class MainPageController extends Controller
 
         $peraturan = new Peraturan();// getting peraturan
         $LatestPeraturan = $peraturan->LatestPeraturan();
-
+        $countPeraturan = $peraturan->getPeraturanCounts();
         return view('index', [
             'title' => 'Main Page',
             'berita' => $latestBerita,
             'pengumuman' => $LatestPengumuman,
             'peraturan' => $LatestPeraturan,
+            'countPer' => $countPeraturan,
         ]);
     }
     /**
