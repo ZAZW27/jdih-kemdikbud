@@ -2,7 +2,6 @@
     var countPeraturan = @json($countPer);
     google.charts.load("current", { packages: ['corechart'] });
     google.charts.setOnLoadCallback(drawChart);
-
     function drawChart() {
         var chartData = [
             ["Element", "Density", { role: "style" }]
@@ -10,18 +9,11 @@
 
         for (var i = 0; i < countPeraturan.length; i++) {
             var item = countPeraturan[i];
-
+            console.log(item.countPeraturan);
             chartData.push([item.jenis_peraturan, item.countPeraturan, "#055CA5"]);
         }
 
         var data = google.visualization.arrayToDataTable(chartData);
-        // var data = google.visualization.arrayToDataTable([
-        //     ["Element", "Density", { role: "style" }],
-        //     ["Copper", 8.94, "#055CA5"],
-        //     ["Silver", 10.49, "#055CA5"],
-        //     ["Gold", 19.30, "#055CA5"],
-        //     ["Platinum", 21.45, "#055CA5"]
-        // ]);
 
         var view = new google.visualization.DataView(data);
         view.setColumns([0, 1,
@@ -35,7 +27,7 @@
         ]);
 
         var options = {
-            chartArea: { width: '94%', height: '100%' },
+            chartArea: { width: '94%', height: '80%' },
             width: 650,
             height: 400,
             bar: { groupWidth: "50%" },
@@ -46,6 +38,7 @@
                 }
             }
         };
+
         var chart = new google.visualization.ColumnChart(document.getElementById("peraturan-chart"));
         chart.draw(view, options);
     }

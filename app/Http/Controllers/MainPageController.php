@@ -8,6 +8,7 @@ use App\Models\Peraturan;
 use App\Http\Requests\StoreBeritaRequest;
 use App\Http\Requests\UpdateBeritaRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MainPageController extends Controller
 {
@@ -24,7 +25,32 @@ class MainPageController extends Controller
 
         $peraturan = new Peraturan();// getting peraturan
         $LatestPeraturan = $peraturan->LatestPeraturan();
-        $countPeraturan = $peraturan->getPeraturanCounts();
+        // HITUNG BERAPA BANYAK PERATURAN
+        $countPeraturan = DB::table('tbl_peraturan')->select('jenis_peraturan.jenis AS jenis_peraturan', DB::raw('COUNT(jenis_id) as countPeraturan'))->join('jenis_peraturan', 'jenis_peraturan.id', '=', 'tbl_peraturan.jenis_id')->groupBy('jenis_peraturan.jenis')->get();
+        // HITUNG BERAPA BANYAK VEIWS
+        $countView = DB::select("
+            (SELECT 'year' AS time, YEAR(tgl_penetapan) AS period, SUM(view) AS totalViews
+            FROM tbl_peraturan
+            GROUP BY YEAR(tgl_penetapan)
+            ORDER BY period DESC
+            LIMIT 1)
+        
+            UNION
+        
+            (SELECT 'month' AS time, MONTH(tgl_penetapan) AS period, SUM(view) AS totalViews
+            FROM tbl_peraturan
+            GROUP BY YEAR(tgl_penetapan), MONTH(tgl_penetapan)
+            ORDER BY YEAR(tgl_penetapan) DESC, MONTH(tgl_penetapan) DESC
+            LIMIT 1)
+        
+            UNION
+        
+            (SELECT 'week' AS time, WEEK(tgl_penetapan) AS period, SUM(view) AS totalViews
+            FROM tbl_peraturan
+            GROUP BY YEAR(tgl_penetapan), WEEK(tgl_penetapan)
+            ORDER BY YEAR(tgl_penetapan) DESC, WEEK(tgl_penetapan) DESC
+            LIMIT 1)
+        ");
 
         // GROUPING EACH ONE OF THE TABLES (why not)
         $groupNmrPer = $peraturan->LatestPeraturan()->groupBy('id_nomor')->pluck('0.nomor_peraturan', '0.id_nomor');
@@ -51,12 +77,38 @@ class MainPageController extends Controller
 
     public function filterPeraturan(Request $request){
         $searchInput = $request->input('search-peraturan');
+        $subjekInput = $request->input('subjek-peraturan');
+        $nomorInput = $request->input('nomor-peraturan');
+        $jenisInput = $request->input('jenis-peraturan');
+        $tahunInput = $request->input('tahun-peraturan');
+        $statusInput = $request->input('status-peraturan');
 
-        if (!empty($searchInput)) {
-            $queryParameter['search-peraturan'] = $searchInput;
-        }
+        // if (!empty($searchInput)) {
+            if (['search-peraturan']) {
+                $queryParameter['search-peraturan'] = $searchInput;
+            }
+            if (['subjek-peraturan']) {
+                $queryParameter['subjek-peraturan'] = $subjekInput;
+            }
+            if (['jenis-peraturan']) {
+                $queryParameter['jenis-peraturan'] = $jenisInput;
+            }
+            if (['nomor-peraturan']) {
+                $queryParameter['nomor-peraturan'] = $nomorInput;
+            }
+            if (['tahun-peraturan']) {
+                $queryParameter['tahun-peraturan'] = $tahunInput;
+            }
+            if (['status-peraturan']) {
+                $queryParameter['status-peraturan'] = $statusInput;
+            }
+            
+            return redirect()->route('show_peraturan.data', $queryParameter);
+        // }
+        // else{
+        //     return back();
+        // }
 
-        return redirect()->route('show_peraturan.data', $queryParameter);
     }
     /**
      * Show the form for creating a new resource.

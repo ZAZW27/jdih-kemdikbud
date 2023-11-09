@@ -36,6 +36,11 @@ class PeraturanController extends Controller
     public function showPeraturan(Request $request){
 
         $searchInput = $request->input('search-peraturan');
+        $subjekInput = $request->input('subjek-peraturan');
+        $nomorInput = $request->input('nomor-peraturan');
+        $jenisInput = $request->input('jenis-peraturan');
+        $tahunInput = $request->input('tahun-peraturan');
+        $statusInput = $request->input('status-peraturan');
 
         $peraturan = new Peraturan();
 
@@ -44,12 +49,42 @@ class PeraturanController extends Controller
             $query->where(function($subQuery) use ($searchInput) {
                 $subQuery->orWhere('judul_peraturan', 'like', '%' . $searchInput . '%');
             });
-        })->get();
+        })
+        ->when($subjekInput, function($query) use ($subjekInput) {
+            $query->where('subjek_id', $subjekInput);
+        })
+        ->when($nomorInput, function($query) use ($nomorInput) {
+            $query->where(function($subQuery) use ($nomorInput) {
+                $subQuery->orWhere('nomor_id', 'like', '%' . $nomorInput . '%');
+            });
+        })
+        ->when($jenisInput, function($query) use ($jenisInput) {
+            $query->where('jenis_id', $jenisInput);
+        })
+        ->when($tahunInput, function($query) use ($tahunInput) {
+            $query->where('tahun_id', $tahunInput);
+        })
+        ->when($statusInput, function($query) use ($statusInput) {
+            $query->where('status_id', $statusInput);
+        })->paginate(10);
+
+        // GROUPING EACH ONE OF THE TABLES (why not)
+        $groupNmrPer = $peraturan->LatestPeraturan()->groupBy('id_nomor')->pluck('0.nomor_peraturan', '0.id_nomor');
+        $groupThnPer = $peraturan->LatestPeraturan()->groupBy('id_tahun')->pluck('0.tahun_peraturan', '0.id_tahun');
+        $groupJnsPer = $peraturan->LatestPeraturan()->groupBy('id_jenis')->pluck('0.jenis_peraturan', '0.id_jenis');
+        $groupSbjkPer = $peraturan->LatestPeraturan()->groupBy('id_subjek')->pluck('0.subjek', '0.id_subjek');
+        $groupStatPer = $peraturan->LatestPeraturan()->groupBy('id_status')->pluck('0.status_peraturan', '0.id_status');
 
         return view('pages.produk-hukum.peraturan', [
             'title' => 'Peraturan | JDIH BPK',
             'peraturanData' => $peraturanData,
             
+             // GROUPD
+            'groupNomor' => $groupNmrPer,
+            'groupTahun' => $groupThnPer,
+            'groupJenis' => $groupJnsPer,
+            'groupSubjek' => $groupSbjkPer,
+            'groupStatus' => $groupStatPer,
         ]);
     }
 

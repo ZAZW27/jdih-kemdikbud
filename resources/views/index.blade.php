@@ -17,7 +17,7 @@
                 <form class="domain-form" action="{{route('get_peraturan.data')}}" method="post">
                     @csrf
                     <div class="md:flex md:items-center md:space-x-4 tutup animate-slide-left">
-                        <input name="search-peraturan" type="text" name="judul" id="judul" class="w-full px-4 py-6 border rounded-lg focus:outline-none focus:ring focus:border-blue-300" placeholder="Cari peraturan perundang-undangan bidang pendidikan, kebudayaan, riset, dan teknologi">
+                        <input name="search-peraturan" type="text" id="judul" class="w-full px-4 py-6 border rounded-lg focus:outline-none focus:ring focus:border-blue-300" placeholder="Cari peraturan perundang-undangan bidang pendidikan, kebudayaan, riset, dan teknologi">
                         <div class="absolute right-6 flex md:mt-0" id="filter-button">
                             <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-l focus:outline-none focus:ring focus:border-blue-300 hover:bg-red-500 ">
                                 <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" width="30"><path d="M0 0h24v24H0z" fill="none"></path><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
@@ -30,8 +30,8 @@
                 </form>
             </div>
         </div>
-        <div class="absolute w-full flex justify-center md:-mt-14 -mt-5 z-[11] hidden" id="filter-options" data-aos="fade-up" data-aos-duration="600">
-            <form action="{{route('get_peraturan.data')}}" class="w-full" method="POST">
+        <div class="absolute w-full flex justify-center md:-mt-14 -mt-5 z-[11] hidden" id="filter-options" >
+            <form action="{{route('get_peraturan.data')}}" class="w-full flex justify-center" method="POST">
                 <div class="bg-white shadow-lg w-[80%] pt-3 pb-1 px-2 rounded-lg">
                     <div class="peraturan-filter flex flex-col sm:flex-row">
                         <div class="flex-1 z-[14]">
@@ -52,7 +52,7 @@
                     <div class="peraturan-filter flex flex-col sm:flex-row">
                         <div class=" flex-1 z-[13]">
                             <section>
-                                <input class="custom-input w-full" name="username" type="text" placeholder="Masukkan nomor peraturan">
+                                <input class="custom-input w-full" name="nomor-peraturan" type="text" placeholder="Masukkan nomor peraturan">
                             </section>
                         </div>
                         <div class="flex-1 z-[13]">
@@ -221,9 +221,9 @@
                                     </form>
                                 </div>
     
-                                <div class=" subject-icons">
+                                <div class=" subject-icons" onclick="showModalSubjekPeraturan()">
                                     <div class="area-box">
-                                        <button onclick="showModalSubjekPeraturan()" style="background-color: transparent; border: none;"><svg xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 0 24 24" width="36px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"></path></svg></button><br><br>
+                                        <button style="background-color: transparent; border: none;"><svg xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 0 24 24" width="36px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"></path></svg></button><br><br>
                                         <p style="float:center;font-weight:bold;font-size:13px">LAINNYA</p>
                                     </div>
                                 </div>
@@ -307,7 +307,10 @@
                                                     </div>
                                                     <div class="col-lg-11 col-md-11 col-sm-12">
                                                         <div class="terbaru">
-                                                            <h6><span style="color: #696969;">{{ strtoupper($per->jenis_peraturan)}}</span> NOMOR {{$per->nomor_peraturan}} TAHUN {{$per->tahun_peraturan}}</h6>
+                                                            <h6>
+                                                                <span style="color: #696969;">{{ strtoupper($per->jenis_peraturan)}}</span> 
+                                                                NOMOR {{$per->nomor_peraturan}} TAHUN {{$per->tahun_peraturan}}
+                                                            </h6>
                                                             <h1 class="hover:text-blue-900 lg:text-start sm:text-justify">{{$per->judul_peraturan}}</h1>
                                                             <span class="tgl-terbit-peraturan">{{ \Carbon\Carbon::parse($per->tanggal_penetapan)->format('d F Y') }}</span>
                                                         </div>
@@ -796,7 +799,6 @@
                                     </div>
                                 </a>
                             </div>
-
                                 <div class=" subject-icons">
                                 <a href="peraturan" data-toggle="modal" data-target=".bd-example-modal-md">
                                     <div class="area-box">

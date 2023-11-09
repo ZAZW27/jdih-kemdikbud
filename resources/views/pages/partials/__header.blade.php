@@ -75,7 +75,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="/peraturan" class="text-sm block py-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 ">
+                        <a href="/show_peraturan" class="text-sm block py-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 ">
                             PRODUK HUKUM
                         </a>
                     </li>

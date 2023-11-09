@@ -53,23 +53,24 @@ class Peraturan extends Model
     // }
     public static function getPeraturanCounts()
     {
-        return DB::table('tbl_peraturan')->select('jenis_id', DB::raw('COUNT(jenis_id) as countPeraturan'))->groupBy('jenis_id')->get();
+        DB::table('tbl_peraturan')->select('jenis_peraturan.jenis AS jenis_peraturan', DB::raw('COUNT(jenis_id) as countPeraturan'))->join('jenis_peraturan', 'jenis_peraturan.id', '=', 'tbl_peraturan.jenis_id')->groupBy('jenis_peraturan.jenis')->get();
+
     }
 
     public function getNomor(){
-        return $this->belongsTo(NomorPeraturan::class, 'nomor_peraturan');
+        return $this->belongsTo(NomorPeraturan::class, 'nomor_id');
     }
     public function getTahun(){
-        return $this->belongsTo(TahunPeraturan::class, 'tahun_peraturan');
+        return $this->belongsTo(TahunPeraturan::class, 'tahun_id');
     }
     public function getJenis(){
-        return $this->belongsTo(JenisPeraturan::class, 'jenis_peraturan');
+        return $this->belongsTo(JenisPeraturan::class, 'jenis_id');
     }
     public function getSubjek(){
-        return $this->belongsTo(SubjekPeraturan::class, 'subjek_peraturan');
+        return $this->belongsTo(SubjekPeraturan::class, 'subjek_id');
     }
     public function getStatus(){
-        return $this->belongsTo(StatusPeraturan::class, 'status_peraturan');
+        return $this->belongsTo(StatusPeraturan::class, 'status_id');
     }
 }
 

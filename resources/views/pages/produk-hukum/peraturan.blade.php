@@ -1,5 +1,6 @@
 
 @include('pages.partials.__header') 
+<script async src="{{asset('assets/js/main/modals.js')}}"></script>
     <div class="containers h-64 bkg-bg banner-small">
         <div class="page-routes">
             <a href="/">
@@ -18,25 +19,75 @@
     </div>
     
     <div class="containers bg-center pb-10" >
-        <div class="py-4 px-4 mx-auto max-w-screen-xl text-center lg:pt-16 z-10 relative">
+        <div class="py-4 px-4 mx-auto max-w-screen-xl text-center lg:pt-16  relative">
             <div class="col-span-12 md:col-span-12 sm:col-span-12 mt-2 animate__animated animate__fadeInUp" id="detail_peraturan">
                 <div class="card row-span-3 col-span-12 ">
-                    <form class="domain-form" action="cari_peraturan" method="post">
-                        <div class="md:flex md:items-center md:space-x-4 tutup">
-                            <input type="text" name="judul" id="judul" class="search-peraturan-search-box rounded-lg focus:outline-none focus:border-white lg:-mb-4" placeholder="Masukkan judul atau kata kunci peraturan">
-                            <div class="absolute right-10 flex lg:mt-7">
-                                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-l focus:outline-none focus:ring focus:border-blue-300 hover:bg-red-500 transition duration-300 ease-in-out">
-                                    <div class="flex ">
-                                        <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="22px" fill="#fff"><g><path d="M0,0h24v24H0V0z" fill="none"></path></g><g><path d="M7,9H2V7h5V9z M7,12H2v2h5V12z M20.59,19l-3.83-3.83C15.96,15.69,15.02,16,14,16c-2.76,0-5-2.24-5-5s2.24-5,5-5s5,2.24,5,5 c0,1.02-0.31,1.96-0.83,2.75L22,17.59L20.59,19z M17,11c0-1.65-1.35-3-3-3s-3,1.35-3,3s1.35,3,3,3S17,12.65,17,11z M2,19h10v-2H2 V19z"></path></g>CARI</svg>
-                                        CARI
-                                    </div>
+                    <form class="domain-form" action="{{route('get_peraturan.data')}}" method="post">
+                        @csrf
+                        <div class="md:flex md:items-center md:space-x-4 tutup animate-slide-left">
+                            <input name="search-peraturan" type="text" id="judul" class="w-full px-4 py-6 border rounded-lg focus:outline-none focus:ring focus:border-blue-300" placeholder="Cari peraturan perundang-undangan bidang pendidikan, kebudayaan, riset, dan teknologi">
+                            <div class="absolute right-6 flex md:mt-0" id="filter-button">
+                                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-l focus:outline-none focus:ring focus:border-blue-300 hover:bg-red-500 ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" width="30"><path d="M0 0h24v24H0z" fill="none"></path><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
                                 </button>
-                                <a class="bg-yellow-500 text-slate-800 px-4 py-4 rounded-r focus:outline-none focus:ring focus:border-yellow-300" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
-                                    <div class="flex ">
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="18px" fill="#000"><path d="M0 0h24v24H0z" fill="none"></path><path d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z"></path></svg>
-                                        FILTER
+                                <button type="reset" style="reset" onclick="showModalFilter()" class="bg-yellow-500 text-slate-800 px-4 py-4 rounded-r focus:outline-none focus:ring focus:border-yellow-300">
+                                    <b>SPESIFIK</b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="absolute w-full flex md:justify-center justify-start md:-mt-14 md:top-[14rem] z-[11] hidden" id="filter-options" >
+                            <div class="bg-white shadow-lg w-[80%] pt-3 pb-1 px-2 rounded-lg">
+                                <div class="peraturan-filter flex flex-col sm:flex-row">
+                                    <div class="flex-1 z-[16]">
+                                        <section>
+                                            <select class="custom-select sources" placeholder="Pilih Subjek" name="subjek-peraturan">
+                                                @foreach ($groupSubjek as $id => $name)
+                                                    <option value="{{$id}}">{{$name}}</option>
+                                                @endforeach
+                                            </select>
+                                        </section>
                                     </div>
-                                </a>
+                                </div>
+                                <div class="peraturan-filter flex flex-col sm:flex-row">
+                                    <div class=" flex-1 z-[15]">
+                                        <section>
+                                            <select class="custom-select sources" placeholder="Pilih Nomor" name="jenis-peraturan">
+                                                @foreach ($groupNomor as $id => $name)
+                                                    <option value="{{$id}}">{{$name}}</option>
+                                                @endforeach
+                                            </select>
+                                        </section>
+                                    </div>
+                                    <div class="flex-1 z-[14]">
+                                        <section>
+                                            <select class="custom-select sources" placeholder="Pilih Jenis" name="jenis-peraturan">
+                                                @foreach ($groupJenis as $id => $name)
+                                                    <option value="{{$id}}">{{$name}}</option>
+                                                @endforeach
+                                            </select>
+                                        </section>
+                                    </div>
+                                </div>
+                                <div class="peraturan-filter flex flex-col sm:flex-row">
+                                    <div class="flex-1 z-[13]">
+                                        <section>
+                                            <select class="custom-select sources" placeholder="Pilih Tahun" name="tahun-peraturan">
+                                                @foreach ($groupTahun as $id => $name)
+                                                    <option value="{{$id}}">{{$name}}</option>
+                                                @endforeach
+                                            </select>
+                                        </section>
+                                    </div>
+                                    <div class="flex-1 z-[12]">
+                                        <section>
+                                            <select class="custom-select sources" placeholder="Pilih Status" name="status-peraturan">
+                                                @foreach ($groupStatus as $id => $name)
+                                                    <option value="{{$id}}">{{$name}}</option>
+                                                @endforeach
+                                            </select>
+                                        </section>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </form>
@@ -59,25 +110,23 @@
                                                 </div>
                                                 <div class="col-lg-11 col-md-11 col-sm-12">
                                                     <div class="perundangan-content">
-                                                        <a href="detail-peraturan">
-                                                            @php
-                                                                $first_data = '40/er/2023';
-                                                                $second_data = '2023'
-                                                            @endphp
-                                                            {{-- <p>{{strpos($p->getNomor->nomor, $p->tahun) !== false ? strtoupper("NOMOR $p->nomor") : strtoupper("NOMOR $p->getNomor->nomor TAHUN $p->tahun");}}</p> --}}
-                                                            <h6 class="text-start lg:text-sm md:text-sm sm:text-xs">{{ $p->jenis_peraturan }}<span class="text-yellow-600"> NOMOR {{$p->getNomor->nomor}} TAHUN 2023</span></h6>
-                                                            <h1 class="hover:text-purple-900 transition duration-150 ease-in-out ">Surat Edaran Menteri Nomor 5 Tahun 2023 tentang Pembayaran Tunjangan Kinerja Pegawai di Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi</h1>
+                                                        <a href="{{route('detail_peraturan.data', ['id' => $p->id])}}">
+                                                            <h6 class="text-start lg:text-sm md:text-sm sm:text-xs">
+                                                                {{ strtoupper($p->getJenis->jenis) }} 
+                                                                <span class="text-yellow-600"> {{ strpos((string)$p->getNomor->nomor, (string)$p->getTahun->tahun) !== false ? strtoupper("NOMOR {$p->getNomor->nomor}") : strtoupper("NOMOR {$p->getNomor->nomor} TAHUN {$p->getTahun->tahun}") }}</span>
+                                                            </h6>
+                                                            <h1 class="hover:text-purple-900 transition duration-150 ease-in-out">{{$p->judul_peraturan}}</h1>
                                                         </a>
                                                         <div class="flex justify-between">
-                                                            <div class="font-semibold text-gray-500">13 Oktober 2023 </div>
+                                                            <div class="font-semibold text-gray-500">{{ \Carbon\Carbon::parse($p->tgl_penetapan)->format('d F Y') }}</div>
                                                             <div class="flex view-info">
                                                                 <a href="#" class="views">
                                                                     <svg style="margin-top:-3px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M12 6.5c3.79 0 7.17 2.13 8.82 5.5-1.65 3.37-5.02 5.5-8.82 5.5S4.83 15.37 3.18 12C4.83 8.63 8.21 6.5 12 6.5m0-2C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zm0 5c1.38 0 2.5 1.12 2.5 2.5s-1.12 2.5-2.5 2.5-2.5-1.12-2.5-2.5 1.12-2.5 2.5-2.5m0-2c-2.48 0-4.5 2.02-4.5 4.5s2.02 4.5 4.5 4.5 4.5-2.02 4.5-4.5-2.02-4.5-4.5-4.5z"></path></svg>
-                                                                    743 | 
+                                                                    {{$p->view}} | 
                                                                 </a>
                                                                 <a href="#" class="downloads">
                                                                     <svg style="margin-top:-3px; margin-right:5px;" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><g><rect fill="none" height="24" width="24"></rect></g><g><path d="M18,15v3H6v-3H4v3c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2v-3H18z M17,11l-1.41-1.41L13,12.17V4h-2v8.17L8.41,9.59L7,11l5,5 L17,11z"></path></g></svg>
-                                                                    421
+                                                                    {{$p->download}}
                                                                 </a>
                                                             </div>
                                                         </div>
@@ -89,10 +138,83 @@
                                     @endforeach
                                 </div>
                             </div>
+                            {{ $peraturanData->links() }}
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    {{-- ANIMATED SELECT OPTIONS --}}
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        $(".custom-select").each(function() {
+        var classes = $(this).attr("class"),
+            id = $(this).attr("id"),
+            name = $(this).attr("name");
+        var template = '<div class="' + classes + '">';
+        template +=
+            '<span class="custom-select-trigger">' +
+            $(this).attr("placeholder") +
+            "</span>";
+        template += '<div class="custom-options">';
+        $(this)
+            .find("option")
+            .each(function() {
+            template +=
+                '<span class="custom-option ' +
+                $(this).attr("class") +
+                '" data-value="' +
+                $(this).attr("value") +
+                '">' +
+                $(this).html() +
+                "</span>";
+            });
+        template += "</div></div>";
+
+        $(this).wrap('<div class="custom-select-wrapper"></div>');
+        $(this).hide();
+        $(this).after(template);
+        });
+        $(".custom-option:first-of-type").hover(
+        function() {
+            $(this)
+            .parents(".custom-options")
+            .addClass("option-hover");
+        },
+        function() {
+            $(this)
+            .parents(".custom-options")
+            .removeClass("option-hover");
+        }
+        );
+        $(".custom-select-trigger").on("click", function() {
+        $("html").one("click", function() {
+            $(".custom-select").removeClass("opened");
+        });
+        $(this)
+            .parents(".custom-select")
+            .toggleClass("opened");
+        event.stopPropagation();
+        });
+        $(".custom-option").on("click", function() {
+        $(this)
+            .parents(".custom-select-wrapper")
+            .find("select")
+            .val($(this).data("value"));
+        $(this)
+            .parents(".custom-options")
+            .find(".custom-option")
+            .removeClass("selection");
+        $(this).addClass("selection");
+        $(this)
+            .parents(".custom-select")
+            .removeClass("opened");
+        $(this)
+            .parents(".custom-select")
+            .find(".custom-select-trigger")
+            .text($(this).text());
+        });
+    
+    </script>
 @include('pages.partials.__footer')
