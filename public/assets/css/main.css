@@ -846,6 +846,187 @@ footer .footer-format{
    max-width: 900px; /* Adjust this value as needed */
    max-height: 5rem;
 }
+
+/* CUSTOM SELECT OPTION FOR THE FILTER ENGInE */
+.peraturan-filter section {
+   font: 13px/1.5 "Roboto", sans-serif;
+   padding: 10px;;
+ }
+ 
+ /* INPUT SELECT OPTION */
+ 
+ .peraturan-filter label {
+   width: 100%;
+   float: left;
+   margin-left: 25px;
+   margin-bottom: 10px;
+ }
+ .peraturan-filter .center {
+   position: absolute;
+   display: inline-block;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+ }
+ .peraturan-filter select {
+   z-index: 3;
+   float: left;
+ }
+ /** Custom Select **/
+ /* c7d1d6 */
+ .peraturan-filter .custom-select-wrapper {
+   border-bottom: 1.5px solid #798d97;
+   position: relative;
+   display: inline-block;
+   user-select: none;
+   cursor: pointer;
+   width: 100%;
+   z-index: 3;
+ }
+ .peraturan-filter .custom-select-wrapper select {
+   display: none;
+ }
+ .peraturan-filter .custom-select {
+   position: relative;
+   display: inline-block;
+   font: 13px/1.5 "Roboto", sans-serif;
+   width: 100%;
+ }
+ .peraturan-filter .custom-select-trigger {
+   position: relative;
+   display: block;
+   min-width: 130px;
+   padding: 0 104px 0 25px;
+   font-weight: 100;
+   color: #6e7c83;
+   line-height: 35px;
+   background-color: #ffffff;
+   border-radius: 3px;
+   cursor: pointer;
+   transition: all 0.2s ease-in-out;
+ }
+ .peraturan-filter .custom-select-trigger:hover {
+   -webkit-box-shadow: 0px 10px 50px 0px rgba(2, 86, 255, 0.1);
+   box-shadow: 0px 10px 50px 0px rgba(1, 81, 240, 0.1);
+   background-color: #f8f7ff;
+ }
+ .peraturan-filter .custom-select-trigger:before {
+   position: absolute;
+   display: block;
+   content: "";
+   width: 1px;
+   height: 35px;
+   top: 3px;
+   right: 50px;
+   margin-top: -3px;
+   border-right: 1px solid #c7d1d6;
+   transition: all 0.35s ease-out;
+   transform-origin: 50% 0;
+ }
+ 
+ .peraturan-filter .custom-select-trigger:after {
+   position: absolute;
+   display: block;
+   content: "";
+   width: 10px;
+   height: 10px;
+   top: 50%;
+   right: 20px;
+   margin-top: -3px;
+   border-bottom: 1px solid #c7d1d6;
+   border-right: 1px solid #c7d1d6;
+   transform: rotate(45deg) translateY(-50%);
+   transition: all 0.35s ease-out;
+   transform-origin: 50% 0;
+ }
+ .peraturan-filter .custom-select.opened .custom-select-trigger:after {
+   margin-top: 3px;
+   transform: rotate(-135deg) translateY(-50%);
+ }
+ .peraturan-filter .custom-options {
+   position: absolute;
+   display: block;
+   top: 100%;
+   left: 0%;
+   right: 0;
+   width: 100%;
+   margin: 10px 0;
+   border-radius: 5px;
+   box-sizing: border-box;
+   background: #fff;
+   transition: all 0.2s ease-in-out;
+   opacity: 0;
+   visibility: hidden;
+   pointer-events: none;
+   transform: translateY(-15px);
+   border: 0;
+   z-index: 999; /* Set a high z-index value to ensure it's above everything */
+}
+.peraturan-filter .custom-select.opened .custom-options {
+   max-height: 300px;
+   overflow-y: auto;
+   opacity: 1;
+   visibility: visible;
+   pointer-events: all;
+   transform: translateY(-8px);
+   z-index: 999; /* Set a high z-index value for opened options as well */
+   box-shadow: 1px 3px 20px rgba(0, 0, 0, 0.1);
+   
+}
+ .peraturan-filter .option-hover:before {
+   background: #f9f9f9;
+ }
+.peraturan-filter .custom-option {
+   position: relative;
+   display: block;
+   padding: 0 22px;
+   font: 13px/1.5 "Roboto", sans-serif;
+   font-weight: 600;
+   color: #b5b5b5;
+   line-height: 35px;
+   cursor: pointer;
+   transition: all 0.05s ease-in-out;
+   border-radius: 20px;
+   margin-top: 2px;
+   margin-left: 10px;
+   margin-right: 20px;
+   transition: all .2s ease;
+   z-index: 999; /* Set a high z-index value for the custom options */
+}
+ .peraturan-filter .custom-option:hover {
+   transform: translateX(10px);
+   margin-right: 20px;
+ }
+ .peraturan-filter .custom-option:first-of-type {
+   border-radius: 4px 4px 0 0;
+ 
+   border-top-right-radius: 5px;
+   border-top-left-radius: 5px;
+   border-radius: 20px;
+ }
+ .peraturan-filter .custom-option:last-of-type {
+   border-bottom: 0;
+   border-radius: 0 0 4px 4px;
+   border-bottom-right-radius: 5px;
+   border-bottom-left-radius: 5px;
+   border-radius: 20px;
+ }
+ .custom-option:hover,
+ .peraturan-filter .custom-option.selection {
+   color: #fff;
+   background-color: #055CA5;
+ }
+ 
+.custom-input{
+   border: none;
+   outline: none;
+   border-bottom: 1.5px solid #798d97;
+   margin-top: -4.82px;
+   padding: 0; 
+}
+.custom-input:focus {
+   outline: none !important; /* Remove the outline when in focus */
+}
 @media screen and (max-width: 1024px) {
    .containers {
        max-width: 100%;

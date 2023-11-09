@@ -57,10 +57,9 @@ Route::get('/faq', function () {// faq page
 // ===========================================================
 // ====================SECTION: PRODUK HUKUM==================
 // ===========================================================
-Route::get('/peraturan', function () {// peraturan page
-    return view('pages/produk-hukum/peraturan');
-});
 
+Route::get('/show_peraturan', [PeraturanController::class, 'showPeraturan'])->name('show_peraturan.data');
+Route::post('/get_peraturan', [MainPageController::class, 'filterPeraturan'])->name('get_peraturan.data');
 Route::get('detail_peraturan/{id}', [PeraturanController::class, 'index'])->name('detail_peraturan.data');
 
 Route::get('/statistika-peraturan', function () {// statistika peraturan page

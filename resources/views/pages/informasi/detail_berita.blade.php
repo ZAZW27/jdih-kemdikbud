@@ -1,6 +1,6 @@
 
 @include('pages.partials.__header')
-    <div class="containers banner-small relative top-24 z-0">
+    <div class="containers banner-small relative top-4 z-0">
         <div class="page-routes">
             <a href="/">
                 Beranda / Informasi / 
@@ -9,8 +9,8 @@
         </div>
     </div>
     
-    <div class="containers bg-center pb-10 -mt-[9rem]">
-        <div class="pt-[2rem] lg:px-[10rem] px-4 mx-auto max-w-screen-xl text-center z-10 relative">
+    <div class="containers bg-center pb-10 -mt-[12rem]">
+        <div class=" lg:px-[10rem] px-4 mx-auto max-w-screen-xl text-center z-10 relative">
             <div class="col-span-12 md:col-span-12 sm:col-span-12 mt-[3rem] animate__animated animate__fadeInUp" id="detail_peraturan">
                 <div class="grid grid-cols-1 grid-forms md:grid-row gap-3 pb-12">
                     <div class="berita-container col-span-1 animate-slide-up" data-aos="fade-up" data-aos-anchor-placement="center-bottom">

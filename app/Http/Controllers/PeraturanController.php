@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Peraturan;
 use App\Http\Requests\StorePeraturanRequest;
 use App\Http\Requests\UpdatePeraturanRequest;
+use Illuminate\Http\Request;
 
 class PeraturanController extends Controller
 {
@@ -14,7 +15,8 @@ class PeraturanController extends Controller
     public function index($id)
     {
          // Assuming you want to fetch a specific Berita by its ID
-         $detail_peraturan = Peraturan::where('id', $id)->first();
+         $detail_peraturan = Peraturan::LatestPeraturan()->where('id', $id)->first();
+
     
          // You can also add more conditions as needed
          // For example, if you want to fetch a specific Berita with a specific category
@@ -30,6 +32,25 @@ class PeraturanController extends Controller
              'title' => 'Berita Detail | JDIH BPK',
              'per' => $detail_peraturan,
          ]);
+    }
+    public function showPeraturan(Request $request){
+
+        $searchInput = $request->input('search-peraturan');
+
+        $peraturan = new Peraturan();
+
+        $peraturanData = Peraturan::with(['getNomor', 'getJenis', 'getSubjek', 'getTahun', 'getStatus'])
+        ->when($searchInput, function($query) use ($searchInput) {
+            $query->where(function($subQuery) use ($searchInput) {
+                $subQuery->orWhere('judul_peraturan', 'like', '%' . $searchInput . '%');
+            });
+        })->get();
+
+        return view('pages.produk-hukum.peraturan', [
+            'title' => 'Peraturan | JDIH BPK',
+            'peraturanData' => $peraturanData,
+            
+        ]);
     }
 
     /**

@@ -2,24 +2,92 @@
 {{-- <script src="{{asset('assets/js/google-charts/col-chart.js')}}"></script> --}}
 @include('charts.col-chart')
 @include('charts.donut-chart')
+<script async>
+    AOS.init();
+
+    AOS.init({
+        once: true
+    })   
+</script>
+
+<script async src="{{asset('assets/js/main/modals.js')}}"></script>
     <div class="containers h-64 mt-24 ">
         <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 z-10 relative">
             <div class="col-span-12 md:col-span-12 sm:col-span-12 mt-2 animate__animated animate__fadeInUp" id="detail_peraturan">
-                <form class="domain-form" action="cari_peraturan" method="post">
+                <form class="domain-form" action="{{route('get_peraturan.data')}}" method="post">
+                    @csrf
                     <div class="md:flex md:items-center md:space-x-4 tutup animate-slide-left">
-                        <input type="text" name="judul" id="judul" class="w-full px-4 py-6 border rounded-lg focus:outline-none focus:ring focus:border-blue-300" placeholder="Cari peraturan perundang-undangan bidang pendidikan, kebudayaan, riset, dan teknologi">
-                        <div class="absolute right-6 flex ">
+                        <input name="search-peraturan" type="text" name="judul" id="judul" class="w-full px-4 py-6 border rounded-lg focus:outline-none focus:ring focus:border-blue-300" placeholder="Cari peraturan perundang-undangan bidang pendidikan, kebudayaan, riset, dan teknologi">
+                        <div class="absolute right-6 flex md:mt-0" id="filter-button">
                             <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-l focus:outline-none focus:ring focus:border-blue-300 hover:bg-red-500 ">
                                 <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" width="30"><path d="M0 0h24v24H0z" fill="none"></path><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
                             </button>
-                            <a class="bg-yellow-500 text-slate-800 px-4 py-4 rounded-r focus:outline-none focus:ring focus:border-yellow-300" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
+                            <button type="reset" style="reset" onclick="showModalFilter()" class="bg-yellow-500 text-slate-800 px-4 py-4 rounded-r focus:outline-none focus:ring focus:border-yellow-300">
                                 <b>SPESIFIK</b>
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
+        <div class="absolute w-full flex justify-center md:-mt-14 -mt-5 z-[11] hidden" id="filter-options" data-aos="fade-up" data-aos-duration="600">
+            <form action="{{route('get_peraturan.data')}}" class="w-full" method="POST">
+                <div class="bg-white shadow-lg w-[80%] pt-3 pb-1 px-2 rounded-lg">
+                    <div class="peraturan-filter flex flex-col sm:flex-row">
+                        <div class="flex-1 z-[14]">
+                            <section>
+                                <input class="custom-input w-full" name="search-peraturan" type="text" placeholder="Masukkan judul atau kata kunci peraturan">
+                            </section>
+                        </div>
+                        <div class="flex-1 z-[14]">
+                            <section>
+                                <select name="potencial" class="custom-select sources" placeholder="Pilih Subjek" name="subjek-peraturan">
+                                    @foreach ($groupSubjek as $id => $name)
+                                        <option value="{{$id}}">{{$name}}</option>
+                                    @endforeach
+                                </select>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="peraturan-filter flex flex-col sm:flex-row">
+                        <div class=" flex-1 z-[13]">
+                            <section>
+                                <input class="custom-input w-full" name="username" type="text" placeholder="Masukkan nomor peraturan">
+                            </section>
+                        </div>
+                        <div class="flex-1 z-[13]">
+                            <section>
+                                <select name="potencial" class="custom-select sources" placeholder="Pilih Jenis" name="jenis-peraturan">
+                                    @foreach ($groupJenis as $id => $name)
+                                        <option value="{{$id}}">{{$name}}</option>
+                                    @endforeach
+                                </select>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="peraturan-filter flex flex-col sm:flex-row">
+                        <div class="flex-1 z-[12]">
+                            <section>
+                                <select name="potencial" class="custom-select sources" placeholder="Pilih Tahun" name="tahun-peraturan">
+                                    @foreach ($groupTahun as $id => $name)
+                                        <option value="{{$id}}">{{$name}}</option>
+                                    @endforeach
+                                </select>
+                            </section>
+                        </div>
+                        <div class="flex-1 z-[12]">
+                            <section>
+                                <select name="potencial" class="custom-select sources" placeholder="Pilih Status" name="status-peraturan">
+                                    @foreach ($groupStatus as $id => $name)
+                                        <option value="{{$id}}">{{$name}}</option>
+                                    @endforeach
+                                </select>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>        
     </div>
     <div id="slideshow">
         <div class="slide-wrapper" >
@@ -809,4 +877,192 @@
         =============================== CONTENT: MODAL MODAL MODAL MODAL MODAL MODAL==============================================
         ============================================ END END =================================================================-->
 
-@include('pages.partials.__footer')
+        <footer class="w3l-footer-29-main">
+            <div class="footer-29 pt-5">
+              <div class="container">
+                <div class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-3 gap-4">
+                  <div class="sub-footer lg:col-span-1 md:col-span-1 sm:col-span-1">
+                    <div class="footer-logo mb-4">
+                      <img src="{{ asset('assets/img/logo/logo_jdih_footer.png') }}" style="width: 180px;">
+                    </div>
+                  </div>
+                  <div class="sub-footer lg:col-span-1 md:col-span-1 sm:col-span-1">
+                    <ul id="komponen">
+                      <li><a href="peraturan">Peraturan</a></li>
+                      <li><a href="#">Putusan Pengadilan</a></li>
+                      <li><a href="#">Naskah Kerja Sama</a></li>
+                      <li><a href="inventarisasi">Inventarisasi</a></li>
+                      <li><a href="statistik">Statistik</a></li>
+                    </ul>
+                  </div>
+                  <div class="sub-footer lg:col-span-1 md:col-span-1 sm:col-span-1">
+                    <ul id="komponen">
+                      <li><a href="tentang">Tentang</a></li>
+                      <li><a href="visi_misi">Visi dan Misi</a></li>
+                      <li><a href="struktur">Struktur Organisasi</a></li>
+                      <li><a href="pengumuman">Pengumuman</a></li>
+                      <li><a href="layanan">Layanan</a></li>
+                      <li><a href="berita">Berita</a></li>
+                    </ul>
+                  </div>
+                  <div class="sub-footer lg:col-span-1 md:col-span-1 sm:col-span-1 footer-media" >
+                    <h5 class="font-bold text-yellow-400 text-lg" style="margin: -10px 0px 0 -10px;">Media Sosial</h5>
+                    <div class="flex gap-2 media-link-footer">
+                      <a href="" target="_blank">
+                        <img src="{{ asset('assets/img/media/envelope.png') }}" alt="Email" style="width: 24px;">
+                      </a>
+                      <a href="" target="_blank">
+                        <img src="{{ asset('assets/img/media/facebook.png') }}" alt="Facebook" style="width: 24px;">
+                      </a>
+                      <a href="https://twitter.com/birohukumdikbud" target="_blank">
+                        <img src="{{ asset('assets/img/media/twitter.png') }}" alt="Twitter" style="width: 24px;">
+                      </a>
+                      <a href="https://www.instagram.com/birohukumdikbud/" target="_blank">
+                        <img src="{{ asset('assets/img/media/instagram-outline') }}.png" alt="Instagram" style="width: 24px;">
+                      </a>
+                      <a href="https://www.youtube.com/channel/UC_teqno_MCTrSKHwfdstXYw" target="_blank">
+                        <img src="{{ asset('assets/img/media/youtube.png') }}" alt="Youtube" style="width: 24px;">
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+            <!-- copyright -->
+            <section class="w3l-copyright text-center ">
+                <div class="container">
+                    <hr class="copyright-border">
+                    <p class="copy-footer-29 mt-4" style="font-size: 15px;">
+                        2023 © <a href="https://birohukum.kemdikbud.go.id" target="_blank">Biro Hukum.</a>
+                    <a href="https://kemdikbud.go.id" target="_blank"> Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi.</a>
+                    </p>
+                </div>
+                <button onclick="topFunction()" id="movetop" title="Go to top" class="move-to-top-btn shadow-md z-50">
+                    ^
+                </button>
+            </section>
+            <!-- //copyright -->
+        </footer>   
+        {{-- top functions --}}
+        <script>
+            // When the user scrolls down 20px from the top of the document, show the button
+            function topFunction() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }
+    
+            window.onscroll = function () {
+                scrollFunction()
+            };
+            
+            function scrollFunction() {
+                if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                document.getElementById("movetop").style.display = "block";
+                } else {
+                document.getElementById("movetop").style.display = "none";
+                }
+            }
+    
+            // When the user clicks on the button, scroll to the top of the document
+            function topFunction() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }
+    
+            
+    
+        </script>    
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(window).on("scroll", function () {
+                var scroll = $(window).scrollTop();
+    
+                if (scroll >= 5) {
+                    $("#site-header")
+                        .stop()
+                        .animate({ height: "90px"}, 200); // Adjust the target height and margin as needed
+                } else {
+                    $("#site-header")
+                        .stop()
+                        .animate({ height: "100px", marginTop: "0px" }, 200); // Replace "original-height" and "original-margin" with the actual original values
+                }
+            });
+        </script>
+        {{-- ANIMATED SELECT OPTIONS --}}
+        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+        <script>
+            $(".custom-select").each(function() {
+            var classes = $(this).attr("class"),
+                id = $(this).attr("id"),
+                name = $(this).attr("name");
+            var template = '<div class="' + classes + '">';
+            template +=
+                '<span class="custom-select-trigger">' +
+                $(this).attr("placeholder") +
+                "</span>";
+            template += '<div class="custom-options">';
+            $(this)
+                .find("option")
+                .each(function() {
+                template +=
+                    '<span class="custom-option ' +
+                    $(this).attr("class") +
+                    '" data-value="' +
+                    $(this).attr("value") +
+                    '">' +
+                    $(this).html() +
+                    "</span>";
+                });
+            template += "</div></div>";
+
+            $(this).wrap('<div class="custom-select-wrapper"></div>');
+            $(this).hide();
+            $(this).after(template);
+            });
+            $(".custom-option:first-of-type").hover(
+            function() {
+                $(this)
+                .parents(".custom-options")
+                .addClass("option-hover");
+            },
+            function() {
+                $(this)
+                .parents(".custom-options")
+                .removeClass("option-hover");
+            }
+            );
+            $(".custom-select-trigger").on("click", function() {
+            $("html").one("click", function() {
+                $(".custom-select").removeClass("opened");
+            });
+            $(this)
+                .parents(".custom-select")
+                .toggleClass("opened");
+            event.stopPropagation();
+            });
+            $(".custom-option").on("click", function() {
+            $(this)
+                .parents(".custom-select-wrapper")
+                .find("select")
+                .val($(this).data("value"));
+            $(this)
+                .parents(".custom-options")
+                .find(".custom-option")
+                .removeClass("selection");
+            $(this).addClass("selection");
+            $(this)
+                .parents(".custom-select")
+                .removeClass("opened");
+            $(this)
+                .parents(".custom-select")
+                .find(".custom-select-trigger")
+                .text($(this).text());
+            });
+        
+        </script>
+        <!-- AOS CODES -->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</body>
+</html>
+    

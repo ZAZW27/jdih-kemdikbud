@@ -51,325 +51,42 @@
                         <div class="content rounded-border-content">
                             <div class="layout text-justify pt-5 px-3 isi-profil ">
                                 <div class="pt-5">
-                                    <div class="perundangan text-sm">
-                                        <div class="row">
-                                            <div class="lg:mx-4">
-                                                <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="40px" viewBox="0 0 24 24" width="40px" fill="#000000"><rect fill="none" height="24" width="24"></rect><path d="M19,5v9l-5,0l0,5H5V5H19 M19,3H5C3.9,3,3,3.9,3,5v14c0,1.1,0.9,2,2,2h10l6-6V5C21,3.9,20.1,3,19,3z M12,14H7v-2h5V14z M17,10H7V8h10V10z"></path></svg>
-                                            </div>
-                                            <div class="col-lg-11 col-md-11 col-sm-12">
-                                                <div class="perundangan-content">
-                                                    <a href="detail-peraturan">
-                                                        <h6 class="text-start lg:text-sm md:text-sm sm:text-xs">SURAT EDARAN MENTERI<span class="text-yellow-600"> NOMOR 5 TAHUN 2023</span></h6>
-                                                        <h1 class="hover:text-purple-900 transition duration-150 ease-in-out ">Surat Edaran Menteri Nomor 5 Tahun 2023 tentang Pembayaran Tunjangan Kinerja Pegawai di Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi</h1>
-                                                    </a>
-                                                    <div class="flex justify-between">
-                                                        <div class="font-semibold text-gray-500">13 Oktober 2023 </div>
-                                                        <div class="flex view-info">
-                                                            <a href="#" class="views">
-                                                                <svg style="margin-top:-3px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M12 6.5c3.79 0 7.17 2.13 8.82 5.5-1.65 3.37-5.02 5.5-8.82 5.5S4.83 15.37 3.18 12C4.83 8.63 8.21 6.5 12 6.5m0-2C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zm0 5c1.38 0 2.5 1.12 2.5 2.5s-1.12 2.5-2.5 2.5-2.5-1.12-2.5-2.5 1.12-2.5 2.5-2.5m0-2c-2.48 0-4.5 2.02-4.5 4.5s2.02 4.5 4.5 4.5 4.5-2.02 4.5-4.5-2.02-4.5-4.5-4.5z"></path></svg>
-                                                                743 | 
-                                                            </a>
-                                                            <a href="#" class="downloads">
-                                                                <svg style="margin-top:-3px; margin-right:5px;" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><g><rect fill="none" height="24" width="24"></rect></g><g><path d="M18,15v3H6v-3H4v3c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2v-3H18z M17,11l-1.41-1.41L13,12.17V4h-2v8.17L8.41,9.59L7,11l5,5 L17,11z"></path></g></svg>
-                                                                421
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="border my-6"></div>
+                                    @foreach ($peraturanData as $p)
+                                        <div class="perundangan text-sm">
+                                            <div class="row">
+                                                <div class="lg:mx-4">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="40px" viewBox="0 0 24 24" width="40px" fill="#000000"><rect fill="none" height="24" width="24"></rect><path d="M19,5v9l-5,0l0,5H5V5H19 M19,3H5C3.9,3,3,3.9,3,5v14c0,1.1,0.9,2,2,2h10l6-6V5C21,3.9,20.1,3,19,3z M12,14H7v-2h5V14z M17,10H7V8h10V10z"></path></svg>
                                                 </div>
-                                            </div>
-                                        </div><!--row-->
-                                    </div>
-                                    <div class="perundangan text-sm">
-                                        <div class="row">
-                                            <div class="lg:mx-4">
-                                                <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="40px" viewBox="0 0 24 24" width="40px" fill="#000000"><rect fill="none" height="24" width="24"></rect><path d="M19,5v9l-5,0l0,5H5V5H19 M19,3H5C3.9,3,3,3.9,3,5v14c0,1.1,0.9,2,2,2h10l6-6V5C21,3.9,20.1,3,19,3z M12,14H7v-2h5V14z M17,10H7V8h10V10z"></path></svg>
-                                            </div>
-                                            <div class="col-lg-11 col-md-11 col-sm-12">
-                                                <div class="perundangan-content">
-                                                    <a href="detail-peraturan">
-                                                        <h6 class="text-start lg:text-sm md:text-sm sm:text-xs">SURAT EDARAN MENTERI<span class="text-yellow-600"> NOMOR 5 TAHUN 2023</span></h6>
-                                                        <h1 class="hover:text-purple-900 transition duration-150 ease-in-out ">Surat Edaran Menteri Nomor 5 Tahun 2023 tentang Pembayaran Tunjangan Kinerja Pegawai di Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi</h1>
-                                                    </a>
-                                                    <div class="flex justify-between">
-                                                        <div class="font-semibold text-gray-500">13 Oktober 2023 </div>
-                                                        <div class="flex view-info">
-                                                            <a href="#" class="views">
-                                                                <svg style="margin-top:-3px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M12 6.5c3.79 0 7.17 2.13 8.82 5.5-1.65 3.37-5.02 5.5-8.82 5.5S4.83 15.37 3.18 12C4.83 8.63 8.21 6.5 12 6.5m0-2C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zm0 5c1.38 0 2.5 1.12 2.5 2.5s-1.12 2.5-2.5 2.5-2.5-1.12-2.5-2.5 1.12-2.5 2.5-2.5m0-2c-2.48 0-4.5 2.02-4.5 4.5s2.02 4.5 4.5 4.5 4.5-2.02 4.5-4.5-2.02-4.5-4.5-4.5z"></path></svg>
-                                                                743 | 
-                                                            </a>
-                                                            <a href="#" class="downloads">
-                                                                <svg style="margin-top:-3px; margin-right:5px;" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><g><rect fill="none" height="24" width="24"></rect></g><g><path d="M18,15v3H6v-3H4v3c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2v-3H18z M17,11l-1.41-1.41L13,12.17V4h-2v8.17L8.41,9.59L7,11l5,5 L17,11z"></path></g></svg>
-                                                                421
-                                                            </a>
+                                                <div class="col-lg-11 col-md-11 col-sm-12">
+                                                    <div class="perundangan-content">
+                                                        <a href="detail-peraturan">
+                                                            @php
+                                                                $first_data = '40/er/2023';
+                                                                $second_data = '2023'
+                                                            @endphp
+                                                            {{-- <p>{{strpos($p->getNomor->nomor, $p->tahun) !== false ? strtoupper("NOMOR $p->nomor") : strtoupper("NOMOR $p->getNomor->nomor TAHUN $p->tahun");}}</p> --}}
+                                                            <h6 class="text-start lg:text-sm md:text-sm sm:text-xs">{{ $p->jenis_peraturan }}<span class="text-yellow-600"> NOMOR {{$p->getNomor->nomor}} TAHUN 2023</span></h6>
+                                                            <h1 class="hover:text-purple-900 transition duration-150 ease-in-out ">Surat Edaran Menteri Nomor 5 Tahun 2023 tentang Pembayaran Tunjangan Kinerja Pegawai di Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi</h1>
+                                                        </a>
+                                                        <div class="flex justify-between">
+                                                            <div class="font-semibold text-gray-500">13 Oktober 2023 </div>
+                                                            <div class="flex view-info">
+                                                                <a href="#" class="views">
+                                                                    <svg style="margin-top:-3px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M12 6.5c3.79 0 7.17 2.13 8.82 5.5-1.65 3.37-5.02 5.5-8.82 5.5S4.83 15.37 3.18 12C4.83 8.63 8.21 6.5 12 6.5m0-2C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zm0 5c1.38 0 2.5 1.12 2.5 2.5s-1.12 2.5-2.5 2.5-2.5-1.12-2.5-2.5 1.12-2.5 2.5-2.5m0-2c-2.48 0-4.5 2.02-4.5 4.5s2.02 4.5 4.5 4.5 4.5-2.02 4.5-4.5-2.02-4.5-4.5-4.5z"></path></svg>
+                                                                    743 | 
+                                                                </a>
+                                                                <a href="#" class="downloads">
+                                                                    <svg style="margin-top:-3px; margin-right:5px;" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><g><rect fill="none" height="24" width="24"></rect></g><g><path d="M18,15v3H6v-3H4v3c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2v-3H18z M17,11l-1.41-1.41L13,12.17V4h-2v8.17L8.41,9.59L7,11l5,5 L17,11z"></path></g></svg>
+                                                                    421
+                                                                </a>
+                                                            </div>
                                                         </div>
+                                                        <div class="border my-6"></div>
                                                     </div>
-                                                    <div class="border my-6"></div>
                                                 </div>
-                                            </div>
-                                        </div><!--row-->
-                                    </div>
-                                    <div class="perundangan text-sm">
-                                        <div class="row">
-                                            <div class="lg:mx-4">
-                                                <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="40px" viewBox="0 0 24 24" width="40px" fill="#000000"><rect fill="none" height="24" width="24"></rect><path d="M19,5v9l-5,0l0,5H5V5H19 M19,3H5C3.9,3,3,3.9,3,5v14c0,1.1,0.9,2,2,2h10l6-6V5C21,3.9,20.1,3,19,3z M12,14H7v-2h5V14z M17,10H7V8h10V10z"></path></svg>
-                                            </div>
-                                            <div class="col-lg-11 col-md-11 col-sm-12">
-                                                <div class="perundangan-content">
-                                                    <a href="detail-peraturan">
-                                                        <h6 class="text-start lg:text-sm md:text-sm sm:text-xs">SURAT EDARAN MENTERI<span class="text-yellow-600"> NOMOR 5 TAHUN 2023</span></h6>
-                                                        <h1 class="hover:text-purple-900 transition duration-150 ease-in-out ">Surat Edaran Menteri Nomor 5 Tahun 2023 tentang Pembayaran Tunjangan Kinerja Pegawai di Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi</h1>
-                                                    </a>
-                                                    <div class="flex justify-between">
-                                                        <div class="font-semibold text-gray-500">13 Oktober 2023 </div>
-                                                        <div class="flex view-info">
-                                                            <a href="#" class="views">
-                                                                <svg style="margin-top:-3px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M12 6.5c3.79 0 7.17 2.13 8.82 5.5-1.65 3.37-5.02 5.5-8.82 5.5S4.83 15.37 3.18 12C4.83 8.63 8.21 6.5 12 6.5m0-2C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zm0 5c1.38 0 2.5 1.12 2.5 2.5s-1.12 2.5-2.5 2.5-2.5-1.12-2.5-2.5 1.12-2.5 2.5-2.5m0-2c-2.48 0-4.5 2.02-4.5 4.5s2.02 4.5 4.5 4.5 4.5-2.02 4.5-4.5-2.02-4.5-4.5-4.5z"></path></svg>
-                                                                743 | 
-                                                            </a>
-                                                            <a href="#" class="downloads">
-                                                                <svg style="margin-top:-3px; margin-right:5px;" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><g><rect fill="none" height="24" width="24"></rect></g><g><path d="M18,15v3H6v-3H4v3c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2v-3H18z M17,11l-1.41-1.41L13,12.17V4h-2v8.17L8.41,9.59L7,11l5,5 L17,11z"></path></g></svg>
-                                                                421
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="border my-6"></div>
-                                                </div>
-                                            </div>
-                                        </div><!--row-->
-                                    </div>
-                                    <div class="perundangan text-sm">
-                                        <div class="row">
-                                            <div class="lg:mx-4">
-                                                <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="40px" viewBox="0 0 24 24" width="40px" fill="#000000"><rect fill="none" height="24" width="24"></rect><path d="M19,5v9l-5,0l0,5H5V5H19 M19,3H5C3.9,3,3,3.9,3,5v14c0,1.1,0.9,2,2,2h10l6-6V5C21,3.9,20.1,3,19,3z M12,14H7v-2h5V14z M17,10H7V8h10V10z"></path></svg>
-                                            </div>
-                                            <div class="col-lg-11 col-md-11 col-sm-12">
-                                                <div class="perundangan-content">
-                                                    <a href="detail-peraturan">
-                                                        <h6 class="text-start lg:text-sm md:text-sm sm:text-xs">SURAT EDARAN MENTERI<span class="text-yellow-600"> NOMOR 5 TAHUN 2023</span></h6>
-                                                        <h1 class="hover:text-purple-900 transition duration-150 ease-in-out ">Surat Edaran Menteri Nomor 5 Tahun 2023 tentang Pembayaran Tunjangan Kinerja Pegawai di Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi</h1>
-                                                    </a>
-                                                    <div class="flex justify-between">
-                                                        <div class="font-semibold text-gray-500">13 Oktober 2023 </div>
-                                                        <div class="flex view-info">
-                                                            <a href="#" class="views">
-                                                                <svg style="margin-top:-3px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M12 6.5c3.79 0 7.17 2.13 8.82 5.5-1.65 3.37-5.02 5.5-8.82 5.5S4.83 15.37 3.18 12C4.83 8.63 8.21 6.5 12 6.5m0-2C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zm0 5c1.38 0 2.5 1.12 2.5 2.5s-1.12 2.5-2.5 2.5-2.5-1.12-2.5-2.5 1.12-2.5 2.5-2.5m0-2c-2.48 0-4.5 2.02-4.5 4.5s2.02 4.5 4.5 4.5 4.5-2.02 4.5-4.5-2.02-4.5-4.5-4.5z"></path></svg>
-                                                                743 | 
-                                                            </a>
-                                                            <a href="#" class="downloads">
-                                                                <svg style="margin-top:-3px; margin-right:5px;" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><g><rect fill="none" height="24" width="24"></rect></g><g><path d="M18,15v3H6v-3H4v3c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2v-3H18z M17,11l-1.41-1.41L13,12.17V4h-2v8.17L8.41,9.59L7,11l5,5 L17,11z"></path></g></svg>
-                                                                421
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="border my-6"></div>
-                                                </div>
-                                            </div>
-                                        </div><!--row-->
-                                    </div>
-                                    <div class="perundangan text-sm">
-                                        <div class="row">
-                                            <div class="lg:mx-4">
-                                                <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="40px" viewBox="0 0 24 24" width="40px" fill="#000000"><rect fill="none" height="24" width="24"></rect><path d="M19,5v9l-5,0l0,5H5V5H19 M19,3H5C3.9,3,3,3.9,3,5v14c0,1.1,0.9,2,2,2h10l6-6V5C21,3.9,20.1,3,19,3z M12,14H7v-2h5V14z M17,10H7V8h10V10z"></path></svg>
-                                            </div>
-                                            <div class="col-lg-11 col-md-11 col-sm-12">
-                                                <div class="perundangan-content">
-                                                    <a href="detail-peraturan">
-                                                        <h6 class="text-start lg:text-sm md:text-sm sm:text-xs">SURAT EDARAN MENTERI<span class="text-yellow-600"> NOMOR 5 TAHUN 2023</span></h6>
-                                                        <h1 class="hover:text-purple-900 transition duration-150 ease-in-out ">Surat Edaran Menteri Nomor 5 Tahun 2023 tentang Pembayaran Tunjangan Kinerja Pegawai di Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi</h1>
-                                                    </a>
-                                                    <div class="flex justify-between">
-                                                        <div class="font-semibold text-gray-500">13 Oktober 2023 </div>
-                                                        <div class="flex view-info">
-                                                            <a href="#" class="views">
-                                                                <svg style="margin-top:-3px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M12 6.5c3.79 0 7.17 2.13 8.82 5.5-1.65 3.37-5.02 5.5-8.82 5.5S4.83 15.37 3.18 12C4.83 8.63 8.21 6.5 12 6.5m0-2C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zm0 5c1.38 0 2.5 1.12 2.5 2.5s-1.12 2.5-2.5 2.5-2.5-1.12-2.5-2.5 1.12-2.5 2.5-2.5m0-2c-2.48 0-4.5 2.02-4.5 4.5s2.02 4.5 4.5 4.5 4.5-2.02 4.5-4.5-2.02-4.5-4.5-4.5z"></path></svg>
-                                                                743 | 
-                                                            </a>
-                                                            <a href="#" class="downloads">
-                                                                <svg style="margin-top:-3px; margin-right:5px;" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><g><rect fill="none" height="24" width="24"></rect></g><g><path d="M18,15v3H6v-3H4v3c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2v-3H18z M17,11l-1.41-1.41L13,12.17V4h-2v8.17L8.41,9.59L7,11l5,5 L17,11z"></path></g></svg>
-                                                                421
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="border my-6"></div>
-                                                </div>
-                                            </div>
-                                        </div><!--row-->
-                                    </div>
-                                    <div class="perundangan text-sm">
-                                        <div class="row">
-                                            <div class="lg:mx-4">
-                                                <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="40px" viewBox="0 0 24 24" width="40px" fill="#000000"><rect fill="none" height="24" width="24"></rect><path d="M19,5v9l-5,0l0,5H5V5H19 M19,3H5C3.9,3,3,3.9,3,5v14c0,1.1,0.9,2,2,2h10l6-6V5C21,3.9,20.1,3,19,3z M12,14H7v-2h5V14z M17,10H7V8h10V10z"></path></svg>
-                                            </div>
-                                            <div class="col-lg-11 col-md-11 col-sm-12">
-                                                <div class="perundangan-content">
-                                                    <a href="detail-peraturan">
-                                                        <h6 class="text-start lg:text-sm md:text-sm sm:text-xs">SURAT EDARAN MENTERI<span class="text-yellow-600"> NOMOR 5 TAHUN 2023</span></h6>
-                                                        <h1 class="hover:text-purple-900 transition duration-150 ease-in-out ">Surat Edaran Menteri Nomor 5 Tahun 2023 tentang Pembayaran Tunjangan Kinerja Pegawai di Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi</h1>
-                                                    </a>
-                                                    <div class="flex justify-between">
-                                                        <div class="font-semibold text-gray-500">13 Oktober 2023 </div>
-                                                        <div class="flex view-info">
-                                                            <a href="#" class="views">
-                                                                <svg style="margin-top:-3px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M12 6.5c3.79 0 7.17 2.13 8.82 5.5-1.65 3.37-5.02 5.5-8.82 5.5S4.83 15.37 3.18 12C4.83 8.63 8.21 6.5 12 6.5m0-2C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zm0 5c1.38 0 2.5 1.12 2.5 2.5s-1.12 2.5-2.5 2.5-2.5-1.12-2.5-2.5 1.12-2.5 2.5-2.5m0-2c-2.48 0-4.5 2.02-4.5 4.5s2.02 4.5 4.5 4.5 4.5-2.02 4.5-4.5-2.02-4.5-4.5-4.5z"></path></svg>
-                                                                743 | 
-                                                            </a>
-                                                            <a href="#" class="downloads">
-                                                                <svg style="margin-top:-3px; margin-right:5px;" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><g><rect fill="none" height="24" width="24"></rect></g><g><path d="M18,15v3H6v-3H4v3c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2v-3H18z M17,11l-1.41-1.41L13,12.17V4h-2v8.17L8.41,9.59L7,11l5,5 L17,11z"></path></g></svg>
-                                                                421
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="border my-6"></div>
-                                                </div>
-                                            </div>
-                                        </div><!--row-->
-                                    </div>
-                                    <div class="perundangan text-sm">
-                                        <div class="row">
-                                            <div class="lg:mx-4">
-                                                <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="40px" viewBox="0 0 24 24" width="40px" fill="#000000"><rect fill="none" height="24" width="24"></rect><path d="M19,5v9l-5,0l0,5H5V5H19 M19,3H5C3.9,3,3,3.9,3,5v14c0,1.1,0.9,2,2,2h10l6-6V5C21,3.9,20.1,3,19,3z M12,14H7v-2h5V14z M17,10H7V8h10V10z"></path></svg>
-                                            </div>
-                                            <div class="col-lg-11 col-md-11 col-sm-12">
-                                                <div class="perundangan-content">
-                                                    <a href="detail-peraturan">
-                                                        <h6 class="text-start lg:text-sm md:text-sm sm:text-xs">SURAT EDARAN MENTERI<span class="text-yellow-600"> NOMOR 5 TAHUN 2023</span></h6>
-                                                        <h1 class="hover:text-purple-900 transition duration-150 ease-in-out ">Surat Edaran Menteri Nomor 5 Tahun 2023 tentang Pembayaran Tunjangan Kinerja Pegawai di Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi</h1>
-                                                    </a>
-                                                    <div class="flex justify-between">
-                                                        <div class="font-semibold text-gray-500">13 Oktober 2023 </div>
-                                                        <div class="flex view-info">
-                                                            <a href="#" class="views">
-                                                                <svg style="margin-top:-3px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M12 6.5c3.79 0 7.17 2.13 8.82 5.5-1.65 3.37-5.02 5.5-8.82 5.5S4.83 15.37 3.18 12C4.83 8.63 8.21 6.5 12 6.5m0-2C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zm0 5c1.38 0 2.5 1.12 2.5 2.5s-1.12 2.5-2.5 2.5-2.5-1.12-2.5-2.5 1.12-2.5 2.5-2.5m0-2c-2.48 0-4.5 2.02-4.5 4.5s2.02 4.5 4.5 4.5 4.5-2.02 4.5-4.5-2.02-4.5-4.5-4.5z"></path></svg>
-                                                                743 | 
-                                                            </a>
-                                                            <a href="#" class="downloads">
-                                                                <svg style="margin-top:-3px; margin-right:5px;" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><g><rect fill="none" height="24" width="24"></rect></g><g><path d="M18,15v3H6v-3H4v3c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2v-3H18z M17,11l-1.41-1.41L13,12.17V4h-2v8.17L8.41,9.59L7,11l5,5 L17,11z"></path></g></svg>
-                                                                421
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="border my-6"></div>
-                                                </div>
-                                            </div>
-                                        </div><!--row-->
-                                    </div>
-                                    <div class="perundangan text-sm">
-                                        <div class="row">
-                                            <div class="lg:mx-4">
-                                                <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="40px" viewBox="0 0 24 24" width="40px" fill="#000000"><rect fill="none" height="24" width="24"></rect><path d="M19,5v9l-5,0l0,5H5V5H19 M19,3H5C3.9,3,3,3.9,3,5v14c0,1.1,0.9,2,2,2h10l6-6V5C21,3.9,20.1,3,19,3z M12,14H7v-2h5V14z M17,10H7V8h10V10z"></path></svg>
-                                            </div>
-                                            <div class="col-lg-11 col-md-11 col-sm-12">
-                                                <div class="perundangan-content">
-                                                    <a href="detail-peraturan">
-                                                        <h6 class="text-start lg:text-sm md:text-sm sm:text-xs">SURAT EDARAN MENTERI<span class="text-yellow-600"> NOMOR 5 TAHUN 2023</span></h6>
-                                                        <h1 class="hover:text-purple-900 transition duration-150 ease-in-out ">Surat Edaran Menteri Nomor 5 Tahun 2023 tentang Pembayaran Tunjangan Kinerja Pegawai di Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi</h1>
-                                                    </a>
-                                                    <div class="flex justify-between">
-                                                        <div class="font-semibold text-gray-500">13 Oktober 2023 </div>
-                                                        <div class="flex view-info">
-                                                            <a href="#" class="views">
-                                                                <svg style="margin-top:-3px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M12 6.5c3.79 0 7.17 2.13 8.82 5.5-1.65 3.37-5.02 5.5-8.82 5.5S4.83 15.37 3.18 12C4.83 8.63 8.21 6.5 12 6.5m0-2C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zm0 5c1.38 0 2.5 1.12 2.5 2.5s-1.12 2.5-2.5 2.5-2.5-1.12-2.5-2.5 1.12-2.5 2.5-2.5m0-2c-2.48 0-4.5 2.02-4.5 4.5s2.02 4.5 4.5 4.5 4.5-2.02 4.5-4.5-2.02-4.5-4.5-4.5z"></path></svg>
-                                                                743 | 
-                                                            </a>
-                                                            <a href="#" class="downloads">
-                                                                <svg style="margin-top:-3px; margin-right:5px;" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><g><rect fill="none" height="24" width="24"></rect></g><g><path d="M18,15v3H6v-3H4v3c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2v-3H18z M17,11l-1.41-1.41L13,12.17V4h-2v8.17L8.41,9.59L7,11l5,5 L17,11z"></path></g></svg>
-                                                                421
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="border my-6"></div>
-                                                </div>
-                                            </div>
-                                        </div><!--row-->
-                                    </div>
-                                    <div class="perundangan text-sm">
-                                        <div class="row">
-                                            <div class="lg:mx-4">
-                                                <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="40px" viewBox="0 0 24 24" width="40px" fill="#000000"><rect fill="none" height="24" width="24"></rect><path d="M19,5v9l-5,0l0,5H5V5H19 M19,3H5C3.9,3,3,3.9,3,5v14c0,1.1,0.9,2,2,2h10l6-6V5C21,3.9,20.1,3,19,3z M12,14H7v-2h5V14z M17,10H7V8h10V10z"></path></svg>
-                                            </div>
-                                            <div class="col-lg-11 col-md-11 col-sm-12">
-                                                <div class="perundangan-content">
-                                                    <a href="detail-peraturan">
-                                                        <h6 class="text-start lg:text-sm md:text-sm sm:text-xs">SURAT EDARAN MENTERI<span class="text-yellow-600"> NOMOR 5 TAHUN 2023</span></h6>
-                                                        <h1 class="hover:text-purple-900 transition duration-150 ease-in-out ">Surat Edaran Menteri Nomor 5 Tahun 2023 tentang Pembayaran Tunjangan Kinerja Pegawai di Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi</h1>
-                                                    </a>
-                                                    <div class="flex justify-between">
-                                                        <div class="font-semibold text-gray-500">13 Oktober 2023 </div>
-                                                        <div class="flex view-info">
-                                                            <a href="#" class="views">
-                                                                <svg style="margin-top:-3px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M12 6.5c3.79 0 7.17 2.13 8.82 5.5-1.65 3.37-5.02 5.5-8.82 5.5S4.83 15.37 3.18 12C4.83 8.63 8.21 6.5 12 6.5m0-2C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zm0 5c1.38 0 2.5 1.12 2.5 2.5s-1.12 2.5-2.5 2.5-2.5-1.12-2.5-2.5 1.12-2.5 2.5-2.5m0-2c-2.48 0-4.5 2.02-4.5 4.5s2.02 4.5 4.5 4.5 4.5-2.02 4.5-4.5-2.02-4.5-4.5-4.5z"></path></svg>
-                                                                743 | 
-                                                            </a>
-                                                            <a href="#" class="downloads">
-                                                                <svg style="margin-top:-3px; margin-right:5px;" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><g><rect fill="none" height="24" width="24"></rect></g><g><path d="M18,15v3H6v-3H4v3c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2v-3H18z M17,11l-1.41-1.41L13,12.17V4h-2v8.17L8.41,9.59L7,11l5,5 L17,11z"></path></g></svg>
-                                                                421
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="border my-6"></div>
-                                                </div>
-                                            </div>
-                                        </div><!--row-->
-                                    </div>
-                                    <div class="perundangan text-sm">
-                                        <div class="row">
-                                            <div class="lg:mx-4">
-                                                <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="40px" viewBox="0 0 24 24" width="40px" fill="#000000"><rect fill="none" height="24" width="24"></rect><path d="M19,5v9l-5,0l0,5H5V5H19 M19,3H5C3.9,3,3,3.9,3,5v14c0,1.1,0.9,2,2,2h10l6-6V5C21,3.9,20.1,3,19,3z M12,14H7v-2h5V14z M17,10H7V8h10V10z"></path></svg>
-                                            </div>
-                                            <div class="col-lg-11 col-md-11 col-sm-12">
-                                                <div class="perundangan-content">
-                                                    <a href="detail-peraturan">
-                                                        <h6 class="text-start lg:text-sm md:text-sm sm:text-xs">SURAT EDARAN MENTERI<span class="text-yellow-600"> NOMOR 5 TAHUN 2023</span></h6>
-                                                        <h1 class="hover:text-purple-900 transition duration-150 ease-in-out ">Surat Edaran Menteri Nomor 5 Tahun 2023 tentang Pembayaran Tunjangan Kinerja Pegawai di Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi</h1>
-                                                    </a>
-                                                    <div class="flex justify-between">
-                                                        <div class="font-semibold text-gray-500">13 Oktober 2023 </div>
-                                                        <div class="flex view-info">
-                                                            <a href="#" class="views">
-                                                                <svg style="margin-top:-3px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M12 6.5c3.79 0 7.17 2.13 8.82 5.5-1.65 3.37-5.02 5.5-8.82 5.5S4.83 15.37 3.18 12C4.83 8.63 8.21 6.5 12 6.5m0-2C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zm0 5c1.38 0 2.5 1.12 2.5 2.5s-1.12 2.5-2.5 2.5-2.5-1.12-2.5-2.5 1.12-2.5 2.5-2.5m0-2c-2.48 0-4.5 2.02-4.5 4.5s2.02 4.5 4.5 4.5 4.5-2.02 4.5-4.5-2.02-4.5-4.5-4.5z"></path></svg>
-                                                                743 | 
-                                                            </a>
-                                                            <a href="#" class="downloads">
-                                                                <svg style="margin-top:-3px; margin-right:5px;" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><g><rect fill="none" height="24" width="24"></rect></g><g><path d="M18,15v3H6v-3H4v3c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2v-3H18z M17,11l-1.41-1.41L13,12.17V4h-2v8.17L8.41,9.59L7,11l5,5 L17,11z"></path></g></svg>
-                                                                421
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="border my-6"></div>
-                                                </div>
-                                            </div>
-                                        </div><!--row-->
-                                    </div>
-                                    <div class="perundangan text-sm">
-                                        <div class="row">
-                                            <div class="lg:mx-4">
-                                                <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="40px" viewBox="0 0 24 24" width="40px" fill="#000000"><rect fill="none" height="24" width="24"></rect><path d="M19,5v9l-5,0l0,5H5V5H19 M19,3H5C3.9,3,3,3.9,3,5v14c0,1.1,0.9,2,2,2h10l6-6V5C21,3.9,20.1,3,19,3z M12,14H7v-2h5V14z M17,10H7V8h10V10z"></path></svg>
-                                            </div>
-                                            <div class="col-lg-11 col-md-11 col-sm-12">
-                                                <div class="perundangan-content">
-                                                    <a href="detail-peraturan">
-                                                        <h6 class="text-start lg:text-sm md:text-sm sm:text-xs">SURAT EDARAN MENTERI<span class="text-yellow-600"> NOMOR 5 TAHUN 2023</span></h6>
-                                                        <h1 class="hover:text-purple-900 transition duration-150 ease-in-out ">Surat Edaran Menteri Nomor 5 Tahun 2023 tentang Pembayaran Tunjangan Kinerja Pegawai di Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi</h1>
-                                                    </a>
-                                                    <div class="flex justify-between">
-                                                        <div class="font-semibold text-gray-500">13 Oktober 2023 </div>
-                                                        <div class="flex view-info">
-                                                            <a href="#" class="views">
-                                                                <svg style="margin-top:-3px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M12 6.5c3.79 0 7.17 2.13 8.82 5.5-1.65 3.37-5.02 5.5-8.82 5.5S4.83 15.37 3.18 12C4.83 8.63 8.21 6.5 12 6.5m0-2C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zm0 5c1.38 0 2.5 1.12 2.5 2.5s-1.12 2.5-2.5 2.5-2.5-1.12-2.5-2.5 1.12-2.5 2.5-2.5m0-2c-2.48 0-4.5 2.02-4.5 4.5s2.02 4.5 4.5 4.5 4.5-2.02 4.5-4.5-2.02-4.5-4.5-4.5z"></path></svg>
-                                                                743 | 
-                                                            </a>
-                                                            <a href="#" class="downloads">
-                                                                <svg style="margin-top:-3px; margin-right:5px;" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><g><rect fill="none" height="24" width="24"></rect></g><g><path d="M18,15v3H6v-3H4v3c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2v-3H18z M17,11l-1.41-1.41L13,12.17V4h-2v8.17L8.41,9.59L7,11l5,5 L17,11z"></path></g></svg>
-                                                                421
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="border my-6"></div>
-                                                </div>
-                                            </div>
-                                        </div><!--row-->
-                                    </div>
+                                            </div><!--row-->
+                                        </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>

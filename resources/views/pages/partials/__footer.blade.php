@@ -91,22 +91,5 @@
             document.documentElement.scrollTop = 0;
         }
     </script>
-    
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-      $(window).on("scroll", function () {
-            var scroll = $(window).scrollTop();
-
-            if (scroll >= 5) {
-                $("#site-header")
-                    .stop()
-                    .animate({ height: "90px"}, 200); // Adjust the target height and margin as needed
-            } else {
-                $("#site-header")
-                    .stop()
-                    .animate({ height: "100px", marginTop: "0px" }, 200); // Replace "original-height" and "original-margin" with the actual original values
-            }
-        });
-    </script>
 </body>
 </html>
