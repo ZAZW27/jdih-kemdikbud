@@ -24,11 +24,11 @@
                     <div class="card row-span-1 col-span-4 animate-slide-up lg:sticky md:sticky top-[7rem]">
                         <div class="content rounded-border-content">
                             <div class="profil-info mb-2">   
-                                <a class="py-1 px-5 " href="/tentang">Tentang Kami</a>         
+                                <a class="py-1 px-5 active" href="/tentang">Tentang Kami</a>         
                                 <a class="py-1 px-5 " href="/visi-misi">Visi dan Misi</a>         
                                 <a class="py-1 px-5 " href="/struktur-organisasi">Struktur Organisasi</a>         
                                 <a class="py-1 px-5 " href="/prasyarat">Prasyarat</a>         
-                                <a class="py-1 px-5 active" href="/faq">Faq</a>         
+                                <a class="py-1 px-5 " href="/faq">Faq</a>         
                             </div> 
                             <div class="flex h-8 flex-row items-center align-center">
                                 <p class="mr-3 text-gray-400 font-semibold" style="user-select: none;">Lainnya</p>
