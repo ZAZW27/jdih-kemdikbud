@@ -54,6 +54,35 @@ Route::get('/faq', function () {// faq page
     return view('pages/profil/faq');
 });
 
+// PROFIL LAINNYA 
+Route::get('bpp-sejarah-balikpapan', function () {// Sejara Balikpapan
+    return view('pages/profil/lainnya/sejarah-balikpapan');
+});
+Route::get('bpp-profil-jdih', function () {// Profil JDIH
+    return view('pages/profil/lainnya/profil-jdih');
+});
+Route::get('bpp-visi-misi', function () {// Visi misi balikpapan
+    return view('pages/profil/lainnya/visi-misi');
+});
+Route::get('bpp-tugas-pokok-fungsi', function () {// Tugas pokok dan fungsi
+    return view('pages/profil/lainnya/tugas-pokok-fungsi');
+});
+Route::get('bpp-sop', function () {// sop
+    return view('pages/profil/lainnya/sop');
+});
+Route::get('bpp-sambutan-kabag-hukum', function () {// sambutan kabag hukum
+    return view('pages/profil/lainnya/sambutan-kabag-hukum');
+});
+Route::get('bpp-struktur-organisasi', function () {// struktur organisasi
+    return view('pages/profil/lainnya/struktur-organisasi');
+});
+Route::get('bpp-pengelola-jdih', function () {// pengelola JDIH
+    return view('pages/profil/lainnya/pengelola-jdih');
+});
+Route::get('bpp-sk-tim-teknis', function () {// SK Tim Teknis
+    return view('pages/profil/lainnya/sk-tim-teknis');
+});
+
 // ===========================================================
 // ====================SECTION: PRODUK HUKUM==================
 // ===========================================================

@@ -65,6 +65,7 @@ class MainPageController extends Controller
             'pengumuman' => $LatestPengumuman,
             'peraturan' => $LatestPeraturan,
             'countPer' => $countPeraturan,
+            'countView' => $countView,
 
             // GROUPD
             'groupNomor' => $groupNmrPer,
@@ -75,7 +76,8 @@ class MainPageController extends Controller
         ]);
     }
 
-    public function filterPeraturan(Request $request){
+    public function filterPeraturan(Request $request)
+    {
         $searchInput = $request->input('search-peraturan');
         $subjekInput = $request->input('subjek-peraturan');
         $nomorInput = $request->input('nomor-peraturan');
@@ -83,33 +85,35 @@ class MainPageController extends Controller
         $tahunInput = $request->input('tahun-peraturan');
         $statusInput = $request->input('status-peraturan');
 
-        // if (!empty($searchInput)) {
-            if (['search-peraturan']) {
-                $queryParameter['search-peraturan'] = $searchInput;
-            }
-            if (['subjek-peraturan']) {
-                $queryParameter['subjek-peraturan'] = $subjekInput;
-            }
-            if (['jenis-peraturan']) {
-                $queryParameter['jenis-peraturan'] = $jenisInput;
-            }
-            if (['nomor-peraturan']) {
-                $queryParameter['nomor-peraturan'] = $nomorInput;
-            }
-            if (['tahun-peraturan']) {
-                $queryParameter['tahun-peraturan'] = $tahunInput;
-            }
-            if (['status-peraturan']) {
-                $queryParameter['status-peraturan'] = $statusInput;
-            }
-            
-            return redirect()->route('show_peraturan.data', $queryParameter);
-        // }
-        // else{
-        //     return back();
-        // }
+        $queryParameter = [];
 
+        if (!empty($searchInput)) {
+            $queryParameter['search-peraturan'] = $searchInput;
+        }
+
+        if (!empty($subjekInput)) {
+            $queryParameter['subjek-peraturan'] = $subjekInput;
+        }
+
+        if (!empty($jenisInput)) {
+            $queryParameter['jenis-peraturan'] = $jenisInput;
+        }
+
+        if (!empty($nomorInput)) {
+            $queryParameter['nomor-peraturan'] = $nomorInput;
+        }
+
+        if (!empty($tahunInput)) {
+            $queryParameter['tahun-peraturan'] = $tahunInput;
+        }
+
+        if (!empty($statusInput)) {
+            $queryParameter['status-peraturan'] = $statusInput;
+        }
+
+        return redirect()->route('show_peraturan.data', $queryParameter);
     }
+
     /**
      * Show the form for creating a new resource.
      */

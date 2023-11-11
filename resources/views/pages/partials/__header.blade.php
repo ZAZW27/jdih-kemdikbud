@@ -72,6 +72,43 @@
                                     Faq
                                 </a>
                             </li>
+
+                            <li>
+                                <button id="doubleDropdownButton" data-dropdown-toggle="doubleDropdown" data-dropdown-placement="right-start" type="button" class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-100">
+                                    Lainnya
+                                    <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                                    </svg>
+                                </button>
+                                <div id="doubleDropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-md w-44">
+                                    <ul class="py-2 text-sm text-black " aria-labelledby="doubleDropdownButton">
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Sejarah Balikpapan</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Profil JDIH</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Tugas Dan Pokok Fungsi</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">SOP</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Sambutan Kabag Hukum</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Struktur Organisasi</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Pengelola JDIH</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">SK Tim Teknis</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
                         </ul>
                     </li>
                     <li>

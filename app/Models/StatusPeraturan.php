@@ -9,7 +9,7 @@ class StatusPeraturan extends Model
 {
     use HasFactory;
 
-    protected $table = 'Status_peraturan';
+    protected $table = 'Status_branch';
 
     public function getPeraturan(){
         return $this->hasMany(Peraturan::class);

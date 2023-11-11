@@ -97,6 +97,7 @@ body{
    align-items: start;
    font-weight: 600;
    width: 110%;
+   color: #7c7c7c;
 }
 
 .info-kontak{
@@ -111,13 +112,15 @@ body{
 
 .profil-info .active{
    border-left: 4px solid #ffb222;
+   color: #000;
+   font-weight: 700;
 }
 
 .profil-info a:hover:not(.active) {
    border-left: 4px solid #ffb22237;
    font-weight: 700;
    z-index: 100;
-   
+   color: #000;
 }
 
 .isi-profil h1{
@@ -1017,6 +1020,8 @@ footer .footer-format{
    color: #fff;
    background-color: #055CA5;
  }
+
+
  
 .custom-input{
    border: none;
@@ -1125,15 +1130,6 @@ footer .footer-format{
    font-size: 10em;
  }
  
- /* @-webkit-keyframes slide {
-   20% {margin-left: 0px;}
-   30% {margin-left: -728px;}
-   50% {margin-left: -728px;}
-   60% {margin-left: -1456px;}
-   70% {margin-left: -1456px;}
-   80% {margin-left: -2184px;}
-   90% {margin-left: -2184px;}
- } */
  @-webkit-keyframes slide {
    20% {margin-left: 0px;}
    30% {margin-left: -100vw;}

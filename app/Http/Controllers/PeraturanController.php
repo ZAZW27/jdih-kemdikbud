@@ -33,8 +33,8 @@ class PeraturanController extends Controller
              'per' => $detail_peraturan,
          ]);
     }
-    public function showPeraturan(Request $request){
-
+    public function showPeraturan(Request $request)
+    {
         $searchInput = $request->input('search-peraturan');
         $subjekInput = $request->input('subjek-peraturan');
         $nomorInput = $request->input('nomor-peraturan');
@@ -45,48 +45,46 @@ class PeraturanController extends Controller
         $peraturan = new Peraturan();
 
         $peraturanData = Peraturan::with(['getNomor', 'getJenis', 'getSubjek', 'getTahun', 'getStatus'])
-        ->when($searchInput, function($query) use ($searchInput) {
-            $query->where(function($subQuery) use ($searchInput) {
-                $subQuery->orWhere('judul_peraturan', 'like', '%' . $searchInput . '%');
-            });
-        })
-        ->when($subjekInput, function($query) use ($subjekInput) {
-            $query->where('subjek_id', $subjekInput);
-        })
-        ->when($nomorInput, function($query) use ($nomorInput) {
-            $query->where(function($subQuery) use ($nomorInput) {
-                $subQuery->orWhere('nomor_id', 'like', '%' . $nomorInput . '%');
-            });
-        })
-        ->when($jenisInput, function($query) use ($jenisInput) {
-            $query->where('jenis_id', $jenisInput);
-        })
-        ->when($tahunInput, function($query) use ($tahunInput) {
-            $query->where('tahun_id', $tahunInput);
-        })
-        ->when($statusInput, function($query) use ($statusInput) {
-            $query->where('status_id', $statusInput);
-        })->paginate(10);
+            ->when($searchInput, function ($query) use ($searchInput) {
+                $query->where(function ($subQuery) use ($searchInput) {
+                    $subQuery->orWhere('judul_peraturan', 'like', '%' . $searchInput . '%');
+                });
+            })
+            ->when($subjekInput, function ($query) use ($subjekInput) {
+                $query->where('subjek_id', $subjekInput);
+            })
+            ->when($nomorInput, function ($query) use ($nomorInput) {
+                $query->where('nomor_id', $nomorInput);
+            })
+            ->when($jenisInput, function ($query) use ($jenisInput) {
+                $query->where('jenis_id', $jenisInput);
+            })
+            ->when($tahunInput, function ($query) use ($tahunInput) {
+                $query->where('tahun_id', $tahunInput);
+            })
+            ->when($statusInput, function ($query) use ($statusInput) {
+                $query->where('status_id', $statusInput);
+            })
+            ->paginate(10);
 
-        // GROUPING EACH ONE OF THE TABLES (why not)
-        $groupNmrPer = $peraturan->LatestPeraturan()->groupBy('id_nomor')->pluck('0.nomor_peraturan', '0.id_nomor');
-        $groupThnPer = $peraturan->LatestPeraturan()->groupBy('id_tahun')->pluck('0.tahun_peraturan', '0.id_tahun');
-        $groupJnsPer = $peraturan->LatestPeraturan()->groupBy('id_jenis')->pluck('0.jenis_peraturan', '0.id_jenis');
-        $groupSbjkPer = $peraturan->LatestPeraturan()->groupBy('id_subjek')->pluck('0.subjek', '0.id_subjek');
-        $groupStatPer = $peraturan->LatestPeraturan()->groupBy('id_status')->pluck('0.status_peraturan', '0.id_status');
+        // GROUPING EACH ONE OF THE TABLES
+        $groupNomor = $peraturan->LatestPeraturan()->groupBy('id_nomor')->pluck('0.nomor_peraturan', '0.id_nomor');
+        $groupTahun = $peraturan->LatestPeraturan()->groupBy('id_tahun')->pluck('0.tahun_peraturan', '0.id_tahun');
+        $groupJenis = $peraturan->LatestPeraturan()->groupBy('id_jenis')->pluck('0.jenis_peraturan', '0.id_jenis');
+        $groupSubjek = $peraturan->LatestPeraturan()->groupBy('id_subjek')->pluck('0.subjek', '0.id_subjek');
+        $groupStatus = $peraturan->LatestPeraturan()->groupBy('id_status')->pluck('0.status_peraturan', '0.id_status');
 
         return view('pages.produk-hukum.peraturan', [
             'title' => 'Peraturan | JDIH BPK',
             'peraturanData' => $peraturanData,
-            
-             // GROUPD
-            'groupNomor' => $groupNmrPer,
-            'groupTahun' => $groupThnPer,
-            'groupJenis' => $groupJnsPer,
-            'groupSubjek' => $groupSbjkPer,
-            'groupStatus' => $groupStatPer,
+            'groupNomor' => $groupNomor,
+            'groupTahun' => $groupTahun,
+            'groupJenis' => $groupJenis,
+            'groupSubjek' => $groupSubjek,
+            'groupStatus' => $groupStatus,
         ]);
     }
+
 
     /**
      * Show the form for creating a new resource.

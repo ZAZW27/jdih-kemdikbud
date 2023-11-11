@@ -16,16 +16,16 @@ class Peraturan extends Model
         ->select(
             'tbl_peraturan.id',
             'nomor_peraturan.id AS id_nomor',
-            'tahun_peraturan.id AS id_tahun',
+            'tahun_branch.id AS id_tahun',
             'jenis_peraturan.id AS id_jenis',
             'subjek_peraturan.id AS id_subjek',
-            'status_peraturan.id AS id_status',
+            'status_branch.id AS id_status',
             'tbl_peraturan.judul_peraturan',
             'nomor_peraturan.nomor AS nomor_peraturan',
-            'tahun_peraturan.tahun AS tahun_peraturan',
+            'tahun_branch.tahun AS tahun_peraturan',
             'jenis_peraturan.jenis AS jenis_peraturan',
             'subjek_peraturan.subjek AS subjek',
-            'status_peraturan.status AS status_peraturan',
+            'status_branch.status AS status_peraturan',
             'tbl_peraturan.tgl_penetapan AS tanggal_penetapan',
             'tbl_peraturan.tajuk_entri_pertama',
             'tbl_peraturan.tipe_dokumen',
@@ -41,10 +41,10 @@ class Peraturan extends Model
             'tbl_peraturan.download'
         )
         ->join('nomor_peraturan', 'tbl_peraturan.nomor_id', '=', 'nomor_peraturan.id')
-        ->join('tahun_peraturan', 'tbl_peraturan.tahun_id', '=', 'tahun_peraturan.id')
+        ->join('tahun_branch', 'tbl_peraturan.tahun_id', '=', 'tahun_branch.id')
         ->join('jenis_peraturan', 'tbl_peraturan.jenis_id', '=', 'jenis_peraturan.id')
         ->join('subjek_peraturan', 'tbl_peraturan.subjek_id', '=', 'subjek_peraturan.id')
-        ->join('status_peraturan', 'tbl_peraturan.status_id', '=', 'status_peraturan.id')
+        ->join('status_branch', 'tbl_peraturan.status_id', '=', 'status_branch.id')
         ->orderBy('tanggal_penetapan', 'desc') 
         ->get();
     }

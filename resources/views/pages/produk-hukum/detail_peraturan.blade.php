@@ -100,7 +100,7 @@
                                                         <p class="bg-yellow-400 text-base text-black px-4 py-2 rounded-full hover:bg-yellow-500">Berlaku</p>
                                                     </td> --}}
                                                     <td class="lg:text-base md:text-sm sm:text-xs p-4">
-                                                        @if ($per->status_peraturan === 1)
+                                                        @if ($per->id_status === 1)
                                                             <button type="submit" class="bg-green-400 text-base text-black px-4 py-2 rounded-full hover:bg-green-500">
                                                                 Berlaku
                                                             </button>

@@ -22,14 +22,29 @@
             <div class="col-span-12 md:col-span-12 sm:col-span-12 mt-2 animate__animated animate__fadeInUp" id="detail_peraturan">
                 <div class="grid grid-cols-12 grid-forms md:grid-row gap-4">
                     <!-- ==================== LIST PROFILS ========================== -->
-                    <div class="card row-span-1 col-span-4 animate-slide-up lg:sticky md:sticky top-[8rem]" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+                    <div class="card row-span-1 col-span-4 animate-slide-up lg:sticky md:sticky top-[7rem]">
                         <div class="content rounded-border-content">
+                            <div class="profil-info mb-2">   
+                                <a class="py-1 px-5 " href="/tentang">Tentang Kami</a>         
+                                <a class="py-1 px-5 " href="/visi-misi">Visi dan Misi</a>         
+                                <a class="py-1 px-5 " href="/struktur-organisasi">Struktur Organisasi</a>         
+                                <a class="py-1 px-5 " href="/prasyarat">Prasyarat</a>         
+                                <a class="py-1 px-5 active" href="/faq">Faq</a>         
+                            </div> 
+                            <div class="flex h-8 flex-row items-center align-center">
+                                <p class="mr-3 text-gray-400 font-semibold" style="user-select: none;">Lainnya</p>
+                                <hr class="mt-10 h-[4px] my-8 bg-blue-900 bg-opacity-50 rounded-lg border-0 w-[100%]">
+                            </div>
                             <div class="profil-info">   
-                                <a class="py-3 px-6 " href="/tentang">Tentang Kami</a>         
-                                <a class="py-3 px-6 " href="/visi-misi">Visi dan Misi</a>         
-                                <a class="py-3 px-6 " href="/struktur-organisasi">Struktur Organisasi</a>         
-                                <a class="py-3 px-6 active" href="#">Prasyarat</a>         
-                                <a class="py-3 px-6 " href="/faq">Faq</a>         
+                                <a class="py-1 px-5 " href="/bpp-sejarah-balikpapan">Sejarah Balikpapan</a>         
+                                <a class="py-1 px-5 " href="/bpp-profil-jdih">Profil JDIH</a>         
+                                <a class="py-1 px-5 " href="/bpp-visi-misi">Visi dan Misi</a>         
+                                <a class="py-1 px-5 " href="/bpp-tugas-pokok-fungsi">Tugas Pokok dan Fungsi</a>         
+                                <a class="py-1 px-5 " href="/bpp-sop">SOP</a>         
+                                <a class="py-1 px-5 " href="/bpp-sambutan-kabag-hukum">Sambutan Kabag Hukum</a>         
+                                <a class="py-1 px-5 " href="/bpp-struktur-organisasi">Struktur Organisasi</a>         
+                                <a class="py-1 px-5 " href="/bpp-pengelola-jdih">Pengelola JDIH</a>         
+                                <a class="py-1 px-5 " href="/bpp-sk-tim-teknis">SK Tim Teknis</a>         
                             </div> 
                         </div>
                     </div>

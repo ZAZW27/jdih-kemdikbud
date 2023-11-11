@@ -12,82 +12,86 @@
 
 <script async src="{{asset('assets/js/main/modals.js')}}"></script>
     <div class="containers h-64 mt-24 ">
-        <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 z-10 relative">
+        <div class="py-4 px-4 mx-auto max-w-screen-xl text-center pt-16  relative">
             <div class="col-span-12 md:col-span-12 sm:col-span-12 mt-2 animate__animated animate__fadeInUp" id="detail_peraturan">
-                <form class="domain-form" action="{{route('get_peraturan.data')}}" method="post">
-                    @csrf
-                    <div class="md:flex md:items-center md:space-x-4 tutup animate-slide-left">
-                        <input name="search-peraturan" type="text" id="judul" class="w-full px-4 py-6 border rounded-lg focus:outline-none focus:ring focus:border-blue-300" placeholder="Cari peraturan perundang-undangan bidang pendidikan, kebudayaan, riset, dan teknologi">
-                        <div class="absolute right-6 flex md:mt-0" id="filter-button">
-                            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-l focus:outline-none focus:ring focus:border-blue-300 hover:bg-red-500 ">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" width="30"><path d="M0 0h24v24H0z" fill="none"></path><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
-                            </button>
-                            <button type="reset" style="reset" onclick="showModalFilter()" class="bg-yellow-500 text-slate-800 px-4 py-4 rounded-r focus:outline-none focus:ring focus:border-yellow-300">
-                                <b>SPESIFIK</b>
-                            </button>
+                <div class="row-span-3 col-span-12 ">
+                    <form class="domain-form" action="{{route('get_peraturan.data')}}" method="post">
+                        @csrf
+                        <div class="md:flex md:items-center md:space-x-4 tutup animate-slide-left">
+                            <input name="search-peraturan" type="text" id="judul" class="w-full px-4 py-6 border-0 mb-0 rounded-lg focus:outline-none focus:ring focus:border-blue-300" placeholder="Cari peraturan perundang-undangan bidang pendidikan, kebudayaan, riset, dan teknologi">
+                            <div class="absolute right-6 flex md:mt-0" id="filter-button">
+                                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-l focus:outline-none focus:ring focus:border-blue-300 hover:bg-red-500 ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" width="30"><path d="M0 0h24v24H0z" fill="none"></path><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
+                                </button>
+                                <button type="reset" style="reset" onclick="showModalFilter()" class="bg-yellow-500 text-slate-800 px-4 py-4 rounded-r focus:outline-none focus:ring focus:border-yellow-300">
+                                    <b>SPESIFIK</b>
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <div class="absolute w-full flex justify-center md:-mt-14 -mt-5 z-[11] hidden" id="filter-options" >
-            <form action="{{route('get_peraturan.data')}}" class="w-full flex justify-center" method="POST">
-                <div class="bg-white shadow-lg w-[80%] pt-3 pb-1 px-2 rounded-lg">
-                    <div class="peraturan-filter flex flex-col sm:flex-row">
-                        <div class="flex-1 z-[14]">
-                            <section>
-                                <input class="custom-input w-full" name="search-peraturan" type="text" placeholder="Masukkan judul atau kata kunci peraturan">
-                            </section>
+                        <div class="absolute w-full flex md:justify-center justify-start md:-mt-14 mt-3 md:top-[13rem] z-[11] hidden" id="filter-options" >
+                            <div class="bg-white shadow-lg w-[80%] pt-3 pb-1 px-2 rounded-lg">
+                                <div class="peraturan-filter flex flex-col sm:flex-row">
+                                    <div class="flex-1 z-[16]">
+                                        <section>
+                                            <select class="custom-select sources" placeholder="Pilih Subjek" name="subjek-peraturan">
+                                                <option value="">Pilih Subjek</option>
+                                                @foreach ($groupSubjek as $id => $name)
+                                                    <option value="{{$id}}">{{$name}}</option>
+                                                @endforeach
+                                            </select>
+                                        </section>
+                                    </div>
+                                </div>
+                                <div class="peraturan-filter flex flex-col sm:flex-row">
+                                    <div class=" flex-1 z-[15]">
+                                        <section>
+                                            <select class="custom-select sources" placeholder="Pilih Nomor" name="nomor-peraturan">
+                                                <option value="">Pilih Nomor</option>
+                                                @foreach ($groupNomor as $id => $name)
+                                                    <option value="{{$id}}">{{$name}}</option>
+                                                @endforeach
+                                            </select>
+                                        </section>
+                                    </div>
+                                    <div class="flex-1 z-[14]">
+                                        <section>
+                                            <select class="custom-select sources" placeholder="Pilih Jenis" name="jenis-peraturan">
+                                                <option value="">Pilih Jenis</option>
+                                                @foreach ($groupJenis as $id => $name)
+                                                    <option value="{{$id}}">{{$name}}</option>
+                                                @endforeach
+                                            </select>
+                                        </section>
+                                    </div>
+                                </div>
+                                <div class="peraturan-filter flex flex-col sm:flex-row">
+                                    <div class="flex-1 z-[13]">
+                                        <section>
+                                            <select class="custom-select sources" placeholder="Pilih Tahun" name="tahun-peraturan">
+                                                <option value="">Pilih Tahun</option>
+                                                @foreach ($groupTahun as $id => $name)
+                                                    <option value="{{$id}}">{{$name}}</option>
+                                                @endforeach
+                                            </select>
+                                        </section>
+                                    </div>
+                                    <div class="flex-1 z-[12]">
+                                        <section>
+                                            <select class="custom-select sources" placeholder="Pilih Status" name="status-peraturan">
+                                                <option value="">Pilih Status</option>
+                                                @foreach ($groupStatus as $id => $name)
+                                                    <option value="{{$id}}">{{$name}}</option>
+                                                @endforeach
+                                            </select>
+                                        </section>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="flex-1 z-[14]">
-                            <section>
-                                <select name="potencial" class="custom-select sources" placeholder="Pilih Subjek" name="subjek-peraturan">
-                                    @foreach ($groupSubjek as $id => $name)
-                                        <option value="{{$id}}">{{$name}}</option>
-                                    @endforeach
-                                </select>
-                            </section>
-                        </div>
-                    </div>
-                    <div class="peraturan-filter flex flex-col sm:flex-row">
-                        <div class=" flex-1 z-[13]">
-                            <section>
-                                <input class="custom-input w-full" name="nomor-peraturan" type="text" placeholder="Masukkan nomor peraturan">
-                            </section>
-                        </div>
-                        <div class="flex-1 z-[13]">
-                            <section>
-                                <select name="potencial" class="custom-select sources" placeholder="Pilih Jenis" name="jenis-peraturan">
-                                    @foreach ($groupJenis as $id => $name)
-                                        <option value="{{$id}}">{{$name}}</option>
-                                    @endforeach
-                                </select>
-                            </section>
-                        </div>
-                    </div>
-                    <div class="peraturan-filter flex flex-col sm:flex-row">
-                        <div class="flex-1 z-[12]">
-                            <section>
-                                <select name="potencial" class="custom-select sources" placeholder="Pilih Tahun" name="tahun-peraturan">
-                                    @foreach ($groupTahun as $id => $name)
-                                        <option value="{{$id}}">{{$name}}</option>
-                                    @endforeach
-                                </select>
-                            </section>
-                        </div>
-                        <div class="flex-1 z-[12]">
-                            <section>
-                                <select name="potencial" class="custom-select sources" placeholder="Pilih Status" name="status-peraturan">
-                                    @foreach ($groupStatus as $id => $name)
-                                        <option value="{{$id}}">{{$name}}</option>
-                                    @endforeach
-                                </select>
-                            </section>
-                        </div>
-                    </div>
+                    </form>
                 </div>
-            </form>
-        </div>        
+            </div>
+        </div> 
     </div>
     <div id="slideshow">
         <div class="slide-wrapper" >
@@ -309,7 +313,8 @@
                                                         <div class="terbaru">
                                                             <h6>
                                                                 <span style="color: #696969;">{{ strtoupper($per->jenis_peraturan)}}</span> 
-                                                                NOMOR {{$per->nomor_peraturan}} TAHUN {{$per->tahun_peraturan}}
+                                                                {{-- CONDITION JIKA TAHUN SUDAH BERADA DI DALAM NOMOR PERATURAN --}}
+                                                                {{ strpos((string)$per->nomor_peraturan, (string)$per->tahun_peraturan) !== false ? strtoupper("NOMOR {$per->nomor_peraturan}") : strtoupper("NOMOR {$per->nomor_peraturan} TAHUN {$per->tahun_peraturan}") }}
                                                             </h6>
                                                             <h1 class="hover:text-blue-900 lg:text-start sm:text-justify">{{$per->judul_peraturan}}</h1>
                                                             <span class="tgl-terbit-peraturan">{{ \Carbon\Carbon::parse($per->tanggal_penetapan)->format('d F Y') }}</span>
