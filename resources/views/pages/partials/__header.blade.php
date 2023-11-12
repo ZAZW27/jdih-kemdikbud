@@ -101,7 +101,7 @@
                                             <a href="#" class="block px-4 py-2 hover:bg-gray-100">Struktur Organisasi</a>
                                         </li>
                                         <li>
-                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Pengelola JDIH</a>
+                                            <a href="{{route('bpp-pengelola-jdih')}}" class="block px-4 py-2 hover:bg-gray-100">Pengelola JDIH</a>
                                         </li>
                                         <li>
                                             <a href="#" class="block px-4 py-2 hover:bg-gray-100">SK Tim Teknis</a>

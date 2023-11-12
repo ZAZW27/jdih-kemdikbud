@@ -61,12 +61,12 @@ body{
 }
 
 .page-routes a{
-   padding: 0.7rem 5rem;
+   padding: 0.2rem 5rem;
    display: flex;
    flex-direction: row;
    justify-content: center;
    align-items: center;
-   
+   margin-top: 1rem;
 }
 
 .page-identity{
@@ -75,8 +75,7 @@ body{
    justify-content: start;
    align-items: start;
    margin-top: 1rem;
-   padding: 0 1rem;
-   
+   padding: 0 1rem;  
 }
 
 .page-identity h1{
@@ -690,7 +689,7 @@ footer .footer-format{
        max-width: 640px;
    }
    .navbar-logos img{
-      height: 2.8rem;
+      height: 2.1rem;
    }
    .peraturan .row{
       flex-direction: column;
@@ -824,6 +823,22 @@ footer .footer-format{
    .perundangan-content h1{
       font-size: 24px !important;
    }
+   .page-routes {
+      margin-top: -1rem;
+   }
+   .page-routes a{
+      padding: -0.2rem 5rem;
+   }
+   
+   .page-identity{
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: start;
+      margin-top: -1rem;
+      padding: 0 1rem;  
+   }
+   
 }
 
 /* 

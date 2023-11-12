@@ -13,7 +13,7 @@
         <div class=" lg:px-[10rem] px-4 mx-auto max-w-screen-xl text-center z-10 relative">
             <div class="col-span-12 md:col-span-12 sm:col-span-12 mt-[3rem] animate__animated animate__fadeInUp" id="detail_peraturan">
                 <div class="grid grid-cols-1 grid-forms md:grid-row gap-3 pb-12">
-                    <div class="berita-container col-span-1 animate-slide-up" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+                    <div class="berita-container col-span-1 animate-slide-up">
                         <div class="berita-bannerpic w-[100%] lg:h-[70rem]  ">
                             <img class="w-[100%] rounded-lg shadow-xl sticky top-[7rem]" src="{{asset('assets/img/berita/'.$berita->gambar_berita)}}" alt="" >
                         </div>

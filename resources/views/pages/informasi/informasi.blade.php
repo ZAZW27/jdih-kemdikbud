@@ -20,8 +20,8 @@
         <div class="pt-[2rem] lg:px-[4rem] px-4 mx-auto max-w-screen-xl text-center z-10 relative">
             <div class="col-span-12 md:col-span-12 sm:col-span-12 mt-[3rem] animate__animated animate__fadeInUp" id="detail_peraturan">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-3 pb-12">
-                    @foreach ($beritas as $b)
-                        <div class="card berita-container col-span-1 animate-slide-up" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+                    @foreach ($berita as $b)
+                        <div class="card berita-container col-span-1 animate-slide-up">
                             <div class="berita-pic w-full h-[220px] overflow-hidden">
                                 <img src="{{asset('assets/img/berita/'.$b->gambar_berita)}}" alt="" >
                             </div>

@@ -5,6 +5,7 @@ use App\Http\Controllers\PpuController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\PeraturanController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MainPageController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\DashboardController;
@@ -76,6 +77,9 @@ Route::get('bpp-sambutan-kabag-hukum', function () {// sambutan kabag hukum
 Route::get('bpp-struktur-organisasi', function () {// struktur organisasi
     return view('pages/profil/lainnya/struktur-organisasi');
 });
+
+Route::get('/bpp-penagalaman-jdih', [ProfileController::class, 'index'])->name('bpp-pengelola-jdih');
+
 Route::get('bpp-pengelola-jdih', function () {// pengelola JDIH
     return view('pages/profil/lainnya/pengelola-jdih');
 });
