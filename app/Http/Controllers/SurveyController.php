@@ -4,40 +4,54 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\SurveyKepuasan;
+use Illuminate\Support\Facades\DB;
 
 class SurveyController extends Controller
 {
     public function showSurvey(){
+        // $survey = DB::table('survey_pengunjung')->select('topic', 'rate', DB::raw('COUNT(*) as count'))->groupBy('topic', 'rate')->get();
+
+        $survery_ui = DB::table('survey_pengunjung')
+                        ->select('topic', 'rate', DB::raw('COUNT(*) as count'))
+                        ->where('topic', 'survey UI')
+                        ->groupBy('topic', 'rate')
+                        ->get();
+
+        $search_ux = DB::table('survey_pengunjung')
+                        ->select('topic', 'rate', DB::raw('COUNT(*) as count'))
+                        ->where('topic', 'search UX survey')
+                        ->groupBy('topic', 'rate')
+                        ->get();
+
+        $klngpn_doc = DB::table('survey_pengunjung')
+                        ->select('topic', 'rate', DB::raw('COUNT(*) as count'))
+                        ->where('topic', 'kelengkapan dokumen')
+                        ->groupBy('topic', 'rate')
+                        ->get();
+
+        $valid_doc = DB::table('survey_pengunjung')
+                        ->select('topic', 'rate', DB::raw('COUNT(*) as count'))
+                        ->where('topic', 'validasi dokumen/hukum')
+                        ->groupBy('topic', 'rate')
+                        ->get();
+
         return view('pages.survey.hasil_survey', [
             'title' => 'JDIH KEMDIKBUD| Survey',
+            'survey_ui' => $survery_ui,
+            'search_ux' => $search_ux,
+            'klngkpn_doc' => $klngpn_doc,
+            'valid_doc' => $valid_doc,
         ]);
     }
     public function submitSurvey(Request $request)
     {
-        $validate = $request->validate([
-            'kepuasan_ui' => 'required|string|in:Sangat Setuju,Setuju,Kurang Setuju,Tidak Setuju',
-            'search_ux' => 'required|string|in:Sangat Setuju,Setuju,Kurang Setuju,Tidak Setuju',
-            'kelengkapan_doc' => 'required|string|in:Sangat Setuju,Setuju,Kurang Setuju,Tidak Setuju',
-            'validate_doc' => 'required|string|in:Sangat Setuju,Setuju,Kurang Setuju,Tidak Setuju',
-        ]);
+        foreach ($request->input('topic') as $key => $topic) {
+            SurveyKepuasan::create([
+                'topic' => $topic,
+                'rate' => $request->input("rate.$key"),
+            ]);
+        }
 
-        $survey = new SurveyKepuasan([
-            'ui_survey' => $validate['kepuasan_ui'], 
-            'ux_search_survey' => $validate['search_ux'], 
-            'kelengkapan_dokumen' => $validate['kelengkapan_doc'], 
-            'validasi_hukum_dokumen' => $validate['validate_doc'], 
-        ]);
-
-        $survey->save();
-
-
-        // SurveyKepuasan::create([
-        //     'kepuasan_ui' => $request->input('kepuasan_ui'),
-        //     'search_ux' => $request->input('search_ux'),
-        //     'kelengkapan_doc' => $request->input('kelengkapan_doc'),
-        //     'validate_doc' => $request->input('validate_doc'),
-        // ]);
-
-        return redirect()->route('survey');
+        return redirect()->route('survey'); // Replace 'survey.thankyou' with your actual thank you page
     }
 }

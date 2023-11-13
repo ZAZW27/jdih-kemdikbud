@@ -35,8 +35,8 @@
                                 <form method="post" action="{{route('submit_survey.data')}}" class="mt-6">
                                     @csrf
                                     <div class="question mb-6">
-                                        <p class="font-semibold mb-3">Apakah tampilan website jdih.balikpapan.go.id mudah dipahami (user friendly)?</p>
-                                        <input type="text" name="topic[1]" value="Apakah tampilan website jdih.balikpapan.go.id mudah dipahami (user friendly)?" id="topic1" hidden>
+                                        <p class="font-semibold mb-3">Apakah tampilan website jdih.kemdikbud.go.id mudah dipahami (user friendly)?</p>
+                                        <input type="text" name="topic[1]" value="survey UI" id="topic1" hidden>
                                         <div class="mb-2">
                                             <input class="form-radio" required autofocus type="radio" name="rate[1]" id="kepuasan_ui04" value="Sangat Setuju">
                                             <label class="ml-2" for="kepuasan_ui04">Sangat Setuju</label>
@@ -55,8 +55,8 @@
                                         </div>
                                     </div>
                                     <div class="question mb-6">
-                                        <p class="font-semibold mb-3">Apakah Akses pencarian pada jdih.balikpapan.go.id mudah digunakan ?</p>
-                                        <input type="text" name="topic[2]" value="Apakah Akses pencarian pada jdih.balikpapan.go.id mudah digunakan ?" id="topic2" hidden>
+                                        <p class="font-semibold mb-3">Apakah Akses pencarian pada jdih.kemdikbud.go.id mudah digunakan ?</p>
+                                        <input type="text" name="topic[2]" value="search UX survey" id="topic2" hidden>
                                         <div class="mb-2">
                                             <input class="form-radio" required autofocus type="radio" name="rate[2]" id="search_ux04" value="Sangat Setuju">
                                             <label class="ml-2" for="search_ux04">Sangat Setuju</label>
@@ -75,8 +75,8 @@
                                         </div>
                                     </div>
                                     <div class="question mb-6">
-                                        <p class="font-semibold mb-3">Dokumen atau informasi hukum yang ada di jdih.balikpapan.go.id lengkap ?</p>
-                                        <input type="text" name="topic[3]" value="Dokumen atau informasi hukum yang ada di jdih.balikpapan.go.id lengkap ?" id="topic3" hidden>
+                                        <p class="font-semibold mb-3">Dokumen atau informasi hukum yang ada di jdih.kemdikbud.go.id lengkap ?</p>
+                                        <input type="text" name="topic[3]" value="kelengkapan dokumen" id="topic3" hidden>
                                         <div class="mb-2">
                                             <input class="form-radio" required autofocus type="radio" name="rate[3]" id="kelengkapan_doc04" value="Sangat Setuju">
                                             <label class="ml-2" for="kelengkapan_doc04">Sangat Setuju</label>
@@ -95,8 +95,8 @@
                                         </div>
                                     </div>
                                     <div class="question">
-                                        <p class="font-semibold mb-3">Dokumen atau informasi hukum yang ada di jdih.balikpapan.go.id otentik/valid ?</p>
-                                        <input type="text" name="topic[4]" value="Dokumen atau informasi hukum yang ada di jdih.balikpapan.go.id otentik/valid ?" id="topic4" hidden>
+                                        <p class="font-semibold mb-3">Dokumen atau informasi hukum yang ada di jdih.kemdikbud.go.id otentik/valid ?</p>
+                                        <input type="text" name="topic[4]" value="validasi dokumen/hukum" id="topic4" hidden>
                                         <div class="mb-2">
                                             <input class="form-radio" required autofocus type="radio" name="rate[4]" id="validate_doc04" value="Sangat Setuju">
                                             <label class="ml-2" for="validate_doc04">Sangat Setuju</label>

@@ -144,7 +144,7 @@
                                 </a>
                             </li>
                             <li class="rounded-sm px-3 py-1 hover:bg-gray-100">
-                                <a href="/investasi" >
+                                <a href="{{route('show_survey.data')}}" >
                                     Hasil Survey
                                 </a>
                             </li>
