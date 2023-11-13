@@ -145,4 +145,4 @@ Route::get('/detail_pengumuman/{id}', [PengumumanController::class, 'index'])->n
 Route::get('/survey', function () {return view('pages/survey/survey');})->name('survey');
 Route::post('/submit-form', [SurveyController::class, 'submitSurvey'])->name('submit_survey.data');
 
-Route::post('/hasil-survey', [SurveyController::class, 'showSurvey'])->name('show_survey.data');
+Route::get('/hasil-survey', [SurveyController::class, 'showSurvey'])->name('show_survey.data');

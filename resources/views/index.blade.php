@@ -634,11 +634,11 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="content">
-                            <div class="graphic-container">
+                        <div class="content" style="overflow: hidden;">
+                            <div class="graphic-container mt-3">
                                 <div class="pengunjung-charts">
                                     <div class="chart-container">
-                                        <div id="pengunjung-chart" style="width: 100%; height: 400px;"></div>
+                                        <div id="pengunjung-chart" style="width: 100%; height: 380px;"></div>
                                     </div>
                                 </div>
                             </div>

@@ -1,8 +1,6 @@
 <script>
     var countView = @json($countView);
 
-    console.log(countView)
-
     google.charts.load('current', {'packages':['corechart']});
     google.charts.setOnLoadCallback(drawChart);
     function drawChart() {
@@ -13,7 +11,6 @@
             var item = countView[i];
             chartData.push([item.time, parseFloat(item.totalViews)]);
         }
-        console.log(chartData)
         var data = google.visualization.arrayToDataTable(chartData);
         
         var options = {

@@ -13,10 +13,8 @@ return new class extends Migration
     {
         SChema::create('survey_pengunjung', function (Blueprint $tbl){
             $tbl->id();
-            $tbl->enum('ui_survey', ['Sangat Setuju', 'Setuju', 'Kurang Setuju', 'Tidak Setuju']);
-            $tbl->enum('ux_search_survey', ['Sangat Setuju', 'Setuju', 'Kurang Setuju', 'Tidak Setuju']);
-            $tbl->enum('kelengkapan_dokumen', ['Sangat Setuju', 'Setuju', 'Kurang Setuju', 'Tidak Setuju']);
-            $tbl->enum('validasi_hukum_dokumen', ['Sangat Setuju', 'Setuju', 'Kurang Setuju', 'Tidak Setuju']);
+            $tbl->string('topic');
+            $tbl->enum('rate', ['Sangat Setuju', 'Setuju', 'Kurang Setuju', 'Tidak Setuju']);
             $tbl->timestamps();
         });
     }

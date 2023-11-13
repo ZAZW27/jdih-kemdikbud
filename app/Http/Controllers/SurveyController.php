@@ -7,6 +7,11 @@ use App\Models\SurveyKepuasan;
 
 class SurveyController extends Controller
 {
+    public function showSurvey(){
+        return view('pages.survey.hasil_survey', [
+            'title' => 'JDIH KEMDIKBUD| Survey',
+        ]);
+    }
     public function submitSurvey(Request $request)
     {
         $validate = $request->validate([

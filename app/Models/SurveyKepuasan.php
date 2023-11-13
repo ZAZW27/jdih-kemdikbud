@@ -9,5 +9,5 @@ class SurveyKepuasan extends Model
 {
     protected $table='survey_pengunjung';
 
-    protected $fillable = ['ui_survey', 'ux_search_survey', 'kelengkapan_dokumen', 'validasi_hukum_dokumen'];
+    protected $fillable = ['topic', 'rate'];
 }
