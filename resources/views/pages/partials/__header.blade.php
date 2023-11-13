@@ -111,10 +111,52 @@
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="/show_peraturan" class="text-sm block py-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 ">
-                            PRODUK HUKUM
-                        </a>
+                    <li class="group inline-block">
+                        <button class="outline-none focus:outline-non rounded-sm flex items-center min-w-1 py-2 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 ">
+                            <span class="text-sm pr-1 font-semibold flex-1">PRODUK HUKUM</span>
+                        </button>
+                        <ul class="bg-white border rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-32 z-50">
+                            <li class="rounded-sm px-3 py-1 hover:bg-gray-100">
+                                <a href="/layanan" >
+                                    Peraturan Daerah (PERDA)
+                                </a>
+                            </li>
+                            <li class="rounded-sm px-3 py-1 hover:bg-gray-100">
+                                <a href="/investasi" >
+                                    Rancangan Peraturan Daerah (RAPERDA)
+                                </a>
+                            </li>
+                            <li class="rounded-sm px-3 py-1 hover:bg-gray-100">
+                                <a href="/investasi" >
+                                    Peraturan Walli Kota
+                                </a>
+                            </li>
+                            <li class="rounded-sm px-3 py-1 hover:bg-gray-100">
+                                <a href="/investasi" >
+                                    Rancangan Peraturan Wali Kota
+                                </a>
+                            </li>
+                            <li class="rounded-sm px-3 py-1 hover:bg-gray-100">
+                                <a href="/investasi" >
+                                    Surat Edaran Wali Kota
+                                </a>
+                            </li>
+                            <li class="rounded-sm px-3 py-1 hover:bg-gray-100">
+                                <a href="/investasi" >
+                                    Instruksi Wali Kota
+                                </a>
+                            </li>
+                            <li class="rounded-sm px-3 py-1 hover:bg-gray-100">
+                                <a href="/investasi" >
+                                    MOU
+                                </a>
+                            </li>
+                            <li class="rounded-sm px-3 py-1 hover:bg-gray-100">
+                                <a href="/show_peraturan" >
+                                    Lainnya
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                     <li class="group inline-block">
                         <button class="outline-none focus:outline-non rounded-sm flex items-center min-w-1 py-2 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 ">
