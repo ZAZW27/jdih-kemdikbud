@@ -1,12 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PpuController;
+
+// CONTROLLERS
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\PeraturanController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MainPageController;
+use App\Http\Controllers\SurveyController;
+
+// OTHER THINGS 
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GlosariumController;
@@ -134,3 +138,11 @@ Route::get('/kontak', function () {// kontak page
 // ====================SECTION: PENGUMUMAN====================
 // ===========================================================
 Route::get('/detail_pengumuman/{id}', [PengumumanController::class, 'index'])->name('detail_pengumuman.data');
+
+// ===========================================================
+// ======================SECTION: SURVEY======================
+// ===========================================================
+Route::get('/survey', function () {return view('pages/survey/survey');})->name('survey');
+Route::post('/submit-form', [SurveyController::class, 'submitSurvey'])->name('submit_survey.data');
+
+Route::post('/hasil-survey', [SurveyController::class, 'showSurvey'])->name('show_survey.data');
