@@ -43,7 +43,11 @@
                                             <select class="custom-select sources" placeholder="Pilih Subjek" name="subjek-peraturan">
                                                 <option value="">Pilih Subjek</option>
                                                 @foreach ($groupSubjek as $id => $name)
-                                                    <option value="{{$id}}">{{$name}}</option>
+                                                    @if ($id)
+                                                        <option value="{{$id}}">{{$name}}</option>
+                                                    @else
+                                                        <option value="{{$name}}">{{$name}}</option>
+                                                    @endif
                                                 @endforeach
                                             </select>
                                         </section>
@@ -51,13 +55,16 @@
                                 </div>
                                 <div class="peraturan-filter flex flex-col sm:flex-row">
                                     <div class=" flex-1 z-[15]">
-                                        <section>
+                                        {{-- <section>
                                             <select class="custom-select sources" placeholder="Pilih Nomor" name="nomor-peraturan">
                                                 <option value="">Pilih Nomor</option>
                                                 @foreach ($groupNomor as $id => $name)
-                                                    <option value="{{$id}}">{{$name}}</option>
+                                                    <option value="{{$name}}">{{$name}}</option>
                                                 @endforeach
                                             </select>
+                                        </section> --}}
+                                        <section>
+                                            
                                         </section>
                                     </div>
                                     <div class="flex-1 z-[14]">
@@ -117,8 +124,8 @@
                                                     <div class="perundangan-content">
                                                         <a href="{{route('detail_peraturan.data', ['id' => $p->id])}}">
                                                             <h6 class="text-start lg:text-sm md:text-sm sm:text-xs">
-                                                                {{ strtoupper($p->getJenis->jenis) }} 
-                                                                <span class="text-yellow-600"> {{ strpos((string)$p->getNomor->nomor, (string)$p->getTahun->tahun) !== false ? strtoupper("NOMOR {$p->getNomor->nomor}") : strtoupper("NOMOR {$p->getNomor->nomor} TAHUN {$p->getTahun->tahun}") }}</span>
+                                                                {{ strtoupper($p->jenis_peraturan) }} 
+                                                                <span class="text-yellow-600"> {{ strpos((string)$p->nomor_peraturan, (string)$p->tahun_peraturan) !== false ? strtoupper("NOMOR {$p->nomor_peraturan}") : strtoupper("NOMOR {$p->nomor_peraturan} TAHUN {$p->tahun_peraturan}") }}</span>
                                                             </h6>
                                                             <h1 class="hover:text-purple-900 transition duration-150 ease-in-out">{{$p->judul_peraturan}}</h1>
                                                         </a>

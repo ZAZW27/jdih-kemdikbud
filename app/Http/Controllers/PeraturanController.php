@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Peraturan; 
+use Illuminate\Support\Facades\DB;
 use App\Models\BppProdukHukum; 
 use App\Http\Requests\StorePeraturanRequest;
 use App\Http\Requests\UpdatePeraturanRequest;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class PeraturanController extends Controller
 {
@@ -44,10 +44,12 @@ class PeraturanController extends Controller
         $tahunInput = $request->input('tahun-peraturan');
         $statusInput = $request->input('status-peraturan');
 
+        $peraturan = new Peraturan();
+
         $peraturanData = Peraturan::select(
-            'tbl_peraturan.id AS id_peraturan',
+            'tbl_peraturan.id',
             'nomor_peraturan.id AS id_nomor',
-            'tahun_branch.id AS id_tahun',
+            'tahun_branch.id AS tahun_id',
             'jenis_peraturan.id AS id_jenis',
             'subjek_peraturan.id AS id_subjek',
             'status_branch.id AS id_status',
@@ -91,23 +93,28 @@ class PeraturanController extends Controller
         ->when($subjekInput, function ($query) use ($subjekInput) {
             $query->where('subjek_id', $subjekInput);
         })
+        // ->when($nomorInput, function ($query) use ($nomorInput) {
+        //     $query->where('nomor_id', $nomorInput);
+        // })
         ->when($nomorInput, function ($query) use ($nomorInput) {
-            $query->where('nomor_id', $nomorInput);
+            $query->where(function ($subQuery) use ($nomorInput) {
+                $subQuery->orWhere('nomor_peraturan.nomor', 'like', '%' . $nomorInput . '%');
+            });
         })
         ->when($jenisInput, function ($query) use ($jenisInput) {
-            $query->where('jenis_id', $jenisInput);
+            $query->where('jenis_peraturan.id', $jenisInput);
         })
         ->when($tahunInput, function ($query) use ($tahunInput) {
-            $query->where('tahun_id', $tahunInput);
+            $query->where('tahun_branch.id', $tahunInput);
         })
         ->when($statusInput, function ($query) use ($statusInput) {
             $query->where('status_id', $statusInput);
         });
 
         $bppProdukHukumData = BppProdukHukum::select(
-            'bpp_produk_hukum.id AS id_produk',
+            'bpp_produk_hukum.id',
             DB::raw('NULL AS id_nomor'),
-            'tahun_branch.id AS id_tahun',
+            'tahun_branch.id AS tahun_id',
             'jenis_peraturan.id AS id_jenis',
             DB::raw('NULL AS id_subjek'),
             'status_branch.id AS id_status',
@@ -146,21 +153,23 @@ class PeraturanController extends Controller
                 $subQuery->orWhere('judul', 'like', '%' . $searchInput . '%');
             });
         })
-        // ->when($subjekInput, function ($query) use ($subjekInput) {
-        //     // Adjust the field name based on your actual structure
-        //     $query->where('subjek', $subjekInput);
-        // })
-        // ->when($nomorInput, function ($query) use ($nomorInput) {
-        //     // Adjust the field name based on your actual structure
-        //     $query->where('nomor_peraturan', $nomorInput);
-        // })
+        ->when($subjekInput, function ($query) use ($subjekInput) {
+            $query->where(function ($subQuery) use ($subjekInput) {
+                $subQuery->orWhere('bpp_produk_hukum.subjek', 'like', '%' . $subjekInput . '%');
+            });
+        })
+        ->when($nomorInput, function ($query) use ($nomorInput) {
+            $query->where(function ($subQuery) use ($nomorInput) {
+                $subQuery->orWhere('bpp_produk_hukum.nomor_peraturan', 'like', '%' . $nomorInput . '%');
+            });
+        })
         ->when($jenisInput, function ($query) use ($jenisInput) {
             // Adjust the field name based on your actual structure
-            $query->where('jenis_id', $jenisInput);
+            $query->where('jenis_peraturan.id', $jenisInput);
         })
         ->when($tahunInput, function ($query) use ($tahunInput) {
             // Adjust the field name based on your actual structure
-            $query->where('tahun_id', $tahunInput);
+            $query->where('tahun_branch.id', $tahunInput);
         })
         ->when($statusInput, function ($query) use ($statusInput) {
             // Adjust the field name based on your actual structure
