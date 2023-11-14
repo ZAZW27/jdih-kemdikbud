@@ -78,7 +78,11 @@ class PeraturanController extends Controller
             DB::raw('NULL AS jenis_subjek'),
             DB::raw('NULL AS file')
         )
-        // ... (join statements)
+        ->join('nomor_peraturan', 'tbl_peraturan.nomor_id', '=', 'nomor_peraturan.id')
+        ->join('tahun_branch', 'tbl_peraturan.tahun_id', '=', 'tahun_branch.id')
+        ->join('jenis_peraturan', 'tbl_peraturan.jenis_id', '=', 'jenis_peraturan.id')
+        ->join('subjek_peraturan', 'tbl_peraturan.subjek_id', '=', 'subjek_peraturan.id')
+        ->join('status_branch', 'tbl_peraturan.status_id', '=', 'status_branch.id')
         ->when($searchInput, function ($query) use ($searchInput) {
             $query->where(function ($subQuery) use ($searchInput) {
                 $subQuery->orWhere('judul_peraturan', 'like', '%' . $searchInput . '%');
@@ -134,7 +138,9 @@ class PeraturanController extends Controller
             'bpp_produk_hukum.jenis_subjek',
             'bpp_produk_hukum.file'
         )
-        // ... (join statements)
+        ->join('tahun_branch', 'bpp_produk_hukum.id_tahun_peraturan', '=', 'tahun_branch.id')
+        ->join('jenis_peraturan', 'bpp_produk_hukum.id_jenis_peraturan', '=', 'jenis_peraturan.id')
+        ->join('status_branch', 'bpp_produk_hukum.id_status_peraturan', '=', 'status_branch.id')
         ->when($searchInput, function ($query) use ($searchInput) {
             $query->where(function ($subQuery) use ($searchInput) {
                 $subQuery->orWhere('judul', 'like', '%' . $searchInput . '%');
