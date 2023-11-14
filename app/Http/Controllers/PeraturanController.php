@@ -15,23 +15,23 @@ class PeraturanController extends Controller
     public function index($id)
     {
          // Assuming you want to fetch a specific Berita by its ID
-         $detail_peraturan = Peraturan::LatestPeraturan()->where('id', $id)->first();
+        $detail_peraturan = Peraturan::LatestPeraturan()->where('id', $id)->first();
 
+
+        // You can also add more conditions as needed
+        // For example, if you want to fetch a specific Berita with a specific category
+        // $detail_peraturan = Berita::where('id', $id)->where('category', 'your_category')->first();
     
-         // You can also add more conditions as needed
-         // For example, if you want to fetch a specific Berita with a specific category
-         // $detail_peraturan = Berita::where('id', $id)->where('category', 'your_category')->first();
-     
-         if (!$detail_peraturan) {
-             // Handle the case where the Berita with the specified ID is not found
-             // You can return a 404 page or some other response.
-         }
-     
-         // Continue with your logic to display the Berita details
-         return view('pages.produk-hukum.detail_peraturan', [
-             'title' => 'Berita Detail | JDIH BPK',
-             'per' => $detail_peraturan,
-         ]);
+        if (!$detail_peraturan) {
+            // Handle the case where the Berita with the specified ID is not found
+            // You can return a 404 page or some other response.
+        }
+    
+        // Continue with your logic to display the Berita details
+        return view('pages.produk-hukum.detail_peraturan', [
+            'title' => 'Berita Detail | JDIH BPK',
+            'per' => $detail_peraturan,
+        ]);
     }
     public function showPeraturan(Request $request)
     {

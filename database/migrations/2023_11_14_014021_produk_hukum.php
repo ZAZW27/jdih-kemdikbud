@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('bpp_produk_rancangan_perwalis', function (Blueprint $table) {
+        Schema::create('bpp_produk_hukum', function (Blueprint $table) {
             $table->id();
             $table->enum('tipe_dokumen', ['PERATURAN PERUNDANG-UNDANGAN']);
             $table->string('judul');
@@ -47,6 +47,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('bpp_produk_rancangan_perwalis');
+        Schema::dropIfExists('bpp_produk_peraturan_walikotas');
     }
 };
