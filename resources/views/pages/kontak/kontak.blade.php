@@ -1,5 +1,12 @@
 
 @include('pages.partials.__header')
+<script async>
+    AOS.init();
+
+    AOS.init({
+        once: true
+    })   
+</script>
     <div class="containers h-[19rem] bkg-bg">
         <div class="page-routes">
             <a href="/">
@@ -21,12 +28,12 @@
             <div class="col-span-12 md:col-span-12 sm:col-span-12 mt-2 animate__animated animate__fadeInUp" id="detail_peraturan">
                 <div class="grid grid-cols-9 grid-rows-2 grid-forms md:grid-row gap-4">
                     <!-- ==================== LIST PROFILS ========================== -->
-                    <div class="card row-span-1 col-span-4 animate-slide-up " data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+                    <div class="card row-span-1 col-span-4 animate-slide-up z-[10]" data-aos="fade-up-left" data-aos-anchor-placement="center-bottom" data-aos-delay="200">
                         <div class="content rounded-border-content">
                             <div class="info-kontak">
                                 <h1 class="mb-5 font-semibold">BIRO HUKUM</h1>
                                 <div class="info-alamat mb-5">
-                                    <h class="font-semibold"1>Alamat</h>
+                                    <h1 class="font-semibold"1>Alamat</h1>
                                     <p>Komplek Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi</p>
                                     <p>Gedung C Lantai 11</p>
                                     <p>Jalan Jenderal Sudirman, Senayan</p>
@@ -44,7 +51,7 @@
                         </div>
                     </div>
                     <!-- ==================== ISI ========================== -->
-                    <div class="card row-span-2 col-span-5 relative lg:-top-[10rem] h-[40rem]">
+                    <div class="card row-span-2 col-span-5 relative lg:-top-[10rem] h-[40rem] z-[20] " data-aos="fade-up" data-aos-anchor-placement="center-bottom" >
                         <div class="content rounded-border-content">
                             <div class="layout text-justify pt-5 form-kontak ">
                                 <form id="hubungi" action="aksi" method="post" class="p-4">
@@ -74,4 +81,5 @@
             </div>
         </div>
     </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     @include('pages.partials.__footer')

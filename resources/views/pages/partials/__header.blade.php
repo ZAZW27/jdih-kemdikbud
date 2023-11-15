@@ -35,18 +35,18 @@
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
                 </svg>
             </button>
-            <div class="hidden w-full md:block md:w-auto" id="navbar-multi-level">
-                <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-white md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white">
+            <div class="hidden w-full md:block md:w-auto h-12 flex items-center md:mx-auto lg:mx-0" id="navbar-multi-level">
+                <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-white md:flex-row md:space-x-0 md:mt-0 md:border-0 md:bg-white">
                     <li>
-                        <a href="/" class="text-sm block py-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 ">
+                        <a href="/" class="text-sm block py-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:px-3 lg:py-4 md:py-1">
                             BERANDA
                         </a>
                     </li>
                     <li class="group inline-block">
-                        <button class="outline-none focus:outline-non rounded-sm flex items-center min-w-1 py-2 text-gray-900 hover:bg-gray-100  md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 ">
-                            <span class="text-sm pr-1 font-semibold flex-1">PROFIL</span>
+                        <button class="outline-none focus:outline-non rounded-sm flex items-center min-w-1 py-2 text-gray-900 hover:bg-gray-100  md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:px-3 lg:py-4 md:py-1">
+                            <span class="text-sm font-semibold flex-1">PROFIL</span>
                         </button>
-                        <ul class="bg-white border rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-32 z-50">
+                        <ul class="bg-white border shadow-lg rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-32 z-50">
                             <li class="rounded-sm px-3 py-1 hover:bg-gray-100">
                                 <a href="/tentang" >
                                     tentang kami
@@ -112,17 +112,21 @@
                         </ul>
                     </li>
                     <li class="group inline-block">
-                        <button class="outline-none focus:outline-non rounded-sm flex items-center min-w-1 py-2 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 ">
-                            <span class="text-sm pr-1 font-semibold flex-1">PRODUK HUKUM</span>
+                        <button class="outline-none focus:outline-non rounded-sm flex items-center min-w-1 py-2 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:px-3 lg:py-4 md:py-1">
+                            <span class="text-sm font-semibold flex-1">DOKUMEN DAN HUKUM</span>
                         </button>
-                        <ul class="bg-white border rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-32 z-50">
+                        <ul class="bg-white border shadow-lg rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-32 z-50">
+                            <div class="flex h-3 mt-2 flex-row items-center align-center pl-1 pr-6">
+                                <p class="mr-3 text-gray-400 font-semibold text-sm" style="user-select: none;">Hukum</p>
+                                <hr class="mt-10 h-[2px] my-8 bg-gray-500 bg-opacity-50 rounded-lg border-0 w-[100%]">
+                            </div>
                             <li class="rounded-sm px-3 py-1 hover:bg-gray-100">
                                 <a href="/show_peraturan?jenis-peraturan=16" >
                                     Peraturan Daerah (PERDA)
                                 </a>
                             </li>
                             <li class="rounded-sm px-3 py-1 hover:bg-gray-100">
-                                <a href="/investasi" >
+                                <a href="/show_peraturan?jenis-peraturan=22">
                                     Rancangan Peraturan Daerah (RAPERDA)
                                 </a>
                             </li>
@@ -132,22 +136,22 @@
                                 </a>
                             </li>
                             <li class="rounded-sm px-3 py-1 hover:bg-gray-100">
-                                <a href="/investasi" >
+                                <a href="/show_peraturan?jenis-peraturan=23" >
                                     Rancangan Peraturan Wali Kota
                                 </a>
                             </li>
                             <li class="rounded-sm px-3 py-1 hover:bg-gray-100">
-                                <a href="/investasi" >
+                                <a href="/show_peraturan?jenis-peraturan=18" >
                                     Surat Edaran Wali Kota
                                 </a>
                             </li>
                             <li class="rounded-sm px-3 py-1 hover:bg-gray-100">
-                                <a href="/investasi" >
+                                <a href="/show_peraturan?jenis-peraturan=21" >
                                     Instruksi Wali Kota
                                 </a>
                             </li>
                             <li class="rounded-sm px-3 py-1 hover:bg-gray-100">
-                                <a href="/investasi" >
+                                <a href="/show_peraturan?jenis-peraturan=20" >
                                     MOU
                                 </a>
                             </li>
@@ -156,13 +160,23 @@
                                     Lainnya
                                 </a>
                             </li>
+                            <div class="flex h-3 flex-row items-center align-center py-2 pl-1 pr-6">
+                                <p class="mr-3 text-gray-400 font-semibold text-sm" style="user-select: none;">Dokumen</p>
+                                <hr class="mt-10 h-[2px] my-8 bg-gray-500 bg-opacity-50 rounded-lg border-0 w-[100%]">
+                            </div>
+                            <li class="rounded-sm px-3 py-1 hover:bg-gray-100">
+                                <a href="/show_peraturan" >
+                                    Penelusuran Dokumen
+                                </a>
+                            </li>
+
                         </ul>
                     </li>
                     <li class="group inline-block">
-                        <button class="outline-none focus:outline-non rounded-sm flex items-center min-w-1 py-2 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 ">
-                            <span class="text-sm pr-1 font-semibold flex-1">PUBLIKASI</span>
+                        <button class="outline-none focus:outline-non rounded-sm flex items-center min-w-1 py-2 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:px-3 lg:py-4 md:py-1">
+                            <span class="text-sm font-semibold flex-1">PUBLIKASI</span>
                         </button>
-                        <ul class="bg-white border rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-32 z-50">
+                        <ul class="bg-white border shadow-lg rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-32 z-50">
                             <li class="rounded-sm px-3 py-1 hover:bg-gray-100">
                                 <a href="/layanan" >
                                     Layanan
@@ -175,32 +189,49 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="group inline-block">
-                        <button class="outline-none focus:outline-non rounded-sm flex items-center min-w-1 py-2 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 ">
-                            <span class="text-sm pr-1 font-semibold flex-1">SURVEY</span>
-                        </button>
-                        <ul class="bg-white border rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-32 z-50">
-                            <li class="rounded-sm px-3 py-1 hover:bg-gray-100">
-                                <a href="/survey" >
-                                    Survey
-                                </a>
-                            </li>
-                            <li class="rounded-sm px-3 py-1 hover:bg-gray-100">
-                                <a href="{{route('show_survey.data')}}" >
-                                    Hasil Survey
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
                     <li>
-                        <a href="{{ Route('berita.data') }}" class="text-sm block py-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">
+                        <a href="{{ Route('berita.data') }}" class="text-sm block py-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:px-3 lg:py-4 md:py-1">
                             INFORMASI
                         </a>
                     </li>
-                    <li>
+                    {{-- <li>
                         <a href="/kontak" class="text-sm block py-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">
                             KONTAK
                         </a>
+                    </li> --}}
+                    <li class="group inline-block">
+                        <button class="outline-none focus:outline-non rounded-sm flex items-center min-w-1 py-2 text-gray-900 hover:bg-gray-100  md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:px-3 lg:py-4 md:py-1">
+                            <span class="text-sm font-semibold flex-1">LAINNYA</span>
+                        </button>
+                        <ul class="bg-white border shadow-lg rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-32 z-50">
+                            <li class="rounded-sm px-3 py-1 hover:bg-gray-100" >
+                                <a id="toKontak" href="/kontak" class="text-sm block py-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">
+                                    KONTAK
+                                </a>
+                            </li>
+                            <li>
+                                <button id="surveydownButton" data-dropdown-toggle="surveydown" data-dropdown-placement="left-start" type="button" class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-100 md:px-3 lg:py-4 md:py-1">
+                                    SURVEY
+                                    <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                                    </svg>
+                                </button>
+                                <div id="surveydown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-md w-44">
+                                    <ul class="py-2 text-sm text-black " aria-labelledby="surveydownButton">
+                                        <li class="rounded-sm px-3 py-1 hover:bg-gray-100">
+                                            <a href="/survey" >
+                                                Survey
+                                            </a>
+                                        </li>
+                                        <li class="rounded-sm px-3 py-1 hover:bg-gray-100">
+                                            <a href="{{route('show_survey.data')}}" >
+                                                Hasil Survey
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </div>

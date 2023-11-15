@@ -140,101 +140,106 @@
                                         <table class="table" id="DataTable">
                                             <tbody >
                                                 <tr class="border-b-2 ">
-                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4">Tipe Dokumen</td>
-                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4" style="border:none;">{{$per->tipe_dokumen}}</td>
+                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4 flex flex-row justify-between mt-3">Tipe Dokumen <span class="font-bold text-lg">:</span></td>
+                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4" style="border:none;">{{$per->tipe_dokumen}}</td>
                                                 </tr>
                                                 <tr class="border-b-2 ">
-                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4">Judul</td>
+                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4 flex flex-row justify-between mt-3">Judul <span class="font-bold text-lg">:</span></td>
                                                     <td class="lg:text-base md:text-sm sm:text-xs p-4">{{$per->judul_peraturan}}</td>
                                                 </tr>
                                                 <tr class="border-b-2 ">
-                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4">T.E.U Badan / Pengarang</td>
+                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4 flex flex-row justify-between mt-3">T.E.U Badan / Pengarang <span class="font-bold text-lg">:</span></td>
                                                     <td class="lg:text-base md:text-sm sm:text-xs p-4">
-                                                        <div class="border border-gray-300 flex justify-around transition duration-300 ease-in-out hover:border-sky-600 hover:drop-shadow-lg">
+                                                        <div class="border border-gray-300 flex sm:flex-row flex-col justify-around transition duration-300 ease-in-out hover:border-sky-600 hover:drop-shadow-lg py-2 px-3">
                                                             <div class="flex flex-col">
                                                                 <div class="font-bold">Nama Pengarang</div>
-                                                                <div class="mt-2">{{$per->nama_pengarang}}</div>
+                                                                <div class="md:mt-2 mb-2 ">{{$per->nama_pengarang}}</div>
                                                             </div>
                                                             <div class="flex flex-col">
                                                                 <div class="font-bold">Tipe Pengarang</div>
-                                                                <div class="mt-2">{{$per->tipe_pengarang}}</div>
+                                                                <div class="md:mt-2 mb-2">{{$per->tipe_pengarang}}</div>
                                                             </div>
                                                             <div class="flex flex-col">
                                                                 <div class="font-bold">Jenis Pengarang</div>
-                                                                <div class="mt-2">{{$per->jenis_pengarang}}</div>
+                                                                <div class="md:mt-2 mb-2">{{$per->jenis_pengarang}}</div>
                                                             </div>
                                                         </div>
                                                     </td>
                                                 </tr>
                                                 <tr class="border-b-2 ">
-                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4">Nomor Peraturan</td>
+                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4 flex flex-row justify-between mt-3">Nomor Peraturan <span class="font-bold text-lg">:</span></td>
                                                     <td class="lg:text-base md:text-sm sm:text-xs p-4">{{$per->nomor_peraturan}}</td>
                                                 </tr>
                                                 <tr class="border-b-2 ">
-                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4">Tahun Peraturan</td>
+                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4 flex flex-row justify-between mt-3">Tahun Peraturan <span class="font-bold text-lg">:</span></td>
                                                     <td class="lg:text-base md:text-sm sm:text-xs p-4">{{$per->tahun_peraturan}}</td>
                                                 </tr>
                                                 <tr class="border-b-2 ">
-                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4">Jenis / Bentuk Peraturan</td>
-                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4 flex flex-col">
-                                                        {{$per->jenis_peraturan}}
-                                                        <span class="text-gray-500 text-sx">
-                                                            @if ($per->id_jenis == 16)
-                                                                PERDA
-                                                            @elseif($per->id_jenis == 17)
-                                                                PERWALI
-                                                            @elseif($per->id_jenis == 18)
-                                                                SE
-                                                            @elseif($per->id_jenis == 20)
-                                                                MOU
-                                                            @elseif($per->id_jenis == 21)
-                                                                INSTRUKSI WALI
-                                                            @elseif($per->id_jenis == 22)
-                                                                RAPERDA
-                                                            @elseif($per->id_jenis == 23)
-                                                                RAWALI
-                                                            @endif
-                                                        </span>
-                                                    </td>
-                                                </tr>
-                                                <tr class="border-b-2 ">
-                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4">Tempat Penetapan</td>
-                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4">{{$per->tempat_penetapan}}</td>
-                                                </tr>
-                                                <tr class="border-b-2 ">
-                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4">Tanggal Penetapan</td>
-                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4">{{$per->tanggal_penetapan}}</td>
-                                                </tr>
-                                                <tr class="border-b-2 ">
-                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4">Tanggal Pengundangan</td>
-                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4">{{$per->tanggal_pengundangan > 1 ?$per->tanggal_pengundangan : $nullRecord}}</td>
-                                                </tr>
-                                                <tr class="border-b-2 ">
-                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4">Sumber</td>
-                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4">{{$per->sumber > 1 ? $per->sumber : $nullRecord}}</td>
-                                                </tr>
-                                                <tr class="border-b-2 ">
-                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4">Subjek</td>
+                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4 flex flex-row justify-between mt-3 my-auto">Jenis / Bentuk Peraturan <span class="font-bold text-lg">:</span></td>
                                                     <td class="lg:text-base md:text-sm sm:text-xs p-4">
-                                                        <div class="border border-gray-300 flex justify-around transition duration-300 ease-in-out hover:border-sky-600 hover:drop-shadow-lg">
-                                                            <div class="flex flex-col">
-                                                                <div class="font-bold">SUBJEK</div>
-                                                                <div class="mt-2">{{$per->subjek}}</div>
-                                                            </div>
-                                                            <div class="flex flex-col">
-                                                                <div class="font-bold">Tipe</div>
-                                                                <div class="mt-2">{{$per->tipe_subjek}}</div>
-                                                            </div>
-                                                            <div class="flex flex-col">
-                                                                <div class="font-bold">Jenis</div>
-                                                                <div class="mt-2">{{$per->jenis_subjek}}</div>
+                                                        <div class="flex flex-row">
+
+                                                            <div class="flex flex-col ml-1.5">
+                                                                {{$per->jenis_peraturan}}
+                                                                <span class="text-gray-500 text-sx">
+                                                                    @if ($per->id_jenis == 16)
+                                                                        PERDA
+                                                                    @elseif($per->id_jenis == 17)
+                                                                        PERWALI
+                                                                    @elseif($per->id_jenis == 18)
+                                                                        SE
+                                                                    @elseif($per->id_jenis == 20)
+                                                                        MOU
+                                                                    @elseif($per->id_jenis == 21)
+                                                                        INSTRUKSI WALI
+                                                                    @elseif($per->id_jenis == 22)
+                                                                        RAPERDA
+                                                                    @elseif($per->id_jenis == 23)
+                                                                        RAWALI
+                                                                    @endif
+                                                                </span>
                                                             </div>
                                                         </div>
                                                     </td>
                                                 </tr>
                                                 <tr class="border-b-2 ">
-                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4">Status Peraturan</td>
-                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4">
+                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4 flex flex-row justify-between mt-3">Tempat Penetapan <span class="font-bold text-lg">:</span></td>
+                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4"> {{$per->tempat_penetapan}}</td>
+                                                </tr>
+                                                <tr class="border-b-2 ">
+                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4 flex flex-row justify-between mt-3">Tanggal Penetapan <span class="font-bold text-lg">:</span></td>
+                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4"> {{$per->tanggal_penetapan}}</td>
+                                                </tr>
+                                                <tr class="border-b-2 ">
+                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4 flex flex-row justify-between mt-3">Tanggal Pengundangan <span class="font-bold text-lg">:</span></td>
+                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4"> {{$per->tanggal_pengundangan > 1 ?$per->tanggal_pengundangan : $nullRecord}}</td>
+                                                </tr>
+                                                <tr class="border-b-2 ">
+                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4 flex flex-row justify-between mt-3">Sumber <span class="font-bold text-lg">:</span></td>
+                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4"> {{$per->sumber > 1 ? $per->sumber : $nullRecord}}</td>
+                                                </tr>
+                                                <tr class="border-b-2 ">
+                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4 flex flex-row justify-between mt-3">Subjek <span class="font-bold text-lg">:</span></td>
+                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4 ">
+                                                        <div class="border border-gray-300 flex sm:flex-row flex-col justify-around transition duration-300 ease-in-out hover:border-sky-600 hover:drop-shadow-lg py-2 px-3">
+                                                            <div class="flex flex-col">
+                                                                <div class="font-bold">SUBJEK</div>
+                                                                <div class="md:mt-2 mb-2">{{$per->subjek}}</div>
+                                                            </div>
+                                                            <div class="flex flex-col">
+                                                                <div class="font-bold">Tipe</div>
+                                                                <div class="md:mt-2 mb-2">{{$per->tipe_subjek}}</div>
+                                                            </div>
+                                                            <div class="flex flex-col">
+                                                                <div class="font-bold">Jenis</div>
+                                                                <div class="md:mt-2 mb-2">{{$per->jenis_subjek}}</div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr class="border-b-2 ">
+                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4 flex flex-row justify-between mt-3">Status Peraturan <span class="font-bold text-lg">:</span></td>
+                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4"> 
                                                         @if ($per->id_status === 1)
                                                             <a href="#" type="submit" class="bg-green-400 text-base font-semibold text-black px-4 py-2 rounded-full hover:bg-green-500">
                                                                 Berlaku
@@ -244,33 +249,29 @@
                                                                 Tidak Berlaku
                                                             </a>
                                                         @else
-                                                            <a href="#" type="submit" class="bg-yellow-500 text-base font-semibold text-white px-4 py-2 rounded-full hover:bg-red-600">
-                                                                
+                                                            <a href="#" type="submit" class="bg-yellow-500 text-base font-semibold text-black px-4 py-2 rounded-full hover:bg-yellow-600">
+                                                                {{$per->status_peraturan}}
                                                             </a>
                                                         @endif
                                                     </td>
                                                 </tr>
                                                 <tr class="border-b-2 ">
-                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4">Detail Status</td>
-                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4">     
-                                                        @if ($per->detail_status === "Baru")
-                                                            <button class="bg-blue-300 hover:bg-blue-400 text-black text-base px-4 py-2 rounded-full">Baru</button>
-                                                        @else
-                                                            <button class="bg-yellow-400 hover:bg-yellow-500 text-black text-base px-4 py-2 rounded-full">{{$per->detail_status}}</button>
-                                                        @endif
+                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4 flex flex-row justify-between mt-3">Catatan <span class="font-bold text-lg">:</span></td>
+                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4">      
+                                                        {{$per->catatan}}
                                                     </td>
                                                 </tr>
                                                 <tr class="border-b-2 ">
-                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4">Bahasa</td>
-                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4">{{strtoupper($per->bahasa)}}</td>
+                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4 flex flex-row justify-between mt-3">Bahasa <span class="font-bold text-lg">:</span></td>
+                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4"> {{strtoupper($per->bahasa)}}</td>
                                                 </tr>
                                                 <tr class="border-b-2 ">
-                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4">Lokasi</td>
-                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4">{{$per->lokasi}}</td>
+                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4 flex flex-row justify-between mt-3">Dilihat <span class="font-bold text-lg">:</span></td>
+                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4"> {{$per->view}} Kali</td>
                                                 </tr>
                                                 <tr class="border-b-2 ">
-                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4">Bidang Hukum</td>
-                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4">{{$per->bidang_hukum > 1 ? $per->bidang_hukum : $nullRecord}}</td>
+                                                    <td class="lg:text-base md:text-sm sm:text-xs px-4 flex flex-row justify-between mt-3">Diunduh <span class="font-bold text-lg">:</span></td>
+                                                    <td class="lg:text-base md:text-sm sm:text-xs p-4"> {{$per->download}} Kali</td>
                                                 </tr>
                                             </tbody>
                                         </table> 
