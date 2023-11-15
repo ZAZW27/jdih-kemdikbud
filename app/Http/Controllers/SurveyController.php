@@ -52,6 +52,6 @@ class SurveyController extends Controller
             ]);
         }
 
-        return redirect()->route('survey'); // Replace 'survey.thankyou' with your actual thank you page
+        return redirect()->route('show_survey.data'); // Replace 'survey.thankyou' with your actual thank you page
     }
 }

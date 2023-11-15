@@ -14,25 +14,21 @@ class PeraturanController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index($id)
+    public function index($id, $model)
     {
-         // Assuming you want to fetch a specific Berita by its ID
-        $detail_peraturan = Peraturan::LatestPeraturan()->where('id', $id)->first();
+        $detail_peraturan = Peraturan::LatestPeraturan()
+        ->where('id', $id)
+        ->where('model', $model)
+        ->first();
 
-
-        // You can also add more conditions as needed
-        // For example, if you want to fetch a specific Berita with a specific category
-        // $detail_peraturan = Berita::where('id', $id)->where('category', 'your_category')->first();
-    
         if (!$detail_peraturan) {
-            // Handle the case where the Berita with the specified ID is not found
-            // You can return a 404 page or some other response.
+            abort(404);
         }
-    
-        // Continue with your logic to display the Berita details
+
         return view('pages.produk-hukum.detail_peraturan', [
-            'title' => 'Berita Detail | JDIH BPK',
+            'title' => 'Peraturan Detail | JDIH BPK',
             'per' => $detail_peraturan,
+            'model' => $model,
         ]);
     }
     public function showPeraturan(Request $request)
@@ -78,7 +74,8 @@ class PeraturanController extends Controller
             DB::raw('NULL AS tipe_pengarang'),
             DB::raw('NULL AS tipe_subjek'),
             DB::raw('NULL AS jenis_subjek'),
-            DB::raw('NULL AS file')
+            DB::raw('NULL AS file'),
+            DB::raw('1 AS model'),
         )
         ->join('nomor_peraturan', 'tbl_peraturan.nomor_id', '=', 'nomor_peraturan.id')
         ->join('tahun_branch', 'tbl_peraturan.tahun_id', '=', 'tahun_branch.id')
@@ -108,7 +105,7 @@ class PeraturanController extends Controller
             $query->where('tahun_branch.id', $tahunInput);
         })
         ->when($statusInput, function ($query) use ($statusInput) {
-            $query->where('status_id', $statusInput);
+            $query->where('status_branch.id', $statusInput);
         });
 
         $bppProdukHukumData = BppProdukHukum::select(
@@ -143,7 +140,8 @@ class PeraturanController extends Controller
             'bpp_produk_hukum.tipe_pengarang',
             'bpp_produk_hukum.tipe_subjek',
             'bpp_produk_hukum.jenis_subjek',
-            'bpp_produk_hukum.file'
+            'bpp_produk_hukum.file', 
+            DB::raw('2 AS model'),
         )
         ->join('tahun_branch', 'bpp_produk_hukum.id_tahun_peraturan', '=', 'tahun_branch.id')
         ->join('jenis_peraturan', 'bpp_produk_hukum.id_jenis_peraturan', '=', 'jenis_peraturan.id')
@@ -173,7 +171,7 @@ class PeraturanController extends Controller
         })
         ->when($statusInput, function ($query) use ($statusInput) {
             // Adjust the field name based on your actual structure
-            $query->where('status_id', $statusInput);
+            $query->where('status_branch.id', $statusInput);
         });
 
         // Unionize the results

@@ -18,7 +18,7 @@
                     <form class="domain-form" action="{{route('get_peraturan.data')}}" method="post">
                         @csrf
                         <div class="md:flex md:items-center md:space-x-4 tutup animate-slide-left">
-                            <input name="search-peraturan" type="text" id="judul" class="w-full px-4 py-6 border-0 mb-0 rounded-lg focus:outline-none focus:ring focus:border-blue-300" placeholder="Cari peraturan perundang-undangan bidang pendidikan, kebudayaan, riset, dan teknologi">
+                            <input name="search-peraturan" type="text" id="judul" class="w-full px-4 py-6 border-0 rounded-lg focus:outline-none focus:ring focus:border-blue-300" placeholder="Cari peraturan perundang-undangan bidang pendidikan, kebudayaan, riset, dan teknologi">
                             <div class="absolute right-6 flex md:mt-0" id="filter-button">
                                 <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-l focus:outline-none focus:ring focus:border-blue-300 hover:bg-red-500 ">
                                     <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" width="30"><path d="M0 0h24v24H0z" fill="none"></path><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
@@ -27,28 +27,36 @@
                                     <b>SPESIFIK</b>
                                 </button>
                             </div>
-                        </div>
-                        <div class="absolute w-full flex md:justify-center justify-start md:-mt-14 mt-3 md:top-[13rem] z-[11] hidden" id="filter-options" >
+                        </div>                        
+                        <div class="absolute w-full flex md:justify-center justify-start md:-mt-14 md:top-[13rem] z-[11] hidden" id="filter-options" >
                             <div class="bg-white shadow-lg w-[80%] pt-3 pb-1 px-2 rounded-lg">
                                 <div class="peraturan-filter flex flex-col sm:flex-row">
                                     <div class="flex-1 z-[16]">
-                                        <section>
-                                            <select class="custom-select sources" placeholder="Pilih Subjek" name="subjek-peraturan">
-                                                <option value="">Pilih Subjek</option>
-                                                @foreach ($groupSubjek as $id => $name)
-                                                    <option value="{{$id}}">{{$name}}</option>
+                                        <section class="hidden" id="select-num" disabled>
+                                            <select class="custom-select sources" placeholder="Pilih Nomor" name="nomor-peraturan">
+                                                <option value="">Pilih Nomor</option>
+                                                @foreach ($groupNomor as $id => $name)
+                                                    <option value="{{$name}}">{{$name}}</option>
                                                 @endforeach
                                             </select>
                                         </section>
+                                        <section class="" id="type-num">
+                                            <input type="text" name="nomor-peraturan" placeholder="Ketik Nomor Peraturan" class="custom-input w-full focus:ring-white">
+                                        </section>
+                                        <input id="change-num" type="checkbox" value="" class="absolute z-[9999] md:right-40 right-32 top-6 w-6 h-6 text-blue-600 bg-white border-gray-600 shadow-md rounded-xl focus:ring-blue-500 ">
                                     </div>
                                 </div>
                                 <div class="peraturan-filter flex flex-col sm:flex-row">
                                     <div class=" flex-1 z-[15]">
                                         <section>
-                                            <select class="custom-select sources" placeholder="Pilih Nomor" name="nomor-peraturan">
-                                                <option value="">Pilih Nomor</option>
-                                                @foreach ($groupNomor as $id => $name)
-                                                    <option value="{{$id}}">{{$name}}</option>
+                                            <select class="custom-select sources" placeholder="Pilih Subjek" name="subjek-peraturan">
+                                                <option value="">Pilih Subjek</option>
+                                                @foreach ($groupSubjek as $id => $name)
+                                                    @if ($id)
+                                                        <option value="{{$id}}">{{$name}}</option>
+                                                    @else
+                                                        <option value="{{$name}}">{{$name}}</option>
+                                                    @endif
                                                 @endforeach
                                             </select>
                                         </section>
@@ -303,7 +311,7 @@
                                 @php $countPeraturan = 0 @endphp
                                 @foreach ($peraturan as $per)
                                     @if ($countPeraturan < 5)
-                                        <a href="{{route('detail_peraturan.data', ['id' => $per->id])}}">
+                                        <a href="{{route('detail_peraturan.data', ['id' => $per->id, 'model' => $per->model])}}">
                                             <div class="peraturan">
                                                 <div class="lg:flex lg:flex-row flex-col">
                                                     <div class="col-lg-1 col-md-1 col-sm-12">

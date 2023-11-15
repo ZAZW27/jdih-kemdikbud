@@ -117,7 +117,7 @@
                         </button>
                         <ul class="bg-white border rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-32 z-50">
                             <li class="rounded-sm px-3 py-1 hover:bg-gray-100">
-                                <a href="/layanan" >
+                                <a href="/show_peraturan?jenis-peraturan=16" >
                                     Peraturan Daerah (PERDA)
                                 </a>
                             </li>
@@ -127,7 +127,7 @@
                                 </a>
                             </li>
                             <li class="rounded-sm px-3 py-1 hover:bg-gray-100">
-                                <a href="/investasi" >
+                                <a href="/show_peraturan?jenis-peraturan=17" >
                                     Peraturan Walli Kota
                                 </a>
                             </li>

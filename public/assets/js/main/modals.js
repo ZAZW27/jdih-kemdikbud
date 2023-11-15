@@ -51,14 +51,16 @@
     }
 
     // UNTUK FILTER SEARCH !!!!!!!!!!!!!!
-    document.addEventListener('click', function (event) {
+    document.getElementById("filter-button").addEventListener('click', function () {
         const targetModal = document.getElementById("filter-options");
     
-        // Check if the target modal has the "block" class and the click target is not inside the modal
-        if (targetModal.classList.contains("block") && !targetModal.contains(event.target)) {
-            hideModalFilter(); // Call your hide modal function
+        if (targetModal.classList.contains("block")) {
+            hideModalFilter();
+        } else {
+            showModalFilter();
         }
     });
+
     function showModalFilter(){
         
         let funButt = document.getElementById("filter-button");
@@ -78,3 +80,32 @@
             targetModal.classList.remove("block");
         }, 20);
     }
+
+    document.getElementById("change-num").addEventListener("change", function () {
+        const selectSection = document.getElementById("select-num");
+        const inputSection = document.getElementById("type-num");
+    
+        if (this.checked) {
+            // Checkbox is checked, show the select section and disable its elements
+            selectSection.classList.remove("hidden");
+            selectSection.querySelectorAll("select, input").forEach(function (element) {
+                element.removeAttribute("disabled");
+            });
+    
+            // Hide the input section and disable its elements
+            inputSection.classList.add("hidden");
+            inputSection.querySelector("input").setAttribute("disabled", "disabled");
+        } else {
+            // Checkbox is not checked, show the input section and disable its elements
+            inputSection.classList.remove("hidden");
+            inputSection.querySelector("input").removeAttribute("disabled");
+    
+            // Hide the select section and disable its elements
+            selectSection.classList.add("hidden");
+            selectSection.querySelectorAll("select, input").forEach(function (element) {
+                element.setAttribute("disabled", "disabled");
+            });
+        }
+    });
+    
+    

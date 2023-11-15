@@ -39,6 +39,22 @@
                             <div class="bg-white shadow-lg w-[80%] pt-3 pb-1 px-2 rounded-lg">
                                 <div class="peraturan-filter flex flex-col sm:flex-row">
                                     <div class="flex-1 z-[16]">
+                                        <section class="hidden" id="select-num" disabled>
+                                            <select class="custom-select sources" placeholder="Pilih Nomor" name="nomor-peraturan">
+                                                <option value="">Pilih Nomor</option>
+                                                @foreach ($groupNomor as $id => $name)
+                                                    <option value="{{$name}}">{{$name}}</option>
+                                                @endforeach
+                                            </select>
+                                        </section>
+                                        <section class="" id="type-num">
+                                            <input type="text" name="nomor-peraturan" placeholder="Ketik Nomor Peraturan" class="custom-input w-full focus:ring-white">
+                                        </section>
+                                        <input id="change-num" type="checkbox" value="" class="absolute z-[9999] md:right-40 right-32  top-6 w-6 h-6 text-blue-600 bg-white border-gray-600 shadow-md rounded-xl focus:ring-blue-500 ">
+                                    </div>
+                                </div>
+                                <div class="peraturan-filter flex flex-col sm:flex-row">
+                                    <div class=" flex-1 z-[15]">
                                         <section>
                                             <select class="custom-select sources" placeholder="Pilih Subjek" name="subjek-peraturan">
                                                 <option value="">Pilih Subjek</option>
@@ -50,21 +66,6 @@
                                                     @endif
                                                 @endforeach
                                             </select>
-                                        </section>
-                                    </div>
-                                </div>
-                                <div class="peraturan-filter flex flex-col sm:flex-row">
-                                    <div class=" flex-1 z-[15]">
-                                        {{-- <section>
-                                            <select class="custom-select sources" placeholder="Pilih Nomor" name="nomor-peraturan">
-                                                <option value="">Pilih Nomor</option>
-                                                @foreach ($groupNomor as $id => $name)
-                                                    <option value="{{$name}}">{{$name}}</option>
-                                                @endforeach
-                                            </select>
-                                        </section> --}}
-                                        <section>
-                                            
                                         </section>
                                     </div>
                                     <div class="flex-1 z-[14]">
@@ -122,7 +123,7 @@
                                                 </div>
                                                 <div class="col-lg-11 col-md-11 col-sm-12">
                                                     <div class="perundangan-content">
-                                                        <a href="{{route('detail_peraturan.data', ['id' => $p->id])}}">
+                                                        <a href="{{route('detail_peraturan.data', ['id' => $p->id, 'model' => $p->model])}}">
                                                             <h6 class="text-start lg:text-sm md:text-sm sm:text-xs">
                                                                 {{ strtoupper($p->jenis_peraturan) }} 
                                                                 <span class="text-yellow-600"> {{ strpos((string)$p->nomor_peraturan, (string)$p->tahun_peraturan) !== false ? strtoupper("NOMOR {$p->nomor_peraturan}") : strtoupper("NOMOR {$p->nomor_peraturan} TAHUN {$p->tahun_peraturan}") }}</span>

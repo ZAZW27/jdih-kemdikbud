@@ -12,14 +12,14 @@ class Peraturan extends Model
 
     public static function LatestPeraturan()
     {
-        $result = DB::table('tbl_peraturan')
+        $tbl_peraturan = DB::table('tbl_peraturan')
             ->join('nomor_peraturan', 'tbl_peraturan.nomor_id', '=', 'nomor_peraturan.id')
             ->join('tahun_branch', 'tbl_peraturan.tahun_id', '=', 'tahun_branch.id')
             ->join('jenis_peraturan', 'tbl_peraturan.jenis_id', '=', 'jenis_peraturan.id')
             ->join('subjek_peraturan', 'tbl_peraturan.subjek_id', '=', 'subjek_peraturan.id')
             ->join('status_branch', 'tbl_peraturan.status_id', '=', 'status_branch.id')
             ->select(
-                'tbl_peraturan.id as id_peraturan',
+                'tbl_peraturan.id',
                 'nomor_peraturan.id AS id_nomor',
                 'tahun_branch.id AS id_tahun',
                 'jenis_peraturan.id AS id_jenis',
@@ -50,15 +50,16 @@ class Peraturan extends Model
                 DB::raw('NULL AS tipe_pengarang'),
                 DB::raw('NULL AS tipe_subjek'),
                 DB::raw('NULL AS jenis_subjek'),
-                DB::raw('NULL AS file')
+                DB::raw('NULL AS file'),
+                DB::raw('1 AS model'),
             );
 
-        $result2 = DB::table('bpp_produk_hukum')
+        $bpp_produk_hukum = DB::table('bpp_produk_hukum')
             ->join('jenis_peraturan', 'bpp_produk_hukum.id_jenis_peraturan', '=', 'jenis_peraturan.id')
             ->join('tahun_branch', 'bpp_produk_hukum.id_tahun_peraturan', '=', 'tahun_branch.id')
             ->join('status_branch', 'bpp_produk_hukum.id_status_peraturan', '=', 'status_branch.id')
             ->select(
-                'bpp_produk_hukum.id AS id_produk',
+                'bpp_produk_hukum.id',
                 DB::raw('NULL AS id_nomor'),
                 'tahun_branch.id AS id_tahun',
                 'jenis_peraturan.id AS id_jenis',
@@ -89,10 +90,11 @@ class Peraturan extends Model
                 'bpp_produk_hukum.tipe_pengarang',
                 'bpp_produk_hukum.tipe_subjek',
                 'bpp_produk_hukum.jenis_subjek',
-                'bpp_produk_hukum.file'
+                'bpp_produk_hukum.file', 
+                DB::raw('2 AS model'),
             );
 
-        return $result->union($result2)->get();
+        return $tbl_peraturan->union($bpp_produk_hukum)->get();
     }
 
     // public function LatestPeraturan(){
