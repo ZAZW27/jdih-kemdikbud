@@ -14,6 +14,9 @@
     <script async src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
     <script async src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <script defer src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    {{-- FANCY APPS --}}
+    <link rel="stylesheet" href="{{ asset('lightbox/dist/css/lightbox.css')}}">
+    <script src="{{ asset('lightbox/dist/js/lightbox-plus-jquery.js')}}"></script>
     {{-- google charts --}}
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -83,28 +86,31 @@
                                 <div id="doubleDropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-md w-44">
                                     <ul class="py-2 text-sm text-black " aria-labelledby="doubleDropdownButton">
                                         <li>
-                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Sejarah Balikpapan</a>
+                                            <a href="/bpp-sejarah-balikpapan" class="block px-4 py-2 hover:bg-gray-100">Sejarah Balikpapan</a>
                                         </li>
                                         <li>
-                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Profil JDIH</a>
+                                            <a href="/bpp-profil-jdih" class="block px-4 py-2 hover:bg-gray-100">Profil JDIH</a>
                                         </li>
                                         <li>
-                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Tugas Dan Pokok Fungsi</a>
+                                            <a href="/bpp-visi-misi" class="block px-4 py-2 hover:bg-gray-100">Visi dan Misi</a>
                                         </li>
                                         <li>
-                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">SOP</a>
+                                            <a href="/bpp-tugas-pokok-fungsi" class="block px-4 py-2 hover:bg-gray-100">Tugas Pokok</a>
                                         </li>
                                         <li>
-                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Sambutan Kabag Hukum</a>
+                                            <a href="/bpp-sop" class="block px-4 py-2 hover:bg-gray-100">SOP</a>
                                         </li>
                                         <li>
-                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Struktur Organisasi</a>
+                                            <a href="/bpp-sambutan-kabag-hukum" class="block px-4 py-2 hover:bg-gray-100">Sambutan Kabag Hukum</a>
+                                        </li>
+                                        <li>
+                                            <a href="/bpp-struktur-organisasi" class="block px-4 py-2 hover:bg-gray-100">Struktur Organisasi</a>
                                         </li>
                                         <li>
                                             <a href="{{route('bpp-pengelola-jdih')}}" class="block px-4 py-2 hover:bg-gray-100">Pengelola JDIH</a>
                                         </li>
                                         <li>
-                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">SK Tim Teknis</a>
+                                            <a href="/bpp-sk-tim-teknis" class="block px-4 py-2 hover:bg-gray-100">SK Tim Teknis</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -165,11 +171,10 @@
                                 <hr class="mt-10 h-[2px] my-8 bg-gray-500 bg-opacity-50 rounded-lg border-0 w-[100%]">
                             </div>
                             <li class="rounded-sm px-3 py-1 hover:bg-gray-100">
-                                <a href="/show_peraturan" >
+                                <a href="{{route('dokumen.data')}}" >
                                     Penelusuran Dokumen
                                 </a>
                             </li>
-
                         </ul>
                     </li>
                     <li class="group inline-block">
@@ -189,11 +194,28 @@
                             </li>
                         </ul>
                     </li>
-                    <li>
+                    <li class="group inline-block">
+                        <button class="outline-none focus:outline-non rounded-sm flex items-center min-w-1 py-2 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:px-3 lg:py-4 md:py-1">
+                            <span class="text-sm font-semibold flex-1">INFORMASI</span>
+                        </button>
+                        <ul class="bg-white border shadow-lg rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-32 z-50">
+                            <li class="rounded-sm px-3 py-1 hover:bg-gray-100">
+                                <a href="{{ Route('berita.data') }}" >
+                                    Berita
+                                </a>
+                            </li>
+                            <li class="rounded-sm px-3 py-1 hover:bg-gray-100">
+                                <a href="{{route('getGaleri.data')}}" >
+                                    Galeri
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    {{-- <li>
                         <a href="{{ Route('berita.data') }}" class="text-sm block py-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:px-3 lg:py-4 md:py-1">
                             INFORMASI
                         </a>
-                    </li>
+                    </li> --}}
                     {{-- <li>
                         <a href="/kontak" class="text-sm block py-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">
                             KONTAK

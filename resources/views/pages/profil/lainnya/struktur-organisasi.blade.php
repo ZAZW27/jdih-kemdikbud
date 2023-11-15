@@ -42,7 +42,7 @@
                                 <a class="py-1 px-5 " href="/bpp-sop">SOP</a>         
                                 <a class="py-1 px-5 " href="/bpp-sambutan-kabag-hukum">Sambutan Kabag Hukum</a>         
                                 <a class="py-1 px-5 active" href="/bpp-struktur-organisasi">Struktur Organisasi</a>         
-                                <a class="py-1 px-5 " href="/bpp-pengelola-jdih">Pengelola JDIH</a>         
+                                <a class="py-1 px-5 " href="{{route('bpp-pengelola-jdih')}}">Pengelola JDIH</a>         
                                 <a class="py-1 px-5 " href="/bpp-sk-tim-teknis">SK Tim Teknis</a>         
                             </div> 
                         </div>

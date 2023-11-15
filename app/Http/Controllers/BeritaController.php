@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Berita;
 use App\Models\BeritaTerkait;
+use App\Models\Galeri;
+
 use App\Http\Requests\StoreBeritaRequest;
 use App\Http\Requests\UpdateBeritaRequest;
 
@@ -57,6 +59,17 @@ class BeritaController extends Controller
                 'berita_terkait' => $get_berita_terkait, // Pass the related records to the view
             ]);
         }
+    }
+
+    public function showGaleri(){
+        $galeri = new Galeri();
+
+        $latestGaleri = $galeri->latestGaleri();
+
+        return view('pages.informasi.galeri', [
+            'title' => 'JDIH | Galeri', 
+            'galeri' => $latestGaleri, 
+        ]);
     }
     /**
      * Show the form for creating a new resource.

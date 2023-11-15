@@ -9,6 +9,7 @@ use App\Http\Controllers\PeraturanController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MainPageController;
 use App\Http\Controllers\SurveyController;
+use App\Http\Controllers\DokumenController;
 
 // OTHER THINGS 
 use App\Http\Controllers\ArtikelController;
@@ -104,6 +105,12 @@ Route::get('/statistika-peraturan', function () {// statistika peraturan page
 });
 
 // ===========================================================
+// =====================SECTION: DOKUMEN======================
+// ===========================================================
+Route::get('/data_dokumen', [DokumenController::class, 'showDokumen'])->name('dokumen.data');
+Route::post('/penelusuran_dokumen', [DokumenController::class, 'filterDokumen'])->name('filter_dokumen');
+
+// ===========================================================
 // ====================SECTION: PUBLIKASI=====================
 // ===========================================================
 Route::get('/investasi', function () {// investasi page
@@ -121,6 +128,8 @@ Route::get('/layanan', function () {// layanan page
 // });
 Route::get('/berita', [BeritaController::class, 'index'])->name('berita.data');
 Route::get('/detail_berita/{id}', [BeritaController::class, 'GetBeritaDetail'])->name('detail_berita.data');
+// GETTING GALERI
+Route::get('/galeri', [BeritaController::class, 'showGaleri'])->name('getGaleri.data');
 // Route::get('/detail_berita', function () {// detail berita page
 //     return view('pages/informasi/detail_berita');
 // });
@@ -146,3 +155,4 @@ Route::get('/survey', function () {return view('pages/survey/survey');})->name('
 Route::post('/submit-form', [SurveyController::class, 'submitSurvey'])->name('submit_survey.data');
 
 Route::get('/hasil-survey', [SurveyController::class, 'showSurvey'])->name('show_survey.data');
+
