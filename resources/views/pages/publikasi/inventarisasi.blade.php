@@ -69,27 +69,57 @@
                                         <td colspan="4" class="border-gray-300 border-t border-b py-3 font-bold text-center">Tahun Penetapan</td>
                                     </tr>
                                     <tr>
-                                        <td class="text-center border-gray-300 border-b border-r font-semibold  ">2020</td>
-                                        <td class="text-center border-gray-300 border-b border-r font-semibold  ">2021</td>
-                                        <td class="text-center border-gray-300 border-b border-r font-semibold  ">2022</td>
-                                        <td class="text-center border-gray-300 border-b border-r font-semibold  ">2023</td>
+                                        @for ($year = date('Y') - 3; $year <= date('Y'); $year++)
+                                            <td class="text-center border-gray-300 border-b border-r font-semibold">{{$year}}</td>
+                                        @endfor
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @php
-                                        $no = 1
-                                    @endphp
+                                    @php $no = 1 @endphp
+                                    @php $combinedRecords = []; @endphp
+
                                     @foreach ($per as $p)
+                                        @php $recordId = $no > 15 ? 15 : $no; @endphp 
+
+                                        @if (!isset($combinedRecords[$recordId]))
+                                            {{-- Create an entry for the record ID if it doesn't exist --}}
+                                            @php
+                                                $combinedRecords[$recordId] = [
+                                                    'jenis' => $p->jenis,
+                                                    'tahun' => [],
+                                                ];
+                                            @endphp
+                                        @endif
+                                        {{-- Add data to the combined record --}}
+                                        @for ($year = date('Y') - 3; $year <= date('Y'); $year++)
+                                            @if (property_exists($p, 'tahun_' . $year))
+                                                @if (!isset($combinedRecords[$recordId]['tahun'][$year]))
+                                                    @php
+                                                        $combinedRecords[$recordId]['tahun'][$year] = 0;
+                                                    @endphp
+                                                @endif
+                                                {{-- Sum the values for the same year --}}
+                                                @php
+                                                    $combinedRecords[$recordId]['tahun'][$year] += $p->{'tahun_' . $year};
+                                                @endphp
+                                            @endif
+                                        @endfor
+
+                                        @php $no = $no > 15 ? 16 : $no + 1; @endphp
+                                    @endforeach
+                                
+                                    @foreach ($combinedRecords as $recordId => $record)
                                         <tr class="border-gray-300 border-b hover:bg-gray-50 hover:border-b-2 hover:border-gray-400">
-                                            <td class="text-start py-4 pl-4"><b>{{$no}} Undang-undang</b></td>
-                                            <td class="text-center py-4">10</td>
-                                            <td class="text-center py-4">2</td>
-                                            <td class="text-center py-4">4</td>
-                                            <td class="text-center py-4">0</td>
+                                            <td class="text-start py-4 pl-4"><b>{{$recordId}} {{$record['jenis']}}</b></td>
+                                            
+                                            @for ($year = date('Y') - 3; $year <= date('Y'); $year++)
+                                                @if (isset($record['tahun'][$year]))
+                                                    <td class="text-center py-4">{{$record['tahun'][$year]}}</td>
+                                                @else
+                                                    <td class="text-center py-4">N/A</td>
+                                                @endif
+                                            @endfor
                                         </tr>
-                                        @php
-                                            $no++
-                                        @endphp
                                     @endforeach
                                 </tbody>
                             </table>
