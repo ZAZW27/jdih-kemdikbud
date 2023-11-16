@@ -15,8 +15,8 @@
     <script async src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <script defer src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     {{-- FANCY APPS --}}
-    <link rel="stylesheet" href="{{ asset('lightbox/dist/css/lightbox.css')}}">
-    <script src="{{ asset('lightbox/dist/js/lightbox-plus-jquery.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
     {{-- google charts --}}
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">

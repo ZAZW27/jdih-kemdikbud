@@ -13,7 +13,7 @@ class DokumenController extends Controller
         $searchInput = $request->input('search-peraturan');
         $peraturanInput = $request->input('peraturan-input');
         $statusInput = $request->input('status-input');
-        $thaunInput = $request->input('tahun-input');
+        $tahunInput = $request->input('tahun-input');
         $opdInput = $request->input('opd-input');
 
         $dokumen = new BppDokumen();
@@ -35,9 +35,9 @@ class DokumenController extends Controller
                 $subquery->orwhere('OPD', 'like', '%' . $opdInput . '%');
             });
         })
-        ->when($thaunInput, function($query) use ($thaunInput){
-            $query->where(function ($subquery) use ($thaunInput){
-                $subquery->orwhere('created_at', 'like', '%' . $thaunInput . '%');
+        ->when($tahunInput, function($query) use ($tahunInput){
+            $query->where(function ($subquery) use ($tahunInput){
+                $subquery->orwhere('created_at', 'like', '%' . $tahunInput . '%');
             });
         })
         ->paginate(10);
@@ -45,6 +45,7 @@ class DokumenController extends Controller
         $getPeraturan = $dokumen->latestDocument()->groupBy('peraturan')->pluck('0.peraturan');
         $getStatus = $dokumen->latestDocument()->groupBy('status_dok')->pluck('0.status_dok');
         $getYear = BppDokumen::selectRaw('YEAR(created_at) as year')->groupBy(DB::Raw('YEAR(created_at)'))->pluck('year');
+
         return view('pages.dokumen.dokumen', [
             'title' => 'JDIH | Dokumen', 
             'dok' => $getDoc, 
@@ -52,6 +53,12 @@ class DokumenController extends Controller
             'getStatus' => $getStatus, 
             'getYear'  => $getYear,
 
+            // GETTING PAST DATA
+            'SearcehdInput' => $searchInput,
+            'SearcehdPer' => $peraturanInput,
+            'SearcehdStatus' => $statusInput,
+            'SearcehdTahun' => $tahunInput,
+            'SearcehdOpd' => $opdInput,
         ]);
     }
 
