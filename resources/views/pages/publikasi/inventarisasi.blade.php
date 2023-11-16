@@ -76,112 +76,21 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr class="border-gray-300 border-b hover:bg-gray-50 hover:border-b-2 hover:border-gray-400">
-                                        <td class="text-start py-4 pl-4"><b>Undang-undang</b></td>
-                                        <td class="text-center py-4">10</td>
-                                        <td class="text-center py-4">2</td>
-                                        <td class="text-center py-4">4</td>
-                                        <td class="text-center py-4">0</td>
-                                    </tr>
-                                    <tr class="border-gray-300 border-b hover:bg-gray-50 hover:border-b-2 hover:border-gray-400">
-                                        <td class="text-start py-4 pl-4"><b>Peraturan Pemerintah</b></td>
-                                        <td class="text-center py-4">7</td>
-                                        <td class="text-center py-4">59</td>
-                                        <td class="text-center py-4">11</td>
-                                        <td class="text-center py-4">0</td>
-                                    </tr>
-                                    <!-- Add more rows with similar classes as needed -->
-                                    <tr class="border-gray-300 border-b hover:bg-gray-50 hover:border-b-2 hover:border-gray-400">
-                                        <td class="text-start py-4 pl-4"><b>Peraturan Presiden</b></td>
-                                        <td class="text-center py-4">1</td>
-                                        <td class="text-center py-4">22</td>
-                                        <td class="text-center py-4">3</td>
-                                        <td class="text-center py-4">1</td>
-                                    </tr>
-                                    <tr class="border-gray-300 border-b hover:bg-gray-50 hover:border-b-2 hover:border-gray-400">
-                                        <td class="text-start py-4 pl-4"><b>Keputusan Presiden</b></td>
-                                        <td class="text-center py-4">0</td>
-                                        <td class="text-center py-4">4</td>
-                                        <td class="text-center py-4">2</td>
-                                        <td class="text-center py-4">0</td>
-                                    </tr>
-                                    <tr class="border-gray-300 border-b hover:bg-gray-50 hover:border-b-2 hover:border-gray-400">
-                                        <td class="text-start py-4 pl-4"><b>Instruksi Presiden</b></td>
-                                        <td class="text-center py-4">1</td>
-                                        <td class="text-center py-4">2</td>
-                                        <td class="text-center py-4">0</td>
-                                        <td class="text-center py-4">0</td>
-                                    </tr>
-                                    <tr class="border-gray-300 border-b hover:bg-gray-50 hover:border-b-2 hover:border-gray-400">
-                                        <td class="text-start py-4 pl-4"><b>Peraturan Menteri</b></td>
-                                        <td class="text-center py-4">51</td>
-                                        <td class="text-center py-4">42</td>
-                                        <td class="text-center py-4">63</td>
-                                        <td class="text-center py-4">43</td>
-                                    </tr>
-                                    <tr class="border-gray-300 border-b hover:bg-gray-50 hover:border-b-2 hover:border-gray-400">
-                                        <td class="text-start py-4 pl-4"><b>Keputusan Menteri</b></td>
-                                        <td class="text-center py-4">22</td>
-                                        <td class="text-center py-4">42</td>
-                                        <td class="text-center py-4">42</td>
-                                        <td class="text-center py-4">23</td>
-                                    </tr>
-                                    <tr class="border-gray-300 border-b hover:bg-gray-50 hover:border-b-2 hover:border-gray-400">
-                                        <td class="text-start py-4 pl-4"><b>Instruksi Menteri</b></td>
-                                        <td class="text-center py-4">0</td>
-                                        <td class="text-center py-4">0</td>
-                                        <td class="text-center py-4">0</td>
-                                        <td class="text-center py-4">0</td>
-                                    </tr>
-                                    <tr class="border-gray-300 border-b hover:bg-gray-50 hover:border-b-2 hover:border-gray-400">
-                                        <td class="text-start py-4 pl-4"><b>Surat Edaran Menteri</b></td>
-                                        <td class="text-center py-4">4</td>
-                                        <td class="text-center py-4">3</td>
-                                        <td class="text-center py-4">5</td>
-                                        <td class="text-center py-4">3</td>
-                                    </tr>
-                                    <tr class="border-gray-300 border-b hover:bg-gray-50 hover:border-b-2 hover:border-gray-400">
-                                        <td class="text-start py-4 pl-4"><b>Peraturan Bersama Menteri</b></td>
-                                        <td class="text-center py-4">0</td>
-                                        <td class="text-center py-4">0</td>
-                                        <td class="text-center py-4">0</td>
-                                        <td class="text-center py-4">0</td>
-                                    </tr>
-                                    <tr class="border-gray-300 border-b hover:bg-gray-50 hover:border-b-2 hover:border-gray-400">
-                                        <td class="text-start py-4 pl-4"><b>Keputusan Bersama Menteri</b></td>
-                                        <td class="text-center py-4">1</td>
-                                        <td class="text-center py-4">2</td>
-                                        <td class="text-center py-4">1</td>
-                                        <td class="text-center py-4">0</td>
-                                    </tr>
-                                    <tr class="border-gray-300 border-b hover:bg-gray-50 hover:border-b-2 hover:border-gray-400">
-                                        <td class="text-start py-4 pl-4"><b>Peraturan Eselon I</b></td>
-                                        <td class="text-center py-4">21</td>
-                                        <td class="text-center py-4">8</td>
-                                        <td class="text-center py-4">8</td>
-                                        <td class="text-center py-4">8</td>
-                                    </tr>
-                                    <tr class="border-gray-300 border-b hover:bg-gray-50 hover:border-b-2 hover:border-gray-400">
-                                        <td class="text-start py-4 pl-4"><b>Keputusan Eselon I</b></td>
-                                        <td class="text-center py-4">0</td>
-                                        <td class="text-center py-4">0</td>
-                                        <td class="text-center py-4">5</td>
-                                        <td class="text-center py-4">0</td>
-                                    </tr>
-                                    <tr class="border-gray-300 border-b hover:bg-gray-50 hover:border-b-2 hover:border-gray-400">
-                                        <td class="text-start py-4 pl-4"><b>Surat Edaran Eselon I</b></td>
-                                        <td class="text-center py-4">12</td>
-                                        <td class="text-center py-4">14</td>
-                                        <td class="text-center py-4">17</td>
-                                        <td class="text-center py-4">9</td>
-                                    </tr>
-                                    <tr class="border-gray-300 border-b hover:bg-gray-50 hover:border-b-2 hover:border-gray-400">
-                                        <td class="text-start py-4 pl-4"><b>Peraturan Lainnya</b></td>
-                                        <td class="text-center py-4">2</td>
-                                        <td class="text-center py-4">1</td>
-                                        <td class="text-center py-4">1</td>
-                                        <td class="text-center py-4">1</td>
-                                    </tr>
+                                    @php
+                                        $no = 1
+                                    @endphp
+                                    @foreach ($per as $p)
+                                        <tr class="border-gray-300 border-b hover:bg-gray-50 hover:border-b-2 hover:border-gray-400">
+                                            <td class="text-start py-4 pl-4"><b>{{$no}} Undang-undang</b></td>
+                                            <td class="text-center py-4">10</td>
+                                            <td class="text-center py-4">2</td>
+                                            <td class="text-center py-4">4</td>
+                                            <td class="text-center py-4">0</td>
+                                        </tr>
+                                        @php
+                                            $no++
+                                        @endphp
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

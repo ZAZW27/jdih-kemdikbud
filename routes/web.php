@@ -10,6 +10,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MainPageController;
 use App\Http\Controllers\SurveyController;
 use App\Http\Controllers\DokumenController;
+use App\Http\Controllers\PublikasiController;
 
 // OTHER THINGS 
 use App\Http\Controllers\ArtikelController;
@@ -114,11 +115,13 @@ Route::post('/penelusuran_dokumen', [DokumenController::class, 'filterDokumen'])
 // ====================SECTION: PUBLIKASI=====================
 // ===========================================================
 Route::get('/investasi', function () {// investasi page
-    return view('pages/publikasi/investasi');
+    return view('pages/publikasi/inventarisasi');
 });
 Route::get('/layanan', function () {// layanan page
     return view('pages/publikasi/layanan');
 });
+
+Route::get('/inventarisasi', [PublikasiController::class, 'index'])->name('getPublikasi.data');
 
 // ===========================================================
 // ====================SECTION: INFORMASI=====================
