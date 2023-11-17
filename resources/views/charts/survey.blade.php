@@ -57,7 +57,6 @@ function drawSearchUX() {
         chartData.push([item.rate, item.count, "#122fb0"]);
     }
 
-    console.log(chartData)
     var data = google.visualization.arrayToDataTable(chartData);
 
     var view = new google.visualization.DataView(data);
@@ -93,7 +92,6 @@ function drawKelengkapanDokumen() {
         chartData.push([item.rate, item.count, "#122fb0"]);
     }
 
-    console.log(chartData)
     var data = google.visualization.arrayToDataTable(chartData);
 
     var view = new google.visualization.DataView(data);
@@ -130,7 +128,6 @@ function drawValidadedDockumen() {
         chartData.push([item.rate, item.count, "#122fb0"]);
     }
 
-    console.log(chartData)
     var data = google.visualization.arrayToDataTable(chartData);
 
     var view = new google.visualization.DataView(data);

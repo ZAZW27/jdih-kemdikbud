@@ -185,7 +185,7 @@ class PeraturanController extends Controller
         $groupStatus = $peraturan->LatestPeraturan()->groupBy('id_status')->pluck('0.status_peraturan', '0.id_status');
 
         return view('pages.produk-hukum.peraturan', [
-            'title' => 'Peraturan | JDIH BPK',
+            'title' => 'JDIH BPP | Peraturan',
             'peraturanData' => $combinedData,
             'groupNomor' => $groupNomor,
             'groupTahun' => $groupTahun,

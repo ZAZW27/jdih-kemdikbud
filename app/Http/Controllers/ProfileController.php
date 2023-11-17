@@ -52,7 +52,7 @@ class ProfileController extends Controller
         
         // Continue with your logic to display the Berita details and related berita_terkait
         return view('pages.informasi.detail_berita', [
-            'title' => 'Berita Detail | JDIH BPK',
+            'title' => 'JDIH BPP | Profiles',
             'berita' => $detail_berita,
             'berita_terkait' => $get_berita_terkait, // Pass the related records to the view
         ]);

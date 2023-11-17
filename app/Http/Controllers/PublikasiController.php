@@ -33,7 +33,7 @@ class PublikasiController extends Controller
         ->get();
 
         return view('pages.publikasi.inventarisasi', [
-            'title' => 'JDIH | inventarisasi', 
+            'title' => 'JDIH BPP | Inventarisasi', 
             'per' => $result
         ]);
     }

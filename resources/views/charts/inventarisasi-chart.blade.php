@@ -49,7 +49,6 @@ for (var i = 0; i < peraturanData.length; i++) {
 combinedDataArray.push(...Object.values(combinedDataMap));
 
 // Output the array of combined data
-console.log(combinedDataArray);
 
     // GOOGLE CHARTSSSSSS
     // google.charts.load("current", { packages: ['corechart'] });
@@ -62,7 +61,7 @@ console.log(combinedDataArray);
 
     //     for (var i = 0; i < combinedPeraturanData.length; i++) {
     //         var item = combinedPeraturanData[i];
-    //         // console.log(item.combinedPeraturanData);
+    //         
     //         chartData.push([item.jenis, item.combinedTahun, "#055CA5"]);
     //     }
 

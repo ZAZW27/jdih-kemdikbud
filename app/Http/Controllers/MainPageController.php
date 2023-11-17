@@ -60,7 +60,7 @@ class MainPageController extends Controller
         $groupStatPer = $peraturan->LatestPeraturan()->groupBy('id_status')->pluck('0.status_peraturan', '0.id_status');
 
         return view('index', [
-            'title' => 'Main Page',
+            'title' => 'JDIH BPP | Main Page',
             'berita' => $latestBerita,
             'pengumuman' => $LatestPengumuman,
             'peraturan' => $LatestPeraturan,

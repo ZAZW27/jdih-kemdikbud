@@ -22,7 +22,7 @@ class BeritaController extends Controller
         $latestBerita = $berita->LatestBerita();
 
         return view('pages.informasi.informasi', [
-            'title' => 'Berita | JDIH BPK',
+            'title' => 'JDIH BPP | Berita',
             'berita' => $latestBerita,
         ]);
     }

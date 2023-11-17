@@ -1,19 +1,37 @@
-<footer class="w3l-footer-29-main">
+    <footer class="w3l-footer-29-main">
         <div class="footer-29 pt-5">
           <div class="container">
             <div class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-3 gap-4">
               <div class="sub-footer lg:col-span-1 md:col-span-1 sm:col-span-1 ">
-                <div class="footer-logo mb-4 flex flex-row justify-center items-center bg-gray-100 rounded-lg relative py-3 overflow-y-auto" style="box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);">>
-                  <div class="flex flex-col">
-                      <img src="{{asset('assets/img/logo/logo_kota_balikpapan.svg')}}" style="width: 50px;">
-                      <img src="{{asset('assets/img/logo/logo_jdih_globe.png')}}" style="width: 50px;">
+                <div class="footer-logo mb-4 flex flex-row justify-center items-center bg-gray-100 rounded-lg relative py-3 no-scrollbar" style="box-shadow: 0 0 8px rgba(255, 255, 255, 0.3); overflow: hidden;">
+                  <!-- Scrollable container for flex items -->
+                  <div class="flex flex-col  items-center overflow-x-auto h-[7rem]">
+                      <!-- Your content here -->
+                      <a href="https://web.balikpapan.go.id/" class="pb-1">
+                        <img src="{{asset('assets/img/logo/logo_kota_balikpapan.svg')}}" style="width: 50px;">
+                      </a>
+                      <a href="https://jdihn.go.id/" class="pb-1">
+                        <img src="{{asset('assets/img/logo/logo_jdih_globe.png')}}" style="width: 50px;">
+                      </a>
+                      <a href="https://www.bphn.go.id/" class="pb-1">
+                        <img src="{{asset('assets/img/logo/Logo_of_the_Ministry_of_Law_and_Human_Rights_of_the_Republic_of_Indonesia.svg')}}" class="rounded-lg" style="width: 50px;">
+                      </a>
+                      <a href="https://jdih.kaltimprov.go.id/" class="pb-1">
+                        <img src="{{asset('assets/img/logo/logo_login.png')}}" style="width: 100px;">
+                      </a>
+                      <a href="https://jdih.kemendagri.go.id/">
+                        <img src="{{asset('assets/img/logo/jdih_kementrian.svg')}}" style="width: 60px;">
+                      </a>
+                      <a href="https://kemenkumham.go.id/">
+                        <img src="{{asset('assets/img/logo/kemenkumham_jdih.png')}}" style="width: 100px;">
+                      </a>
                   </div>
                   <a href="https://play.google.com/store/apps/details?id=com.bsw_rn" target="_blank">
                       <img src="{{asset('assets/img/logo/gplay.png')}}" style="width: 180px;">
                   </a>
                   <!-- Inset shadow pseudo-element -->
                   <div class="inset-shadow"></div>
-                </div>
+              </div>
               </div>
               <div class="sub-footer lg:col-span-1 md:col-span-1 sm:col-span-1">
                 <ul id="komponen">
@@ -89,7 +107,7 @@
             </button>
         </section>
         <!-- //copyright -->
-    </footer>   
+    </footer>
     <script src="{{asset('assets/js/main.js')}}"></script>
     <script>
         // When the user scrolls down 20px from the top of the document, show the button

@@ -9,7 +9,6 @@
 
         for (var i = 0; i < countPeraturan.length; i++) {
             var item = countPeraturan[i];
-            console.log(item.countPeraturan);
             chartData.push([item.jenis_peraturan, item.countPeraturan, "#055CA5"]);
         }
 

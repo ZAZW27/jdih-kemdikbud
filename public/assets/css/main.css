@@ -4,6 +4,16 @@ body{
    overflow-x: hidden;
 }
 
+
+.no-scrollbar div::-webkit-scrollbar {
+   display: none !important; /* Hide scrollbar for Webkit (Chrome, Safari) */
+}
+
+.no-scollbar {
+   -ms-overflow-style: none !important; /* Hide scrollbar for IE and Edge */
+   scrollbar-width: none !important; /* Hide scrollbar for Firefox */
+}
+
 .inset-shadow::before {
    content: '';
    position: absolute;
@@ -699,7 +709,8 @@ footer .footer-format{
        max-width: 640px;
    }
    .navbar-logos img{
-      height: 2.1rem;
+      height: 3.1rem;
+      padding-bottom: -1rem;
    }
    .peraturan .row{
       flex-direction: column;

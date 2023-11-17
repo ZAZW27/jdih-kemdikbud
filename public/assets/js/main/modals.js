@@ -1,5 +1,4 @@
 
-    console.log("DOMContentLoaded");
     // UNTUK SUBJECT PERATURAN !!!!!!!!!!!!!!!!
     function showModalSubjekPeraturan(){
         let modal = document.getElementById("modal-base");

@@ -25,7 +25,7 @@ class PengumumanController extends Controller
     
         // Continue with your logic to display the Berita details
         return view('pages.pengumuman.datail_pengumuman', [
-            'title' => 'JDIH KEMDIKBUD | Pengumuman',
+            'title' => 'JDIH BPP | Pengumuman',
             'pengumuman' => $detail_pengumuman,
         ]);
     }

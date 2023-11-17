@@ -47,7 +47,7 @@ class DokumenController extends Controller
         $getYear = BppDokumen::selectRaw('YEAR(created_at) as year')->groupBy(DB::Raw('YEAR(created_at)'))->pluck('year');
 
         return view('pages.dokumen.dokumen', [
-            'title' => 'JDIH | Dokumen', 
+            'title' => 'JDIH BPP | Dokumen', 
             'dok' => $getDoc, 
             'getPer' => $getPeraturan, 
             'getStatus' => $getStatus, 

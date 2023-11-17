@@ -36,7 +36,7 @@ class SurveyController extends Controller
                         ->get();
 
         return view('pages.survey.hasil_survey', [
-            'title' => 'JDIH KEMDIKBUD| Survey',
+            'title' => 'JDIH BPP | Survey',
             'survey_ui' => $survery_ui,
             'search_ux' => $search_ux,
             'klngkpn_doc' => $klngpn_doc,
