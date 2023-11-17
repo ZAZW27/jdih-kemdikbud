@@ -16,7 +16,7 @@ class PublikasiController extends Controller
                     ->select(DB::raw('EXTRACT(YEAR FROM tanggal_penetapan) as year'))
             )
             ->distinct()
-            ->pluck('year');
+        ->pluck('year');
 
         $result = DB::table('jenis_peraturan')
             ->leftJoin('tbl_peraturan', 'jenis_peraturan.id', '=', 'tbl_peraturan.jenis_id')
@@ -25,12 +25,12 @@ class PublikasiController extends Controller
                 'jenis_peraturan.id as jenis_id',
                 'jenis_peraturan.jenis',
                 DB::raw(implode(', ', array_map(function ($year) {
-                    return "SUM(CASE WHEN EXTRACT(YEAR FROM tgl_penetapan) = $year THEN 1 ELSE 0 END) AS tahun_$year";
+                    return "SUM(CASE WHEN EXTRACT(YEAR FROM COALESCE(tgl_penetapan, tanggal_penetapan)) = $year THEN 1 ELSE 0 END) AS tahun_$year";
                 }, $years->toArray())))
             )
             ->groupBy('jenis_peraturan.id', 'jenis_peraturan.jenis')
             ->orderBy('jenis_peraturan.id')
-            ->get();
+        ->get();
 
         return view('pages.publikasi.inventarisasi', [
             'title' => 'JDIH | inventarisasi', 

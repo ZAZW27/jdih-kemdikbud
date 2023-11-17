@@ -4,6 +4,16 @@ body{
    overflow-x: hidden;
 }
 
+.inset-shadow::before {
+   content: '';
+   position: absolute;
+   inset: 0;
+   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); /* Adjust the shadow color and size as needed */
+   border-radius: inherit; /* Ensure the shadow follows the rounded corners */
+   pointer-events: none; /* Allow clicks to pass through the pseudo-element */
+   border-radius: 5px;
+}
+
 
 ::-webkit-scrollbar {
    width: 8px;

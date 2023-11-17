@@ -177,7 +177,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="group inline-block">
+                    {{-- <li class="group inline-block">
                         <button class="outline-none focus:outline-non rounded-sm flex items-center min-w-1 py-2 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:px-3 lg:py-4 md:py-1">
                             <span class="text-sm font-semibold flex-1">PUBLIKASI</span>
                         </button>
@@ -193,7 +193,7 @@
                                 </a>
                             </li>
                         </ul>
-                    </li>
+                    </li> --}}
                     <li class="group inline-block">
                         <button class="outline-none focus:outline-non rounded-sm flex items-center min-w-1 py-2 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:px-3 lg:py-4 md:py-1">
                             <span class="text-sm font-semibold flex-1">INFORMASI</span>

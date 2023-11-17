@@ -2,12 +2,17 @@
         <div class="footer-29 pt-5">
           <div class="container">
             <div class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-3 gap-4">
-              <div class="sub-footer lg:col-span-1 md:col-span-1 sm:col-span-1">
-                <div class="footer-logo mb-4">
-                  <img src="{{asset('assets/img/logo/logo_jdih_footer.png')}}" style="width: 180px;">
+              <div class="sub-footer lg:col-span-1 md:col-span-1 sm:col-span-1 ">
+                <div class="footer-logo mb-4 flex flex-row justify-center items-center bg-gray-100 rounded-lg relative py-3 overflow-y-auto" style="box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);">>
+                  <div class="flex flex-col">
+                      <img src="{{asset('assets/img/logo/logo_kota_balikpapan.svg')}}" style="width: 50px;">
+                      <img src="{{asset('assets/img/logo/logo_jdih_globe.png')}}" style="width: 50px;">
+                  </div>
                   <a href="https://play.google.com/store/apps/details?id=com.bsw_rn" target="_blank">
-                    <img src="{{asset('assets/img/logo/gplay.png')}}" style="width: 180px;">
+                      <img src="{{asset('assets/img/logo/gplay.png')}}" style="width: 180px;">
                   </a>
+                  <!-- Inset shadow pseudo-element -->
+                  <div class="inset-shadow"></div>
                 </div>
               </div>
               <div class="sub-footer lg:col-span-1 md:col-span-1 sm:col-span-1">
