@@ -43,7 +43,7 @@
                                         <section class="" id="type-num">
                                             <input type="text" name="nomor-peraturan" placeholder="Ketik Nomor Peraturan" class="custom-input w-full focus:ring-white">
                                         </section>
-                                        <input id="change-num" type="checkbox" value="" class="absolute z-[9999] md:right-40 right-32 top-6 w-6 h-6 text-blue-600 bg-white border-gray-600 shadow-md rounded-xl focus:ring-blue-500 ">
+                                        <input id="change-num" type="checkbox" value="" class="absolute z-[9999] md:right-40 right-[20px] top-6 w-6 h-6 text-blue-600 bg-white border-gray-600 shadow-md rounded-xl focus:ring-blue-500 ">
                                     </div>
                                 </div>
                                 <div class="peraturan-filter flex flex-col sm:flex-row">
@@ -52,11 +52,7 @@
                                             <select class="custom-select sources" placeholder="Pilih Subjek" name="subjek-peraturan">
                                                 <option value="">Pilih Subjek</option>
                                                 @foreach ($groupSubjek as $id => $name)
-                                                    @if ($id)
-                                                        <option value="{{$id}}">{{$name}}</option>
-                                                    @else
-                                                        <option value="{{$name}}">{{$name}}</option>
-                                                    @endif
+                                                    <option value="{{$name}}">{{$name}}</option>
                                                 @endforeach
                                             </select>
                                         </section>

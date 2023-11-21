@@ -184,6 +184,19 @@ class PeraturanController extends Controller
         $groupSubjek = $peraturan->LatestPeraturan()->groupBy('id_subjek')->pluck('0.subjek', '0.id_subjek');
         $groupStatus = $peraturan->LatestPeraturan()->groupBy('id_status')->pluck('0.status_peraturan', '0.id_status');
 
+        $pastData = (object)[
+            'searchInput' => $searchInput,
+            'subjekInput' => $subjekInput,
+            'nomorInput' => $nomorInput,
+            'jenisInput' => $jenisInput,
+            'tahunInput' => $tahunInput,
+            'statusInput' => $statusInput,
+        ];
+
+        $filledInputs = array_filter((array)$pastData);
+        
+        $filledInputsCount = count($filledInputs);
+
         return view('pages.produk-hukum.peraturan', [
             'title' => 'JDIH BPP | Peraturan',
             'peraturanData' => $combinedData,
@@ -194,12 +207,8 @@ class PeraturanController extends Controller
             'groupStatus' => $groupStatus,
 
             // GET PAST DATAS
-            'searchInput' => $searchInput,
-            'subjekInput' => $subjekInput,
-            'nomorInput' => $nomorInput,
-            'jenisInput' => $jenisInput,
-            'tahunInput' => $tahunInput,
-            'statusInput' => $statusInput,
+            'countFills' => $filledInputsCount,
+            'pastData' => $pastData,
         ]);
     }
 
