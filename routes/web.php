@@ -11,6 +11,8 @@ use App\Http\Controllers\MainPageController;
 use App\Http\Controllers\SurveyController;
 use App\Http\Controllers\DokumenController;
 use App\Http\Controllers\PublikasiController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminBeritaController;
 
 // OTHER THINGS 
 use App\Http\Controllers\ArtikelController;
@@ -159,3 +161,16 @@ Route::post('/submit-form', [SurveyController::class, 'submitSurvey'])->name('su
 
 Route::get('/hasil-survey', [SurveyController::class, 'showSurvey'])->name('show_survey.data');
 
+// ===========================================================
+// ======================SECTION: ADMINS======================
+// ===========================================================
+Route::get('/admin', function () {// kontak page
+    return view('pages/admin/index');
+});
+
+Route::get('/admin', [AdminController::class, 'index'])->name('getAdmin.data');
+
+// ADMIN BERITA 
+Route::get('/berita-admin', [AdminBeritaController::class, 'index'])->name('getBerita.data');
+Route::get('berita-edit/{id}', [AdminBeritaController::class, 'edit'])->name('edit-berita/');
+Route::put('/process-update-berita', [AdminBeritaController::class, 'update'])->name('proses-update-berita');

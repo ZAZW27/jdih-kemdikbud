@@ -45,6 +45,18 @@ class DokumenController extends Controller
         $getPeraturan = $dokumen->latestDocument()->groupBy('peraturan')->pluck('0.peraturan');
         $getStatus = $dokumen->latestDocument()->groupBy('status_dok')->pluck('0.status_dok');
         $getYear = BppDokumen::selectRaw('YEAR(created_at) as year')->groupBy(DB::Raw('YEAR(created_at)'))->pluck('year');
+        
+        $pastData = (object)[
+            'SearcehdInput' => $searchInput,
+            'SearcehdPer' => $peraturanInput,
+            'SearcehdStatus' => $statusInput,
+            'SearcehdTahun' => $tahunInput,
+            'SearcehdOpd' => $opdInput,
+        ];
+
+        $filledInputs = array_filter((array)$pastData);
+        
+        $filledInputsCount = count($filledInputs);
 
         return view('pages.dokumen.dokumen', [
             'title' => 'JDIH BPP | Dokumen', 
@@ -54,11 +66,13 @@ class DokumenController extends Controller
             'getYear'  => $getYear,
 
             // GETTING PAST DATA
-            'SearcehdInput' => $searchInput,
-            'SearcehdPer' => $peraturanInput,
-            'SearcehdStatus' => $statusInput,
-            'SearcehdTahun' => $tahunInput,
-            'SearcehdOpd' => $opdInput,
+            // 'SearcehdInput' => $searchInput,
+            // 'SearcehdPer' => $peraturanInput,
+            // 'SearcehdStatus' => $statusInput,
+            // 'SearcehdTahun' => $tahunInput,
+            // 'SearcehdOpd' => $opdInput,
+            'pastData' => $pastData, 
+            'countFills' => $filledInputsCount,
         ]);
     }
 

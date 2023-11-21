@@ -24,13 +24,18 @@
                     <form class="domain-form" action="{{route('filter_dokumen')}}" method="post">
                         @csrf
                         <div class="md:flex md:items-center md:space-x-4 tutup animate-slide-left">
-                            <input value="{{$SearcehdInput}}" name="search-peraturan" type="text" id="judul" class="w-full px-4 py-6 border-0 rounded-lg focus:outline-none focus:ring focus:border-blue-300" placeholder="Cari Dokumen">
+                            <input value="{{$pastData->SearcehdInput}}" name="search-peraturan" type="text" id="judul" class="w-full px-4 py-6 border-0 rounded-lg focus:outline-none focus:ring focus:border-blue-300" placeholder="Cari Dokumen">
                             <div class="absolute right-6 flex md:mt-0" id="filter-button">
                                 <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-l focus:outline-none focus:ring focus:border-blue-300 hover:bg-red-500 ">
                                     <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" width="30"><path d="M0 0h24v24H0z" fill="none"></path><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
                                 </button>
                                 <p onclick="showModalFilter()" class="bg-yellow-500 text-slate-800 px-4 py-4 rounded-r focus:outline-none focus:ring focus:border-yellow-300" style="user-select: none; cursor: pointer;">
                                     <b>SPESIFIK</b>
+                                    @if ($countFills > 0)
+                                        <div class="absolute -top-3 left-[140px] bg-red-500 text-white w-[30px] h-[30px]" style="border-radius: 20px 20px 20px 20px">
+                                            {{$countFills}}
+                                        </div>
+                                    @endif
                                 </p>
                             </div>
                         </div>                        
@@ -39,18 +44,18 @@
                                 <div class="peraturan-filter flex flex-col sm:flex-row">
                                     <div class="flex-1 z-[16]">
                                         <section class="" id="type-num">
-                                            <input value="{{$SearcehdOpd}}" type="text" name="opd-input" placeholder="Cari OPD" class="custom-input w-full focus:ring-white">
+                                            <input value="{{$pastData->SearcehdOpd}}" type="text" name="opd-input" placeholder="Cari OPD" class="custom-input w-full focus:ring-white">
                                         </section>
                                     </div>
                                     <div class="flex-1 z-[15]">
                                         <section>
-                                            <select class="custom-select sources" placeholder='{{ isset($SearcehdStatus) ? $SearcehdStatus : "Pilih Status"}}' name="status-input">
-                                                <option value="">{{isset($SearcehdStatus) ? "None" : "Pilih Status"}}</option>
+                                            <select class="custom-select sources" placeholder='{{ isset($pastData->SearcehdStatus) ? $pastData->SearcehdStatus : "Pilih Status"}}' name="status-input">
+                                                <option value="">{{isset($pastData->SearcehdStatus) ? "None" : "Pilih Status"}}</option>
                                                 @foreach ($getStatus as $name)
-                                                    @if ($name == $SearcehdStatus)
+                                                    @if ($name == $pastData->SearcehdStatus)
                                                         <option class="selection" selected value="{{$name}}">{{$name}}</option>
                                                     @else
-                                                        <option class="" value="{{$name}}">{{$name}} {{$SearcehdStatus}}</option>
+                                                        <option class="" value="{{$name}}">{{$name}} {{$pastData->SearcehdStatus}}</option>
                                                     @endif
                                                 @endforeach
                                             </select>
@@ -60,13 +65,13 @@
                                 <div class="peraturan-filter flex flex-col sm:flex-row">
                                     <div class=" flex-1 z-[15]">
                                         <section>
-                                            <select class="custom-select sources" placeholder="{{ isset($SearcehdPer) ? $SearcehdPer : 'Pilih Peraturan'}}" name="peraturan-input">
-                                                <option value="">{{isset($SearcehdPer) ? "None" : "Pilih Peraturan"}}</option>
+                                            <select class="custom-select sources" placeholder="{{ isset($pastData->SearcehdPer) ? $pastData->SearcehdPer : 'Pilih Peraturan'}}" name="peraturan-input">
+                                                <option value="">{{isset($pastData->SearcehdPer) ? "None" : "Pilih Peraturan"}}</option>
                                                 @foreach ($getPer as $name)
-                                                    @if ($name == $SearcehdPer)
+                                                    @if ($name == $pastData->SearcehdPer)
                                                         <option class="selection" selected value="{{$name}}">{{$name}}</option>
                                                     @else
-                                                        <option class="" value="{{$name}}">{{$name}} {{$SearcehdPer}}</option>
+                                                        <option class="" value="{{$name}}">{{$name}} {{$pastData->SearcehdPer}}</option>
                                                     @endif
                                                 @endforeach
                                             </select>
@@ -74,41 +79,19 @@
                                     </div>
                                     <div class="flex-1 z-[14]">
                                         <section>
-                                            <select class="custom-select sources" placeholder="{{ isset($SearcehdTahun) ? $SearcehdTahun : 'Pilih Tahun'}}" name="tahun-input">
-                                                <option value="">{{isset($SearcehdTahun) ? "None" : "Pilih Tahun"}}</option>
+                                            <select class="custom-select sources" placeholder="{{ isset($pastData->SearcehdTahun) ? $pastData->SearcehdTahun : 'Pilih Tahun'}}" name="tahun-input">
+                                                <option value="">{{isset($pastData->SearcehdTahun) ? "None" : "Pilih Tahun"}}</option>
                                                 @foreach ($getYear as $name)
-                                                    @if ($name == $SearcehdTahun)
+                                                    @if ($name == $pastData->SearcehdTahun)
                                                         <option class="selection" selected value="{{$name}}">{{$name}}</option>
                                                     @else
-                                                        <option class="" value="{{$name}}">{{$name}} {{$SearcehdTahun}}</option>
+                                                        <option class="" value="{{$name}}">{{$name}} {{$pastData->SearcehdTahun}}</option>
                                                     @endif
                                                 @endforeach
                                             </select>
                                         </section>
                                     </div>
                                 </div>
-                                {{-- <div class="peraturan-filter flex flex-col sm:flex-row">
-                                    <div class="flex-1 z-[13]">
-                                        <section>
-                                            <select class="custom-select sources" placeholder="Pilih Tahun" name="tahun-peraturan">
-                                                <option value="">Pilih Tahun</option>
-                                                @foreach ($groupTahun as $name)
-                                                    <option value="{{$id}}">{{$name}}</option>
-                                                @endforeach
-                                            </select>
-                                        </section>
-                                    </div>
-                                    <div class="flex-1 z-[12]">
-                                        <section>
-                                            <select class="custom-select sources" placeholder="Pilih Status" name="status-peraturan">
-                                                <option value="">Pilih Status</option>
-                                                @foreach ($groupStatus as $name)
-                                                    <option value="{{$id}}">{{$name}}</option>
-                                                @endforeach
-                                            </select>
-                                        </section>
-                                    </div>
-                                </div> --}}
                             </div>
                         </div>
                     </form>
