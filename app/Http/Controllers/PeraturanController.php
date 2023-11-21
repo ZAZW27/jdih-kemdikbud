@@ -88,7 +88,7 @@ class PeraturanController extends Controller
             });
         })
         ->when($subjekInput, function ($query) use ($subjekInput) {
-            $query->where('subjek_id', $subjekInput);
+            $query->where('subjek_peraturan.subjek', $subjekInput);
         })
         // ->when($nomorInput, function ($query) use ($nomorInput) {
         //     $query->where('nomor_id', $nomorInput);
@@ -192,6 +192,14 @@ class PeraturanController extends Controller
             'groupJenis' => $groupJenis,
             'groupSubjek' => $groupSubjek,
             'groupStatus' => $groupStatus,
+
+            // GET PAST DATAS
+            'searchInput' => $searchInput,
+            'subjekInput' => $subjekInput,
+            'nomorInput' => $nomorInput,
+            'jenisInput' => $jenisInput,
+            'tahunInput' => $tahunInput,
+            'statusInput' => $statusInput,
         ]);
     }
 
