@@ -10,6 +10,7 @@ use App\Http\Requests\StoreBeritaRequest;
 use App\Http\Requests\UpdateBeritaRequest;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 
 class AdminBeritaController extends Controller
@@ -37,7 +38,7 @@ class AdminBeritaController extends Controller
         ]);
     }
 
-    public function update(Request $request)
+    public function update(Request $request)    
     {
         $validatedData = $request->validate([
             'id' => 'required|integer',
@@ -62,11 +63,22 @@ class AdminBeritaController extends Controller
 
         // Handle file upload if a new file is provided
         if ($request->hasFile('gambar')) {
-            // You may want to customize the file name and storage location
-            // $fileName = time() . '_' . $request->file('gambar')->getClientOriginalName();
-            // $request->file('gambar')->storeAs('assets/img/berita/', $fileName);
-            // $berita->gambar_berita = $fileName;
-            Storage::disk('local')->put('file.txt', 'Contents');
+            echo asset('berita/file.txt');
+            // dd($berita);
+            // $file = $request->file('gambar');
+            // $fileName = time() . '_' . $file->getClientOriginalName();
+            // $filePath = 'assets/img/berita/' . $fileName;
+        
+            // // Save the file to the public disk
+            // $fileSaved = Storage::disk('public')->put($filePath, file_get_contents($file->getRealPath()));
+        
+            // if ($fileSaved) {
+            //     // Set the file path for the berita model
+            //     $berita->gambar_berita = $filePath;
+            // } else {
+            //     // Log or handle the case where the file save fails
+            //     \Log::error('File save failed.');
+            // }
         }
 
         

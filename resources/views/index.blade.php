@@ -307,27 +307,41 @@
                                 @php $countPeraturan = 0 @endphp
                                 @foreach ($peraturan as $per)
                                     @if ($countPeraturan < 5)
-                                        <a href="{{route('detail_peraturan.data', ['id' => $per->id, 'model' => $per->model])}}">
-                                            <div class="peraturan">
-                                                <div class="lg:flex lg:flex-row flex-col">
-                                                    <div class="col-lg-1 col-md-1 col-sm-12">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="40px" viewBox="0 0 24 24" width="40px" fill="#000000"><rect fill="none" height="24" width="24"></rect><path d="M19,5v9l-5,0l0,5H5V5H19 M19,3H5C3.9,3,3,3.9,3,5v14c0,1.1,0.9,2,2,2h10l6-6V5C21,3.9,20.1,3,19,3z M12,14H7v-2h5V14z M17,10H7V8h10V10z"></path></svg>
-                                                    </div>
-                                                    <div class="col-lg-11 col-md-11 col-sm-12">
-                                                        <div class="terbaru">
-                                                            <h6>
-                                                                <span style="color: #696969;">{{ strtoupper($per->jenis_peraturan)}}</span> 
-                                                                {{-- CONDITION JIKA TAHUN SUDAH BERADA DI DALAM NOMOR PERATURAN --}}
-                                                                {{ strpos((string)$per->nomor_peraturan, (string)$per->tahun_peraturan) !== false ? strtoupper("NOMOR {$per->nomor_peraturan}") : strtoupper("NOMOR {$per->nomor_peraturan} TAHUN {$per->tahun_peraturan}") }}
-                                                            </h6>
-                                                            <h1 class="hover:text-blue-900 lg:text-start sm:text-justify">{{$per->judul_peraturan}}</h1>
-                                                            <span class="tgl-terbit-peraturan">{{ \Carbon\Carbon::parse($per->tanggal_penetapan)->format('d F Y') }}</span>
-                                                        </div>
-                                                    </div>
-                                                </div><!--row-->
-                                                <div class="bdr2"></div>
+                                        
+                                        <div class="relative">
+                                            <div class="flex items-center absolute bottom-0 right-0 ">
+                                                <span class="text-xs text-gray-500">{{$per->download}}</span>
+                                                <div class="flex justify-center items-center transition-all duration-500 ease-in-out hover:bg-sky-200 hover:bg-opacity-50 w-10 h-10 rounded-2xl">
+                                                    <a href="#" class="">
+                                                        <svg width="23px" height="23px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#4b3f3f"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path opacity="0.5" d="M3 15C3 17.8284 3 19.2426 3.87868 20.1213C4.75736 21 6.17157 21 9 21H15C17.8284 21 19.2426 21 20.1213 20.1213C21 19.2426 21 17.8284 21 15" stroke="#1C274C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12 3V16M12 16L16 11.625M12 16L8 11.625" stroke="#1C274C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                                                    </a>
+                                                </div>
                                             </div>
-                                        </a>
+                                            <a href="{{route('detail_peraturan.data', ['id' => $per->id, 'model' => $per->model])}}">
+                                                <div class="peraturan">
+                                                    <div class="lg:flex lg:flex-row flex-col">
+                                                        <div class="col-lg-1 col-md-1 col-sm-12">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="40px" viewBox="0 0 24 24" width="40px" fill="#000000"><rect fill="none" height="24" width="24"></rect><path d="M19,5v9l-5,0l0,5H5V5H19 M19,3H5C3.9,3,3,3.9,3,5v14c0,1.1,0.9,2,2,2h10l6-6V5C21,3.9,20.1,3,19,3z M12,14H7v-2h5V14z M17,10H7V8h10V10z"></path></svg>
+                                                        </div>
+                                                        <div class="col-lg-11 col-md-11 col-sm-12">
+                                                            <div class="terbaru">
+                                                                <div class="flex flex-row justify-between">
+                                                                    <h6>
+                                                                        <span style="color: #696969;">{{ strtoupper($per->jenis_peraturan)}}</span> 
+                                                                        {{-- CONDITION JIKA TAHUN SUDAH BERADA DI DALAM NOMOR PERATURAN --}}
+                                                                        {{ strpos((string)$per->nomor_peraturan, (string)$per->tahun_peraturan) !== false ? strtoupper("NOMOR {$per->nomor_peraturan}") : strtoupper("NOMOR {$per->nomor_peraturan} TAHUN {$per->tahun_peraturan}") }}
+                                                                    </h6>
+                                                                    
+                                                                </div>
+                                                                <h1 class="hover:text-blue-900 lg:text-start sm:text-justify">{{$per->judul_peraturan}}</h1>
+                                                                <span class="tgl-terbit-peraturan">{{ \Carbon\Carbon::parse($per->tanggal_penetapan)->format('d F Y') }}</span>
+                                                            </div>
+                                                        </div>
+                                                    </div><!--row-->
+                                                    <div class="bdr2 border-b-2 border-slate-200"></div>
+                                                </div>
+                                            </a>
+                                        </div>
                                         @php $countPeraturan++ @endphp
                                     @endif
                                 @endforeach

@@ -173,4 +173,7 @@ Route::get('/admin', [AdminController::class, 'index'])->name('getAdmin.data');
 // ADMIN BERITA 
 Route::get('/berita-admin', [AdminBeritaController::class, 'index'])->name('getBerita.data');
 Route::get('berita-edit/{id}', [AdminBeritaController::class, 'edit'])->name('edit-berita/');
+Route::get('/berita-baru', function () {return view('pages/admin/berita/insert');})->name('berita-baru');
+
 Route::put('/process-update-berita', [AdminBeritaController::class, 'update'])->name('proses-update-berita');
+Route::put('/process-insert-berita', [AdminBeritaController::class, 'insert'])->name('proses-insert-berita');

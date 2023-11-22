@@ -9,6 +9,10 @@ class Berita extends Model
 {
     protected $table = "tbl_berita";
 
+    protected $fillable = [
+        
+    ];
+
     public function LatestBerita(){
         return $this->orderBy('created_at', 'desc')->get();
     }

@@ -72,6 +72,12 @@
                             <span class="flex-1 ms-3 whitespace-nowrap slide-link">Berita</span>
                         </a>
                     </li>
+                    <li class="">
+                        <a href="{{route('getBerita.data')}}" class="flex items-center p-2 text-gray-900 rounded-lg ">
+                            <svg fill="#1a1a1a" width="26px" height="26px" viewBox="0 0 24 24" id="gallery-collections-left" data-name="Line Color" xmlns="http://www.w3.org/2000/svg" class="icon line-color" stroke="#1a1a1a"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path id="secondary" d="M3,8V19a1,1,0,0,0,1,1H19" style="fill: none; stroke: #000000; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></path><path id="primary" d="M16.24,8.68,21,13.44V15a1,1,0,0,1-1,1H16.59l-3.83-3.83ZM7,12.26V15a1,1,0,0,0,1,1h8.59L9.92,9.33ZM21,5V15a1,1,0,0,1-1,1H8a1,1,0,0,1-1-1V5A1,1,0,0,1,8,4H20A1,1,0,0,1,21,5Z" style="fill: none; stroke: #000000; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></path></g></svg>
+                            <span class="flex-1 ms-3 whitespace-nowrap slide-link">Gallery</span>
+                        </a>
+                    </li>
                     <li>
                         <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg ">
                             <svg width="26px" height="26px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>law-scale</title> <g id="Layer_2" data-name="Layer 2"> <g id="invisible_box" data-name="invisible box"> <rect width="48" height="48" fill="none"></rect> </g> <g id="Q3_icons" data-name="Q3 icons"> <path d="M46,25,38,5.7h0A38.3,38.3,0,0,0,24,3,38.3,38.3,0,0,0,10,5.7h0L2,25H2v2a8,8,0,0,0,16,0V25h0L11.6,10l.3-.8A34.3,34.3,0,0,1,22,7.1V41H15a2,2,0,0,0,0,4H33a2,2,0,0,0,0-4H26V7.1A34.3,34.3,0,0,1,36.1,9.2l.3.8L30,25h0v2a8,8,0,0,0,16,0V25ZM14.2,25h-9L10,14.3ZM38,14.3,42.2,25h-9Z"></path> </g> </g> </g></svg>
