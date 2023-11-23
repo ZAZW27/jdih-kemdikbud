@@ -175,5 +175,6 @@ Route::get('/berita-admin', [AdminBeritaController::class, 'index'])->name('getB
 Route::get('berita-edit/{id}', [AdminBeritaController::class, 'edit'])->name('edit-berita/');
 Route::get('/berita-baru', function () {return view('pages/admin/berita/insert');})->name('berita-baru');
 
-Route::put('/process-update-berita', [AdminBeritaController::class, 'update'])->name('proses-update-berita');
-Route::put('/process-insert-berita', [AdminBeritaController::class, 'insert'])->name('proses-insert-berita');
+Route::put('/process-update-berita', [AdminBeritaController::class, 'update'])->name('proses-update-berita');// update
+Route::post('/process-insert-berita', [AdminBeritaController::class, 'insert'])->name('proses-insert-berita');// insert
+Route::get('/process-delete-berita/{id}', [AdminBeritaController::class, 'delete'])->name('proses-delete-berita');// delete

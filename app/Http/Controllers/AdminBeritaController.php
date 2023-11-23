@@ -9,6 +9,7 @@ use App\Models\Galeri;
 use App\Http\Requests\StoreBeritaRequest;
 use App\Http\Requests\UpdateBeritaRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
@@ -25,8 +26,49 @@ class AdminBeritaController extends Controller
 
         return view('pages.admin.berita.berita', [
             'title' => 'JDIH BPP | Admin',
+            'active' => 'berita',
             'berita' => $berita,
         ]);
+    }
+
+    public function insert(Request $request){
+        $berita = new BErita();
+
+        $judul = $request->input('judul');
+        $tema = $request->input('tema');
+        $isi = $request->input('isi');
+        $tanggal = $request->input('tanggal');
+        $gambar = $request->file('gambar');   
+        
+        
+        
+        if ($request->hasfile('gambar')) {
+            $file = $request->file('gambar');
+            $extension = $file->getClientOriginalName();
+            $filename = time() . '_' . str_replace(' ', '_', $extension);
+            $file->move('assets/img/berita', $filename);
+
+            // MASUKKAN BARANG
+            $berita->gambar_berita = $filename;
+            $berita->judul = $judul;
+            $berita->tema = $tema;
+            $berita->isi = $isi;
+            $berita->tanggal = $tanggal;
+            $berita->dilihat = 0;
+            $berita->tautan = 'null';
+            // dd($filename);
+        }
+        else{
+            $seeData = [
+                $judul, $tema, $isi, $tanggal, $gambar
+            ];
+
+            dd($seeDataa);
+        }
+
+        $berita->save();
+
+        return redirect()->route('berita-baru');
     }
 
     public function edit($id){
@@ -54,31 +96,27 @@ class AdminBeritaController extends Controller
 
         $berita = Berita::findOrFail($id);
 
-        // Update the berita data
-        $berita->judul = $request->judul;
-        $berita->tema = $request->tema;
-        $berita->tanggal = $request->tanggal;
-        $berita->isi = $request->isi;
-        $berita->updated_at = $currTimeStamp;
-
         // Handle file upload if a new file is provided
-        if ($request->hasFile('gambar')) {
-            echo asset('berita/file.txt');
-            // dd($berita);
-            // $file = $request->file('gambar');
-            // $fileName = time() . '_' . $file->getClientOriginalName();
-            // $filePath = 'assets/img/berita/' . $fileName;
-        
-            // // Save the file to the public disk
-            // $fileSaved = Storage::disk('public')->put($filePath, file_get_contents($file->getRealPath()));
-        
-            // if ($fileSaved) {
-            //     // Set the file path for the berita model
-            //     $berita->gambar_berita = $filePath;
-            // } else {
-            //     // Log or handle the case where the file save fails
-            //     \Log::error('File save failed.');
-            // }
+        if ($request->hasfile('gambar')) {
+            $file = $request->file('gambar');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extension;
+            // $file->move('uplloads/berita', $filename);
+            $file->move('assets/img/berita', $filename);
+
+            // MASUKKAN BARANG
+            $berita->gambar_berita = $filename;
+            $berita->judul = $request->judul;
+            $berita->tema = $request->tema;
+            $berita->tanggal = $request->tanggal;
+            $berita->isi = $request->isi;
+            $berita->updated_at = $currTimeStamp;
+        }else{
+            $seeData = [
+                $judul, $tema, $isi, $tanggal, $gambar
+            ];
+
+            dd($seeData);
         }
 
         
@@ -91,11 +129,15 @@ class AdminBeritaController extends Controller
         return redirect()->route('getBerita.data')->with('success', 'Berita updated successfully');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Berita $berita)
-    {
-        //
+    public function delete($id){
+        $berita = Berita::find($id);
+
+        if (!$berita) {
+            return "Berita dengan id $id tidak ada";
+        }
+
+        $berita->delete();
+
+        return redirect()->route('getBerita.data')->with('success', 'berita telah dihapus');
     }
 }

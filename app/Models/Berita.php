@@ -10,7 +10,7 @@ class Berita extends Model
     protected $table = "tbl_berita";
 
     protected $fillable = [
-        
+        'judul', 'tema', 'tanggal', 'isi', 'gambar_berita'
     ];
 
     public function LatestBerita(){

@@ -23,21 +23,22 @@ class AdminController extends Controller
 
         return view('pages.admin.index', [
             'title' => 'JDIH BPP | Admin',
+            'active' => 'adminDash', 
             'berita' => $berita,
             'galeri' => $galeri,
         ]);
     }
 
-    public function showGaleri(){
-        $galeri = new Galeri();
+    // public function showGaleri(){
+    //     $galeri = new Galeri();
 
-        $latestGaleri = $galeri->latestGaleri();
+    //     $latestGaleri = $galeri->latestGaleri();
 
-        return view('pages.informasi.galeri', [
-            'title' => 'JDIH | Galeri', 
-            'galeri' => $latestGaleri, 
-        ]);
-    }
+    //     return view('pages.informasi.galeri', [
+    //         'title' => 'JDIH | Galeri', 
+    //         'galeri' => $latestGaleri, 
+    //     ]);
+    // }
     /**
      * Show the form for creating a new resource.
      */

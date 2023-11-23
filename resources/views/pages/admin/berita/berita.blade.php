@@ -3,12 +3,13 @@
 
 
 <div class="p-4 sm:ml-64">
+    
     <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg">
+        <div class="relative top-[0px] md:top-[50px] right-0">
+            <a href="{{route('berita-baru')}}" class="flex justify-center w-20 h-auto bg-blue-500 rounded-lg drop-shadow-md text-white font-semibold py-1">NEW+</a>
+        </div>
         <div class="flex justify-center py-2 mb-2 border-b-4 border-amber-400">
             <h1 class="text-4xl font-bold  text-sky-600">BERITA</h1>
-        </div>
-        <div class="absolute top-[75px] right-20">
-            <a href="{{route('berita-baru')}}" class="flex justify-center w-20 h-auto bg-blue-500 rounded-lg drop-shadow-md text-white font-semibold py-1">NEW+</a>
         </div>
         <div class="flex items-center justify-center h-auto pt-2 px-4 rounded bg-gray-50">
             <div class="relative overflow-x-auto sm:rounded-lg">
@@ -74,7 +75,7 @@
                                 <td class="px-1 py-4">
                                     <div class="flex flex-row justify-center align-center items-center px-2 py-4">
                                         <a href="{{route('edit-berita/', ['id' => $q->id])}}" class="font-medium text-blue-600 hover:underline">Edit</a>
-                                        <a href="#" class="font-medium text-red-600 hover:underline ms-3">Remove</a>
+                                        <a href="#" onclick="confirmDelete({{ $q->id }})" class="font-medium text-red-600 hover:underline ms-3">Remove</a>
                                     </div>
                                 </td>
                             </tr>
@@ -85,34 +86,17 @@
         </div>
     </div>
 </div>
-{{-- COMPONENT SIAPA TAU PERLU --}}
-{{-- <div class="grid grid-cols-2 gap-4 mb-4">
-    <div class="flex items-center justify-center rounded bg-gray-50 h-28">
-        <p class="text-2xl text-gray-400 ">
-            <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16"/>
-            </svg>
-        </p>
-    </div>
-    <div class="flex items-center justify-center rounded bg-gray-50 h-28">
-        <p class="text-2xl text-gray-400 ">
-            <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16"/>
-            </svg>
-        </p>
-    </div>
-    <div class="flex items-center justify-center rounded bg-gray-50 h-28">
-        <p class="text-2xl text-gray-400 ">
-            <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16"/>
-            </svg>
-        </p>
-    </div>
-    <div class="flex items-center justify-center rounded bg-gray-50 h-28">
-        <p class="text-2xl text-gray-400 ">
-            <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16"/>
-            </svg>
-        </p>
-    </div>
-</div> --}}
+<script>
+    function confirmDelete(id) {
+        var confirmation = window.confirm("Are you sure you want to delete this berita?");
+
+        if (confirmation) {
+            // If the user confirms, redirect to the delete route
+            window.location.href = "{{ url('/process-delete-berita') }}/" + id;
+        } else {
+            // If the user cancels, do nothing or show a message
+            // You can customize this part based on your requirements
+            console.log("Deletion canceled");
+        }
+    }
+</script>
