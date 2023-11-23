@@ -559,54 +559,57 @@
             </div>
         </div>
         <div class="py-4 px-4 mx-auto max-w-screen-xl text-center z-10 relative">
-            <div class="col-span-12 md:col-span-12 sm:col-span-12 mt-2 animate__animated animate__fadeInUp" id="detail_peraturan">
-                <div class="grid grid-cols-3 grid-forms md:grid-row gap-4">
-                    <!-- ==================== CONTENT: VIDIO YOUTUBE ========================== -->
-                    <div class="card row-span-3 col-span-2 md:col-span-3 bg-transparent shadow-none lg:h-[450px] md:h-[450px] sm:h-[450px] xs:h-[600px] z-[1000]" data-aos="fade-right" data-aos-duration="400">
-                        <!-- width="100%" height="450px" -->
+            
+
+            <div id="default-carousel" class="relative w-full" data-carousel="slide">
+                <!-- Carousel wrapper -->
+                <div class="relative h-[10rem] overflow-hidden rounded-lg md:h-[40rem]">
+                    <!-- Item 1 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
                         <iframe class="kemdikbud-vid-yt" width="100%" height="100%" src="https://www.youtube.com/embed/M9S3yezU6Bo?si=MOIL3T0NuSyoVVYb" title="YouTube video player" frameborder="10px" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
-                    <!-- ==================== CONTENT: MEDIA SOSIAL ========================== -->
-                    <div class="card row-span-3 col-span-2 " style="padding-bottom: -50px;" data-aos="fade-right" data-aos-duration="400" data-aos-duration="100" data-aos-delay="200" data-aos-easing="ease-in-out">
-                        <div class="top-banner w-full h-14 ">
-                            <h2>MEDIA</h2>
-                            <div class="dots">
-                                <a >
-                                    <svg style="float:right;" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="content">
-                            <div class="py-4">
-                                <div class="padd-all">
-                                    <svg style="float:left; margin-right:10px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#05a9f4" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
-                                    <a class="media-link" href="https://twitter.com/birohukumdikbud" target="blank">
-                                        <b>Twitter</b> 
-                                        <p>@birohukumdikbud</p>
-                                    </a>
-                                    <!-- <a href='https://twitter.com/birohukumdikbud/status/1588353648509128704' target="blank"><h1>#Permendikbudristek 25/2022 - Penilaian Buku Pendidikan http://bit.ly/3WuDvop #JDIHKemendikbudristek</h1></a> -->
-                                    <br>
-                                    <div class="border"></div>
-                                    <br>
-                                    <a href="https://www.instagram.com/birohukumdikbud/" target="blank"><img src="{{ asset('assets/img/media/Instagram.png') }}" alt="Instagram" style="width:24px; float:left; margin-right:10px; margin-top:20px;"></a>
-                                    <a class="media-link" href="https://www.instagram.com/birohukumdikbud/" target="blank">
-                                        <b>Instagram</b> 
-                                        <p>@birohukumdikbud</p>
-                                    </a>
-                                    <br>
-                                    <!-- <a href='https://www.instagram.com/p/CkaTEhwrqQJ/' target="blank"><h1>Tahapan pembentukan Permendikbudristek diatur melalui Permendikbud No 142 tahun 2014 tentang Pedoman Pembentukan Peraturan Menteri Pendidikan dan Kebudayaan.</h1></a> -->
-                                    <div class="border"></div>
-                                    <!-- <a href='https://www.youtube.com/@birohukumdikbud/' target="blank"><img src="{{ asset('assets/images/ig.png"') }} alt="Youtube" style="width:24px; float:left; margin-right:10px; margin-top:20px;"></a>
-                                    <a href='https://www.youtube.com/@birohukumdikbud/' target="blank"><b>Youtube</b> <p style="margin-top:17px;">@birohukumdikbud</p></a>
-                                    <a href='https://www.instagram.com/p/CkaTEhwrqQJ/' target="blank"><h1>Tahapan pembentukan Permendikbudristek diatur melalui Permendikbud No 142 tahun 2014 tentang Pedoman Pembentukan Peraturan Menteri Pendidikan dan Kebudayaan.</h1></a>
-                                    <br/>
-                                    <br/>
-                                    <div class="bdr2"></div> -->
-                                </div>
-                            </div>
-                        </div>
+                    <!-- Item 2 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <iframe class="kemdikbud-vid-yt" width="100%" height="100%" src="https://www.youtube.com/embed/M9S3yezU6Bo?si=MOIL3T0NuSyoVVYb" title="YouTube video player" frameborder="10px" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <iframe class="kemdikbud-vid-yt" width="100%" height="100%" src="https://www.youtube.com/embed/M9S3yezU6Bo?si=MOIL3T0NuSyoVVYb" title="YouTube video player" frameborder="10px" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <iframe class="kemdikbud-vid-yt" width="100%" height="100%" src="https://www.youtube.com/embed/M9S3yezU6Bo?si=MOIL3T0NuSyoVVYb" title="YouTube video player" frameborder="10px" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <!-- Item 5 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <iframe class="kemdikbud-vid-yt" width="100%" height="100%" src="https://www.youtube.com/embed/M9S3yezU6Bo?si=MOIL3T0NuSyoVVYb" title="YouTube video player" frameborder="10px" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
                 </div>
+                <!-- Slider indicators -->
+                <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+                </div>
+                <!-- Slider controls -->
+                <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-cyan-50/60 transition-all duration-700 ease-out group-hover:bg-sky-400/50 group-focus:ring-4 group-focus:ring-amber-500 group-focus:outline-none">
+                        <svg class="w-4 h-4 text-slate=800 hover:text-black transition-all ease-out duration-700 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                        </svg>
+                        <span class="sr-only">Previous</span>
+                    </span>
+                </button>
+                <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-cyan-50/60 transition-all duration-700 ease-out group-hover:bg-sky-400/50 group-focus:ring-4 group-focus:ring-amber-500 group-focus:outline-none">
+                        <svg class="w-4 h-4 text-slate-800 hover:text-black transition-all ease-out duration-700 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                        </svg>
+                        <span class="sr-only">Next</span>
+                    </span>
+                </button>
             </div>
         </div>
         <div class="py-4 px-4 mx-auto max-w-screen-xl text-center z-10 relative">

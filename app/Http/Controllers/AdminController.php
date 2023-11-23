@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Berita;
 use App\Models\BeritaTerkait;
 use App\Models\Galeri;
+use App\Models\Peraturan;
 
 use App\Http\Requests\StoreBeritaRequest;
 use App\Http\Requests\UpdateBeritaRequest;
@@ -20,6 +21,7 @@ class AdminController extends Controller
     {   
         $berita = Berita::orderBy('created_at', 'desc')->paginate(4);
         $galeri = Galeri::orderBy('created_at', 'desc')->paginate(4);
+        $peraturan = Peraturan::LatestPeraturan(4);
 
         return view('pages.admin.index', [
             'title' => 'JDIH BPP | Admin',

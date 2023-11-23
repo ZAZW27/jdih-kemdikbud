@@ -10,7 +10,7 @@ class Peraturan extends Model
 {
     protected $table = 'tbl_peraturan';
 
-    public static function LatestPeraturan()
+    public static function LatestPeraturan($paginate = null)
     {
         $tbl_peraturan = DB::table('tbl_peraturan')
             ->join('nomor_peraturan', 'tbl_peraturan.nomor_id', '=', 'nomor_peraturan.id')
@@ -93,6 +93,10 @@ class Peraturan extends Model
                 'bpp_produk_hukum.file', 
                 DB::raw('2 AS model'),
             );
+
+        if ($paginate) {
+            return $tbl_peraturan->union($bpp_produk_hukum)->paginate($paginate);
+        }
 
         return $tbl_peraturan->union($bpp_produk_hukum)->get();
     }

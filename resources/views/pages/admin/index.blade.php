@@ -12,7 +12,7 @@
     <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg">
         <div class="flex justify-center py-2 mb-2 border-b-4 border-amber-400">
             <a href="{{route('getBerita.data')}}">
-                <h1 class="text-4xl font-bold text-sky-600">BERITA</h1>
+                <h1 class="text-4xl font-bold text-sky-600 hover:text-sky-700 transition-all duration-500 ease-">BERITA</h1>
             </a>
         </div>
         <div class="flex items-center justify-center h-auto pt-2 px-4 rounded">
@@ -93,7 +93,7 @@
         {{$berita->links()}}
         <div class="flex justify-center py-2 mb-2 border-b-4 border-amber-400 mt-6">
             <a href="{{route('getGaleri.data')}}">
-                <h1 class="text-4xl font-bold text-sky-600">GALERI</h1>
+                <h1 class="text-4xl font-bold text-sky-600 hover:text-sky-700 transition-all duration-500 ease-out">GALERI</h1>
             </a>
         </div>
         <div class="flex items-center justify-center h-auto pt-2 px-4 rounded">
