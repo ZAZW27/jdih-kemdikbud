@@ -13,6 +13,7 @@ use App\Http\Controllers\DokumenController;
 use App\Http\Controllers\PublikasiController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminBeritaController;
+use App\Http\Controllers\AdminGaleriController;
 
 // OTHER THINGS 
 use App\Http\Controllers\ArtikelController;
@@ -161,16 +162,12 @@ Route::post('/submit-form', [SurveyController::class, 'submitSurvey'])->name('su
 
 Route::get('/hasil-survey', [SurveyController::class, 'showSurvey'])->name('show_survey.data');
 
-// ===========================================================
-// ======================SECTION: ADMINS======================
-// ===========================================================
-Route::get('/admin', function () {// kontak page
-    return view('pages/admin/index');
-});
-
+// =================================================================================================
+// [[[[[[[[[[[[[[[[[[[[[[SECTION: ADMINS]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+// =================================================================================================
 Route::get('/admin', [AdminController::class, 'index'])->name('getAdmin.data');
 
-// ADMIN BERITA 
+// ===================== PAGE: BERITA ==========================================
 Route::get('/berita-admin', [AdminBeritaController::class, 'index'])->name('getBerita.data');
 Route::get('berita-edit/{id}', [AdminBeritaController::class, 'edit'])->name('edit-berita/');
 Route::get('/berita-baru', function () {return view('pages/admin/berita/insert');})->name('berita-baru');
@@ -178,3 +175,12 @@ Route::get('/berita-baru', function () {return view('pages/admin/berita/insert')
 Route::put('/process-update-berita', [AdminBeritaController::class, 'update'])->name('proses-update-berita');// update
 Route::post('/process-insert-berita', [AdminBeritaController::class, 'insert'])->name('proses-insert-berita');// insert
 Route::get('/process-delete-berita/{id}', [AdminBeritaController::class, 'delete'])->name('proses-delete-berita');// delete
+
+// ===================== PAGE: GALLERY ==========================================
+Route::get('/galeri-admin', [AdminGaleriController::class, 'index'])->name('getGaleri.data');
+Route::get('galeri-edit/{id}', [AdminGaleriController::class, 'edit'])->name('edit-galeri/');
+Route::get('/galeri-baru', function () {return view('pages/admin/galeri/insert');})->name('galeri-baru');
+
+Route::post('/process-insert-galeri', [AdminGaleriController::class, 'insert'])->name('proses-insert-galeri');// insert
+Route::put('/process-update-galeri', [AdminGaleriController::class, 'update'])->name('proses-update-galeri');// update
+Route::get('/process-delete-galeri/{id}', [AdminGaleriController::class, 'delete'])->name('proses-delete-galeri');// delete

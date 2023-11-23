@@ -1,6 +1,12 @@
 @include('pages.partials.__adminBar');
 
-
+<script>
+    Fancybox.bind('[data-fancybox="berita"], [data-fancybox="galeri"]', {
+        Carousel: {
+            transition: "classic",
+        },
+    });
+</script>
 
 <div class="p-4 sm:ml-64">
     <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg">
@@ -47,7 +53,9 @@
                         @foreach ($berita as $q)
                             <tr class="bg-white border-b hover:bg-sky-50">
                                 <td class="w-4 p-4">
-                                    <img src="{{asset('assets/img/berita/'.$q->gambar_berita)}}" alt="">
+                                    <a href="{{asset('assets/img/berita/'.$q->gambar_berita)}}" class="overflow-hidden" data-fancybox="berita" data-caption="{{$q->judul}}">
+                                        <img src="{{asset('assets/img/berita/'.$q->gambar_berita)}}" alt="">
+                                    </a>
                                 </td>
                                 <th scope="row" class="px-6 py-4">
                                     {{ Illuminate\Support\Str::limit($q->judul, $limit = 100, $end = '. . .') }}
@@ -84,7 +92,9 @@
         </div>
         {{$berita->links()}}
         <div class="flex justify-center py-2 mb-2 border-b-4 border-amber-400 mt-6">
-            <h1 class="text-4xl font-bold text-sky-600">GALERI</h1>
+            <a href="{{route('getGaleri.data')}}">
+                <h1 class="text-4xl font-bold text-sky-600">GALERI</h1>
+            </a>
         </div>
         <div class="flex items-center justify-center h-auto pt-2 px-4 rounded">
             <div class="relative overflow-x-auto sm:rounded-lg">
@@ -115,7 +125,10 @@
                         @foreach ($galeri as $q)
                             <tr class="bg-white border-b hover:bg-sky-50">
                                 <td class="w-4 p-4">
-                                    <img src="{{asset('assets/img/galeri/'.$q->gambar)}}" alt="">
+                                    <a href="{{asset('assets/img/galeri/'.$q->gambar)}}" class="overflow-hidden" data-fancybox="galeri" data-caption="{{$q->judul}}">
+                                        <img src="{{asset('assets/img/galeri/'.$q->gambar)}}" alt="">
+                                    </a>
+                                    {{-- <img src="{{asset('assets/img/galeri/'.$q->gambar)}}" alt=""> --}}
                                 </td>
                                 <th scope="row" class="px-6 py-4">
                                     {{ Illuminate\Support\Str::limit($q->judul, $limit = 100, $end = '. . .') }}

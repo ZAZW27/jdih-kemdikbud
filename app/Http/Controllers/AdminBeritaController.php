@@ -106,18 +106,12 @@ class AdminBeritaController extends Controller
 
             // MASUKKAN BARANG
             $berita->gambar_berita = $filename;
-            $berita->judul = $request->judul;
-            $berita->tema = $request->tema;
-            $berita->tanggal = $request->tanggal;
-            $berita->isi = $request->isi;
-            $berita->updated_at = $currTimeStamp;
-        }else{
-            $seeData = [
-                $judul, $tema, $isi, $tanggal, $gambar
-            ];
-
-            dd($seeData);
         }
+        $berita->judul = $request->judul;
+        $berita->tema = $request->tema;
+        $berita->tanggal = $request->tanggal;
+        $berita->isi = $request->isi;
+        $berita->updated_at = $currTimeStamp;
 
         
         // dd($validatedData);
