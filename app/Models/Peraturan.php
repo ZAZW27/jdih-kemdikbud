@@ -25,6 +25,7 @@ class Peraturan extends Model
                 'jenis_peraturan.id AS id_jenis',
                 'subjek_peraturan.id AS id_subjek',
                 'status_branch.id AS id_status',
+
                 'tbl_peraturan.judul_peraturan',
                 'nomor_peraturan.nomor AS nomor_peraturan',
                 'tahun_branch.tahun AS tahun_peraturan',
@@ -52,7 +53,8 @@ class Peraturan extends Model
                 DB::raw('NULL AS jenis_subjek'),
                 DB::raw('NULL AS file'),
                 DB::raw('1 AS model'),
-            );
+            )
+            ->orderBy('tbl_peraturan.tgl_penetapan', 'desc');
 
         $bpp_produk_hukum = DB::table('bpp_produk_hukum')
             ->join('jenis_peraturan', 'bpp_produk_hukum.id_jenis_peraturan', '=', 'jenis_peraturan.id')
@@ -92,7 +94,8 @@ class Peraturan extends Model
                 'bpp_produk_hukum.jenis_subjek',
                 'bpp_produk_hukum.file', 
                 DB::raw('2 AS model'),
-            );
+            )
+            ->orderBy('bpp_produk_hukum.tanggal_penetapan', 'desc');
 
         if ($paginate) {
             return $tbl_peraturan->union($bpp_produk_hukum)->paginate($paginate);

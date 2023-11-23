@@ -14,6 +14,7 @@ use App\Http\Controllers\PublikasiController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminBeritaController;
 use App\Http\Controllers\AdminGaleriController;
+use App\Http\Controllers\AdminPeraturanController;
 
 // OTHER THINGS 
 use App\Http\Controllers\ArtikelController;
@@ -184,3 +185,12 @@ Route::get('/galeri-baru', function () {return view('pages/admin/galeri/insert')
 Route::post('/process-insert-galeri', [AdminGaleriController::class, 'insert'])->name('proses-insert-galeri');// insert
 Route::put('/process-update-galeri', [AdminGaleriController::class, 'update'])->name('proses-update-galeri');// update
 Route::get('/process-delete-galeri/{id}', [AdminGaleriController::class, 'delete'])->name('proses-delete-galeri');// delete
+
+// ===================== PAGE: PERATURAN ==========================================
+Route::get('/peraturan-admin', [AdminPeraturanController::class, 'index'])->name('getPeraturan.data');
+Route::get('peraturan-edit/{id}', [AdminPeraturanController::class, 'edit'])->name('edit-peraturan/');
+Route::get('/peraturan-baru', function () {return view('pages/admin/peraturan/insert');})->name('peraturan-baru');
+
+Route::post('/process-insert-peraturan', [AdminPeraturanController::class, 'insert'])->name('proses-insert-peraturan');// insert
+Route::put('/process-update-peraturan', [AdminPeraturanController::class, 'update'])->name('proses-update-peraturan');// update
+Route::get('/process-delete-peraturan/{id}', [AdminPeraturanController::class, 'delete'])->name('proses-delete-peraturan');// delete

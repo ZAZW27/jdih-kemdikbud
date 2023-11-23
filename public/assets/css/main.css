@@ -1069,6 +1069,12 @@ footer .footer-format{
 .custom-input:focus {
    outline: none !important; /* Remove the outline when in focus */
 }
+
+.judul-peraturan-admin {
+   line-height: 1;
+   font-size: 1.2rem;
+   font-weight: 500;
+}
 @media screen and (max-width: 1024px) {
    .containers {
        max-width: 100%;
@@ -1176,3 +1182,4 @@ footer .footer-format{
    90% {margin-left: -300vw;}
  }
 /* custom scrollbar */
+

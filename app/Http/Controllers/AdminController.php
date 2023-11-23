@@ -28,6 +28,7 @@ class AdminController extends Controller
             'active' => 'adminDash', 
             'berita' => $berita,
             'galeri' => $galeri,
+            'peraturan' => $peraturan,
         ]);
     }
 
