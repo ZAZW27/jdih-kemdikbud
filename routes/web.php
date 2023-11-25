@@ -15,6 +15,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminBeritaController;
 use App\Http\Controllers\AdminGaleriController;
 use App\Http\Controllers\AdminPeraturanController;
+use App\Http\Controllers\AdminDokumenController;
 
 // OTHER THINGS 
 use App\Http\Controllers\ArtikelController;
@@ -194,3 +195,12 @@ Route::get('/peraturan-baru', function () {return view('pages/admin/peraturan/in
 Route::post('/process-insert-peraturan', [AdminPeraturanController::class, 'insert'])->name('proses-insert-peraturan');// insert
 Route::put('/process-update-peraturan', [AdminPeraturanController::class, 'update'])->name('proses-update-peraturan');// update
 Route::get('/process-delete-peraturan/{id}', [AdminPeraturanController::class, 'delete'])->name('proses-delete-peraturan');// delete
+
+// ===================== PAGE: DOKUMEN ==========================================
+Route::get('/dokumen-admin', [AdminDokumenController::class, 'index'])->name('getDokumen.data');
+Route::get('dokumen-edit/{id}', [AdminDokumenController::class, 'edit'])->name('edit-dokumen/');
+Route::get('/dokumen-baru', function () {return view('pages/admin/dokumen/insert');})->name('dokumen-baru');
+
+Route::post('/process-insert-dokumen', [AdminDokumenController::class, 'insert'])->name('proses-insert-dokumen');// insert
+Route::put('/process-update-dokumen', [AdminDokumenController::class, 'update'])->name('proses-update-dokumen');// update
+Route::get('/process-delete-dokumen/{id}', [AdminDokumenController::class, 'delete'])->name('proses-delete-dokumen');// delete

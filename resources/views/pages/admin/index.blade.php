@@ -39,10 +39,10 @@
                                 Dilihat
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Created
+                                Created at
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Updated
+                                Updated at
                             </th>
                             <th scope="col" class="px-6 py-3">
                                 Action
@@ -73,10 +73,10 @@
                                     120
                                 </td>
                                 <td class="px-1 py-4">
-                                    2023-11-05 17:12:58
+                                    {{$q->created_at}}   
                                 </td>
                                 <td class="px-1 py-4">
-                                    2023-11-05 17:12:58
+                                    {{$q->updated_at}}   
                                 </td>
                                 <td class="px-1 py-4">
                                     <div class="flex flex-row justify-center align-center items-center px-2 py-4">
@@ -111,10 +111,10 @@
                                 excerpt
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Created
+                                Created at
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Updated
+                                Updated at
                             </th>
                             <th scope="col" class="px-6 py-3">
                                 Action
@@ -137,10 +137,10 @@
                                     {{$q->exerpt}}
                                 </td>
                                 <td class="px-1 py-4">
-                                    2023-11-05 17:12:58
+                                    {{$q->created_at}}   
                                 </td>
                                 <td class="px-1 py-4">
-                                    2023-11-05 17:12:58
+                                    {{$q->updated_at}}   
                                 </td>
                                 <td class="px-1 py-4">
                                     <div class="flex flex-row justify-center align-center items-center px-2 py-4">
@@ -237,6 +237,12 @@
                                 File
                             </th>
                             <th scope="col" class="px-6 py-3">
+                                Created at
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Updated 
+                            </th>
+                            <th scope="col" class="px-6 py-3">
                                 Action
                             </th>
                         </tr>
@@ -315,6 +321,12 @@
                                     {{$per->file}}
                                 </td>
                                 <td class="px-1 py-4">
+                                    {{$q->created_at}}   
+                                </td>
+                                <td class="px-1 py-4">
+                                    {{$q->updated_at}}   
+                                </td>
+                                <td class="px-1 py-4">
                                     <div class="flex flex-row justify-center align-center items-center px-2 py-4">
                                         <a href="#" class="font-medium text-blue-600 hover:underline">Edit</a>
                                         <a href="#" class="font-medium text-red-600 hover:underline ms-3">Remove</a>
@@ -327,6 +339,80 @@
             </div>
         </div>
         {{$peraturan->links()}}
+
+        <div class="flex justify-center py-2 mb-2 border-b-4 border-amber-400 mt-6">
+            <a href="{{route('getDokumen.data')}}">
+                <h1 class="text-4xl font-bold text-sky-600 hover:text-sky-700 transition-all duration-500 ease-out">DOKUMEN</h1>
+            </a>
+        </div>
+        <div class="flex items-center justify-center h-auto pt-2 px-4 rounded">
+            <div class="relative overflow-x-auto sm:rounded-lg">
+                <table class="w-full text-sm shadow-md text-left rtl:text-right text-gray-500">
+                    <thead class="text-xs text-sky-50 uppercase bg-blue-900">
+                        <tr>
+                            <th scope="col" class="p-4 px-6">
+                                OPD
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Peraturan
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Judul
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                status
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                keterangan
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Created at
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Updated at
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($dokumen as $q)
+                            <tr class="bg-white border-b hover:bg-sky-50">
+                                <td class="px-6 py-4">
+                                    {{$q->OPD}}
+                                </td>
+                                <td class="px-6 py-4">
+                                    {{$q->peraturan}}
+                                </td>
+                                <th scope="row" class="px-6 py-4">
+                                    {{ Illuminate\Support\Str::limit($q->judul_dok, $limit = 100, $end = '. . .') }}
+                                </th>
+                                <td class="px-1 py-4">
+                                    {{$q->status_dok}}
+                                </td>
+                                <td class="px-1 py-4">
+                                    {{$q->keterangan_dok}}   
+                                </td>
+                                <td class="px-1 py-4">
+                                    {{$q->created_at}}   
+                                </td>
+                                <td class="px-1 py-4">
+                                    {{$q->updated_at}}   
+                                </td>
+                                <td class="px-1 py-4">
+                                    <div class="flex flex-row justify-center align-center items-center px-2 py-4">
+                                        <a href="#" class="font-medium text-blue-600 hover:underline">Edit</a>
+                                        <a href="#" class="font-medium text-red-600 hover:underline ms-3">Remove</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {{$dokumen->links()}}
     </div>
 </div>
 
