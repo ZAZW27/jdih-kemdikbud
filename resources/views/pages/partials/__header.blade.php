@@ -260,7 +260,7 @@
                         </ul>
                     </li>
                     <li class="md:absolute block right-4">
-                        <a href="{{route('getAdmin.data')}}" class="text-sm block py-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:px-3 md:py-3 bg-blue-300 rounded-xl transition-all duration-300 ease-in-out">
+                        <a href="" class="text-sm block py-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:px-3 md:py-3 bg-blue-300 rounded-xl transition-all duration-300 ease-in-out">
                             LOGIN
                         </a>
                     </li>
