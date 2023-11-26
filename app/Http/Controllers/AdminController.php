@@ -25,7 +25,7 @@ class AdminController extends Controller
         $peraturan = Peraturan::LatestPeraturan(4);
         $dokumen = BppDokumen::orderBy('created_at', 'desc')->paginate(4);
 
-        return view('pages.admin.index', [
+        return view('pages.admin.admin', [
             'title' => 'JDIH BPP | Admin',
             'active' => 'adminDash', 
             'berita' => $berita,

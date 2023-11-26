@@ -11,6 +11,8 @@ class BppDokumen extends Model
 {
     protected $table = "bpp_dokumen";
 
+    protected $guarded = [];
+
     public function latestDocument(){
         return $this->orderBy('created_at', 'desc')->get();
     }
