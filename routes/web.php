@@ -7,6 +7,7 @@ use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\PeraturanController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\JdihProfileController;
 use App\Http\Controllers\MainPageController;
 use App\Http\Controllers\SurveyController;
 use App\Http\Controllers\DokumenController;
@@ -113,7 +114,7 @@ Route::get('bpp-struktur-organisasi', function () {// struktur organisasi
     return view('pages/profil/lainnya/struktur-organisasi');
 });
 
-Route::get('/bpp-penagalaman-jdih', [ProfileController::class, 'index'])->name('bpp-pengelola-jdih');
+Route::get('/bpp-pengalaman-jdih', [JdihProfileController::class, 'index'])->name('bpp-pengelola-jdih');
 
 Route::get('bpp-pengelola-jdih', function () {// pengelola JDIH
     return view('pages/profil/lainnya/pengelola-jdih');
@@ -191,40 +192,40 @@ Route::get('/hasil-survey', [SurveyController::class, 'showSurvey'])->name('show
 // =================================================================================================
 // [[[[[[[[[[[[[[[[[[[[[[SECTION: ADMINS]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
 // =================================================================================================
-Route::get('/admin', [AdminController::class, 'index'])->name('getAdmin.data')->middleware(['auth', 'verified'])->name('dashboard');;
+Route::get('/admin', [AdminController::class, 'index'])->middleware(['auth', 'verified'])->name('getAdmin.data');
 
 // ===================== PAGE: BERITA ==========================================
-Route::get('/berita-admin', [AdminBeritaController::class, 'index'])->name('getBerita.data')->middleware(['auth', 'verified'])->name('dashboard');;
-Route::get('berita-edit/{id}', [AdminBeritaController::class, 'edit'])->name('edit-berita/')->middleware(['auth', 'verified'])->name('dashboard');;
-Route::get('/berita-baru', function () {return view('pages/admin/berita/insert');})->name('berita-baru')->middleware(['auth', 'verified'])->name('dashboard');;
+Route::get('/berita-admin', [AdminBeritaController::class, 'index'])->middleware(['auth', 'verified'])->name('getBerita.data');
+Route::get('berita-edit/{id}', [AdminBeritaController::class, 'edit'])->middleware(['auth', 'verified'])->name('edit-berita/');
+Route::get('/berita-baru', function () {return view('pages/admin/berita/insert');})->middleware(['auth', 'verified'])->name('berita-baru');
 
-Route::put('/process-update-berita', [AdminBeritaController::class, 'update'])->name('proses-update-berita')->middleware(['auth', 'verified'])->name('dashboard');;// update
-Route::post('/process-insert-berita', [AdminBeritaController::class, 'insert'])->name('proses-insert-berita')->middleware(['auth', 'verified'])->name('dashboard');;// insert
-Route::get('/process-delete-berita/{id}', [AdminBeritaController::class, 'delete'])->name('proses-delete-berita')->middleware(['auth', 'verified'])->name('dashboard');;// delete
+Route::put('/process-update-berita', [AdminBeritaController::class, 'update'])->middleware(['auth', 'verified'])->name('proses-update-berita');// update
+Route::post('/process-insert-berita', [AdminBeritaController::class, 'insert'])->middleware(['auth', 'verified'])->name('proses-insert-berita');// insert
+Route::get('/process-delete-berita/{id}', [AdminBeritaController::class, 'delete'])->middleware(['auth', 'verified'])->name('proses-delete-berita');// delete
 
 // ===================== PAGE: GALLERY ==========================================
-Route::get('/galeri-admin', [AdminGaleriController::class, 'index'])->name('getGaleri.data')->middleware(['auth', 'verified'])->name('dashboard');;
-Route::get('galeri-edit/{id}', [AdminGaleriController::class, 'edit'])->name('edit-galeri/')->middleware(['auth', 'verified'])->name('dashboard');;
-Route::get('/galeri-baru', function () {return view('pages/admin/galeri/insert');})->name('galeri-baru')->middleware(['auth', 'verified'])->name('dashboard');;
+Route::get('/galeri-admin', [AdminGaleriController::class, 'index'])->middleware(['auth', 'verified'])->name('getGaleri.data');
+Route::get('galeri-edit/{id}', [AdminGaleriController::class, 'edit'])->middleware(['auth', 'verified'])->name('edit-galeri/');
+Route::get('/galeri-baru', function () {return view('pages/admin/galeri/insert');})->middleware(['auth', 'verified'])->name('galeri-baru');
 
-Route::post('/process-insert-galeri', [AdminGaleriController::class, 'insert'])->name('proses-insert-galeri')->middleware(['auth', 'verified'])->name('dashboard');;// insert
-Route::put('/process-update-galeri', [AdminGaleriController::class, 'update'])->name('proses-update-galeri')->middleware(['auth', 'verified'])->name('dashboard');;// update
-Route::get('/process-delete-galeri/{id}', [AdminGaleriController::class, 'delete'])->name('proses-delete-galeri')->middleware(['auth', 'verified'])->name('dashboard');;// delete
+Route::post('/process-insert-galeri', [AdminGaleriController::class, 'insert'])->middleware(['auth', 'verified'])->name('proses-insert-galeri');// insert
+Route::put('/process-update-galeri', [AdminGaleriController::class, 'update'])->middleware(['auth', 'verified'])->name('proses-update-galeri');// update
+Route::get('/process-delete-galeri/{id}', [AdminGaleriController::class, 'delete'])->middleware(['auth', 'verified'])->name('proses-delete-galeri');// delete
 
 // ===================== PAGE: PERATURAN ==========================================
-Route::get('/peraturan-admin', [AdminPeraturanController::class, 'index'])->name('getPeraturan.data')->middleware(['auth', 'verified'])->name('dashboard');;
-Route::get('peraturan-edit/{id}', [AdminPeraturanController::class, 'edit'])->name('edit-peraturan/')->middleware(['auth', 'verified'])->name('dashboard');;
-Route::get('/peraturan-baru', function () {return view('pages/admin/peraturan/insert');})->name('peraturan-baru')->middleware(['auth', 'verified'])->name('dashboard');;
+Route::get('/peraturan-admin', [AdminPeraturanController::class, 'index'])->middleware(['auth', 'verified'])->name('getPeraturan.data');
+Route::get('peraturan-edit/{id}', [AdminPeraturanController::class, 'edit'])->middleware(['auth', 'verified'])->name('edit-peraturan/');
+Route::get('/peraturan-baru', function () {return view('pages/admin/peraturan/insert');})->middleware(['auth', 'verified'])->name('peraturan-baru');
 
-Route::post('/process-insert-peraturan', [AdminPeraturanController::class, 'insert'])->name('proses-insert-peraturan')->middleware(['auth', 'verified'])->name('dashboard');;// insert
-Route::put('/process-update-peraturan', [AdminPeraturanController::class, 'update'])->name('proses-update-peraturan')->middleware(['auth', 'verified'])->name('dashboard');;// update
-Route::get('/process-delete-peraturan/{id}', [AdminPeraturanController::class, 'delete'])->name('proses-delete-peraturan')->middleware(['auth', 'verified'])->name('dashboard');;// delete
+Route::post('/process-insert-peraturan', [AdminPeraturanController::class, 'insert'])->middleware(['auth', 'verified'])->name('proses-insert-peraturan');// insert
+Route::put('/edit-peraturan', [AdminPeraturanController::class, 'update'])->middleware(['auth', 'verified'])->name('proses-update-peraturan');// update
+Route::get('/process-delete-peraturan/{id}', [AdminPeraturanController::class, 'delete'])->middleware(['auth', 'verified'])->name('proses-delete-peraturan');// delete
 
 // ===================== PAGE: DOKUMEN ==========================================
-Route::get('/dokumen-admin', [AdminDokumenController::class, 'index'])->name('getDokumen.data')->middleware(['auth', 'verified'])->name('dashboard');;
-Route::get('dokumen-edit/{id}', [AdminDokumenController::class, 'edit'])->name('edit-dokumen/')->middleware(['auth', 'verified'])->name('dashboard');;
-Route::get('/dokumen-baru', function () {return view('pages/admin/dokumen/insert');})->name('dokumen-baru')->middleware(['auth', 'verified'])->name('dashboard');;
+Route::get('/dokumen-admin', [AdminDokumenController::class, 'index'])->middleware(['auth', 'verified'])->name('getDokumen.data');
+Route::get('dokumen-edit/{id}', [AdminDokumenController::class, 'edit'])->middleware(['auth', 'verified'])->name('edit-dokumen/');
+Route::get('/dokumen-baru', function () {return view('pages/admin/dokumen/insert');})->middleware(['auth', 'verified'])->name('dokumen-baru');
 
-Route::post('/process-insert-dokumen', [AdminDokumenController::class, 'insert'])->name('proses-insert-dokumen')->middleware(['auth', 'verified'])->name('dashboard');;// insert
-Route::put('/process-update-dokumen', [AdminDokumenController::class, 'update'])->name('proses-update-dokumen')->middleware(['auth', 'verified'])->name('dashboard');;// update
-Route::get('/process-delete-dokumen/{id}', [AdminDokumenController::class, 'delete'])->name('proses-delete-dokumen')->middleware(['auth', 'verified'])->name('dashboard');;// delete
+Route::post('/process-insert-dokumen', [AdminDokumenController::class, 'insert'])->middleware(['auth', 'verified'])->name('proses-insert-dokumen');// insert
+Route::put('/process-update-dokumen', [AdminDokumenController::class, 'update'])->middleware(['auth', 'verified'])->name('proses-update-dokumen');// update
+Route::get('/process-delete-dokumen/{id}', [AdminDokumenController::class, 'delete'])->middleware(['auth', 'verified'])->name('proses-delete-dokumen');// delete

@@ -80,8 +80,8 @@
                                 </td>
                                 <td class="px-1 py-4">
                                     <div class="flex flex-row justify-center align-center items-center px-2 py-4">
-                                        <a href="#" class="font-medium text-blue-600 hover:underline">Edit</a>
-                                        <a href="#" class="font-medium text-red-600 hover:underline ms-3">Remove</a>
+                                        <a href="{{route('edit-berita/', ['id' => $q->id])}}" class="font-medium text-blue-600 hover:underline">Edit</a>
+                                        <a href="#" onclick="confirmDeleteBerita({{ $q->id }})" class="font-medium text-red-600 hover:underline ms-3">Remove</a>
                                     </div>
                                 </td>
                             </tr>
@@ -145,7 +145,7 @@
                                 <td class="px-1 py-4">
                                     <div class="flex flex-row justify-center align-center items-center px-2 py-4">
                                         <a href="#" class="font-medium text-blue-600 hover:underline">Edit</a>
-                                        <a href="#" class="font-medium text-red-600 hover:underline ms-3">Remove</a>
+                                        <a href="#" onclick="confirmDeleteGaleri({{ $q->id }})" class="font-medium text-red-600 hover:underline ms-3">Remove</a>
                                     </div>
                                 </td>
                             </tr>
@@ -403,7 +403,7 @@
                                 <td class="px-1 py-4">
                                     <div class="flex flex-row justify-center align-center items-center px-2 py-4">
                                         <a href="#" class="font-medium text-blue-600 hover:underline">Edit</a>
-                                        <a href="#" class="font-medium text-red-600 hover:underline ms-3">Remove</a>
+                                        <a href="#" onclick="confirmDeleteDok({{ $q->id }})" class="font-medium text-red-600 hover:underline ms-3">Remove</a>
                                     </div>
                                 </td>
                             </tr>
@@ -415,7 +415,46 @@
         {{$dokumen->links()}}
     </div>
 </div>
+<script>
+    function confirmDeleteBerita(id) {
+        var confirmation = window.confirm("Are you sure you want to delete this berita?");
 
+        if (confirmation) {
+            // If the user confirms, redirect to the delete route
+            window.location.href = "{{ url('/process-delete-berita') }}/" + id;
+        } else {
+            // If the user cancels, do nothing or show a message
+            // You can customize this part based on your requirements
+            console.log("Deletion canceled");
+        }
+    }
+
+    function confirmDeleteDok(id) {
+        var confirmation = window.confirm("Are you sure you want to delete this berita?");
+
+        if (confirmation) {
+            // If the user confirms, redirect to the delete route
+            window.location.href = "{{ url('/process-delete-dokumen') }}/" + id;
+        } else {
+            // If the user cancels, do nothing or show a message
+            // You can customize this part based on your requirements
+            console.log("Deletion canceled");
+        }
+    }
+
+    function confirmDeleteGaleri(id) {
+        var confirmation = window.confirm("Apakah anda yakin ingin menghapus galeri ini?");
+
+        if (confirmation) {
+            // If the user confirms, redirect to the delete route
+            window.location.href = "{{ url('/process-delete-galeri') }}/" + id;
+        } else {
+            // If the user cancels, do nothing or show a message
+            // You can customize this part based on your requirements
+            console.log("Deletion canceled");
+        }
+    }
+</script>
 
 
 

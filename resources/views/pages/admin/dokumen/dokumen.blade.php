@@ -9,7 +9,7 @@
 <div class="p-4 sm:ml-64">
     <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg">
         <div class="relative top-[0px] md:top-[50px] right-0">
-            <a href="{{route('berita-baru')}}" class="flex justify-center w-20 h-auto bg-blue-500 rounded-lg drop-shadow-md text-white font-semibold py-1">NEW+</a>
+            <a href="{{route('dokumen-baru')}}" class="flex justify-center w-20 h-auto bg-blue-500 rounded-lg drop-shadow-md text-white font-semibold py-1">NEW+</a>
         </div>
         <div class="flex justify-center py-2 mb-2 border-b-4 border-amber-400">
             <h1 class="text-4xl font-bold  text-sky-600">DOKUMEN</h1>
@@ -67,12 +67,12 @@
                                 {{$q->created_at}}   
                             </td>
                             <td class="px-1 py-4">
-                                {{$q->updated_at}}   
+                                {{$q->updated_at}}
                             </td>
                             <td class="px-1 py-4">
                                 <div class="flex flex-row justify-center align-center items-center px-2 py-4">
-                                    <a href="#" class="font-medium text-blue-600 hover:underline">Edit</a>
-                                    <a href="#" class="font-medium text-red-600 hover:underline ms-3">Remove</a>
+                                    <a href="{{route('edit-dokumen/', ['id' => $q->id])}}" class="font-medium text-blue-600 hover:underline">Edit</a>
+                                    <a href="#" onclick="confirmDelete({{ $q->id }})" class="font-medium text-red-600 hover:underline ms-3">Remove</a>
                                 </div>
                             </td>
                         </tr>
@@ -89,7 +89,7 @@
 
         if (confirmation) {
             // If the user confirms, redirect to the delete route
-            window.location.href = "{{ url('/process-delete-berita') }}/" + id;
+            window.location.href = "{{ url('/process-delete-dokumen') }}/" + id;
         } else {
             // If the user cancels, do nothing or show a message
             // You can customize this part based on your requirements

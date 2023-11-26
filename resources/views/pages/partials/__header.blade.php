@@ -260,9 +260,16 @@
                         </ul>
                     </li>
                     <li class="md:absolute block right-4">
-                        <a href="" class="text-sm block py-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:px-3 md:py-3 bg-blue-300 rounded-xl transition-all duration-300 ease-in-out">
-                            LOGIN
-                        </a>
+                        @guest
+                            <a href="{{ route('login') }}" class="text-sm block py-2 text-slate-50 hover:text-slate-500 rounded-xl md:font-bold font-semibold hover:font-semibold hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-sky-700 md:p-0 md:px-3 md:py-3 bg-blue-500  transition-all duration-300 ease-in-out">
+                                LOGIN
+                            </a>
+                        @else
+                            <!-- You can customize this part to show different content for logged-in users -->
+                            <a href="{{ url('/admin') }}" class="text-sm block py-2 text-slate-50 hover:text-slate-500 rounded-xl md:font-bold font-semibold hover:font-semibold hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-sky-700 md:p-0 md:px-3 md:py-3 bg-blue-500  transition-all duration-300 ease-in-out">
+                                {{ Auth::user()->name }}
+                            </a>
+                        @endguest
                     </li>
                 </ul>
             </div>

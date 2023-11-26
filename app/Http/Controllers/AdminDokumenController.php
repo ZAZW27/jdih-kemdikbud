@@ -24,55 +24,45 @@ class AdminDokumenController extends Controller
 
         return view('pages.admin.dokumen.dokumen', [
             'title' => 'JDIH BPP | Admin',
-            'active' => 'd  okumen',
+            'active' => 'dokumen',
             'dokumen' => $dokumen,
         ]);
     }
 
     public function insert(Request $request){
-        $berita = new BErita();
+        $dok = new BppDokumen();
 
         $judul = $request->input('judul');
-        $tema = $request->input('tema');
-        $isi = $request->input('isi');
-        $tanggal = $request->input('tanggal');
-        $gambar = $request->file('gambar');   
+        $status = $request->input('status');
+        $peraturan = $request->input('peraturan');
+        $opd = $request->input('opd');
+        $keterangan = $request->input('keterangan');   
         
-        if ($request->hasfile('gambar')) {
-            $file = $request->file('gambar');
-            $extension = $file->getClientOriginalName();
-            $filename = time() . '_' . str_replace(' ', '_', $extension);
-            $file->move('assets/img/berita', $filename);
-
-            // MASUKKAN BARANG
-            $berita->gambar_berita = $filename;
-            $berita->judul = $judul;
-            $berita->tema = $tema;
-            $berita->isi = $isi;
-            $berita->tanggal = $tanggal;
-            $berita->dilihat = 0;
-            $berita->tautan = 'null';
-            // dd($filename);
+        if ($status != null) {
+            // dd($status);
+            $dok->status_dok = 'Selesai';
         }
         else{
-            $seeData = [
-                $judul, $tema, $isi, $tanggal, $gambar
-            ];
-
-            dd($seeDataa);
+            // dd($status);
+            $dok->status_dok = 'Paraf Koordinasi';
         }
 
-        $berita->save();
+        $dok->OPD = $opd;
+        $dok->peraturan = $peraturan;
+        $dok->judul_dok = $judul;
+        $dok->keterangan_dok = $keterangan;
 
-        return redirect()->route('berita-baru');
+        $dok->save();
+
+        return redirect()->route('dokumen-baru');
     }
 
     public function edit($id){
-        $detail_berita = Berita::where('id', $id)->first();
+        $detail_dokumen = BppDokumen::where('id', $id)->first();
 
-        return view('pages.admin.berita.update', [
-            'title' => 'JDIH | Update berita', 
-            'berita' => $detail_berita, 
+        return view('pages.admin.dokumen.update', [
+            'title' => 'JDIH | Update dokumen', 
+            'data' => $detail_dokumen, 
         ]);
     }
 
@@ -81,53 +71,58 @@ class AdminDokumenController extends Controller
         $validatedData = $request->validate([
             'id' => 'required|integer',
             'judul' => 'required|string',
-            'gambar' => 'image|mimes:jpeg,png,jpg,svg', // Adjust as needed
-            'tema' => 'required|string',
-            'tanggal' => 'required|date',
-            'isi' => 'required|string',
+            // 'status' => 'boolean', // Adjust as needed
+            'peraturan' => 'required|string',
+            'opd' => 'required|string',
+            'keterangan' => 'required|string',
         ]);
+
         $currTimeStamp = now()->toDateTimeString();
 
         $id = $request->id;
 
-        $berita = Berita::findOrFail($id);
+        $dok = BppDokumen::findOrFail($id);
 
-        // Handle file upload if a new file is provided
-        if ($request->hasfile('gambar')) {
-            $file = $request->file('gambar');
-            $extension = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $extension;
-            // $file->move('uplloads/berita', $filename);
-            $file->move('assets/img/berita', $filename);
-
-            // MASUKKAN BARANG
-            $berita->gambar_berita = $filename;
+        $judul = $request->input('judul');
+        $status = $request->input('status');
+        $peraturan = $request->input('peraturan');
+        $opd = $request->input('opd');
+        $keterangan = $request->input('keterangan');   
+        
+        if ($status != null) {
+            // dd($status);
+            $dok->status_dok = 'Selesai';
         }
-        $berita->judul = $request->judul;
-        $berita->tema = $request->tema;
-        $berita->tanggal = $request->tanggal;
-        $berita->isi = $request->isi;
-        $berita->updated_at = $currTimeStamp;
+        else{
+            // dd($status);
+            $dok->status_dok = 'Paraf Koordinasi';
+        }
+
+        $dok->OPD = $opd;
+        $dok->peraturan = $peraturan;
+        $dok->judul_dok = $judul;
+        $dok->keterangan_dok = $keterangan;
+        $dok->updated_at = $currTimeStamp;
 
         
         // dd($validatedData);
-        // dd($berita);
+        // dd($dok);
 
 
         // Save the updated berita
-        $berita->save();
-        return redirect()->route('getBerita.data')->with('success', 'Berita updated successfully');
+        $dok->save();
+        return redirect()->route('getDokumen.data')->with('success', 'Berita updated successfully');
     }
 
     public function delete($id){
-        $berita = Berita::find($id);
+        $dok = BppDokumen::find($id);
 
-        if (!$berita) {
-            return "Berita dengan id $id tidak ada";
+        if (!$dok) {
+            return "Dokumen dengan id $id tidak ada";
         }
 
-        $berita->delete();
+        $dok->delete();
 
-        return redirect()->route('getBerita.data')->with('success', 'berita telah dihapus');
+        return redirect()->route('getDokumen.data')->with('success', 'Dokumen telah dihapus');
     }
 }

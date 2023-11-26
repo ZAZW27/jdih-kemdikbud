@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('bpp_dokumen', function (Blueprint $table) {
             $table->id();
             $table->string('OPD');
-            $table->enum('peraturan', ['PERATURAN WALIKOTA', 'INSTRUKSI WALIKOTA', 'KEPUTUSAN WALIKOTA']);
+            $table->string('peraturan');
             $table->string('judul_dok');
             $table->enum('status_dok', ['Paraf Koordinasi', 'Selesai']);
             $table->string('keterangan_dok');
