@@ -1,33 +1,30 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-// CONTROLLERS
-use App\Http\Controllers\BeritaController;
-use App\Http\Controllers\PengumumanController;
-use App\Http\Controllers\PeraturanController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\MainPageController;
-use App\Http\Controllers\SurveyController;
-use App\Http\Controllers\DokumenController;
-use App\Http\Controllers\PublikasiController;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\AdminBeritaController;
-use App\Http\Controllers\AdminGaleriController;
-use App\Http\Controllers\AdminPeraturanController;
-use App\Http\Controllers\AdminDokumenController;
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
+|
+*/
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-// OTHER THINGS 
-use App\Http\Controllers\ArtikelController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\GlosariumController;
-use App\Http\Controllers\MonografiController;
-use App\Http\Controllers\InfografisController;
-use App\Http\Controllers\TulisanHukumController;
-use App\Http\Controllers\CatatanBeritaController;
-use App\Http\Controllers\PutusanPengadilanController;
-use App\Http\Controllers\MatriksPerbandinganController;
-use App\Http\Controllers\TerjemahanPeraturanController;
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';
+
 
 /*
 |--------------------------------------------------------------------------
