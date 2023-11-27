@@ -11,9 +11,8 @@
 </script>
 
 <script async src="{{asset('assets/js/main/modals.js')}}"></script>
-    <div class="containers md:h-[30rem] h-[120svh] overflow-hidden">
+    <div class="containers md:h-[30rem] h-[120svh]">
         <div class="sticky md:top-24 top-[0px]">
-            
             <div id="carousel-banner" class="relative w-full" data-carousel="slide">
                 <!-- Carousel wrapper -->
                 <div class="relative overflow-hidden rounded-lg md:h-[30rem] h-[100svh]">
@@ -63,20 +62,46 @@
                 <div class="relative w-[100svw] h-full py-4 px-4 mx-auto max-w-screen-xl text-center pt-16 z-[20]">
                     <div class="col-span-12 md:col-span-12 sm:col-span-12 mt-2 animate__animated animate__fadeInUp" id="detail_peraturan">
                         <div class="row-span-3 col-span-12 ">
-                            <div class="absolute top-0 md:-left-[9rem] -left-[0rem] md:w-[115svw] w-[100svw] h-full banner-gradient">
+                            <div class="z-[11] absolute top-0 md:-left-[9rem] -left-[0rem] md:w-[115svw] w-[100svw] h-full banner-gradient"></div>
+                            <div class="absolute top-0 md:-left-[9rem] -left-[0rem] md:w-[115svw] w-[100svw] h-full">
+                                <div class="mt-[10rem] w-[100vw] flex flex-col items-center justify-start  md:ml-10">
+                                    <div id="logoContainer" class="z-[22] md:w-[33rem] w-[90vw] bg-blue-500/50">
+                                        <img src="{{ asset('assets/img/logo/helarctos-malayanus.png') }}" alt="">
+                                        <!-- Placeholder content, e.g., a loading spinner or text -->
+                                    </div>
+                                    
+                                    {{-- <script>
+                                        window.addEventListener('load', function () {
+                                            // Get the container and create an image element
+                                            var logoContainer = document.getElementById('logoContainer');
+                                            var imageElement = document.createElement('img');
+                                    
+                                            // Set the source attribute of the image
+                                            imageElement.src = "{{ asset('assets/img/logo/helarctos-malayanus.png') }}";
+                                    
+                                            // Append the image to the container
+                                            logoContainer.appendChild(imageElement);
+                                        });
+                                    </script> --}}
+                                    <div class="z-[20] absolute md:hidden top-4 h-[30rem] banner-title opacity-20 backgdrop-blur" >
+                                        <div class="sticky top-16 font-bold text-white" style="font-size: 15vw;">
+                                            BALIKPAPAN
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <form class="relative domain-form z-[20]" action="{{route('get_peraturan.data')}}" method="post">
+                            <form class="relative domain-form z-[24]" action="{{route('get_peraturan.data')}}" method="post">
                                 @csrf
                                 <div class="relative flex justify-center items-center">
 
-                                    <div class="relative w-[50%] flex flex-row justify-center md:items-center">
+                                    <div class="relative md:w-[50%] w-[80%] flex flex-row justify-center md:items-center">
                                         <div class="flex justify-center items-end md:items-center md:space-x-4 tutup animate-slide-left mt-24 w-full  md:h-[20rem] h-[58svh]">
                                             <input name="search-peraturan" type="text" id="judul" class="w-[100%] pl-2 pr-4 py-3 border-0 rounded-lg focus:outline-none focus:ring focus:border-blue-300" placeholder="Cari peraturan dan dokumen disini">
-                                            <div class="absolute flex md:right-1 md:mb-0 mb-12 -right-4 justify-center items-center md:mt-0 " id="filter-button">
-                                                <button type="submit" class="bg-blue-500 text-white px-4 py-2 mr-1 h-8 rounded-r focus:outline-none focus:ring focus:border-blue-300 hover:bg-red-500 rounded-lg">
+                                            <div class="absolute flex md:right-1 md:mb-0 mb-[50px] -right-4 justify-center items-center md:mt-0 " id="filter-button">
+                                                <button type="submit" class="bg-blue-500 text-white px-4 py-2 mr-1 h-10 rounded-r focus:outline-none focus:ring focus:border-blue-300 hover:bg-red-500 rounded-lg">
                                                     <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" width="20"><path d="M0 0h24v24H0z" fill="none"></path><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
                                                 </button>
-                                                <button type="reset" style="reset" onclick="showModalFilter()" class="bg-yellow-500 text-slate-800 px-2 py-2 h-8 focus:outline-none mx-auto flex items-center rounded-l rounded-xl focus:ring focus:border-yellow-300">
+                                                <button type="reset" style="reset" onclick="showModalFilter()" class="bg-yellow-500 text-slate-800 px-2 py-3 h-10 focus:outline-none mx-auto flex items-center rounded-l rounded-xl focus:ring focus:border-yellow-300">
                                                     <b>SPESIFIK</b>
                                                 </button>
                                             </div>
@@ -1148,34 +1173,6 @@
             <!-- //copyright -->
         </footer>
         {{-- top functions --}}
-        <script>
-            // When the user scrolls down 20px from the top of the document, show the button
-            function topFunction() {
-                document.body.scrollTop = 0;
-                document.documentElement.scrollTop = 0;
-            }
-    
-            window.onscroll = function () {
-                scrollFunction()
-            };
-            
-            function scrollFunction() {
-                if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-                document.getElementById("movetop").style.display = "block";
-                } else {
-                document.getElementById("movetop").style.display = "none";
-                }
-            }
-    
-            // When the user clicks on the button, scroll to the top of the document
-            function topFunction() {
-                document.body.scrollTop = 0;
-                document.documentElement.scrollTop = 0;
-            }
-    
-            
-    
-        </script>    
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script>
             $(window).on("scroll", function () {
