@@ -10,6 +10,8 @@ class BppProdukHukum extends Model
 {
     protected $table = 'bpp_produk_hukum';
 
+    protected $guarded = [];
+
     public function getNomor(){
         return $this->belongsTo(NomorPeraturan::class, 'nomor_id');
     }

@@ -9,7 +9,7 @@
 <div class="p-4 sm:ml-64">
     <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg">
         <div class="relative top-[0px] md:top-[50px] right-0">
-            <a href="{{route('berita-baru')}}" class="flex justify-center w-20 h-auto bg-blue-500 rounded-lg drop-shadow-md text-white font-semibold py-1">NEW+</a>
+            <a href="{{route('peraturan-baru')}}" class="flex justify-center w-20 h-auto bg-blue-500 rounded-lg drop-shadow-md text-white font-semibold py-1">NEW+</a>
         </div>
         <div class="flex justify-center py-2 mb-2 border-b-4 border-amber-400">
             <h1 class="text-4xl font-bold  text-sky-600">PERATURAN</h1>

@@ -215,7 +215,9 @@ Route::get('/process-delete-galeri/{id}', [AdminGaleriController::class, 'delete
 // ===================== PAGE: PERATURAN ==========================================
 Route::get('/peraturan-admin', [AdminPeraturanController::class, 'index'])->middleware(['auth', 'verified'])->name('getPeraturan.data');
 Route::get('peraturan-edit/{id}', [AdminPeraturanController::class, 'edit'])->middleware(['auth', 'verified'])->name('edit-peraturan/');
-Route::get('/peraturan-baru', function () {return view('pages/admin/peraturan/insert');})->middleware(['auth', 'verified'])->name('peraturan-baru');
+// Route::get('/peraturan-baru', function () {return view('pages/admin/peraturan/insert');})->middleware(['auth', 'verified'])->name('peraturan-baru');
+Route::get('/peraturan-baru}', [AdminPeraturanController::class, 'inputForm'])->middleware(['auth', 'verified'])->name('peraturan-baru');
+
 
 Route::post('/process-insert-peraturan', [AdminPeraturanController::class, 'insert'])->middleware(['auth', 'verified'])->name('proses-insert-peraturan');// insert
 Route::put('/edit-peraturan', [AdminPeraturanController::class, 'update'])->middleware(['auth', 'verified'])->name('proses-update-peraturan');// update

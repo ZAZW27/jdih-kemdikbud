@@ -11,7 +11,7 @@
 </script>
 
 <script async src="{{asset('assets/js/main/modals.js')}}"></script>
-    <div class="containers h-64 mt-24 ">
+    <div class="containers h-[30rem] mt-24 bg-black">
         <div class="py-4 px-4 mx-auto max-w-screen-xl text-center pt-16  relative">
             <div class="col-span-12 md:col-span-12 sm:col-span-12 mt-2 animate__animated animate__fadeInUp" id="detail_peraturan">
                 <div class="row-span-3 col-span-12 ">
@@ -559,8 +559,6 @@
             </div>
         </div>
         <div class="py-4 px-4 mx-auto max-w-screen-xl text-center z-10 relative">
-            
-
             <div id="default-carousel" class="relative w-full" data-carousel="slide">
                 <!-- Carousel wrapper -->
                 <div class="relative h-[10rem] overflow-hidden rounded-lg md:h-[40rem]">

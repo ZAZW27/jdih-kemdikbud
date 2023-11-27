@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BppProdukHukum;
 use App\Models\Peraturan;
 
 use App\Http\Requests\StoreBeritaRequest;
@@ -29,38 +30,59 @@ class AdminPeraturanController extends Controller
         ]);
     }
 
+    public function inputForm(){
+        $peraturan = new Peraturan();
+        $groupJenis = $peraturan->LatestPeraturan()->groupBy('id_jenis')->pluck('0.jenis_peraturan', '0.id_jenis');
+        $groupTahun = DB::table('tahun_branch')->orderBy('tahun', 'desc')->get();
+        $groupStatus = DB::table('status_branch')->orderBy('id', 'asc')->get();
+
+        return view('pages.admin.peraturan.insert', [
+            'title' => 'JDIH BPP | Peraturan',
+            'groupJenis' => $groupJenis,
+            'groupTahun' => $groupTahun,
+            'groupStatus' => $groupStatus,
+        ]);
+    }
+
     public function insert(Request $request){
-        $berita = new BErita();
+        $peraturan = new BppProdukHukum();
 
+    
         $judul = $request->input('judul');
-        $tema = $request->input('tema');
-        $isi = $request->input('isi');
-        $tanggal = $request->input('tanggal');
-        $gambar = $request->file('gambar');   
-        
-        if ($request->hasfile('gambar')) {
-            $file = $request->file('gambar');
-            $extension = $file->getClientOriginalName();
-            $filename = time() . '_' . str_replace(' ', '_', $extension);
-            $file->move('assets/img/berita', $filename);
-
-            // MASUKKAN BARANG
-            $berita->gambar_berita = $filename;
-            $berita->judul = $judul;
-            $berita->tema = $tema;
-            $berita->isi = $isi;
-            $berita->tanggal = $tanggal;
-            $berita->dilihat = 0;
-            $berita->tautan = 'null';
-            // dd($filename);
-        }
-        else{
-            $seeData = [
-                $judul, $tema, $isi, $tanggal, $gambar
-            ];
-
-            dd($seeDataa);
-        }
+        $tipe_dok = $request->input('tipe_dok');
+        $subjek = $request->input('subjek');
+        $nama_peng = $request->input('nama_peng');
+        $tipe_peng = $request->input('tipe_peng');
+        $jenis_peng = $request->input('jenis_peng');
+        $nomor_per = $request->input('nomor_per');
+        $jenis_per = $request->input('jenis_per');
+        $tahun_per = $request->input('tahun_per');
+        $tempat_penetapan = $request->input('tempat_penetapan');
+        $tanggal_penetapan = $request->input('tanggal_penetapan');
+        $tanggal_pengundangan = $request->input('tanggal_pengundangan');
+        $status = $request->input('status');
+        $bahasa = $request->input('bahasa');
+        $catatan = $request->input('catatan');
+        $sumber = $request->input('sumber');
+    
+        $peraturan->tipe_dokumen
+        $peraturan->judul
+        $peraturan->nama_pengarang
+        $peraturan->tipe_pengarang
+        $peraturan->jenis_pengarang
+        $peraturan->nomor_peraturan
+        $peraturan->id_jenis_peraturan
+        $peraturan->tempat_penetapan
+        $peraturan->tanggal_penetapan
+        $peraturan->tanggal_pengundangan
+        $peraturan->id_tahun_peraturan
+        $peraturan->sumber
+        $peraturan->subjek
+        $peraturan->tipe_dokumen
+        $peraturan->tipe_dokumen
+        $peraturan->tipe_dokumen
+        $peraturan->tipe_dokumen
+        $peraturan->tipe_dokumen
 
         $berita->save();
 
