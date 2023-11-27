@@ -30,7 +30,7 @@
     <script src="{{asset('assets/js/main/main.js')}}"></script>
 </head>
 <body style="background-color: #F1F4FA;">
-    <nav class="bg-white border-gray-200 shadow-lg fixed top-0 w-full lg:h-[6rem] sm:h-[5rem]">
+    <nav class="md:bg-white md:border-gray-200 bg-slate-800/30 shadow-lg fixed top-0 w-full lg:h-[6rem] sm:h-[5rem] backdrop-blur-sm">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <a href="/" class="flex items-center navbar-logos">
                 <img src="{{ asset('assets/img/logo/logo_jdih_globe.png') }}" class="h-16 mr-3" alt="Flowbite Logo" />

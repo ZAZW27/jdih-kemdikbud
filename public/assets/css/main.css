@@ -1,7 +1,7 @@
 
 body{
    
-   overflow-x: hidden;
+   overflow-x: hidden !important;
 }
 
 
@@ -1075,6 +1075,12 @@ footer .footer-format{
    font-size: 1.2rem;
    font-weight: 500;
 }
+
+.banner-gradient{
+   background: linear-gradient(to top, rgba(0, 0, 0, 0.82), rgba(15, 6, 148, 0.4))
+}
+
+
 @media screen and (max-width: 1024px) {
    .containers {
        max-width: 100%;
@@ -1103,83 +1109,4 @@ footer .footer-format{
    }
    
 }
-
-
-#slideshow {
-   position: absolute;
-   top: 6rem;
-   overflow: hidden;
-   height: 16rem;
-   width: 100%;
-   margin: 0 auto;
-   z-index: -1;
- }
- 
- .slide-wrapper {
-   width: 500%;
-   -webkit-animation: slide 18s ease infinite;
- }
- 
- .slide {
-   float: left;
-   height: 510px;
-   width: 100vw;
- }
- 
- .slide:nth-child(1) {
-   width: 100vw;
-   height: 20rem;
-   background-image: url("../img/bg/bkg-index.jpg");/* Untuk mengganti gambar carousel */
-   background-repeat: no-repeat;
-   background-position: center;
-   background-size: cover;
-   filter: brightness(90%);
- }
- 
- .slide:nth-child(2) {
-   width: 100vw;
-   height: 20rem;
-   background-image: url("../img/bg/bkg-index.jpg");/* Untuk mengganti gambar carousel */
-   background-repeat: no-repeat;
-   background-position: center;
-   background-size: cover;
-   filter: hue-rotate(90deg) brightness(90%);
- }
- 
- .slide:nth-child(3) {
-   width: 100vw;
-   height: 20rem;
-   background-image: url("../img/bg/bkg-index.jpg");/* Untuk mengganti gambar carousel */
-   background-repeat: no-repeat;
-   background-position: center;
-   background-size: cover;
-   filter: hue-rotate(120deg) brightness(90%);
- }
- 
- .slide:nth-child(4) {
-   width: 100vw;
-   height: 20rem;
-   background-image: url("../img/bg/bkg-index.jpg");/* Untuk mengganti gambar carousel */
-   background-repeat: no-repeat;
-   background-position: center;
-   background-size: cover;
-   filter: hue-rotate(-120deg) brightness(90%);
- }
- 
- .slide-number {
-   color: #000;
-   text-align: center;
-   font-size: 10em;
- }
- 
- @-webkit-keyframes slide {
-   20% {margin-left: 0px;}
-   30% {margin-left: -100vw;}
-   50% {margin-left: -100vw;}
-   60% {margin-left: -200vw;}
-   70% {margin-left: -200vw;}
-   80% {margin-left: -300vw;}
-   90% {margin-left: -300vw;}
- }
-/* custom scrollbar */
 

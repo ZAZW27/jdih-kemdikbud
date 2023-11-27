@@ -11,8 +11,150 @@
 </script>
 
 <script async src="{{asset('assets/js/main/modals.js')}}"></script>
-    <div class="containers h-[30rem] mt-24 bg-black">
-        <div class="py-4 px-4 mx-auto max-w-screen-xl text-center pt-16  relative">
+    <div class="containers md:h-[30rem] h-[120svh] overflow-hidden">
+        <div class="sticky md:top-24 top-[0px]">
+            
+            <div id="carousel-banner" class="relative w-full" data-carousel="slide">
+                <!-- Carousel wrapper -->
+                <div class="relative overflow-hidden rounded-lg md:h-[30rem] h-[100svh]">
+                    <!-- Item 1 -->
+                    <div class="hidden duration-700 ease-in-out bg-yellow-100" data-carousel-item>
+                        <img class="w-full h-full object-cover object-right" src="{{asset('assets/img/bg/banner.jpeg')}}" alt="">
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="hidden duration-700 ease-in-out bg-yellow-200" data-carousel-item>
+                        <img class="w-full h-full object-cover object-right" src="{{asset('assets/img/bg/background.jpg')}}" alt="">
+                    </div>
+                    <!-- Item 1 -->
+                    <div class="hidden duration-700 ease-in-out bg-yellow-100" data-carousel-item>
+                        <img class="w-full h-full object-cover object-right" src="{{asset('assets/img/bg/banner.jpeg')}}" alt="">
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="hidden duration-700 ease-in-out bg-yellow-200" data-carousel-item>
+                        <img class="w-full h-full object-cover object-right" src="{{asset('assets/img/bg/background.jpg')}}" alt="">
+                    </div>
+                </div>
+                <!-- Slider controls -->
+                <button type="button" class="absolute top-8 start-0 z-30 flex items-center justify-center h-full px-0 duration-200 cursor-pointer group focus:outline-none" data-carousel-prev>
+                    <span class="inline-flex items-center justify-center w-6 hover:w-10 h-[15rem] hover:h-[20rem] rounded-br-full rounded-tr-full bg-slate-400/10 backdrop-blur group-hover:bg-slate-50/20 group-focus:ring-1 group-focus:ring-amber-500/20 group-focus:outline-none transition-all duration-300 ease-out">
+                        <svg class="w-4 h-4 text-slate-300  rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor"  stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                        </svg>
+                        <span class="sr-only">Previous</span>
+                    </span>
+                </button>
+                <button type="button" class="absolute top-8 end-0 z-30 flex items-center justify-center h-full px-0 duration-200 cursor-pointer group focus:outline-none" data-carousel-next>
+                    <span class="inline-flex items-center justify-center w-6 hover:w-10 h-[15rem] hover:h-[20rem] rounded-tl-full rounded-bl-full bg-slate-400/10 backdrop-blur group-hover:bg-slate-50/20 group-focus:ring-1 group-focus:ring-amber-500/20 group-focus:outline-none transition-all duration-300 ease-out">
+                        <svg class="w-4 h-4 text-slate-300  rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                        </svg>
+                        <span class="sr-only">Next</span>
+                    </span>
+                </button>
+                {{-- <!-- Slider indicators -->
+                <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+                </div> --}}
+
+            </div>
+            
+            <div class="absolute top-0 flex justify-center bg-amber-500 w-full h-full ">
+                <div class="relative w-[100svw] h-full py-4 px-4 mx-auto max-w-screen-xl text-center pt-16 z-[20]">
+                    <div class="col-span-12 md:col-span-12 sm:col-span-12 mt-2 animate__animated animate__fadeInUp" id="detail_peraturan">
+                        <div class="row-span-3 col-span-12 ">
+                            <div class="absolute top-0 md:-left-[9rem] -left-[0rem] md:w-[115svw] w-[100svw] h-full banner-gradient">
+                            </div>
+                            <form class="relative domain-form z-[20]" action="{{route('get_peraturan.data')}}" method="post">
+                                @csrf
+                                <div class="relative flex justify-center items-center">
+
+                                    <div class="relative w-[50%] flex flex-row justify-center md:items-center">
+                                        <div class="flex justify-center items-end md:items-center md:space-x-4 tutup animate-slide-left mt-24 w-full  md:h-[20rem] h-[58svh]">
+                                            <input name="search-peraturan" type="text" id="judul" class="w-[100%] pl-2 pr-4 py-3 border-0 rounded-lg focus:outline-none focus:ring focus:border-blue-300" placeholder="Cari peraturan dan dokumen disini">
+                                            <div class="absolute flex md:right-1 md:mb-0 mb-12 -right-4 justify-center items-center md:mt-0 " id="filter-button">
+                                                <button type="submit" class="bg-blue-500 text-white px-4 py-2 mr-1 h-8 rounded-r focus:outline-none focus:ring focus:border-blue-300 hover:bg-red-500 rounded-lg">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" width="20"><path d="M0 0h24v24H0z" fill="none"></path><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
+                                                </button>
+                                                <button type="reset" style="reset" onclick="showModalFilter()" class="bg-yellow-500 text-slate-800 px-2 py-2 h-8 focus:outline-none mx-auto flex items-center rounded-l rounded-xl focus:ring focus:border-yellow-300">
+                                                    <b>SPESIFIK</b>
+                                                </button>
+                                            </div>
+                                        </div>                        
+                                    </div>
+                                </div>
+                                <div class="absolute w-full md:justify-center justify-start md:-mt-14 md:top-[13rem] z-[11] hidden" id="filter-options" >
+                                    <div class="bg-white shadow-lg w-[80%] pt-3 pb-1 px-2 rounded-lg">
+                                        <div class="peraturan-filter flex flex-col sm:flex-row">
+                                            <div class="flex-1 z-[16]">
+                                                <section class="hidden" id="select-num" disabled>
+                                                    <select class="custom-select sources" placeholder="Pilih Nomor" name="nomor-peraturan">
+                                                        <option value="">Pilih Nomor</option>
+                                                        @foreach ($groupNomor as $id => $name)
+                                                            <option value="{{$name}}">{{$name}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </section>
+                                                <section class="" id="type-num">
+                                                    <input type="text" name="nomor-peraturan" placeholder="Ketik Nomor Peraturan" class="custom-input w-full focus:ring-white">
+                                                </section>
+                                                <input id="change-num" type="checkbox" value="" class="absolute z-[9999] md:right-40 right-[20px] top-6 w-6 h-6 text-blue-600 bg-white border-gray-600 shadow-md rounded-xl focus:ring-blue-500 ">
+                                            </div>
+                                        </div>
+                                        <div class="peraturan-filter flex flex-col sm:flex-row">
+                                            <div class=" flex-1 z-[15]">
+                                                <section>
+                                                    <select class="custom-select sources" placeholder="Pilih Subjek" name="subjek-peraturan">
+                                                        <option value="">Pilih Subjek</option>
+                                                        @foreach ($groupSubjek as $id => $name)
+                                                            <option value="{{$name}}">{{$name}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </section>
+                                            </div>
+                                            <div class="flex-1 z-[14]">
+                                                <section>
+                                                    <select class="custom-select sources" placeholder="Pilih Jenis" name="jenis-peraturan">
+                                                        <option value="">Pilih Jenis</option>
+                                                        @foreach ($groupJenis as $id => $name)
+                                                            <option value="{{$id}}">{{$name}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </section>
+                                            </div>
+                                        </div>
+                                        <div class="peraturan-filter flex flex-col sm:flex-row">
+                                            <div class="flex-1 z-[13]">
+                                                <section>
+                                                    <select class="custom-select sources" placeholder="Pilih Tahun" name="tahun-peraturan">
+                                                        <option value="">Pilih Tahun</option>
+                                                        @foreach ($groupTahun as $id => $name)
+                                                            <option value="{{$id}}">{{$name}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </section>
+                                            </div>
+                                            <div class="flex-1 z-[12]">
+                                                <section>
+                                                    <select class="custom-select sources" placeholder="Pilih Status" name="status-peraturan">
+                                                        <option value="">Pilih Status</option>
+                                                        @foreach ($groupStatus as $id => $name)
+                                                            <option value="{{$id}}">{{$name}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </section>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        {{-- <div class="py-4 px-4 mx-auto max-w-screen-xl text-center pt-16  relative">
             <div class="col-span-12 md:col-span-12 sm:col-span-12 mt-2 animate__animated animate__fadeInUp" id="detail_peraturan">
                 <div class="row-span-3 col-span-12 ">
                     <form class="domain-form" action="{{route('get_peraturan.data')}}" method="post">
@@ -95,18 +237,10 @@
                     </form>
                 </div>
             </div>
-        </div> 
+        </div>  --}}
     </div>
-    <div id="slideshow">
-        <div class="slide-wrapper" >
-            <div class="slide"></div>
-            <div class="slide"></div>
-            <div class="slide"></div>
-            <div class="slide"></div>
-            <div class="slide"></div>
-        </div>
-    </div>
-    <div class="containers bg-center">
+    <div class="containers bg-center md:-mt-[0rem] -mt-[20svh]">
+        
         <div class="py-4 px-4 mx-auto max-w-screen-xl text-center z-10 relative">
             <div class="col-span-12 md:col-span-12 sm:col-span-12 mt-2 animate__animated animate__fadeInUp" id="detail_peraturan">
                 <div class="grid grid-cols-3 grid-forms md:grid-row gap-4">
@@ -1060,7 +1194,52 @@
         </script>
         {{-- ANIMATED SELECT OPTIONS --}}
         <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-        <script>
+        <script> // Script untuk modal
+            function dialog() {
+
+                // Declare variables
+                var dialogBox = $('.dialog'),
+                    dialogTrigger = $('.dialog__trigger'),
+                    dialogClose = $('.dialog__close'),
+                    dialogTitle = $('.dialog__title'),
+                    dialogContent = $('.dialog__content'),
+                    dialogAction = $('.dialog__action');
+
+                // Open the dialog
+                dialogTrigger.on('click', function(e) {
+                dialogBox.toggleClass('dialog--active');
+                e.stopPropagation();
+                });
+
+                // Close the dialog - click close button
+                dialogClose.on('click', function() {
+                dialogBox.removeClass('dialog--active');
+                });
+
+                // Close the dialog - press escape key // key#27
+                $(document).keyup(function(e) {
+                if (e.keyCode === 27) {
+                    dialogBox.removeClass('dialog--active');
+                }
+                });
+
+                // Close the dialog - click outside
+                $(document).on('click', function(e) {
+                if ($(e.target).is(dialogBox) === false &&
+                    $(e.target).is(dialogTitle) === false &&
+                    $(e.target).is(dialogContent) === false &&
+                    $(e.target).is(dialogAction) === false) {
+                    dialogBox.removeClass('dialog--active');   
+                }
+                });
+
+                }
+
+                // Run function
+                $(dialog);
+        </script>
+
+        <script> // script untuk animated select options
             $(".custom-select").each(function() {
             var classes = $(this).attr("class"),
                 id = $(this).attr("id"),
@@ -1129,6 +1308,10 @@
                 .text($(this).text());
             });
         
+        </script>
+        <script>
+            const carouselElement: HTMLElement = document.getElementById('carousel-banner');
+
         </script>
         <!-- AOS CODES -->
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
