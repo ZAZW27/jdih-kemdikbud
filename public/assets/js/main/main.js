@@ -28,7 +28,10 @@ function bannerToggleScreen() {
     if (window.innerWidth <= 768) { // Adjust the breakpoint as needed
         bppText.classList.remove('text-bpp');
         bppText.classList.add('text-white');
-        console.log('Change to white');
+        // if (banner.classList.contains('z-50')) {
+        //     banner.classList.remove('z-50')
+        // }
+        
     } else {
         bppText.classList.add('text-bpp');
         bppText.classList.remove('text-white');

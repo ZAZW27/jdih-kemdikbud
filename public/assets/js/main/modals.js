@@ -72,6 +72,8 @@
             targetModal.classList.add("block");
             if (window.innerWidth <= 768) {
                 banner.classList.remove('sticky');
+            }else{
+                banner.classList.add('z-50');
             }
             Beruang.classList.remove('md:z-[43]');
             // banner.classList.add("block");
@@ -88,6 +90,8 @@
             targetModal.classList.remove("block");
             if (!banner.classList.contains('sticky')) {
                 banner.classList.add('sticky');
+            }else if(banner.classList.contains('z-50')){
+                banner.classList.remove('z-50');
             }
             Beruang.classList.add('md:z-[43]');
         }, 20);
