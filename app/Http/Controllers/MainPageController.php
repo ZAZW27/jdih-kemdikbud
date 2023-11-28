@@ -24,7 +24,8 @@ class MainPageController extends Controller
         $LatestPengumuman = $pengumuman->LatestPengumuman();
 
         $peraturan = new Peraturan();// getting peraturan
-        $LatestPeraturan = $peraturan->LatestPeraturan();
+        // $LatestPeraturan = $peraturan->LatestPeraturan();
+        $LatestPeraturan = $peraturan->getProdukHukum();
         // HITUNG BERAPA BANYAK PERATURAN
         $countPeraturan = DB::table('tbl_peraturan')->select('jenis_peraturan.jenis AS jenis_peraturan', DB::raw('COUNT(jenis_id) as countPeraturan'))->join('jenis_peraturan', 'jenis_peraturan.id', '=', 'tbl_peraturan.jenis_id')->groupBy('jenis_peraturan.jenis')->get();
         // HITUNG BERAPA BANYAK VEIWS

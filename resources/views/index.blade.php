@@ -62,15 +62,21 @@
                 <div class="relative w-[100svw] h-full py-4 px-4 mx-auto max-w-screen-xl text-center pt-16 z-[20]">
                     <div class="col-span-12 md:col-span-12 sm:col-span-12 mt-2 animate__animated animate__fadeInUp" id="detail_peraturan">
                         <div class="row-span-3 col-span-12 ">
-                            <div class="z-[11] absolute top-0 md:-left-[9rem] -left-[0rem] md:w-[115svw] w-[100svw] h-full banner-gradient"></div>
-                            <div class="absolute top-0 md:-left-[9rem] -left-[0rem] md:w-[115svw] w-[100svw] h-full">
+                            <div class="z-[11] absolute top-0 md:-left-[9rem] -left-[0rem] md:w-[120svw] w-[100svw] h-full banner-gradient"></div>
+                            <div class="absolute md:flex lg:block justify-end top-0 md:-left-[9rem] -left-[0rem] md:w-[115svw] w-[100svw] h-full">
                                 <div class="mt-[10rem] w-[100vw] flex flex-col items-center justify-start  md:ml-10">
-                                    <div id="logoContainer" class="z-[22] md:w-[33rem] w-[90vw] bg-blue-500/50">
-                                        <img src="{{ asset('assets/img/logo/helarctos-malayanus.png') }}" alt="">
+                                    <div id="logoContainer" for="search-input" class="md:absolute md:bottom-[160px] lg:bottom-[66px] md:left-[37.8vw] lg:left-[17.4vw] md:z-[42] z-[22] md:w-[8rem] lg:w-[20rem] w-[90vw]">
+                                        {{-- <img src="{{ asset('assets/img/logo/helarctos-malayanus.png') }}" alt="" style="pointer-events: none;"> --}}
                                         <!-- Placeholder content, e.g., a loading spinner or text -->
                                     </div>
+                                    <script>
+                                        document.getElementById('logoContainer').addEventListener('click', function () {
+                                            document.getElementById('search-input').focus();
+                                        });
+                                        console.log('does this work correctly??')
+                                    </script>
                                     
-                                    {{-- <script>
+                                    <script>
                                         window.addEventListener('load', function () {
                                             // Get the container and create an image element
                                             var logoContainer = document.getElementById('logoContainer');
@@ -82,11 +88,34 @@
                                             // Append the image to the container
                                             logoContainer.appendChild(imageElement);
                                         });
-                                    </script> --}}
-                                    <div class="z-[20] absolute md:hidden top-4 h-[30rem] banner-title opacity-20 backgdrop-blur" >
-                                        <div class="sticky top-16 font-bold text-white" style="font-size: 15vw;">
+                                    </script>
+                                    <div class="z-[20] absolute  top-4 h-[30rem] banner-title opacity-40 md:opacity-90  backgdrop-blur" >
+                                        <div id="text-bpp" class="sticky top-16 font-bold md:relative md:top-[13.5rem] lg:top-[10.5rem] text-[15vw] md:ml-[4rem] lg:ml-0 md:text-[6vw] lg:text-[6rem] text-bpp">
                                             BALIKPAPAN
                                         </div>
+                                        
+                                        <script>
+                                            // Function to check screen size and toggle classes
+                                            function toggleBppTextClass() {
+                                                const element = document.getElementById('text-bpp');
+                                                if (window.innerWidth <= 768) { // Adjust the breakpoint as needed
+                                                    element.classList.remove('text-bpp');
+                                                    element.classList.add('text-white');
+                                                    console.log('Change to white');
+                                                } else {
+                                                    element.classList.add('text-bpp');
+                                                    element.classList.remove('text-white');
+                                                    console.log('Change to original gradient');
+                                                }
+                                            }
+                                        
+                                            // Initial call to set classes based on the initial screen size
+                                            toggleBppTextClass();
+                                        
+                                            // Event listener for window resize
+                                            window.addEventListener('resize', toggleBppTextClass);
+                                        </script>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -96,7 +125,7 @@
 
                                     <div class="relative md:w-[50%] w-[80%] flex flex-row justify-center md:items-center">
                                         <div class="flex justify-center items-end md:items-center md:space-x-4 tutup animate-slide-left mt-24 w-full  md:h-[20rem] h-[58svh]">
-                                            <input name="search-peraturan" type="text" id="judul" class="w-[100%] pl-2 pr-4 py-3 border-0 rounded-lg focus:outline-none focus:ring focus:border-blue-300" placeholder="Cari peraturan dan dokumen disini">
+                                            <input name="search-peraturan" type="text" id="search-input" class="w-[100%] pl-2 pr-4 py-3 border-0 rounded-lg focus:outline-none focus:ring focus:border-blue-300" placeholder="Cari peraturan dan dokumen disini">
                                             <div class="absolute flex md:right-1 md:mb-0 mb-[50px] -right-4 justify-center items-center md:mt-0 " id="filter-button">
                                                 <button type="submit" class="bg-blue-500 text-white px-4 py-2 mr-1 h-10 rounded-r focus:outline-none focus:ring focus:border-blue-300 hover:bg-red-500 rounded-lg">
                                                     <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" width="20"><path d="M0 0h24v24H0z" fill="none"></path><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>

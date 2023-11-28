@@ -104,6 +104,44 @@ class Peraturan extends Model
         return $tbl_peraturan->union($bpp_produk_hukum)->get();
     }
 
+    public function getProdukHukum(){
+        return DB::table('bpp_produk_hukum')
+            ->join('jenis_peraturan', 'bpp_produk_hukum.id_jenis_peraturan', '=', 'jenis_peraturan.id')
+            ->join('tahun_branch', 'bpp_produk_hukum.id_tahun_peraturan', '=', 'tahun_branch.id')
+            ->join('status_branch', 'bpp_produk_hukum.id_status_peraturan', '=', 'status_branch.id')
+            ->select(
+                'bpp_produk_hukum.id',
+                'tahun_branch.id AS id_tahun',
+                'jenis_peraturan.id AS id_jenis',
+                'status_branch.id AS id_status',
+                'bpp_produk_hukum.judul AS judul_peraturan',
+                'bpp_produk_hukum.nomor_peraturan',
+                'tahun_branch.tahun AS tahun_peraturan',
+                'jenis_peraturan.jenis AS jenis_peraturan',
+                'bpp_produk_hukum.subjek',
+                'status_branch.status AS status_peraturan',
+                'bpp_produk_hukum.tanggal_penetapan',
+                'bpp_produk_hukum.tipe_dokumen',
+                'bpp_produk_hukum.tempat_penetapan',
+                'bpp_produk_hukum.tanggal_penetapan AS tgl_penetapan',
+                'bpp_produk_hukum.tanggal_pengundangan',
+                'bpp_produk_hukum.sumber',
+                'bpp_produk_hukum.bahasa',
+                'bpp_produk_hukum.dilihat AS view',
+                'bpp_produk_hukum.diunduh AS download',
+                'bpp_produk_hukum.catatan',
+                'bpp_produk_hukum.nama_pengarang',
+                'bpp_produk_hukum.jenis_pengarang',
+                'bpp_produk_hukum.tipe_pengarang',
+                'bpp_produk_hukum.tipe_subjek',
+                'bpp_produk_hukum.jenis_subjek',
+                'bpp_produk_hukum.file', 
+                DB::raw('2 AS model'),
+            )
+            ->orderBy('bpp_produk_hukum.tanggal_penetapan', 'desc')
+            ->get();
+    }
+
     // public function LatestPeraturan(){
     //     return $this->orderBy('tanggal_penetapan', 'desc')->get();
     // }

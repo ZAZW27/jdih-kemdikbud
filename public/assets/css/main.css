@@ -1,4 +1,7 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Montserrat:ital,wght@0,500;0,600;0,700;0,800;0,900;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hind+Guntur:wght@400;500;600;700&family=Roboto:ital,wght@0,700;0,900;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hind+Guntur:wght@400;500;600;700&family=Roboto:ital,wght@0,700;0,900;1,500;1,700&family=Viga&display=swap');
 body{
    
    overflow-x: hidden !important;
@@ -859,7 +862,6 @@ footer .footer-format{
       margin-top: -1rem;
       padding: 0 1rem;  
    }
-   
 }
 
 /* 
@@ -1077,7 +1079,18 @@ footer .footer-format{
 }
 
 .banner-gradient{
-   background: linear-gradient(to top, rgba(0, 0, 0, 0.82), rgba(15, 6, 148, 0.4))
+   background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(13, 6, 112, 0.65))
+}
+
+.text-bpp{
+   /* font-family: 'Hind Guntur'; */
+   font-family: 'Viga';
+   
+   /* background: -webkit-linear-gradient(to right, #eee, #333); */
+   /* background: linear-gradient(30deg , #30d282, #8ad2c5); */
+   background: linear-gradient(to bottom , #33e08a, #16946c);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
 }
 
 
