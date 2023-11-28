@@ -27,7 +27,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
 
     {{-- MY JS --}}
-    <script src="{{asset('assets/js/main/main.js')}}"></script>
+    <script defer src="{{asset('assets/js/main/main.js')}}"></script>
 </head>
 <body style="background-color: #F1F4FA;">
     <nav class="md:bg-white md:border-gray-200 bg-slate-800/30 shadow-lg fixed top-0 w-full lg:h-[6rem] sm:h-[5rem] backdrop-blur-sm">

@@ -1088,6 +1088,7 @@ footer .footer-format{
    
    /* background: -webkit-linear-gradient(to right, #eee, #333); */
    /* background: linear-gradient(30deg , #30d282, #8ad2c5); */
+   /* background: linear-gradient(120deg , #16946c, #33e08a); */
    background: linear-gradient(to bottom , #33e08a, #16946c);
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;

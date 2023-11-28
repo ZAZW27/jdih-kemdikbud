@@ -60,26 +60,40 @@
         }
     });
 
+    // SHOW MODAL FOR FILTERING
     function showModalFilter(){
-        
+        let Beruang = document.getElementById("beruangMaduImg");
+        let banner = document.getElementById("banner-position");
         let funButt = document.getElementById("filter-button");
         let targetModal = document.getElementById("filter-options");
         setTimeout(() => {
             funButt.classList.add('-mt-[4rem]');
             targetModal.classList.remove('hidden');
             targetModal.classList.add("block");
+            if (window.innerWidth <= 768) {
+                banner.classList.remove('sticky');
+            }
+            Beruang.classList.remove('md:z-[43]');
+            // banner.classList.add("block");
         }, 20);
     }
     function hideModalFilter(){
+        let Beruang = document.getElementById("beruangMaduImg");
+        let banner = document.getElementById("banner-position");
         let funButt = document.getElementById("filter-button");
         let targetModal = document.getElementById("filter-options");
         setTimeout(() => {
             funButt.classList.remove('-mt-[4rem]');
             targetModal.classList.add('hidden');
             targetModal.classList.remove("block");
+            if (!banner.classList.contains('sticky')) {
+                banner.classList.add('sticky');
+            }
+            Beruang.classList.add('md:z-[43]');
         }, 20);
     }
 
+    // SELECT NUM WHETHER ITS FOR SELECT OPTION OR WITH INPUTS
     document.getElementById("change-num").addEventListener("change", function () {
         const selectSection = document.getElementById("select-num");
         const inputSection = document.getElementById("type-num");

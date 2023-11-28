@@ -21,3 +21,25 @@
 //         }
 //     });
 // });
+// Function to check screen size and toggle classes
+function bannerToggleScreen() {
+    const banner = document.getElementById('banner-position');
+    const bppText = document.getElementById('text-bpp');
+    if (window.innerWidth <= 768) { // Adjust the breakpoint as needed
+        bppText.classList.remove('text-bpp');
+        bppText.classList.add('text-white');
+        console.log('Change to white');
+    } else {
+        bppText.classList.add('text-bpp');
+        bppText.classList.remove('text-white');
+        if (!banner.classList.contains('sticky')) {
+            banner.classList.add('sticky');
+        }
+    }
+}
+
+// Initial call to set classes based on the initial screen size
+bannerToggleScreen();
+
+// Event listener for window resize
+window.addEventListener('resize', bannerToggleScreen);

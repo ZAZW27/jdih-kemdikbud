@@ -12,7 +12,7 @@
 
 <script async src="{{asset('assets/js/main/modals.js')}}"></script>
     <div class="containers md:h-[30rem] h-[120svh]">
-        <div class="sticky md:top-24 top-[0px]">
+        <div id="banner-position" class="sticky md:top-24 top-[0px] ">
             <div id="carousel-banner" class="relative w-full" data-carousel="slide">
                 <!-- Carousel wrapper -->
                 <div class="relative overflow-hidden rounded-lg md:h-[30rem] h-[100svh]">
@@ -58,71 +58,42 @@
 
             </div>
             
-            <div class="absolute top-0 flex justify-center bg-amber-500 w-full h-full ">
+
+            {{-- CONTENT THAT SHOULD HAVE GREATER Z IDNEX --}}
+            <div class="absolute top-0 flex justify-center bg-amber-500 w-full h-full z-50">
                 <div class="relative w-[100svw] h-full py-4 px-4 mx-auto max-w-screen-xl text-center pt-16 z-[20]">
                     <div class="col-span-12 md:col-span-12 sm:col-span-12 mt-2 animate__animated animate__fadeInUp" id="detail_peraturan">
                         <div class="row-span-3 col-span-12 ">
                             <div class="z-[11] absolute top-0 md:-left-[9rem] -left-[0rem] md:w-[120svw] w-[100svw] h-full banner-gradient"></div>
                             <div class="absolute md:flex lg:block justify-end top-0 md:-left-[9rem] -left-[0rem] md:w-[115svw] w-[100svw] h-full">
                                 <div class="mt-[10rem] w-[100vw] flex flex-col items-center justify-start  md:ml-10">
-                                    <div id="logoContainer" for="search-input" class="md:absolute md:bottom-[160px] lg:bottom-[66px] md:left-[37.8vw] lg:left-[17.4vw] md:z-[42] z-[22] md:w-[8rem] lg:w-[20rem] w-[90vw]">
+                                    <div id="beruangMaduImg" for="search-input" class="md:absolute md:bottom-[160px] lg:bottom-[66px] md:left-[37.8vw] lg:left-[17.4vw] md:z-[43] z-[22] md:w-[8rem] lg:w-[20rem] w-[90vw]">
                                         {{-- <img src="{{ asset('assets/img/logo/helarctos-malayanus.png') }}" alt="" style="pointer-events: none;"> --}}
                                         <!-- Placeholder content, e.g., a loading spinner or text -->
                                     </div>
                                     <script>
-                                        document.getElementById('logoContainer').addEventListener('click', function () {
-                                            document.getElementById('search-input').focus();
-                                        });
-                                        console.log('does this work correctly??')
-                                    </script>
-                                    
-                                    <script>
                                         window.addEventListener('load', function () {
                                             // Get the container and create an image element
-                                            var logoContainer = document.getElementById('logoContainer');
+                                            var beruangMaduImg = document.getElementById('beruangMaduImg');
                                             var imageElement = document.createElement('img');
-                                    
+
                                             // Set the source attribute of the image
                                             imageElement.src = "{{ asset('assets/img/logo/helarctos-malayanus.png') }}";
-                                    
+
                                             // Append the image to the container
-                                            logoContainer.appendChild(imageElement);
-                                        });
+                                            beruangMaduImg.appendChild(imageElement);
+                                        }); 
                                     </script>
                                     <div class="z-[20] absolute  top-4 h-[30rem] banner-title opacity-40 md:opacity-90  backgdrop-blur" >
                                         <div id="text-bpp" class="sticky top-16 font-bold md:relative md:top-[13.5rem] lg:top-[10.5rem] text-[15vw] md:ml-[4rem] lg:ml-0 md:text-[6vw] lg:text-[6rem] text-bpp">
                                             BALIKPAPAN
                                         </div>
-                                        
-                                        <script>
-                                            // Function to check screen size and toggle classes
-                                            function toggleBppTextClass() {
-                                                const element = document.getElementById('text-bpp');
-                                                if (window.innerWidth <= 768) { // Adjust the breakpoint as needed
-                                                    element.classList.remove('text-bpp');
-                                                    element.classList.add('text-white');
-                                                    console.log('Change to white');
-                                                } else {
-                                                    element.classList.add('text-bpp');
-                                                    element.classList.remove('text-white');
-                                                    console.log('Change to original gradient');
-                                                }
-                                            }
-                                        
-                                            // Initial call to set classes based on the initial screen size
-                                            toggleBppTextClass();
-                                        
-                                            // Event listener for window resize
-                                            window.addEventListener('resize', toggleBppTextClass);
-                                        </script>
-                                        
                                     </div>
                                 </div>
                             </div>
-                            <form class="relative domain-form z-[24]" action="{{route('get_peraturan.data')}}" method="post">
+                            <form class="relative domain-form z-[44]" action="{{route('get_peraturan.data')}}" method="post">
                                 @csrf
                                 <div class="relative flex justify-center items-center">
-
                                     <div class="relative md:w-[50%] w-[80%] flex flex-row justify-center md:items-center">
                                         <div class="flex justify-center items-end md:items-center md:space-x-4 tutup animate-slide-left mt-24 w-full  md:h-[20rem] h-[58svh]">
                                             <input name="search-peraturan" type="text" id="search-input" class="w-[100%] pl-2 pr-4 py-3 border-0 rounded-lg focus:outline-none focus:ring focus:border-blue-300" placeholder="Cari peraturan dan dokumen disini">
@@ -137,10 +108,11 @@
                                         </div>                        
                                     </div>
                                 </div>
-                                <div class="absolute w-full md:justify-center justify-start md:-mt-14 md:top-[13rem] z-[11] hidden" id="filter-options" >
+                                {{-- prioritas --}}
+                                <div class="absolute w-full flex md:justify-center justify-center md:-mt-14 md:top-[13rem] hidden" id="filter-options" >
                                     <div class="bg-white shadow-lg w-[80%] pt-3 pb-1 px-2 rounded-lg">
                                         <div class="peraturan-filter flex flex-col sm:flex-row">
-                                            <div class="flex-1 z-[16]">
+                                            <div class="flex-1 z-[50]">
                                                 <section class="hidden" id="select-num" disabled>
                                                     <select class="custom-select sources" placeholder="Pilih Nomor" name="nomor-peraturan">
                                                         <option value="">Pilih Nomor</option>
@@ -156,7 +128,7 @@
                                             </div>
                                         </div>
                                         <div class="peraturan-filter flex flex-col sm:flex-row">
-                                            <div class=" flex-1 z-[15]">
+                                            <div class=" flex-1 z-[55]">
                                                 <section>
                                                     <select class="custom-select sources" placeholder="Pilih Subjek" name="subjek-peraturan">
                                                         <option value="">Pilih Subjek</option>
@@ -166,7 +138,7 @@
                                                     </select>
                                                 </section>
                                             </div>
-                                            <div class="flex-1 z-[14]">
+                                            <div class="flex-1 z-[54]">
                                                 <section>
                                                     <select class="custom-select sources" placeholder="Pilih Jenis" name="jenis-peraturan">
                                                         <option value="">Pilih Jenis</option>
@@ -178,7 +150,7 @@
                                             </div>
                                         </div>
                                         <div class="peraturan-filter flex flex-col sm:flex-row">
-                                            <div class="flex-1 z-[13]">
+                                            <div class="flex-1 z-[53]">
                                                 <section>
                                                     <select class="custom-select sources" placeholder="Pilih Tahun" name="tahun-peraturan">
                                                         <option value="">Pilih Tahun</option>
@@ -188,7 +160,7 @@
                                                     </select>
                                                 </section>
                                             </div>
-                                            <div class="flex-1 z-[12]">
+                                            <div class="flex-1 z-[52]">
                                                 <section>
                                                     <select class="custom-select sources" placeholder="Pilih Status" name="status-peraturan">
                                                         <option value="">Pilih Status</option>
@@ -293,9 +265,8 @@
             </div>
         </div>  --}}
     </div>
-    <div class="containers bg-center md:-mt-[0rem] -mt-[20svh]">
-        
-        <div class="py-4 px-4 mx-auto max-w-screen-xl text-center z-10 relative">
+    <div class="containers bg-center md:-mt-[0rem] -mt-[20svh] z-40">
+        <div class="py-4 px-4 mx-auto max-w-screen-xl text-center z-1 relative">
             <div class="col-span-12 md:col-span-12 sm:col-span-12 mt-2 animate__animated animate__fadeInUp" id="detail_peraturan">
                 <div class="grid grid-cols-3 grid-forms md:grid-row gap-4">
                     <!-- ==================== CONTENT: SUBJEK PERATURAN ========================== -->
