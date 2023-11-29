@@ -1,3 +1,12 @@
+function setOpacity(bppText, scrollPosition) {
+    // Calculate the opacity based on the scroll position
+    var opacity = 0.80 - Math.min(scrollPosition / 300, 1); // Adjust the divisor for a faster/slower fade
+
+    // Check if the opacity is above 20%
+    bppText.style.opacity = opacity > 0.1 ? opacity : bppText.style.opacity;
+}
+
+
 function bannerToggleScreen() {
     const banner = document.getElementById('banner-position');
     const bppText = document.getElementById('text-bpp');
@@ -11,19 +20,13 @@ function bannerToggleScreen() {
             hideModalFilter()
         }
         window.addEventListener('scroll', function () {
-             // Get the current scroll position
             var scrollPosition = window.scrollY || document.documentElement.scrollTop;
-
-            // Calculate the opacity based on the scroll position
-            var opacity = 0.80 - Math.min(scrollPosition / 300, 1); // Adjust the divisor for a faster/slower fade
-
-            // Check if the opacity is above 20%
-            bppText.style.opacity = opacity > 0.1 ? opacity : bppText.style.opacity;
+            setOpacity(bppText, scrollPosition);
         });
-        
     } else {
         bppText.classList.add('text-bpp');
         bppText.classList.remove('text-white');
+        bppText.style.opacity = 1;
         if (!banner.classList.contains('sticky')) {
             banner.classList.add('sticky');
             hideModalFilter()

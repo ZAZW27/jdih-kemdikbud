@@ -34,7 +34,8 @@
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <a href="/" class="flex items-center navbar-logos">
                 <img src="{{ asset('assets/img/logo/logo_jdih_globe.png') }}" class="h-16 mr-3" alt="Flowbite Logo" />
-                <img src="{{ asset('assets/img/logo/logo_kota_balikpapan.svg') }}" class="h-16 mr-3" alt="Flowbite Logo" />
+                <img src="{{ asset('assets/img/logo/logo_kota_balikpapan.svg') }}" class="h-16 -ml-3" alt="Flowbite Logo" />
+                <img src="{{ asset('assets/img/logo/helarctos-malayanus.png') }}" class="h-16 -ml-2" alt="Flowbite Logo" />
             </a>
             <button data-collapse-toggle="navbar-multi-level" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-blue-800 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-200" aria-controls="navbar-multi-level" aria-expanded="false">
                 <span class="sr-only">Open main menu</span>

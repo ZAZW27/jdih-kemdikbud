@@ -86,7 +86,7 @@
                                             beruangMaduImg.appendChild(imageElement);
                                         }); 
                                     </script>
-                                    <div class="z-[20] absolute  top-4 h-[30rem] banner-title opacity-100 md:opacity-90  backgdrop-blur" >
+                                    <div class="z-[20] absolute  top-4 h-[30rem] banner-title backgdrop-blur-md" >
                                         <div id="text-bpp" class="sticky top-16 font-bold md:relative md:top-[13.5rem] lg:top-[10.5rem] text-[15vw] md:ml-[4rem] lg:ml-0 md:text-[6vw] lg:text-[6rem] text-bpp">
                                             BALIKPAPAN
                                         </div>
