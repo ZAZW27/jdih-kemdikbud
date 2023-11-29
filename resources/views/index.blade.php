@@ -471,76 +471,78 @@
                 </div>
             </div>
         </div>
-        <script>
-            var slider = tns({
-                container: '#slider-content',
-                items: 1,
-                responsive: {
-                    640: {
-                    edgePadding: 20,
-                    gutter: 20,
-                    items: 2
-                    },
-                    700: {
-                    gutter: 30
-                    },
-                    900: {
-                    items: 3
-                    }
-                }
-                });
-          </script>
-        <div class="py-4 px-4 mx-auto max-w-screen-xl text-center z-10 relative">
-            <div id="default-carousel" class="relative w-full" data-carousel="slide">
-                <!-- Carousel wrapper -->
-                <div class="relative h-[30rem] overflow-hidden rounded-lg md:h-[30rem]">
-                    <!-- Item 1 -->
-                    <div class="hidden duration-700 ease-in-out bg-yellow-100" data-carousel-item>
-                        
+        <div id="slide-content" class="py-4 px-4 mx-auto max-w-screen-xl text-center z-1 relative">
+            example:
+
+            <button id="prevBtn"
+                class="prev bg-white border-2 border-yellow-500/70 group hover:bg-yellow-500/70 duration-300 rounded-full w-12 h-12 flex items-center justify-center absolute left-4 md:left-12 top-1/2 transform -translate-y-1/2 z-50">
+                <i class="fa fa-angle-left fa-2x text-yellow-500/70 group-hover:text-white"></i>
+            </button>
+            <div class="slider-container tns-layanan-slider flex space-x-4 text-center">
+                <div
+                    class="slider-item bg-white group hover:drop-shadow-2xl hover:border-2 hover:border-blue-600 hover:border-dashed active:border-solid duration-300 rounded-lg p-16 h-64">
+                    <div
+                        class="icon border-2 border-blue-600 rounded-full w-20 h-20 flex items-center justify-center mx-auto">
+                        <i class="fa-regular fa-address-card fa-3x text-blue-600"></i>
                     </div>
-                    <!-- Item 2 -->
-                    <div class="hidden duration-700 ease-in-out bg-yellow-200" data-carousel-item>
-                        
-                    </div>
-                    <!-- Item 3 -->
-                    <div class="hidden duration-700 ease-in-out bg-yellow-300" data-carousel-item>
-                        
-                    </div>
-                    <!-- Item 4 -->
-                    <div class="hidden duration-700 ease-in-out bg-yellow-400" data-carousel-item>
-                        
-                    </div>
-                    <!-- Item 5 -->
-                    <div class="hidden duration-700 ease-in-out bg-yellow-500" data-carousel-item>
-                        
-                    </div>
+                    <h1 class="text-xl font-bold mt-4 group-hover:text-blue-600">Pelayanan Kependudukan
+                    </h1>
                 </div>
-                <!-- Slider indicators -->
-                <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
-                    <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+                <div
+                    class="slider-item bg-white group hover:drop-shadow-2xl hover:border-2 hover:border-blue-600 hover:border-dashed active:border-solid duration-300 rounded-lg p-16 h-64">
+                    <div
+                        class="icon border-2 border-blue-600 rounded-full w-20 h-20 flex items-center justify-center mx-auto">
+                        <i class="fa-solid fa-notes-medical fa-3x text-blue-600"></i>
+                    </div>
+                    <h1 class="text-xl font-bold mt-4 group-hover:text-blue-600">Izin Kesehatan</h1>
                 </div>
-                <!-- Slider controls -->
-                <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-cyan-50/60 transition-all duration-700 ease-out group-hover:bg-sky-400/50 group-focus:ring-4 group-focus:ring-amber-500 group-focus:outline-none">
-                        <svg class="w-4 h-4 text-slate=800 hover:text-black transition-all ease-out duration-700 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
-                        </svg>
-                        <span class="sr-only">Previous</span>
-                    </span>
-                </button>
-                <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-cyan-50/60 transition-all duration-700 ease-out group-hover:bg-sky-400/50 group-focus:ring-4 group-focus:ring-amber-500 group-focus:outline-none">
-                        <svg class="w-4 h-4 text-slate-800 hover:text-black transition-all ease-out duration-700 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-                        </svg>
-                        <span class="sr-only">Next</span>
-                    </span>
-                </button>
+                <div
+                    class="slider-item bg-white group hover:drop-shadow-2xl hover:border-2 hover:border-blue-600 hover:border-dashed active:border-solid duration-300 rounded-lg p-16 h-64">
+                    <div
+                        class="icon border-2 border-blue-600 rounded-full w-20 h-20 flex items-center justify-center mx-auto">
+                        <i class="fa-solid fa-house-chimney-user fa-3x text-blue-600"></i>
+                    </div>
+                    <h1 class="text-xl font-bold mt-4 group-hover:text-blue-600">Pelayanan Kelurahan</h1>
+                </div>
+                <div
+                    class="slider-item bg-white group hover:drop-shadow-2xl hover:border-2 hover:border-blue-600 hover:border-dashed active:border-solid duration-300 rounded-lg p-16 h-64">
+                    <div
+                        class="icon border-2 border-blue-600 rounded-full w-20 h-20 flex items-center justify-center mx-auto">
+                        <i class="fa-solid fa-ellipsis fa-3x text-blue-600"></i>
+                    </div>
+                    <h1 class="text-xl font-bold mt-4 group-hover:text-blue-600">Lainnya</h1>
+                </div>
             </div>
+            <button id="nextBtn"
+                class="next bg-white border-2 border-yellow-500/70 group hover:bg-yellow-500/70 duration-300 rounded-full w-12 h-12 flex items-center justify-center absolute right-4 md:right-12 top-1/2 transform -translate-y-1/2 z-50">
+                <i class="fa fa-angle-right fa-2x text-yellow-500/70 group-hover:text-white"></i>
+            </button>
+
+            <script>
+
+                var slider = tns({
+                    container: '.tns-layanan-slider',
+                    items: 2,
+                    nav: false,
+                    slideBy: 1,
+                    controlsPosition: 'bottom',
+                    mouseDrag: true,
+                    controlsContainer: '#slide-content',
+                    prevButton: '#prevBtn',
+                    nextButton: '#nextBtn',
+                    speed: 1000,
+                    autoplay: false,
+                    autoplayButtonOutput: false,
+                    responsive: {
+                        0: {
+                            items: 1,
+                        },
+                        910: {
+                            items: 2,
+                        },
+                    },
+                });
+            </script>
         </div>
         <div class="py-4 px-4 mx-auto max-w-screen-xl text-center z-10 relative">
             <div class="col-span-12 md:col-span-12 sm:col-span-12 mt-2 animate__animated animate__fadeInUp" id="detail_peraturan">
