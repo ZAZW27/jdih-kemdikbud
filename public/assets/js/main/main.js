@@ -33,7 +33,7 @@ function bannerToggleScreen() {
         }
         window.addEventListener('scroll', function () {
             var scrollPosition = window.scrollY || document.documentElement.scrollTop;
-            setOpacity(bppText, scrollPosition, 1, 500);
+            setOpacity(bppText, scrollPosition, 1, 900);
         });
     }
 }

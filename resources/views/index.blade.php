@@ -11,6 +11,7 @@
 </script>
 
 <script async src="{{asset('assets/js/main/modals.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
     <div class="containers md:h-[30rem] h-[120svh]">
         <div id="banner-position" class="sticky md:top-24 top-[0px] z-50">
             <div id="carousel-banner" class="relative w-full z-20" data-carousel="slide">
@@ -65,15 +66,20 @@
                             <div class="z-[11] absolute top-0 md:-left-[9rem] -left-[0rem] md:w-[120svw] w-[100svw] h-full banner-gradient"></div>
                             <div class="absolute md:flex lg:block justify-end top-0 md:-left-[9rem] -left-[0rem] md:w-[115svw] w-[100svw] h-full">
                                 <div class="mt-[10rem] w-[100vw] flex flex-col items-center justify-start  md:ml-10">
-                                    <div id="beruangMaduImg" for="search-input" class="md:absolute md:bottom-[160px] lg:bottom-[66px] md:left-[37.8vw] lg:left-[17.4vw] md:z-[45] z-[22] md:w-[8rem] lg:w-[20rem] w-[90vw]">
-                                        {{-- <img src="{{ asset('assets/img/logo/helarctos-malayanus.png') }}" alt="" style="pointer-events: none;"> --}}
+                                    <div id="beruangMaduImg" for="search-input" class="md:absolute md:bottom-[160px] lg:bottom-[66px] md:left-[37.8vw] lg:left-[17.4vw] md:z-[45] z-[22] md:w-[8rem] lg:w-[20rem] w-[90vw] hover:cursor-text">
+                                        {{-- <img src="{{ asset('assets/img/logo/helarctos-malayanus.png') }}" alt="" style=""> --}}
                                         <!-- Placeholder content, e.g., a loading spinner or text -->
+                                    </div>
+                                    <div id="batikBanner" class="absolute hidden lg:block top-[9.5rem] -mr-[41.6rem] scale-x-[-1] w-[20vw] z-[22]">
+                                        {{-- <img src="{{asset('assets/img/props/batik1.png')}}" alt="" style="filter: contrast(120%) saturate(110%)"> --}}
                                     </div>
                                     <script>
                                         
                                         window.addEventListener('load', function () {
                                             var beruangMaduImg = document.getElementById('beruangMaduImg');
+                                            var batik = document.getElementById('batikBanner');
                                             var input = document.getElementById('search-input');
+
                                             // Add a click event listener to the image
                                             beruangMaduImg.addEventListener('click', function() {
                                                 // Set focus on the input when the image is clicked
@@ -81,10 +87,24 @@
                                             });
 
                                             var imageElement = document.createElement('img');
-                                            // Set the source attribute of the image
                                             imageElement.src = "{{ asset('assets/img/logo/helarctos-malayanus.png') }}";
+                                            // Use Tailwind classes for transitions
+                                            imageElement.classList.add('opacity-0', 'transition-opacity', 'duration-1000', 'ease-in-out');
                                             beruangMaduImg.appendChild(imageElement);
-                                        }); 
+
+                                            var batikBanner = document.createElement('img');
+                                            batikBanner.setAttribute('style', 'filter: contrast(120%) saturate(110%)');
+                                            batikBanner.src = "{{asset('assets/img/props/batik1.png')}}";
+                                            // Use Tailwind classes for transitions
+                                            batikBanner.classList.add('opacity-0', 'transition-opacity', 'duration-1000', 'ease-in-out', 'delay-700');
+                                            batik.appendChild(batikBanner);
+
+                                            // Set a timeout to remove the fade-in classes after a delay
+                                            setTimeout(function () {
+                                                imageElement.classList.remove('opacity-0');
+                                                batikBanner.classList.remove('opacity-0');
+                                            }, 200); // Adjust the delay (in milliseconds) as needed
+                                        });
                                     </script>
                                     <div class="z-[20] absolute  top-4 h-[30rem] banner-title backgdrop-blur-md" >
                                         <div id="text-bpp" class="sticky top-16 font-bold md:relative md:top-[13.5rem] lg:top-[10.5rem] text-[15vw] md:ml-[4rem] lg:ml-0 md:text-[6vw] lg:text-[6rem] text-bpp">
@@ -451,6 +471,25 @@
                 </div>
             </div>
         </div>
+        <script>
+            var slider = tns({
+                container: '#slider-content',
+                items: 1,
+                responsive: {
+                    640: {
+                    edgePadding: 20,
+                    gutter: 20,
+                    items: 2
+                    },
+                    700: {
+                    gutter: 30
+                    },
+                    900: {
+                    items: 3
+                    }
+                }
+                });
+          </script>
         <div class="py-4 px-4 mx-auto max-w-screen-xl text-center z-10 relative">
             <div id="default-carousel" class="relative w-full" data-carousel="slide">
                 <!-- Carousel wrapper -->

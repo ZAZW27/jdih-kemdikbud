@@ -1094,6 +1094,10 @@ footer .footer-format{
    -webkit-text-fill-color: transparent;
 }
 
+.batik-banner{
+   filter: saturate(200%) hue-rotate(120deg);
+}
+
 
 @media screen and (max-width: 1024px) {
    .containers {
