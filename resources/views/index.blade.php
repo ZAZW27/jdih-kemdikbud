@@ -12,24 +12,24 @@
 
 <script async src="{{asset('assets/js/main/modals.js')}}"></script>
     <div class="containers md:h-[30rem] h-[120svh]">
-        <div class="sticky md:top-24 top-[0px] z-40">
+        <div id="banner-position" class="sticky md:top-24 top-[0px] z-50">
             <div id="carousel-banner" class="relative w-full z-20" data-carousel="slide">
                 <!-- Carousel wrapper -->
                 <div class="relative overflow-hidden rounded-lg md:h-[30rem] h-[100svh]">
                     <!-- Item 1 -->
-                    <div class="hidden duration-700 ease-in-out bg-yellow-100" data-carousel-item>
+                    <div class="hidden duration-1000 ease-in-out bg-yellow-100" data-carousel-item>
                         <img class="w-full h-full object-cover object-right" src="{{asset('assets/img/bg/banner.jpeg')}}" alt="">
                     </div>
                     <!-- Item 2 -->
-                    <div class="hidden duration-700 ease-in-out bg-yellow-200" data-carousel-item>
+                    <div class="hidden duration-1000 ease-in-out bg-yellow-200" data-carousel-item>
                         <img class="w-full h-full object-cover object-right" src="{{asset('assets/img/bg/background.jpg')}}" alt="">
                     </div>
                     <!-- Item 1 -->
-                    <div class="hidden duration-700 ease-in-out bg-yellow-100" data-carousel-item>
+                    <div class="hidden duration-1000 ease-in-out bg-yellow-100" data-carousel-item>
                         <img class="w-full h-full object-cover object-right" src="{{asset('assets/img/bg/banner.jpeg')}}" alt="">
                     </div>
                     <!-- Item 2 -->
-                    <div class="hidden duration-700 ease-in-out bg-yellow-200" data-carousel-item>
+                    <div class="hidden duration-1000 ease-in-out bg-yellow-200" data-carousel-item>
                         <img class="w-full h-full object-cover object-right" src="{{asset('assets/img/bg/background.jpg')}}" alt="">
                     </div>
                 </div>
@@ -65,24 +65,28 @@
                             <div class="z-[11] absolute top-0 md:-left-[9rem] -left-[0rem] md:w-[120svw] w-[100svw] h-full banner-gradient"></div>
                             <div class="absolute md:flex lg:block justify-end top-0 md:-left-[9rem] -left-[0rem] md:w-[115svw] w-[100svw] h-full">
                                 <div class="mt-[10rem] w-[100vw] flex flex-col items-center justify-start  md:ml-10">
-                                    <div id="logoContainer" for="search-input" class="md:absolute md:bottom-[160px] lg:bottom-[66px] md:left-[37.8vw] lg:left-[17.4vw] md:z-[42] z-[22] md:w-[8rem] lg:w-[20rem] w-[90vw]">
+                                    <div id="beruangMaduImg" for="search-input" class="md:absolute md:bottom-[160px] lg:bottom-[66px] md:left-[37.8vw] lg:left-[17.4vw] md:z-[45] z-[22] md:w-[8rem] lg:w-[20rem] w-[90vw]">
                                         {{-- <img src="{{ asset('assets/img/logo/helarctos-malayanus.png') }}" alt="" style="pointer-events: none;"> --}}
                                         <!-- Placeholder content, e.g., a loading spinner or text -->
                                     </div>
                                     <script>
+                                        
                                         window.addEventListener('load', function () {
-                                            // Get the container and create an image element
-                                            var logoContainer = document.getElementById('logoContainer');
-                                            var imageElement = document.createElement('img');
+                                            var beruangMaduImg = document.getElementById('beruangMaduImg');
+                                            var input = document.getElementById('search-input');
+                                            // Add a click event listener to the image
+                                            beruangMaduImg.addEventListener('click', function() {
+                                                // Set focus on the input when the image is clicked
+                                                input.focus();
+                                            });
 
+                                            var imageElement = document.createElement('img');
                                             // Set the source attribute of the image
                                             imageElement.src = "{{ asset('assets/img/logo/helarctos-malayanus.png') }}";
-
-                                            // Append the image to the container
-                                            logoContainer.appendChild(imageElement);
+                                            beruangMaduImg.appendChild(imageElement);
                                         }); 
                                     </script>
-                                    <div class="z-[20] absolute  top-4 h-[30rem] banner-title opacity-40 md:opacity-90  backgdrop-blur" >
+                                    <div class="z-[20] absolute  top-4 h-[30rem] banner-title opacity-100 md:opacity-90  backgdrop-blur" >
                                         <div id="text-bpp" class="sticky top-16 font-bold md:relative md:top-[13.5rem] lg:top-[10.5rem] text-[15vw] md:ml-[4rem] lg:ml-0 md:text-[6vw] lg:text-[6rem] text-bpp">
                                             BALIKPAPAN
                                         </div>
@@ -108,7 +112,7 @@
                                     </div>
                                 </div>
                                 {{-- prioritas --}}
-                                <div class="absolute w-full flex md:justify-center justify-center md:-mt-14 md:top-[13rem] " id="filter-options" >
+                                <div class="absolute w-full flex hidden md:justify-center justify-center md:-mt-14 md:top-[21.3rem] " id="filter-options" >
                                     <div class="bg-white shadow-lg w-[80%] pt-3 pb-1 px-2 rounded-lg">
                                         <div class="peraturan-filter flex flex-col sm:flex-row">
                                             <div class="flex-1 z-[50]">
@@ -445,6 +449,58 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="py-4 px-4 mx-auto max-w-screen-xl text-center z-10 relative">
+            <div id="default-carousel" class="relative w-full" data-carousel="slide">
+                <!-- Carousel wrapper -->
+                <div class="relative h-[30rem] overflow-hidden rounded-lg md:h-[30rem]">
+                    <!-- Item 1 -->
+                    <div class="hidden duration-700 ease-in-out bg-yellow-100" data-carousel-item>
+                        
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="hidden duration-700 ease-in-out bg-yellow-200" data-carousel-item>
+                        
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="hidden duration-700 ease-in-out bg-yellow-300" data-carousel-item>
+                        
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="hidden duration-700 ease-in-out bg-yellow-400" data-carousel-item>
+                        
+                    </div>
+                    <!-- Item 5 -->
+                    <div class="hidden duration-700 ease-in-out bg-yellow-500" data-carousel-item>
+                        
+                    </div>
+                </div>
+                <!-- Slider indicators -->
+                <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+                </div>
+                <!-- Slider controls -->
+                <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-cyan-50/60 transition-all duration-700 ease-out group-hover:bg-sky-400/50 group-focus:ring-4 group-focus:ring-amber-500 group-focus:outline-none">
+                        <svg class="w-4 h-4 text-slate=800 hover:text-black transition-all ease-out duration-700 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                        </svg>
+                        <span class="sr-only">Previous</span>
+                    </span>
+                </button>
+                <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-cyan-50/60 transition-all duration-700 ease-out group-hover:bg-sky-400/50 group-focus:ring-4 group-focus:ring-amber-500 group-focus:outline-none">
+                        <svg class="w-4 h-4 text-slate-800 hover:text-black transition-all ease-out duration-700 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                        </svg>
+                        <span class="sr-only">Next</span>
+                    </span>
+                </button>
             </div>
         </div>
         <div class="py-4 px-4 mx-auto max-w-screen-xl text-center z-10 relative">

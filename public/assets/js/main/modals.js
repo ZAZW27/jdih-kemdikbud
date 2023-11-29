@@ -75,7 +75,7 @@
             }else{
                 banner.classList.add('z-50');
             }
-            Beruang.classList.remove('md:z-[43]');
+            Beruang.classList.remove('md:z-[45]');
             // banner.classList.add("block");
         }, 20);
     }
@@ -93,7 +93,7 @@
             }else if(banner.classList.contains('z-50')){
                 banner.classList.remove('z-50');
             }
-            Beruang.classList.add('md:z-[43]');
+            Beruang.classList.add('md:z-[45]');
         }, 20);
     }
 
