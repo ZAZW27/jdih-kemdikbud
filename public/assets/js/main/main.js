@@ -1,6 +1,6 @@
-function setOpacity(bppText, scrollPosition) {
+function setOpacity(bppText, scrollPosition, topOps, minHeight) {
     // Calculate the opacity based on the scroll position
-    var opacity = 0.80 - Math.min(scrollPosition / 300, 1); // Adjust the divisor for a faster/slower fade
+    var opacity = topOps - Math.min(scrollPosition / 300, 1); // Adjust the divisor for a faster/slower fade
 
     // Check if the opacity is above 20%
     bppText.style.opacity = opacity > 0.1 ? opacity : bppText.style.opacity;
@@ -21,7 +21,7 @@ function bannerToggleScreen() {
         }
         window.addEventListener('scroll', function () {
             var scrollPosition = window.scrollY || document.documentElement.scrollTop;
-            setOpacity(bppText, scrollPosition);
+            setOpacity(bppText, scrollPosition, 0.80, 300);
         });
     } else {
         bppText.classList.add('text-bpp');
@@ -31,6 +31,10 @@ function bannerToggleScreen() {
             banner.classList.add('sticky');
             hideModalFilter()
         }
+        window.addEventListener('scroll', function () {
+            var scrollPosition = window.scrollY || document.documentElement.scrollTop;
+            setOpacity(bppText, scrollPosition, 1, 500);
+        });
     }
 }
 
