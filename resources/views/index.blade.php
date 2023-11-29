@@ -472,10 +472,8 @@
             </div>
         </div>
         <div id="slide-content" class="py-4 px-4 mx-auto max-w-screen-xl text-center z-1 relative">
-            example:
-
             <button id="prevBtn"
-                class="prev bg-white border-2 border-yellow-500/90 hover:border-yellow-500/50 group hover:bg-yellow-500/50 duration-300 rounded-full w-12 h-12 flex items-center justify-center absolute left-4 md:left-12 top-1/2 transform -translate-y-1/2 z-50">
+                class="prev bg-white border-2 border-amber-600/90 hover:border-yellow-500/50 group hover:bg-yellow-500/50 hover:backdrop-blur-lg duration-300 rounded-full w-12 h-12 flex items-center justify-center absolute left-4 md:left-12 top-1/2 transform -translate-y-1/2 z-50">
                 <i class="fa fa-angle-left fa-2x text-yellow-500/90 group-hover:text-white"></i>
             </button>
             <div class="slider-container tns-layanan-slider flex space-x-4 text-center">
@@ -514,12 +512,10 @@
                 </div>
             </div>
             <button id="nextBtn"
-                class="next bg-white border-2 border-yellow-500/90 hover:border-yellow-500/50 group hover:bg-yellow-500/50 duration-300 rounded-full w-12 h-12 flex items-center justify-center absolute right-4 md:right-12 top-1/2 transform -translate-y-1/2 z-50">
+                class="next bg-white border-2 border-amber-600/90 hover:border-yellow-500/50 group hover:bg-yellow-500/50 hover:backdrop-blur-lg duration-300 rounded-full w-12 h-12 flex items-center justify-center absolute right-4 md:right-12 top-1/2 transform -translate-y-1/2 z-50">
                 <i class="fa fa-angle-right fa-2x text-yellow-500/90 group-hover:text-white"></i>
             </button>
-
             <script>
-
                 var slider = tns({
                     container: '.tns-layanan-slider',
                     items: 2,
