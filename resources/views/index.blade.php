@@ -63,7 +63,7 @@
                 <div class="relative w-[100svw] h-full py-4 px-4 mx-auto max-w-screen-xl text-center pt-16 z-[20]">
                     <div class="col-span-12 md:col-span-12 sm:col-span-12 mt-2 animate__animated animate__fadeInUp" id="detail_peraturan">
                         <div class="row-span-3 col-span-12 ">
-                            <div class="z-[11] absolute top-0 md:-left-[9rem] -left-[0rem] md:w-[120svw] w-[100svw] h-full banner-gradient"></div>
+                            <div class="z-[11] absolute top-0 md:-left-[12rem] -left-[0rem] md:w-[130svw] w-[100svw] h-full banner-gradient"></div>
                             <div class="absolute md:flex lg:block justify-end top-0 md:-left-[9rem] -left-[0rem] md:w-[115svw] w-[100svw] h-full">
                                 <div class="mt-[10rem] w-[100vw] flex flex-col items-center justify-start  md:ml-10">
                                     <div id="beruangMaduImg" for="search-input" class="md:absolute md:bottom-[160px] lg:bottom-[66px] md:left-[37.8vw] lg:left-[17.4vw] md:z-[45] z-[22] md:w-[8rem] lg:w-[20rem] w-[90vw] hover:cursor-text">
