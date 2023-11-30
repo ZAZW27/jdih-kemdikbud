@@ -2,13 +2,34 @@
 {{-- <script src="{{asset('assets/js/google-charts/col-chart.js')}}"></script> --}}
 @include('charts.col-chart')
 @include('charts.donut-chart')
-<script async>
-    AOS.init();
-
+{{-- <script async>
     AOS.init({
         once: true
-    })   
+    });
+</script> --}}
+
+<script async>
+    // Check if the screen width is greater than a certain threshold for landscape orientation
+    if (window.innerWidth > 600 && window.innerHeight < window.innerWidth) {
+        // Load AOS stylesheet dynamically
+        var aosStylesheet = document.createElement('link');
+        aosStylesheet.rel = 'stylesheet';
+        aosStylesheet.href = 'https://unpkg.com/aos@2.3.1/dist/aos.css';
+        document.head.appendChild(aosStylesheet);
+
+        // Load AOS library dynamically
+        var aosScript = document.createElement('script');
+        aosScript.src = 'https://unpkg.com/aos@2.3.1/dist/aos.js';
+        aosScript.onload = function () {
+            // AOS script is loaded, now initialize AOS
+            AOS.init({
+                once: true
+            });
+        };
+        document.head.appendChild(aosScript);
+    }
 </script>
+
 
 <script async src="{{asset('assets/js/main/modals.js')}}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
@@ -35,7 +56,7 @@
                     </div>
                 </div>
                 <!-- Slider controls -->
-                <button type="button" class="absolute top-8 start-0 z-30 flex items-center justify-center h-full px-0 duration-200 cursor-pointer group focus:outline-none" data-carousel-prev>
+                {{-- <button type="button" class="absolute top-8 start-0 z-[80] flex items-center justify-center h-full px-0 duration-200 cursor-pointer group focus:outline-none" data-carousel-prev>
                     <span class="inline-flex items-center justify-center w-6 hover:w-10 h-[15rem] hover:h-[20rem] rounded-br-full rounded-tr-full bg-slate-400/10 backdrop-blur group-hover:bg-slate-50/20 group-focus:ring-1 group-focus:ring-amber-500/20 group-focus:outline-none transition-all duration-300 ease-out">
                         <svg class="w-4 h-4 text-slate-300  rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                             <path stroke="currentColor"  stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
@@ -43,14 +64,14 @@
                         <span class="sr-only">Previous</span>
                     </span>
                 </button>
-                <button type="button" class="absolute top-8 end-0 z-30 flex items-center justify-center h-full px-0 duration-200 cursor-pointer group focus:outline-none" data-carousel-next>
+                <button type="button" class="absolute top-8 end-0 z-[80] flex items-center justify-center h-full px-0 duration-200 cursor-pointer group focus:outline-none" data-carousel-next>
                     <span class="inline-flex items-center justify-center w-6 hover:w-10 h-[15rem] hover:h-[20rem] rounded-tl-full rounded-bl-full bg-slate-400/10 backdrop-blur group-hover:bg-slate-50/20 group-focus:ring-1 group-focus:ring-amber-500/20 group-focus:outline-none transition-all duration-300 ease-out">
                         <svg class="w-4 h-4 text-slate-300  rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
                         </svg>
                         <span class="sr-only">Next</span>
                     </span>
-                </button>
+                </button> --}}
                 {{-- <!-- Slider indicators -->
                 <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
                     <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
@@ -59,7 +80,7 @@
 
             </div>
             
-            <div class="absolute top-0 flex justify-center bg-amber-500 w-full h-full ">
+            <div class="absolute top-0 flex justify-center bg-amber-500 w-full h-full">
                 <div class="relative w-[100svw] h-full py-4 px-4 mx-auto max-w-screen-xl text-center pt-16 z-[20]">
                     <div class="col-span-12 md:col-span-12 sm:col-span-12 mt-2 animate__animated animate__fadeInUp" id="detail_peraturan">
                         <div class="row-span-3 col-span-12 ">
