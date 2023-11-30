@@ -3,7 +3,7 @@ function setOpacity(bppText, scrollPosition, topOps, minHeight) {
     var opacity = topOps - Math.min(scrollPosition / 300, 1); // Adjust the divisor for a faster/slower fade
 
     // Check if the opacity is above 20%
-    bppText.style.opacity = opacity > 0.1 ? opacity : bppText.style.opacity;
+    bppText.style.opacity = opacity > 0.2 ? opacity : bppText.style.opacity;
 }
 
 

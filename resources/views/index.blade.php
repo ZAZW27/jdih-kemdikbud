@@ -89,14 +89,14 @@
                                             var imageElement = document.createElement('img');
                                             imageElement.src = "{{ asset('assets/img/logo/helarctos-malayanus.png') }}";
                                             // Use Tailwind classes for transitions
-                                            imageElement.classList.add('opacity-0', 'transition-opacity', 'duration-1000', 'ease-in-out');
+                                            imageElement.classList.add('opacity-0', 'transition-opacity', 'duration-700', 'ease-in-out');
                                             beruangMaduImg.appendChild(imageElement);
 
                                             var batikBanner = document.createElement('img');
                                             batikBanner.setAttribute('style', 'filter: contrast(120%) saturate(110%)');
                                             batikBanner.src = "{{asset('assets/img/props/batik1.png')}}";
                                             // Use Tailwind classes for transitions
-                                            batikBanner.classList.add('opacity-0', 'transition-opacity', 'duration-1000', 'ease-in-out', 'delay-700');
+                                            batikBanner.classList.add('opacity-0', 'transition-opacity', 'duration-700', 'ease-in-out', 'delay-200');
                                             batik.appendChild(batikBanner);
 
                                             // Set a timeout to remove the fade-in classes after a delay
@@ -844,16 +844,16 @@
                 </div>
                 <!-- Slider controls -->
                 <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-cyan-50/60 transition-all duration-700 ease-out group-hover:bg-sky-400/50 group-focus:ring-4 group-focus:ring-amber-500 group-focus:outline-none">
-                        <svg class="w-4 h-4 text-slate=800 hover:text-black transition-all ease-out duration-700 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <span class="inline-flex items-center justify-center w-12 h-12 rounded-full transition-all duration-700 ease-out group-hover:bg-sky-400/50 group-focus:ring-4 group-focus:ring-amber-500 group-focus:outline-none">
+                        <svg class="w-8 h-8 text-amber-50 hover:text-slate-50 transition-all ease-out duration-700 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
                         </svg>
                         <span class="sr-only">Previous</span>
                     </span>
                 </button>
                 <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-cyan-50/60 transition-all duration-700 ease-out group-hover:bg-sky-400/50 group-focus:ring-4 group-focus:ring-amber-500 group-focus:outline-none">
-                        <svg class="w-4 h-4 text-slate-800 hover:text-black transition-all ease-out duration-700 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <span class="inline-flex items-center justify-center w-12 h-12 rounded-full transition-all duration-700 ease-out group-hover:bg-sky-400/50 group-focus:ring-4 group-focus:ring-amber-500 group-focus:outline-none">
+                        <svg class="w-8 h-8 text-amber-50 hover:text-slate-50 transition-all ease-out duration-700 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
                         </svg>
                         <span class="sr-only">Next</span>
