@@ -11,7 +11,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- jQuery -->
-    <script defer src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
 
     <!-- Load Flowbite and Alpine.js from CDN -->           
@@ -19,8 +19,8 @@
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
 
-     <!-- Load the latest version of Font Awesome -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Load the latest version of Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
@@ -35,17 +35,17 @@
 
 
     {{-- MY JS --}}
-    <script defer src="{{asset('assets/js/main/main.js')}}"></script>
+    <script async src="{{asset('assets/js/main/main.js')}}"></script>
 </head>
 <body style="background-color: #F1F4FA;">
-    <nav class="md:bg-white md:border-gray-200 bg-slate-800/30 shadow-lg fixed top-0 w-full lg:h-[6rem] sm:h-[5rem] backdrop-blur-sm">
+    <nav class="md:bg-white md:border-gray-200 bg-slate-800/30 shadow-lg fixed top-0 w-full lg:h-[6rem] sm:h-[5rem] backdrop-blur-sm transition-all duration-200 ease-in" id="navbar">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <a href="/" class="flex items-center navbar-logos">
                 <img src="{{ asset('assets/img/logo/logo_jdih_globe.png') }}" class="h-16 mr-3" alt="Logo kemdikbud" loading="lazy" />
                 <img src="{{ asset('assets/img/logo/logo_kota_balikpapan.svg') }}" class="h-16 -ml-3" alt="Logo Balikpapan" loading="lazy" />
                 <img src="{{ asset('assets/img/logo/helarctos-malayanus.png') }}" class="h-16 -ml-2" alt="Beruang" loading="lazy" />
             </a>
-            <button data-collapse-toggle="navbar-multi-level" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-blue-800 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-200" aria-controls="navbar-multi-level" aria-expanded="false">
+            <button id="collapse-nav-btn" data-collapse-toggle="navbar-multi-level" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white hover:text-blue-800 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-200 transition-all duration-100 ease-linear" aria-controls="navbar-multi-level" aria-expanded="false">
                 <span class="sr-only">Open main menu</span>
                 <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
@@ -284,4 +284,37 @@
             </div>
         </div>
     </nav>
+    <script>
+        $(document).ready(function() {
+        // Function to update navbar styles based on scroll position
+        function updateNavbarStyles() {
+            var scrollPosition = $(window).scrollTop();
+    
+            // Define the scroll threshold for color change
+            var scrollThreshold = 627;
+    
+            // Check if the viewport width is less than or equal to 768 pixels (mobile view)
+            if ($(window).width() <= 768) {
+            if (scrollPosition > scrollThreshold) {
+                // If scrolled beyond the threshold, change background color to white
+                $('#navbar').removeClass('bg-slate-800/30').addClass('bg-white');
+                $('#collapse-nav-btn').removeClass('text-white').addClass('text-blue-800');
+            } else {
+                // If not scrolled beyond the threshold, revert to the original styles
+                $('#navbar').removeClass('bg-white').addClass('bg-slate-800/30');
+                $('#collapse-nav-btn').removeClass('text-blue-800').addClass('text-white');
+            }
+            } else {
+            // If not in mobile view, revert to the original styles
+            $('#navbar').removeClass('bg-white').addClass('bg-slate-800/30');
+            }
+        }
+    
+        // Attach the updateNavbarStyles function to the scroll event
+        $(window).scroll(updateNavbarStyles);
+    
+        // Attach the updateNavbarStyles function to the window resize event
+        $(window).resize(updateNavbarStyles);
+        });
+    </script>
     
