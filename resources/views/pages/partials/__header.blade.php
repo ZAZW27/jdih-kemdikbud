@@ -9,12 +9,19 @@
     <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/logo/TutWuriHandayani.png') }}">
     {{-- TAILWIND CDN --}}
     <script src="https://cdn.tailwindcss.com"></script>
-    {{-- FLOWBITE CDN --}}
+    
+    <!-- jQuery -->
+    <script defer src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+
+    <!-- Load Flowbite and Alpine.js from CDN -->           
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css">
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
-    <script async src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-    <script defer src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    {{-- FANCY APPS --}}
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+
+     <!-- Load the latest version of Font Awesome -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.umd.js"></script>
@@ -25,12 +32,7 @@
 
     {{-- google charts --}}
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-{{--     
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>  --}}
 
-    {{-- font awesome icon  --}}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     {{-- MY JS --}}
     <script defer src="{{asset('assets/js/main/main.js')}}"></script>
@@ -39,9 +41,9 @@
     <nav class="md:bg-white md:border-gray-200 bg-slate-800/30 shadow-lg fixed top-0 w-full lg:h-[6rem] sm:h-[5rem] backdrop-blur-sm">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <a href="/" class="flex items-center navbar-logos">
-                <img src="{{ asset('assets/img/logo/logo_jdih_globe.png') }}" class="h-16 mr-3" alt="Flowbite Logo" />
-                <img src="{{ asset('assets/img/logo/logo_kota_balikpapan.svg') }}" class="h-16 -ml-3" alt="Flowbite Logo" />
-                <img src="{{ asset('assets/img/logo/helarctos-malayanus.png') }}" class="h-16 -ml-2" alt="Flowbite Logo" />
+                <img src="{{ asset('assets/img/logo/logo_jdih_globe.png') }}" class="h-16 mr-3" alt="Logo kemdikbud" loading="lazy" />
+                <img src="{{ asset('assets/img/logo/logo_kota_balikpapan.svg') }}" class="h-16 -ml-3" alt="Logo Balikpapan" loading="lazy" />
+                <img src="{{ asset('assets/img/logo/helarctos-malayanus.png') }}" class="h-16 -ml-2" alt="Beruang" loading="lazy" />
             </a>
             <button data-collapse-toggle="navbar-multi-level" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-blue-800 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-200" aria-controls="navbar-multi-level" aria-expanded="false">
                 <span class="sr-only">Open main menu</span>
@@ -49,7 +51,7 @@
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
                 </svg>
             </button>
-            <div class="hidden w-full md:block md:w-auto md:h-auto md:flex md:items-center md:mx-auto lg:mx-0" id="navbar-multi-level">
+            <div class="hidden w-full md:w-auto md:h-auto md:flex md:items-center md:mx-auto lg:mx-0" id="navbar-multi-level">
                 <ul class="flex flex-col font-medium p-4 md:p-0 md:shadow-md lg:shadow-none mt-4 border border-gray-100 rounded-lg bg-white md:flex-row md:space-x-0 md:mt-0 md:border-0 md:bg-white">
                     <li>
                         <a href="/" class="text-sm block py-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:px-3 lg:py-4 md:py-1">

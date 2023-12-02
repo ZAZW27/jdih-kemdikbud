@@ -8,9 +8,9 @@
     });
 </script> --}}
 
-<script async>
-    // Check if the screen width is greater than a certain threshold for landscape orientation
-    if (window.innerWidth > 600 && window.innerHeight < window.innerWidth) {
+<script>
+    // Function to add AOS script and stylesheet
+    function addAOS() {
         // Load AOS stylesheet dynamically
         var aosStylesheet = document.createElement('link');
         aosStylesheet.rel = 'stylesheet';
@@ -28,6 +28,22 @@
         };
         document.head.appendChild(aosScript);
     }
+
+    // Function to remove AOS script and stylesheet
+    function removeAOS() {
+        // Remove AOS stylesheet
+        var existingStylesheet = document.querySelector('link[href="https://unpkg.com/aos@2.3.1/dist/aos.css"]');
+        existingStylesheet && existingStylesheet.remove(); 
+
+        // Remove AOS script
+        var existingScript = document.querySelector('script[src="https://unpkg.com/aos@2.3.1/dist/aos.js"]');
+        existingScript && existingScript.remove();
+    }
+
+    // Check screen size and orientation on page load
+    (window.innerWidth > 765 && window.innerHeight < window.innerWidth) && addAOS();
+
+    window.addEventListener('resize', () => (window.innerWidth > 765 && window.innerHeight < window.innerWidth) ? addAOS() : removeAOS());  
 </script>
 
 
@@ -40,19 +56,19 @@
                 <div class="relative overflow-hidden rounded-lg md:h-[30rem] h-[100svh]">
                     <!-- Item 1 -->
                     <div class="hidden duration-1000 ease-in-out bg-yellow-100" data-carousel-item>
-                        <img class="w-full h-full object-cover object-right" src="{{asset('assets/img/bg/banner.jpeg')}}" alt="">
+                        <img class="w-full h-full object-cover object-right" src="{{asset('assets/img/bg/banner.jpeg')}}" alt="" loading="lazy">
                     </div>
                     <!-- Item 2 -->
                     <div class="hidden duration-1000 ease-in-out bg-yellow-200" data-carousel-item>
-                        <img class="w-full h-full object-cover object-right" src="{{asset('assets/img/bg/background.jpg')}}" alt="">
+                        <img class="w-full h-full object-cover object-right" src="{{asset('assets/img/bg/background.jpg')}}" alt="" loading="lazy">
                     </div>
                     <!-- Item 1 -->
                     <div class="hidden duration-1000 ease-in-out bg-yellow-100" data-carousel-item>
-                        <img class="w-full h-full object-cover object-right" src="{{asset('assets/img/bg/banner.jpeg')}}" alt="">
+                        <img class="w-full h-full object-cover object-right" src="{{asset('assets/img/bg/banner.jpeg')}}" alt="" loading="lazy">
                     </div>
                     <!-- Item 2 -->
                     <div class="hidden duration-1000 ease-in-out bg-yellow-200" data-carousel-item>
-                        <img class="w-full h-full object-cover object-right" src="{{asset('assets/img/bg/background.jpg')}}" alt="">
+                        <img class="w-full h-full object-cover object-right" src="{{asset('assets/img/bg/background.jpg')}}" alt="" loading="lazy">
                     </div>
                 </div>
                 <!-- Slider controls -->
@@ -801,7 +817,7 @@
                                         <div class="berita-containers">
                                             
                                             <div class="berita-img">
-                                                <img class="berita-image" src="{{ asset('assets/img/berita/'.$b->gambar_berita)}}" alt="">
+                                                <img class="berita-image" src="{{ asset('assets/img/berita/'.$b->gambar_berita)}}" alt="" loading="lazy">
                                             </div>
                                             <div class="berita-content">
                                                 <div class="berita-text px-4 py-1">
@@ -1185,26 +1201,26 @@
                         <div class="flex flex-col  items-center overflow-x-auto h-[7rem]">
                             <!-- Your content here -->
                             <a href="https://web.balikpapan.go.id/" class="pb-1">
-                                <img src="{{asset('assets/img/logo/logo_kota_balikpapan.svg')}}" style="width: 50px;">
+                                <img src="{{asset('assets/img/logo/logo_kota_balikpapan.svg')}}" style="width: 50px;" loading="lazy">
                             </a>
                             <a href="https://jdihn.go.id/" class="pb-1">
-                                <img src="{{asset('assets/img/logo/logo_jdih_globe.png')}}" style="width: 50px;">
+                                <img src="{{asset('assets/img/logo/logo_jdih_globe.png')}}" style="width: 50px;" loading="lazy">
                             </a>
                             <a href="https://www.bphn.go.id/" class="pb-1">
-                                <img src="{{asset('assets/img/logo/Logo_of_the_Ministry_of_Law_and_Human_Rights_of_the_Republic_of_Indonesia.svg')}}" class="rounded-lg" style="width: 50px;">
+                                <img src="{{asset('assets/img/logo/Logo_of_the_Ministry_of_Law_and_Human_Rights_of_the_Republic_of_Indonesia.svg')}}" class="rounded-lg" style="width: 50px;" loading="lazy">
                             </a>
                             <a href="https://jdih.kaltimprov.go.id/" class="pb-1">
-                                <img src="{{asset('assets/img/logo/logo_login.png')}}" style="width: 100px;">
+                                <img src="{{asset('assets/img/logo/logo_login.png')}}" style="width: 100px;" loading="lazy">
                             </a>
                             <a href="https://jdih.kemendagri.go.id/">
-                                <img src="{{asset('assets/img/logo/jdih_kementrian.svg')}}" style="width: 60px;">
+                                <img src="{{asset('assets/img/logo/jdih_kementrian.svg')}}" style="width: 60px;" loading="lazy">
                             </a>
                             <a href="https://kemenkumham.go.id/">
-                                <img src="{{asset('assets/img/logo/kemenkumham_jdih.png')}}" style="width: 100px;">
+                                <img src="{{asset('assets/img/logo/kemenkumham_jdih.png')}}" style="width: 100px;" loading="lazy">
                             </a>
                         </div>
                         <a href="https://play.google.com/store/apps/details?id=com.bsw_rn" target="_blank">
-                            <img src="{{asset('assets/img/logo/gplay.png')}}" style="width: 180px;">
+                            <img src="{{asset('assets/img/logo/gplay.png')}}" style="width: 180px;" loading="lazy">
                         </a>
                         <!-- Inset shadow pseudo-element -->
                         <div class="inset-shadow"></div>
@@ -1233,19 +1249,19 @@
                         <h5 class="font-bold text-yellow-400 text-lg" style="margin: -10px 0px 0 -10px;">Media Sosial</h5>
                         <div class="flex gap-2 media-link-footer">
                         <a href="" target="_blank">
-                            <img src="{{asset('assets/img/media/envelope.png')}}" alt="Email" style="width: 24px;">
+                            <img src="{{asset('assets/img/media/envelope.png')}}" alt="Email" style="width: 24px;" loading="lazy">
                         </a>
                         <a href="" target="_blank">
-                            <img src="{{asset('assets/img/media/facebook.png')}}" alt="Facebook" style="width: 24px;">
+                            <img src="{{asset('assets/img/media/facebook.png')}}" alt="Facebook" style="width: 24px;" loading="lazy">
                         </a>
                         <a href="https://twitter.com/birohukumdikbud" target="_blank">
-                            <img src="{{asset('assets/img/media/twitter.png')}}" alt="Twitter" style="width: 24px;">
+                            <img src="{{asset('assets/img/media/twitter.png')}}" alt="Twitter" style="width: 24px;" loading="lazy">
                         </a>
                         <a href="https://www.instagram.com/birohukumdikbud/" target="_blank">
-                            <img src="{{asset('assets/img/media/instagram-outline.png')}}" alt="Instagram" style="width: 24px;">
+                            <img src="{{asset('assets/img/media/instagram-outline.png')}}" alt="Instagram" style="width: 24px;" loading="lazy">
                         </a>
                         <a href="https://www.youtube.com/channel/UC_teqno_MCTrSKHwfdstXYw" target="_blank">
-                            <img src="{{asset('assets/img/media/youtube.png')}}" alt="Youtube" style="width: 24px;">
+                            <img src="{{asset('assets/img/media/youtube.png')}}" alt="Youtube" style="width: 24px;" loading="lazy">
                         </a>
                         </div>
                     </div>
