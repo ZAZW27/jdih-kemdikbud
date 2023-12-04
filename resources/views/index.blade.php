@@ -121,11 +121,9 @@
 
                                             var imageElement = document.createElement('img');
                                             imageElement.src = "{{ asset('assets/img/logo/helarctos-malayanus.png') }}";
-                                            // Use Tailwind classes for transitions
+
                                             imageElement.classList.add('opacity-0', 'transition-opacity', 'duration-700', 'ease-in-out');
                                             beruangMaduImg.appendChild(imageElement);
-
-                                            // Use Tailwind classes for transitions
 
                                             // Set a timeout to remove the fade-in classes after a delay
                                             setTimeout(function () {
@@ -143,7 +141,6 @@
                             <form class="relative domain-form z-[44]" action="{{route('get_peraturan.data')}}" method="post">
                                 @csrf
                                 <div class="relative flex justify-center items-center">
-
                                     <div class="relative md:w-[50%] w-[80%] flex flex-row justify-center md:items-center">
                                         <div class="flex justify-center items-end md:items-center md:space-x-4 tutup animate-slide-left mt-24 w-full  md:h-[20rem] h-[58svh]">
                                             <input name="search-peraturan" type="text" id="search-input" class="w-[100%] pl-2 pr-4 py-3 border-0 rounded-lg focus:outline-none focus:ring focus:border-blue-300" placeholder="Cari peraturan dan dokumen disini">
@@ -229,6 +226,91 @@
                 </div>
             </div>
         </div>
+        
+        {{-- <div class="py-4 px-4 mx-auto max-w-screen-xl text-center pt-16  relative">
+            <div class="col-span-12 md:col-span-12 sm:col-span-12 mt-2 animate__animated animate__fadeInUp" id="detail_peraturan">
+                <div class="row-span-3 col-span-12 ">
+                    <form class="domain-form" action="{{route('get_peraturan.data')}}" method="post">
+                        @csrf
+                        <div class="md:flex md:items-center md:space-x-4 tutup animate-slide-left">
+                            <input name="search-peraturan" type="text" id="judul" class="w-full px-4 py-6 border-0 rounded-lg focus:outline-none focus:ring focus:border-blue-300" placeholder="Cari peraturan perundang-undangan bidang pendidikan, kebudayaan, riset, dan teknologi">
+                            <div class="absolute right-6 flex md:mt-0" id="filter-button">
+                                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-l focus:outline-none focus:ring focus:border-blue-300 hover:bg-red-500 ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" width="30"><path d="M0 0h24v24H0z" fill="none"></path><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
+                                </button>
+                                <button type="reset" style="reset" onclick="showModalFilter()" class="bg-yellow-500 text-slate-800 px-4 py-4 rounded-r focus:outline-none focus:ring focus:border-yellow-300">
+                                    <b>SPESIFIK</b>
+                                </button>
+                            </div>
+                        </div>                        
+                        <div class="absolute w-full flex md:justify-center justify-start md:-mt-14 md:top-[13rem] z-[11] hidden" id="filter-options" >
+                            <div class="bg-white shadow-lg w-[80%] pt-3 pb-1 px-2 rounded-lg">
+                                <div class="peraturan-filter flex flex-col sm:flex-row">
+                                    <div class="flex-1 z-[16]">
+                                        <section class="hidden" id="select-num" disabled>
+                                            <select class="custom-select sources" placeholder="Pilih Nomor" name="nomor-peraturan">
+                                                <option value="">Pilih Nomor</option>
+                                                @foreach ($groupNomor as $id => $name)
+                                                    <option value="{{$name}}">{{$name}}</option>
+                                                @endforeach
+                                            </select>
+                                        </section>
+                                        <section class="" id="type-num">
+                                            <input type="text" name="nomor-peraturan" placeholder="Ketik Nomor Peraturan" class="custom-input w-full focus:ring-white">
+                                        </section>
+                                        <input id="change-num" type="checkbox" value="" class="absolute z-[9999] md:right-40 right-[20px] top-6 w-6 h-6 text-blue-600 bg-white border-gray-600 shadow-md rounded-xl focus:ring-blue-500 ">
+                                    </div>
+                                </div>
+                                <div class="peraturan-filter flex flex-col sm:flex-row">
+                                    <div class=" flex-1 z-[15]">
+                                        <section>
+                                            <select class="custom-select sources" placeholder="Pilih Subjek" name="subjek-peraturan">
+                                                <option value="">Pilih Subjek</option>
+                                                @foreach ($groupSubjek as $id => $name)
+                                                    <option value="{{$name}}">{{$name}}</option>
+                                                @endforeach
+                                            </select>
+                                        </section>
+                                    </div>
+                                    <div class="flex-1 z-[14]">
+                                        <section>
+                                            <select class="custom-select sources" placeholder="Pilih Jenis" name="jenis-peraturan">
+                                                <option value="">Pilih Jenis</option>
+                                                @foreach ($groupJenis as $id => $name)
+                                                    <option value="{{$id}}">{{$name}}</option>
+                                                @endforeach
+                                            </select>
+                                        </section>
+                                    </div>
+                                </div>
+                                <div class="peraturan-filter flex flex-col sm:flex-row">
+                                    <div class="flex-1 z-[13]">
+                                        <section>
+                                            <select class="custom-select sources" placeholder="Pilih Tahun" name="tahun-peraturan">
+                                                <option value="">Pilih Tahun</option>
+                                                @foreach ($groupTahun as $id => $name)
+                                                    <option value="{{$id}}">{{$name}}</option>
+                                                @endforeach
+                                            </select>
+                                        </section>
+                                    </div>
+                                    <div class="flex-1 z-[12]">
+                                        <section>
+                                            <select class="custom-select sources" placeholder="Pilih Status" name="status-peraturan">
+                                                <option value="">Pilih Status</option>
+                                                @foreach ($groupStatus as $id => $name)
+                                                    <option value="{{$id}}">{{$name}}</option>
+                                                @endforeach
+                                            </select>
+                                        </section>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>  --}}
     </div>
     <div class="containers bg-center md:-mt-[0rem] -mt-[20svh] z-50">
         <div class="py-4 px-4 mx-auto max-w-screen-xl text-center z-1 relative">
@@ -382,7 +464,7 @@
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-12 fam-grid">
                                         <a href="https://jdih.kemdikbud.go.id/sjdih/siperpu/login" target="_blank">
-                                            <div class="c-layanan bg-yellow-500 p-2 rounded-xg text-center">SIPERPU</div>
+                                          <div class="c-layanan bg-yellow-500 p-2 rounded-xg text-center">SIPERPU</div>
                                         </a>
                                     </div>
                                     <div class="col-lg-7 col-md-7 col-sm-12 fam-grid">
@@ -469,7 +551,7 @@
                     prevButton: '#prevBtn',
                     nextButton: '#nextBtn',
                     speed: 1000,
-                    autoplay: true,
+                    autoplay: false,
                     autoplayButtonOutput: false,
                     responsive: {
                         0: {
@@ -1200,7 +1282,7 @@
                     <a href="https://kemdikbud.go.id" target="_blank"> Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi.</a>
                     </p>
                 </div>
-                <button id="toTopBtn" title="Go to top" class="move-to-top-btn shadow-md z-50">
+                <button onclick="topFunction()" id="movetop" title="Go to top" class="move-to-top-btn shadow-md z-50">
                     ^
                 </button>
             </section>
@@ -1209,18 +1291,18 @@
         {{-- top functions --}}
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script>
-            $(document).ready(function(){ 
-                $(window).scroll(function(){ 
-                    if ($(this).scrollTop() > 100) { 
-                        $('#toTopBtn').fadeIn(); 
-                    } else { 
-                        $('#toTopBtn').fadeOut(); 
-                    } 
-                }); 
-                $('#toTopBtn').click(function(){ 
-                    $("html, body").animate({ scrollTop: 0 }, 600); 
-                    return false; 
-                }); 
+            $(window).on("scroll", function () {
+                var scroll = $(window).scrollTop();
+    
+                if (scroll >= 5) {
+                    $("#site-header")
+                        .stop()
+                        .animate({ height: "90px"}, 200); // Adjust the target height and margin as needed
+                } else {
+                    $("#site-header")
+                        .stop()
+                        .animate({ height: "100px", marginTop: "0px" }, 200); // Replace "original-height" and "original-margin" with the actual original values
+                }
             });
         </script>
         {{-- ANIMATED SELECT OPTIONS --}}
