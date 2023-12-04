@@ -102,37 +102,49 @@
                 <a href="https://kemdikbud.go.id" target="_blank"> Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi.</a>
                 </p>
             </div>
-            <button onclick="topFunction()" id="movetop" title="Go to top" class="move-to-top-btn shadow-md z-50">
+            <button id="toTopBtn" title="Go to top" class="move-to-top-btn shadow-md z-50 hidden">
                 ^
             </button>
         </section>
         <!-- //copyright -->
     </footer>
     <script src="{{asset('assets/js/main.js')}}"></script>
+    {{-- <script>
+      $(document).ready(function(){
+          console.log("to top btn function's ready");
+  
+          function toTopButton(){
+              var scrollPosition = $(window).scrollTop();
+              const scrollThreshold = 400;
+              const btn = $('#toTopBtn');
+  
+              if (scrollPosition > scrollThreshold) {
+                  btn.removeClass('hidden');
+              } else {
+                  btn.addClass('hidden');
+              }
+          }
+  
+          // Call the toTopButton function on scroll
+          $(window).scroll(toTopButton);
+      });
+    </script> --}}
+  
     <script>
-        // When the user scrolls down 20px from the top of the document, show the button
-        function topFunction() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }
-
-        window.onscroll = function () {
-            scrollFunction()
-        };
-        
-        function scrollFunction() {
-            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-            document.getElementById("movetop").style.display = "block";
-            } else {
-            document.getElementById("movetop").style.display = "none";
-            }
-        }
-
-        // When the user clicks on the button, scroll to the top of the document
-        function topFunction() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }
+      $(document).ready(function(){ 
+          $(window).scroll(function(){ 
+              if ($(this).scrollTop() > 100) { 
+                  $('#toTopBtn').fadeIn(); 
+              } else { 
+                  $('#toTopBtn').fadeOut(); 
+              } 
+          }); 
+          $('#toTopBtn').click(function(){ 
+              $("html, body").animate({ scrollTop: 0 }, 600); 
+              return false; 
+          }); 
+      });
     </script>
+
 </body>
 </html>

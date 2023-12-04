@@ -286,24 +286,25 @@
     </nav>
     <script>
         $(document).ready(function() {
+        var pageTitle = "{{ isset($title) ? $title : 'JDIH Balikpapan' }}";
         // Function to update navbar styles based on scroll position
         function updateNavbarStyles() {
             var scrollPosition = $(window).scrollTop();
     
             // Define the scroll threshold for color change
-            var scrollThreshold = 627;
-    
+            var scrollThreshold = pageTitle.toLowerCase().includes('main') ? 627 : 200;
+
             // Check if the viewport width is less than or equal to 768 pixels (mobile view)
             if ($(window).width() <= 768) {
-            if (scrollPosition > scrollThreshold) {
-                // If scrolled beyond the threshold, change background color to white
-                $('#navbar').removeClass('bg-slate-800/30').addClass('bg-white');
-                $('#collapse-nav-btn').removeClass('text-white').addClass('text-blue-800');
-            } else {
-                // If not scrolled beyond the threshold, revert to the original styles
-                $('#navbar').removeClass('bg-white').addClass('bg-slate-800/30');
-                $('#collapse-nav-btn').removeClass('text-blue-800').addClass('text-white');
-            }
+                if (scrollPosition > scrollThreshold) {
+                    // If scrolled beyond the threshold, change background color to white
+                    $('#navbar').removeClass('bg-slate-800/30').addClass('bg-white');
+                    $('#collapse-nav-btn').removeClass('text-white').addClass('text-blue-800');
+                } else {
+                    // If not scrolled beyond the threshold, revert to the original styles
+                    $('#navbar').removeClass('bg-white').addClass('bg-slate-800/30');
+                    $('#collapse-nav-btn').removeClass('text-blue-800').addClass('text-white');
+                }
             } else {
             // If not in mobile view, revert to the original styles
             $('#navbar').removeClass('bg-white').addClass('bg-slate-800/30');

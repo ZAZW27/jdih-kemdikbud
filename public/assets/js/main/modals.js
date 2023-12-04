@@ -1,65 +1,56 @@
 
-    // UNTUK SUBJECT PERATURAN !!!!!!!!!!!!!!!!
-    function showModalSubjekPeraturan(){
-        let modal = document.getElementById("modal-base");
-        let targetModal = document.getElementById("modalSubjekPeraturan");
-        modal.classList.remove('hidden');
-        modal.classList.add("flex");
-        setTimeout(() => {
-            targetModal.classList.remove('hidden');
-            targetModal.classList.add("flex");
-            modal.classList.add("opacity-100");
-        }, 20);
-    }
-    function hideModalSubjekPeraturan(){
-        let modal = document.getElementById("modal-base");
-        let targetModal = document.getElementById("modalSubjekPeraturan");
-        modal.classList.add("opacity-0");
-        modal.classList.remove("opacity-100");
-        setTimeout(() => {
-            modal.classList.add('hidden');
-            modal.classList.remove("flex");
-            targetModal.classList.add('hidden');
-            targetModal.classList.remove("flex");
-        }, 500);
-    }
+// UNTUK SUBJECT PERATURAN !!!!!!!!!!!!!!!!
+function showModalSubjekPeraturan(){
+    let modal = document.getElementById("modal-base");
+    let targetModal = document.getElementById("modalSubjekPeraturan");
+    modal.classList.remove('hidden');
+    modal.classList.add("flex");
+    setTimeout(() => {
+        targetModal.classList.remove('hidden');
+        targetModal.classList.add("flex");
+        modal.classList.add("opacity-100");
+    }, 20);
+}
+function hideModalSubjekPeraturan(){
+    let modal = document.getElementById("modal-base");
+    let targetModal = document.getElementById("modalSubjekPeraturan");
+    modal.classList.add("opacity-0");
+    modal.classList.remove("opacity-100");
+    setTimeout(() => {
+        modal.classList.add('hidden');
+        modal.classList.remove("flex");
+        targetModal.classList.add('hidden');
+        targetModal.classList.remove("flex");
+    }, 500);
+}
 
-    // UNTUK LAYANAN !!!!!!!!!!!!!!!!
-    function showModalLayanan(){
-        let modal = document.getElementById("modal-base");
-        let targetModal = document.getElementById("modalLayanan");
-        modal.classList.remove('hidden');
-        modal.classList.add("flex");
-        setTimeout(() => {
-            targetModal.classList.remove('hidden');
-            targetModal.classList.add("flex");
-            modal.classList.add("opacity-100");
-        }, 20);
-    }
-    function hideModalLayanan(){
-        let modal = document.getElementById("modal-base");
-        let targetModal = document.getElementById("modalLayanan");
-        modal.classList.add("opacity-0");
-        modal.classList.remove("opacity-100");
-        setTimeout(() => {
-            modal.classList.add('hidden');
-            modal.classList.remove("flex");
-            targetModal.classList.add('hidden');
-            targetModal.classList.remove("flex");
-        }, 500);
-    }
+// UNTUK LAYANAN !!!!!!!!!!!!!!!!
+function showModalLayanan(){
+    let modal = document.getElementById("modal-base");
+    let targetModal = document.getElementById("modalLayanan");
+    modal.classList.remove('hidden');
+    modal.classList.add("flex");
+    setTimeout(() => {
+        targetModal.classList.remove('hidden');
+        targetModal.classList.add("flex");
+        modal.classList.add("opacity-100");
+    }, 20);
+}
+function hideModalLayanan(){
+    let modal = document.getElementById("modal-base");
+    let targetModal = document.getElementById("modalLayanan");
+    modal.classList.add("opacity-0");
+    modal.classList.remove("opacity-100");
+    setTimeout(() => {
+        modal.classList.add('hidden');
+        modal.classList.remove("flex");
+        targetModal.classList.add('hidden');
+        targetModal.classList.remove("flex");
+    }, 500);
+}
 
+document.addEventListener('DOMContentLoaded', function(){
     // UNTUK FILTER SEARCH !!!!!!!!!!!!!!
-    document.getElementById("filter-button").addEventListener('click', function () {
-        const targetModal = document.getElementById("filter-options");
-    
-        if (targetModal.classList.contains("block")) {
-            hideModalFilter();
-        } else {
-            showModalFilter();
-        }
-    });
-
     // SHOW MODAL FOR FILTERING
     function showModalFilter(){
         let Beruang = document.getElementById("beruangMaduImg");
@@ -79,6 +70,7 @@
             // banner.classList.add("block");
         }, 20);
     }
+
     function hideModalFilter(){
         let Beruang = document.getElementById("beruangMaduImg");
         let banner = document.getElementById("banner-position");
@@ -96,6 +88,16 @@
             Beruang.classList.add('md:z-[45]');
         }, 20);
     }
+
+    document.getElementById("filter-button").addEventListener('click', function () {
+        const targetModal = document.getElementById("filter-options");
+    
+        if (targetModal.classList.contains("block")) {
+            hideModalFilter();
+        } else {
+            showModalFilter();
+        }
+    });
 
     // SELECT NUM WHETHER ITS FOR SELECT OPTION OR WITH INPUTS
     document.getElementById("change-num").addEventListener("change", function () {
@@ -124,3 +126,4 @@
             });
         }
     });
+})
