@@ -107,14 +107,10 @@
                                         {{-- <img src="{{ asset('assets/img/logo/helarctos-malayanus.png') }}" alt="" style=""> --}}
                                         <!-- Placeholder content, e.g., a loading spinner or text -->
                                     </div>
-                                    <div id="batikBanner" class="absolute hidden lg:block top-[9.5rem] -mr-[41.6rem] scale-x-[-1] w-[20vw] z-[22]">
-                                        {{-- <img src="{{asset('assets/img/props/batik1.png')}}" alt="" style="filter: contrast(120%) saturate(110%)"> --}}
-                                    </div>
                                     <script>
                                         
                                         window.addEventListener('load', function () {
                                             var beruangMaduImg = document.getElementById('beruangMaduImg');
-                                            var batik = document.getElementById('batikBanner');
                                             var input = document.getElementById('search-input');
 
                                             // Add a click event listener to the image
@@ -125,21 +121,13 @@
 
                                             var imageElement = document.createElement('img');
                                             imageElement.src = "{{ asset('assets/img/logo/helarctos-malayanus.png') }}";
-                                            // Use Tailwind classes for transitions
+
                                             imageElement.classList.add('opacity-0', 'transition-opacity', 'duration-700', 'ease-in-out');
                                             beruangMaduImg.appendChild(imageElement);
-
-                                            var batikBanner = document.createElement('img');
-                                            batikBanner.setAttribute('style', 'filter: contrast(120%) saturate(110%)');
-                                            batikBanner.src = "{{asset('assets/img/props/batik1.png')}}";
-                                            // Use Tailwind classes for transitions
-                                            batikBanner.classList.add('opacity-0', 'transition-opacity', 'duration-700', 'ease-in-out', 'delay-200');
-                                            batik.appendChild(batikBanner);
 
                                             // Set a timeout to remove the fade-in classes after a delay
                                             setTimeout(function () {
                                                 imageElement.classList.remove('opacity-0');
-                                                batikBanner.classList.remove('opacity-0');
                                             }, 200); // Adjust the delay (in milliseconds) as needed
                                         });
                                     </script>
@@ -153,7 +141,6 @@
                             <form class="relative domain-form z-[44]" action="{{route('get_peraturan.data')}}" method="post">
                                 @csrf
                                 <div class="relative flex justify-center items-center">
-
                                     <div class="relative md:w-[50%] w-[80%] flex flex-row justify-center md:items-center">
                                         <div class="flex justify-center items-end md:items-center md:space-x-4 tutup animate-slide-left mt-24 w-full  md:h-[20rem] h-[58svh]">
                                             <input name="search-peraturan" type="text" id="search-input" class="w-[100%] pl-2 pr-4 py-3 border-0 rounded-lg focus:outline-none focus:ring focus:border-blue-300" placeholder="Cari peraturan dan dokumen disini">
@@ -161,7 +148,7 @@
                                                 <button type="submit" class="bg-blue-500 text-white px-4 py-2 mr-1 h-10 rounded-r focus:outline-none focus:ring focus:border-blue-300 hover:bg-red-500 rounded-lg">
                                                     <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" width="20"><path d="M0 0h24v24H0z" fill="none"></path><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
                                                 </button>
-                                                <button type="reset" style="reset" onclick="showModalFilter()" class="bg-yellow-500 text-slate-800 px-2 py-3 h-10 focus:outline-none mx-auto flex items-center rounded-l rounded-xl focus:ring focus:border-yellow-300">
+                                                <button type="reset" style="reset" class="bg-yellow-500 text-slate-800 px-2 py-3 h-10 focus:outline-none mx-auto flex items-center rounded-l rounded-xl focus:ring focus:border-yellow-300">
                                                     <b>SPESIFIK</b>
                                                 </button>
                                             </div>

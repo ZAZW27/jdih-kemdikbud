@@ -49,6 +49,7 @@
         }, 500);
     }
 
+document.addEventListener('DOMContentLoaded', function(){
     // UNTUK FILTER SEARCH !!!!!!!!!!!!!!
     document.getElementById("filter-button").addEventListener('click', function () {
         const targetModal = document.getElementById("filter-options");
@@ -59,6 +60,7 @@
             showModalFilter();
         }
     });
+})
 
     // SHOW MODAL FOR FILTERING
     function showModalFilter(){
