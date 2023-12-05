@@ -218,7 +218,7 @@
                                 </a>
                             </li>
                             <li class="rounded-sm px-3 py-1 hover:bg-gray-100">
-                                <a href="{{route('getGaleri.data')}}" >
+                                <a href="{{route('getGaleri.public')}}" >
                                     Galeri
                                 </a>
                             </li>

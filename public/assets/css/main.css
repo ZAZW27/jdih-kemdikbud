@@ -319,10 +319,15 @@ nav{
    padding: 5px 20px;
 }
 
+.area-box button{
+   background-color: transparent; 
+   border: none;
+}
 .area-box {
    height: 77px;
    width: 77px;
-   position: relative;
+   position: relative !important;
+   z-index: 12 !important;
    -webkit-border-radius: 10px 10px 10px 10px;
    /* box-shadow: 0 25px 98px 0 rgba(0, 0, 0, 0.03); */
    background-color: #e2e8f0;
@@ -1096,8 +1101,14 @@ footer .footer-format{
    -webkit-text-fill-color: transparent;
 }
 
-.batik-banner{
-   filter: saturate(200%) hue-rotate(120deg);
+.sway-animate {
+   animation: sway 2s infinite cubic-bezier(0.455, 0.03, 0.515, 0.955);
+   transform-origin: 50% 100% 0;
+}
+
+@keyframes sway {
+   0%, 100%{ transform: rotate(-2deg);}
+   50%{ transform: rotate(2deg); }
 }
 
 

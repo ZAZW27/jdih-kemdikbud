@@ -8,26 +8,26 @@
                   <div class="flex flex-col  items-center overflow-x-auto h-[7rem]">
                       <!-- Your content here -->
                       <a href="https://web.balikpapan.go.id/" class="pb-1">
-                        <img src="{{asset('assets/img/logo/logo_kota_balikpapan.svg')}}" style="width: 50px;">
+                        <img src="{{asset('assets/img/logo/logo_kota_balikpapan.svg')}}" style="width: 50px;" loading="lazy">
                       </a>
                       <a href="https://jdihn.go.id/" class="pb-1">
-                        <img src="{{asset('assets/img/logo/logo_jdih_globe.png')}}" style="width: 50px;">
+                        <img src="{{asset('assets/img/logo/logo_jdih_globe.png')}}" style="width: 50px;" loading="lazy">
                       </a>
                       <a href="https://www.bphn.go.id/" class="pb-1">
-                        <img src="{{asset('assets/img/logo/Logo_of_the_Ministry_of_Law_and_Human_Rights_of_the_Republic_of_Indonesia.svg')}}" class="rounded-lg" style="width: 50px;">
+                        <img src="{{asset('assets/img/logo/Logo_of_the_Ministry_of_Law_and_Human_Rights_of_the_Republic_of_Indonesia.svg')}}" class="rounded-lg" style="width: 50px;" loading="lazy">
                       </a>
                       <a href="https://jdih.kaltimprov.go.id/" class="pb-1">
-                        <img src="{{asset('assets/img/logo/logo_login.png')}}" style="width: 100px;">
+                        <img src="{{asset('assets/img/logo/logo_login.png')}}" style="width: 100px;" loading="lazy">
                       </a>
                       <a href="https://jdih.kemendagri.go.id/">
-                        <img src="{{asset('assets/img/logo/jdih_kementrian.svg')}}" style="width: 60px;">
+                        <img src="{{asset('assets/img/logo/jdih_kementrian.svg')}}" style="width: 60px;" loading="lazy">
                       </a>
                       <a href="https://kemenkumham.go.id/">
-                        <img src="{{asset('assets/img/logo/kemenkumham_jdih.png')}}" style="width: 100px;">
+                        <img src="{{asset('assets/img/logo/kemenkumham_jdih.png')}}" style="width: 100px;" loading="lazy">
                       </a>
                   </div>
                   <a href="https://play.google.com/store/apps/details?id=com.bsw_rn" target="_blank">
-                      <img src="{{asset('assets/img/logo/gplay.png')}}" style="width: 180px;">
+                      <img src="{{asset('assets/img/logo/gplay.png')}}" style="width: 180px;" loading="lazy">
                   </a>
                   <!-- Inset shadow pseudo-element -->
                   <div class="inset-shadow"></div>
@@ -56,19 +56,19 @@
                 <h5 class="font-bold text-yellow-400 text-lg" style="margin: -10px 0px 0 -10px;">Media Sosial</h5>
                 <div class="flex gap-2 media-link-footer">
                   <a href="" target="_blank">
-                    <img src="{{asset('assets/img/media/envelope.png')}}" alt="Email" style="width: 24px;">
+                    <img src="{{asset('assets/img/media/envelope.png')}}" alt="Email" style="width: 24px;" loading="lazy">
                   </a>
                   <a href="" target="_blank">
-                    <img src="{{asset('assets/img/media/facebook.png')}}" alt="Facebook" style="width: 24px;">
+                    <img src="{{asset('assets/img/media/facebook.png')}}" alt="Facebook" style="width: 24px;" loading="lazy">
                   </a>
                   <a href="https://twitter.com/birohukumdikbud" target="_blank">
-                    <img src="{{asset('assets/img/media/twitter.png')}}" alt="Twitter" style="width: 24px;">
+                    <img src="{{asset('assets/img/media/twitter.png')}}" alt="Twitter" style="width: 24px;" loading="lazy">
                   </a>
                   <a href="https://www.instagram.com/birohukumdikbud/" target="_blank">
-                    <img src="{{asset('assets/img/media/instagram-outline.png')}}" alt="Instagram" style="width: 24px;">
+                    <img src="{{asset('assets/img/media/instagram-outline.png')}}" alt="Instagram" style="width: 24px;" loading="lazy">
                   </a>
                   <a href="https://www.youtube.com/channel/UC_teqno_MCTrSKHwfdstXYw" target="_blank">
-                    <img src="{{asset('assets/img/media/youtube.png')}}" alt="Youtube" style="width: 24px;">
+                    <img src="{{asset('assets/img/media/youtube.png')}}" alt="Youtube" style="width: 24px;" loading="lazy">
                   </a>
                 </div>
               </div>
@@ -102,6 +102,24 @@
                 <a href="https://kemdikbud.go.id" target="_blank"> Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi.</a>
                 </p>
             </div>
+            <div id="beruangBottomLogo" class="fixed md:left-4 md:bottom-4 right-0 bottom-4 lg:w-24 w-20 sway-animate z-[50]">
+              {{-- <img class="bottom-[4.3rem]" src="{{asset('assets/img/logo/helarctos-malayanus.png')}}" alt="gambar beruang"> --}}
+            </div>
+            <script>
+                window.addEventListener('load', function () {
+                    var beruangBottomLogo = document.getElementById('beruangBottomLogo');
+                    var imageElementBeruang = document.createElement('img');
+
+                    imageElementBeruang.src = "{{ asset('assets/img/logo/helarctos-malayanus.png') }}";
+                    imageElementBeruang.classList.add('opacity-0', 'transition-opacity');
+                    beruangBottomLogo.appendChild(imageElementBeruang);
+
+                    // Set a timeout to remove the fade-in classes after a delay
+                    setTimeout(function () {
+                        imageElementBeruang.classList.remove('opacity-0');
+                    }, 200); // Adjust the delay (in milliseconds) as needed
+                });
+            </script>
             <button id="toTopBtn" title="Go to top" class="move-to-top-btn shadow-md z-50 hidden">
                 ^
             </button>
@@ -131,19 +149,36 @@
     </script> --}}
   
     <script>
+      // $(document).ready(function(){ 
+      //     $(window).scroll(function(){ 
+      //         if ($(this).scrollTop() > 100) { 
+      //             $('#toTopBtn').fadeIn(); 
+      //         } else { 
+      //             $('#toTopBtn').fadeOut(); 
+      //         } 
+      //     }); 
+      //     $('#toTopBtn').click(function(){ 
+      //         $("html, body").animate({ scrollTop: 0 }, 600); 
+      //         return false; 
+      //     }); 
+      // });
       $(document).ready(function(){ 
-          $(window).scroll(function(){ 
-              if ($(this).scrollTop() > 100) { 
-                  $('#toTopBtn').fadeIn(); 
-              } else { 
-                  $('#toTopBtn').fadeOut(); 
-              } 
-          }); 
-          $('#toTopBtn').click(function(){ 
-              $("html, body").animate({ scrollTop: 0 }, 600); 
-              return false; 
-          }); 
-      });
+        $(window).scroll(function(){ 
+            var scrollTop = $(this).scrollTop();
+            
+            if (scrollTop > 100) { 
+                $('#toTopBtn').fadeIn();
+            } else { 
+                $('#toTopBtn').fadeOut();
+            } 
+        }); 
+        
+        $('#toTopBtn').click(function(){ 
+            $("html, body").animate({ scrollTop: 0 }, 600); 
+            return false; 
+        }); 
+    });
+
     </script>
 
 </body>

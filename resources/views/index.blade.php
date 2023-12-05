@@ -72,47 +72,45 @@
                     </div>
                 </div>
             </div>
-            <div class="absolute top-0 flex justify-center bg-amber-500 w-full h-full">
+            <div class="absolute top-0 flex justify-center w-full h-full">
                 <div class="relative w-[100svw] h-full py-4 px-4 mx-auto max-w-screen-xl text-center pt-16 z-[20]">
                     <div class="col-span-12 md:col-span-12 sm:col-span-12 mt-2 animate__animated animate__fadeInUp" id="detail_peraturan">
                         <div class="row-span-3 col-span-12 ">
                             <div class="z-[11] absolute top-0 md:-left-[12rem] -left-[0rem] md:w-[130svw] w-[100svw] h-full banner-gradient"></div>
                             <div class="absolute md:flex lg:block justify-end top-0 md:-left-[9rem] -left-[0rem] md:w-[115svw] w-[100svw] h-full">
-                                <div class="mt-[10rem] w-[100vw] flex flex-col items-center justify-start  md:ml-10">
-                                    <div id="logo-balikpapan-banner" for="search-input" class="md:absolute md:bottom-[160px] lg:bottom-[66px] md:left-[37.8vw] lg:left-[17.4vw] md:z-[45] z-[22] md:w-[8rem] lg:w-[20rem] w-[90vw] hover:cursor-text">
-                                        <img src="{{ asset('assets/img/logo/logo_kota_balikpapan.svg') }}" alt="" style="">
-                                        <!-- Placeholder content, e.g., a loading spinner or text -->
+                                <div class="mt-[9rem] lg:w-[96vw] md:w-[100vw] w-[100vw] flex flex-col items-center justify-start md:ml-10">
+                                    <div id="logo-balikpapan-banner" for="search-input" class="md:absolute md:bottom-[160px] lg:bottom-[70px] md:left-[37.8vw] lg:left-[21vw] lg:z-[22] md:z-[45] z-[22] md:w-[5rem] lg:w-[10rem] w-[50vw] hover:cursor-text">
+                                        {{-- <img src="{{ asset('assets/img/logo/logo_kota_balikpapan.svg') }}" alt="" style="filter: grayscale(10%);"> --}}
                                     </div>
                                     {{-- <div id="logo-balikpapan-banner" for="search-input" class="md:absolute md:bottom-[160px] lg:bottom-[66px] md:left-[37.8vw] lg:left-[17.4vw] md:z-[45] z-[22] md:w-[8rem] lg:w-[20rem] w-[90vw] hover:cursor-text">
                                         <img src="{{ asset('assets/img/logo/logo_kota_balikpapan.svg') }}" alt="" style="">
-                                        <!-- Placeholder content, e.g., a loading spinner or text -->
                                     </div> --}}
                                     <script>
                                         
-                                        // window.addEventListener('load', function () {
-                                        //     var beruangMaduImg = document.getElementById('beruangMaduImg');
-                                        //     var input = document.getElementById('search-input');
+                                        window.addEventListener('load', function () {
+                                            var logoBalikpapan = document.getElementById('logo-balikpapan-banner');
+                                            var input = document.getElementById('search-input');
 
-                                        //     // Add a click event listener to the image
-                                        //     beruangMaduImg.addEventListener('click', function() {
-                                        //         // Set focus on the input when the image is clicked
-                                        //         input.focus();
-                                        //     });
+                                            // Add a click event listener to the image
+                                            logoBalikpapan.addEventListener('click', function() {
+                                                // Set focus on the input when the image is clicked
+                                                input.focus();
+                                            });
 
-                                        //     var imageElement = document.createElement('img');
-                                        //     imageElement.src = "{{ asset('assets/img/logo/logo_kota_balikpapan.svg') }}";
+                                            var imageElement = document.createElement('img');
+                                            imageElement.src = "{{ asset('assets/img/logo/logo_kota_balikpapan.svg') }}";
 
-                                        //     imageElement.classList.add('opacity-0', 'transition-opacity', 'duration-700', 'ease-in-out');
-                                        //     beruangMaduImg.appendChild(imageElement);
+                                            imageElement.classList.add('opacity-0', 'transition-opacity', 'duration-700', 'ease-in-out');
+                                            logoBalikpapan.appendChild(imageElement);
 
-                                        //     // Set a timeout to remove the fade-in classes after a delay
-                                        //     setTimeout(function () {
-                                        //         imageElement.classList.remove('opacity-0');
-                                        //     }, 200); // Adjust the delay (in milliseconds) as needed
-                                        // });
+                                            // Set a timeout to remove the fade-in classes after a delay
+                                            setTimeout(function () {
+                                                imageElement.classList.remove('opacity-0');
+                                            }, 200); // Adjust the delay (in milliseconds) as needed
+                                        });
                                     </script>
                                     <div class="z-[20] absolute  top-4 h-[30rem] banner-title backgdrop-blur-md" >
-                                        <div id="text-bpp" class="sticky top-16 font-bold md:relative md:top-[13.5rem] lg:top-[10.5rem] text-[15vw] md:ml-[4rem] lg:ml-0 md:text-[6vw] lg:text-[6rem] text-bpp">
+                                        <div id="text-bpp" class="sticky top-16 font-bold md:relative md:top-[13.5rem] lg:top-[10.5rem] text-[15vw] md:ml-[0rem] lg:ml-0 md:text-[6vw] lg:text-[6rem] text-bpp">
                                             BALIKPAPAN
                                         </div>
                                     </div>
@@ -312,7 +310,7 @@
                                     <form id="detail_peraturan" action="cari_peraturan" method="post">
                                         <input type="hidden" name="id_peraturan_subjek" value="1">
                                         <div class="area-box">
-                                            <button title="Administrasi" style="background-color: transparent; border: none;"><svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 0 24 24" width="36"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M3 13h8v2H3zm0 4h8v2H3zm0-8h8v2H3zm0-4h8v2H3zm16 2v10h-4V7h4m2-2h-8v14h8V5z"></path></svg></button><br><br>
+                                            <button title="Administrasi"><svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 0 24 24" width="36"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M3 13h8v2H3zm0 4h8v2H3zm0-8h8v2H3zm0-4h8v2H3zm16 2v10h-4V7h4m2-2h-8v14h8V5z"></path></svg></button><br><br>
                                             <p style="float:center;font-weight:bold;font-size:13px">ADMINISTRASI</p>
                                         </div>
                                     </form>
@@ -321,7 +319,7 @@
                                     <form id="detail_peraturan" action="cari_peraturan" method="post">
                                         <input type="hidden" name="id_peraturan_subjek" value="2">
                                         <div class="area-box">
-                                            <button title="Bahasa" style="background-color: transparent; border: none;"><svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 0 24 24" width="36"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"></path></svg></button><br><br>
+                                            <button title="Bahasa"><svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 0 24 24" width="36"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"></path></svg></button><br><br>
                                             <p style="float:center;font-weight:bold;font-size:13px">BAHASA</p>
                                         </div>
                                     </form>
@@ -330,7 +328,7 @@
                                     <form id="detail_peraturan" action="cari_peraturan" method="post">
                                         <input type="hidden" name="id_peraturan_subjek" value="3">
                                         <div class="area-box">
-                                            <button title="Bantuan/Pendanaan Pendidikan" style="background-color: transparent; border: none;"><svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 0 24 24" width="36"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M21 7.28V5c0-1.1-.9-2-2-2H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-2.28c.59-.35 1-.98 1-1.72V9c0-.74-.41-1.37-1-1.72zM20 9v6h-7V9h7zM5 19V5h14v2h-6c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2h6v2H5z"></path><circle cx="16" cy="12" r="1.5"></circle></svg></button><br><br>
+                                            <button title="Bantuan/Pendanaan Pendidikan"><svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 0 24 24" width="36"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M21 7.28V5c0-1.1-.9-2-2-2H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-2.28c.59-.35 1-.98 1-1.72V9c0-.74-.41-1.37-1-1.72zM20 9v6h-7V9h7zM5 19V5h14v2h-6c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2h6v2H5z"></path><circle cx="16" cy="12" r="1.5"></circle></svg></button><br><br>
                                             <p style="float:center;font-weight:bold;font-size:13px">BANTUAN</p>
                                         </div>
                                     </form>
@@ -339,7 +337,7 @@
                                     <form id="detail_peraturan" action="cari_peraturan" method="post">
                                         <input type="hidden" name="id_peraturan_subjek" value="4">
                                         <div class="area-box">
-                                            <button title="Buku" style="background-color: transparent; border: none;"><svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 0 24 24" width="36"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M7 15h7v2H7zm0-4h10v2H7zm0-4h10v2H7zm12-4h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-.14 0-.27.01-.4.04-.39.08-.74.28-1.01.55-.18.18-.33.4-.43.64-.1.23-.16.49-.16.77v14c0 .27.06.54.16.78s.25.45.43.64c.27.27.62.47 1.01.55.13.02.26.03.4.03h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7-.25c.41 0 .75.34.75.75s-.34.75-.75.75-.75-.34-.75-.75.34-.75.75-.75zM19 19H5V5h14v14z"></path></svg></button><br><br>
+                                            <button title="Buku"><svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 0 24 24" width="36"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M7 15h7v2H7zm0-4h10v2H7zm0-4h10v2H7zm12-4h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-.14 0-.27.01-.4.04-.39.08-.74.28-1.01.55-.18.18-.33.4-.43.64-.1.23-.16.49-.16.77v14c0 .27.06.54.16.78s.25.45.43.64c.27.27.62.47 1.01.55.13.02.26.03.4.03h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7-.25c.41 0 .75.34.75.75s-.34.75-.75.75-.75-.34-.75-.75.34-.75.75-.75zM19 19H5V5h14v14z"></path></svg></button><br><br>
                                             <p style="float:center;font-weight:bold;font-size:13px">BUKU</p>
                                         </div>
                                     </form>
@@ -349,7 +347,7 @@
                                     <form id="detail_peraturan" action="cari_peraturan" method="post">
                                         <input type="hidden" name="id_peraturan_subjek" value="5">
                                         <div class="area-box">
-                                            <button title="Kebudayaan" style="background-color: transparent; border: none;"><svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 0 24 24" width="36"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M14 6l-1-2H5v17h2v-7h5l1 2h7V6h-6zm4 8h-4l-1-2H7V6h5l1 2h5v6z"></path></svg></button><br><br>
+                                            <button title="Kebudayaan"><svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 0 24 24" width="36"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M14 6l-1-2H5v17h2v-7h5l1 2h7V6h-6zm4 8h-4l-1-2H7V6h5l1 2h5v6z"></path></svg></button><br><br>
                                             <p style="float:center;font-weight:bold;font-size:13px">KEBUDAYAAN</p>
                                         </div>
                                     </form>
@@ -359,7 +357,7 @@
                                     <form id="detail_peraturan" action="cari_peraturan" method="post">
                                         <input type="hidden" name="id_peraturan_subjek" value="6">
                                         <div class="area-box">
-                                            <button title="Organisasi" style="background-color: transparent; border: none;"><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="36" viewBox="0 0 24 24" width="36"><rect fill="none" height="24" width="24"></rect><path d="M22,11V3h-7v3H9V3H2v8h7V8h2v10h4v3h7v-8h-7v3h-2V8h2v3H22z M7,9H4V5h3V9z M17,15h3v4h-3V15z M17,5h3v4h-3V5z"></path></svg></button><br><br>
+                                            <button title="Organisasi"><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="36" viewBox="0 0 24 24" width="36"><rect fill="none" height="24" width="24"></rect><path d="M22,11V3h-7v3H9V3H2v8h7V8h2v10h4v3h7v-8h-7v3h-2V8h2v3H22z M7,9H4V5h3V9z M17,15h3v4h-3V15z M17,5h3v4h-3V5z"></path></svg></button><br><br>
                                             <p style="float:center;font-weight:bold;font-size:13px">ORGANISASI</p>
                                         </div>
                                     </form>
@@ -369,7 +367,7 @@
                                     <form id="detail_peraturan" action="cari_peraturan" method="post">
                                         <input type="hidden" name="id_peraturan_subjek" value="7">
                                         <div class="area-box">
-                                            <button title="Pengawasan" style="background-color: transparent; border: none;"><svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 0 24 24" width="36"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H3V5h18v12zm-2-9H8v2h11V8zm0 4H8v2h11v-2zM7 8H5v2h2V8zm0 4H5v2h2v-2z"></path></svg></button><br><br>
+                                            <button title="Pengawasan"><svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 0 24 24" width="36"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H3V5h18v12zm-2-9H8v2h11V8zm0 4H8v2h11v-2zM7 8H5v2h2V8zm0 4H5v2h2v-2z"></path></svg></button><br><br>
                                             <p style="float:center;font-weight:bold;font-size:13px">PENGAWASAN</p>
                                         </div>
                                     </form>
@@ -379,7 +377,7 @@
                                     <form id="detail_peraturan" action="cari_peraturan" method="post">
                                         <input type="hidden" name="id_peraturan_subjek" value="8">
                                         <div class="area-box">
-                                            <button title="Pengelolaan Satuan Pendidikan" style="background-color: transparent; border: none;"><svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 0 24 24" width="36"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M18.36 9l.6 3H5.04l.6-3h12.72M20 4H4v2h16V4zm0 3H4l-1 5v2h1v6h10v-6h4v6h2v-6h1v-2l-1-5zM6 18v-4h6v4H6z"></path></svg></button><br><br>
+                                            <button title="Pengelolaan Satuan Pendidikan"><svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 0 24 24" width="36"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M18.36 9l.6 3H5.04l.6-3h12.72M20 4H4v2h16V4zm0 3H4l-1 5v2h1v6h10v-6h4v6h2v-6h1v-2l-1-5zM6 18v-4h6v4H6z"></path></svg></button><br><br>
                                             <p style="float:center;font-weight:bold;font-size:13px">SATUAN PENDIDIKAN</p>
                                         </div>
                                     </form>
@@ -389,7 +387,7 @@
                                     <form id="detail_peraturan" action="cari_peraturan" method="post">
                                         <input type="hidden" name="id_peraturan_subjek" value="9">
                                         <div class="area-box">
-                                            <button title="Pendidik dan Tenaga Kependidikan" style="background-color: transparent; border: none;"><svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 0 24 24" width="36"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M9 12c1.93 0 3.5-1.57 3.5-3.5S10.93 5 9 5 5.5 6.57 5.5 8.5 7.07 12 9 12zm0-5c.83 0 1.5.67 1.5 1.5S9.83 10 9 10s-1.5-.67-1.5-1.5S8.17 7 9 7zm.05 10H4.77c.99-.5 2.7-1 4.23-1 .11 0 .23.01.34.01.34-.73.93-1.33 1.64-1.81-.73-.13-1.42-.2-1.98-.2-2.34 0-7 1.17-7 3.5V19h7v-1.5c0-.17.02-.34.05-.5zm7.45-2.5c-1.84 0-5.5 1.01-5.5 3V19h11v-1.5c0-1.99-3.66-3-5.5-3zm1.21-1.82c.76-.43 1.29-1.24 1.29-2.18C19 9.12 17.88 8 16.5 8S14 9.12 14 10.5c0 .94.53 1.75 1.29 2.18.36.2.77.32 1.21.32s.85-.12 1.21-.32z"></path></svg></button><br><br>
+                                            <button title="Pendidik dan Tenaga Kependidikan"><svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 0 24 24" width="36"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M9 12c1.93 0 3.5-1.57 3.5-3.5S10.93 5 9 5 5.5 6.57 5.5 8.5 7.07 12 9 12zm0-5c.83 0 1.5.67 1.5 1.5S9.83 10 9 10s-1.5-.67-1.5-1.5S8.17 7 9 7zm.05 10H4.77c.99-.5 2.7-1 4.23-1 .11 0 .23.01.34.01.34-.73.93-1.33 1.64-1.81-.73-.13-1.42-.2-1.98-.2-2.34 0-7 1.17-7 3.5V19h7v-1.5c0-.17.02-.34.05-.5zm7.45-2.5c-1.84 0-5.5 1.01-5.5 3V19h11v-1.5c0-1.99-3.66-3-5.5-3zm1.21-1.82c.76-.43 1.29-1.24 1.29-2.18C19 9.12 17.88 8 16.5 8S14 9.12 14 10.5c0 .94.53 1.75 1.29 2.18.36.2.77.32 1.21.32s.85-.12 1.21-.32z"></path></svg></button><br><br>
                                             <p style="float:center;font-weight:bold;font-size:13px">PENDIDIK &amp; TENDIK</p>
                                         </div>
                                     </form>
@@ -399,7 +397,7 @@
                                     <form id="detail_peraturan" action="cari_peraturan" method="post">
                                         <input type="hidden" name="id_peraturan_subjek" value="10">
                                         <div class="area-box">
-                                            <button title="Pendidikan Tinggi" style="background-color: transparent; border: none;"><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="36" viewBox="0 0 24 24" width="36"><rect fill="none" height="60" width="60"></rect><path d="M12,7V3H2v18h20V7H12z M10,19H4v-2h6V19z M10,15H4v-2h6V15z M10,11H4V9h6V11z M10,7H4V5h6V7z M20,19h-8V9h8V19z M18,11h-4v2 h4V11z M18,15h-4v2h4V15z"></path></svg></button><br><br>
+                                            <button title="Pendidikan Tinggi"><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="36" viewBox="0 0 24 24" width="36"><rect fill="none" height="60" width="60"></rect><path d="M12,7V3H2v18h20V7H12z M10,19H4v-2h6V19z M10,15H4v-2h6V15z M10,11H4V9h6V11z M10,7H4V5h6V7z M20,19h-8V9h8V19z M18,11h-4v2 h4V11z M18,15h-4v2h4V15z"></path></svg></button><br><br>
                                             <p style="float:center;font-weight:bold;font-size:13px">PENDIDIKAN TINGGI</p>
                                         </div>
                                     </form>
@@ -409,7 +407,7 @@
                                     <form id="detail_peraturan" action="cari_peraturan" method="post">
                                         <input type="hidden" name="id_peraturan_subjek" value="11">
                                         <div class="area-box">
-                                            <button title="Perizinan" style="background-color: transparent; border: none;"><svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 0 24 24" width="36"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm7 10c0 4.52-2.98 8.69-7 9.93-4.02-1.24-7-5.41-7-9.93V6.3l7-3.11 7 3.11V11zm-11.59.59L6 13l4 4 8-8-1.41-1.42L10 14.17z"></path></svg></button><br><br>
+                                            <button title="Perizinan"><svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 0 24 24" width="36"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm7 10c0 4.52-2.98 8.69-7 9.93-4.02-1.24-7-5.41-7-9.93V6.3l7-3.11 7 3.11V11zm-11.59.59L6 13l4 4 8-8-1.41-1.42L10 14.17z"></path></svg></button><br><br>
                                             <p style="float:center;font-weight:bold;font-size:13px">PERIZINAN</p>
                                         </div>
                                     </form>
@@ -417,7 +415,7 @@
     
                                 <div class=" subject-icons" onclick="showModalSubjekPeraturan()">
                                     <div class="area-box">
-                                        <button style="background-color: transparent; border: none;"><svg xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 0 24 24" width="36px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"></path></svg></button><br><br>
+                                        <button><svg xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 0 24 24" width="36px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"></path></svg></button><br><br>
                                         <p style="float:center;font-weight:bold;font-size:13px">LAINNYA</p>
                                     </div>
                                 </div>
@@ -966,7 +964,7 @@
                                 <form id="detail_peraturan" action="cari_peraturan" method="post">
                                     <input type="hidden" name="id_peraturan_subjek" value="1">
                                     <div class="area-box">
-                                        <button title="Administrasi" style="background-color: transparent; border: none;"><svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 0 24 24" width="36"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M3 13h8v2H3zm0 4h8v2H3zm0-8h8v2H3zm0-4h8v2H3zm16 2v10h-4V7h4m2-2h-8v14h8V5z"></path></svg></button><br><br>
+                                        <button title="Administrasi"><svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 0 24 24" width="36"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M3 13h8v2H3zm0 4h8v2H3zm0-8h8v2H3zm0-4h8v2H3zm16 2v10h-4V7h4m2-2h-8v14h8V5z"></path></svg></button><br><br>
                                         <p style="float:center;font-weight:bold;font-size:10px">ADMINISTRASI</p>
                                     </div>
                                 </form>
@@ -975,7 +973,7 @@
                                 <form id="detail_peraturan" action="cari_peraturan" method="post">
                                     <input type="hidden" name="id_peraturan_subjek" value="2">
                                     <div class="area-box">
-                                        <button title="Bahasa" style="background-color: transparent; border: none;"><svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 0 24 24" width="36"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"></path></svg></button><br><br>
+                                        <button title="Bahasa"><svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 0 24 24" width="36"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"></path></svg></button><br><br>
                                         <p style="float:center;font-weight:bold;font-size:10px">BAHASA</p>
                                     </div>
                                 </form>
@@ -984,7 +982,7 @@
                                 <form id="detail_peraturan" action="cari_peraturan" method="post">
                                     <input type="hidden" name="id_peraturan_subjek" value="3">
                                     <div class="area-box">
-                                        <button title="Bantuan/Pendanaan Pendidikan" style="background-color: transparent; border: none;"><svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 0 24 24" width="36"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M21 7.28V5c0-1.1-.9-2-2-2H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-2.28c.59-.35 1-.98 1-1.72V9c0-.74-.41-1.37-1-1.72zM20 9v6h-7V9h7zM5 19V5h14v2h-6c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2h6v2H5z"></path><circle cx="16" cy="12" r="1.5"></circle></svg></button><br><br>
+                                        <button title="Bantuan/Pendanaan Pendidikan"><svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 0 24 24" width="36"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M21 7.28V5c0-1.1-.9-2-2-2H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-2.28c.59-.35 1-.98 1-1.72V9c0-.74-.41-1.37-1-1.72zM20 9v6h-7V9h7zM5 19V5h14v2h-6c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2h6v2H5z"></path><circle cx="16" cy="12" r="1.5"></circle></svg></button><br><br>
                                         <p style="float:center;font-weight:bold;font-size:10px">BANTUAN</p>
                                     </div>
                                 </form>
@@ -993,7 +991,7 @@
                                 <form id="detail_peraturan" action="cari_peraturan" method="post">
                                     <input type="hidden" name="id_peraturan_subjek" value="4">
                                     <div class="area-box">
-                                        <button title="Buku" style="background-color: transparent; border: none;"><svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 0 24 24" width="36"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M7 15h7v2H7zm0-4h10v2H7zm0-4h10v2H7zm12-4h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-.14 0-.27.01-.4.04-.39.08-.74.28-1.01.55-.18.18-.33.4-.43.64-.1.23-.16.49-.16.77v14c0 .27.06.54.16.78s.25.45.43.64c.27.27.62.47 1.01.55.13.02.26.03.4.03h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7-.25c.41 0 .75.34.75.75s-.34.75-.75.75-.75-.34-.75-.75.34-.75.75-.75zM19 19H5V5h14v14z"></path></svg></button><br><br>
+                                        <button title="Buku"><svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 0 24 24" width="36"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M7 15h7v2H7zm0-4h10v2H7zm0-4h10v2H7zm12-4h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-.14 0-.27.01-.4.04-.39.08-.74.28-1.01.55-.18.18-.33.4-.43.64-.1.23-.16.49-.16.77v14c0 .27.06.54.16.78s.25.45.43.64c.27.27.62.47 1.01.55.13.02.26.03.4.03h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7-.25c.41 0 .75.34.75.75s-.34.75-.75.75-.75-.34-.75-.75.34-.75.75-.75zM19 19H5V5h14v14z"></path></svg></button><br><br>
                                         <p style="float:center;font-weight:bold;font-size:10px">BUKU</p>
                                     </div>
                                 </form>
@@ -1003,7 +1001,7 @@
                                 <form id="detail_peraturan" action="cari_peraturan" method="post">
                                     <input type="hidden" name="id_peraturan_subjek" value="5">
                                     <div class="area-box">
-                                        <button title="Kebudayaan" style="background-color: transparent; border: none;"><svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 0 24 24" width="36"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M14 6l-1-2H5v17h2v-7h5l1 2h7V6h-6zm4 8h-4l-1-2H7V6h5l1 2h5v6z"></path></svg></button><br><br>
+                                        <button title="Kebudayaan"><svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 0 24 24" width="36"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M14 6l-1-2H5v17h2v-7h5l1 2h7V6h-6zm4 8h-4l-1-2H7V6h5l1 2h5v6z"></path></svg></button><br><br>
                                         <p style="float:center;font-weight:bold;font-size:10px">KEBUDAYAAN</p>
                                     </div>
                                 </form>
@@ -1013,7 +1011,7 @@
                                 <form id="detail_peraturan" action="cari_peraturan" method="post">
                                     <input type="hidden" name="id_peraturan_subjek" value="6">
                                     <div class="area-box">
-                                        <button title="Organisasi" style="background-color: transparent; border: none;"><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="36" viewBox="0 0 24 24" width="36"><rect fill="none" height="24" width="24"></rect><path d="M22,11V3h-7v3H9V3H2v8h7V8h2v10h4v3h7v-8h-7v3h-2V8h2v3H22z M7,9H4V5h3V9z M17,15h3v4h-3V15z M17,5h3v4h-3V5z"></path></svg></button><br><br>
+                                        <button title="Organisasi"><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="36" viewBox="0 0 24 24" width="36"><rect fill="none" height="24" width="24"></rect><path d="M22,11V3h-7v3H9V3H2v8h7V8h2v10h4v3h7v-8h-7v3h-2V8h2v3H22z M7,9H4V5h3V9z M17,15h3v4h-3V15z M17,5h3v4h-3V5z"></path></svg></button><br><br>
                                         <p style="float:center;font-weight:bold;font-size:10px">ORGANISASI</p>
                                     </div>
                                 </form>
@@ -1023,7 +1021,7 @@
                                 <form id="detail_peraturan" action="cari_peraturan" method="post">
                                     <input type="hidden" name="id_peraturan_subjek" value="7">
                                     <div class="area-box">
-                                        <button title="Pengawasan" style="background-color: transparent; border: none;"><svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 0 24 24" width="36"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H3V5h18v12zm-2-9H8v2h11V8zm0 4H8v2h11v-2zM7 8H5v2h2V8zm0 4H5v2h2v-2z"></path></svg></button><br><br>
+                                        <button title="Pengawasan"><svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 0 24 24" width="36"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H3V5h18v12zm-2-9H8v2h11V8zm0 4H8v2h11v-2zM7 8H5v2h2V8zm0 4H5v2h2v-2z"></path></svg></button><br><br>
                                         <p style="float:center;font-weight:bold;font-size:10px">PENGAWASAN</p>
                                     </div>
                                 </form>
@@ -1033,7 +1031,7 @@
                                 <form id="detail_peraturan" action="cari_peraturan" method="post">
                                     <input type="hidden" name="id_peraturan_subjek" value="8">
                                     <div class="area-box">
-                                        <button title="Pengelolaan Satuan Pendidikan" style="background-color: transparent; border: none;"><svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 0 24 24" width="36"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M18.36 9l.6 3H5.04l.6-3h12.72M20 4H4v2h16V4zm0 3H4l-1 5v2h1v6h10v-6h4v6h2v-6h1v-2l-1-5zM6 18v-4h6v4H6z"></path></svg></button><br><br>
+                                        <button title="Pengelolaan Satuan Pendidikan"><svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 0 24 24" width="36"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M18.36 9l.6 3H5.04l.6-3h12.72M20 4H4v2h16V4zm0 3H4l-1 5v2h1v6h10v-6h4v6h2v-6h1v-2l-1-5zM6 18v-4h6v4H6z"></path></svg></button><br><br>
                                         <p style="float:center;font-weight:bold;font-size:10px">SATUAN PENDIDIKAN</p>
                                     </div>
                                 </form>
@@ -1043,7 +1041,7 @@
                                 <form id="detail_peraturan" action="cari_peraturan" method="post">
                                     <input type="hidden" name="id_peraturan_subjek" value="9">
                                     <div class="area-box">
-                                        <button title="Pendidik dan Tenaga Kependidikan" style="background-color: transparent; border: none;"><svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 0 24 24" width="36"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M9 12c1.93 0 3.5-1.57 3.5-3.5S10.93 5 9 5 5.5 6.57 5.5 8.5 7.07 12 9 12zm0-5c.83 0 1.5.67 1.5 1.5S9.83 10 9 10s-1.5-.67-1.5-1.5S8.17 7 9 7zm.05 10H4.77c.99-.5 2.7-1 4.23-1 .11 0 .23.01.34.01.34-.73.93-1.33 1.64-1.81-.73-.13-1.42-.2-1.98-.2-2.34 0-7 1.17-7 3.5V19h7v-1.5c0-.17.02-.34.05-.5zm7.45-2.5c-1.84 0-5.5 1.01-5.5 3V19h11v-1.5c0-1.99-3.66-3-5.5-3zm1.21-1.82c.76-.43 1.29-1.24 1.29-2.18C19 9.12 17.88 8 16.5 8S14 9.12 14 10.5c0 .94.53 1.75 1.29 2.18.36.2.77.32 1.21.32s.85-.12 1.21-.32z"></path></svg></button><br><br>
+                                        <button title="Pendidik dan Tenaga Kependidikan"><svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 0 24 24" width="36"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M9 12c1.93 0 3.5-1.57 3.5-3.5S10.93 5 9 5 5.5 6.57 5.5 8.5 7.07 12 9 12zm0-5c.83 0 1.5.67 1.5 1.5S9.83 10 9 10s-1.5-.67-1.5-1.5S8.17 7 9 7zm.05 10H4.77c.99-.5 2.7-1 4.23-1 .11 0 .23.01.34.01.34-.73.93-1.33 1.64-1.81-.73-.13-1.42-.2-1.98-.2-2.34 0-7 1.17-7 3.5V19h7v-1.5c0-.17.02-.34.05-.5zm7.45-2.5c-1.84 0-5.5 1.01-5.5 3V19h11v-1.5c0-1.99-3.66-3-5.5-3zm1.21-1.82c.76-.43 1.29-1.24 1.29-2.18C19 9.12 17.88 8 16.5 8S14 9.12 14 10.5c0 .94.53 1.75 1.29 2.18.36.2.77.32 1.21.32s.85-.12 1.21-.32z"></path></svg></button><br><br>
                                         <p style="float:center;font-weight:bold;font-size:10px">PENDIDIK &amp; TENDIK</p>
                                     </div>
                                 </form>
@@ -1053,7 +1051,7 @@
                                 <form id="detail_peraturan" action="cari_peraturan" method="post">
                                     <input type="hidden" name="id_peraturan_subjek" value="10">
                                     <div class="area-box">
-                                        <button title="Pendidikan Tinggi" style="background-color: transparent; border: none;"><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="36" viewBox="0 0 24 24" width="36"><rect fill="none" height="60" width="60"></rect><path d="M12,7V3H2v18h20V7H12z M10,19H4v-2h6V19z M10,15H4v-2h6V15z M10,11H4V9h6V11z M10,7H4V5h6V7z M20,19h-8V9h8V19z M18,11h-4v2 h4V11z M18,15h-4v2h4V15z"></path></svg></button><br><br>
+                                        <button title="Pendidikan Tinggi"><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="36" viewBox="0 0 24 24" width="36"><rect fill="none" height="60" width="60"></rect><path d="M12,7V3H2v18h20V7H12z M10,19H4v-2h6V19z M10,15H4v-2h6V15z M10,11H4V9h6V11z M10,7H4V5h6V7z M20,19h-8V9h8V19z M18,11h-4v2 h4V11z M18,15h-4v2h4V15z"></path></svg></button><br><br>
                                         <p style="float:center;font-weight:bold;font-size:10px">PENDIDIKAN TINGGI</p>
                                     </div>
                                 </form>
@@ -1063,7 +1061,7 @@
                                 <form id="detail_peraturan" action="cari_peraturan" method="post">
                                     <input type="hidden" name="id_peraturan_subjek" value="11">
                                     <div class="area-box">
-                                        <button title="Perizinan" style="background-color: transparent; border: none;"><svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 0 24 24" width="36"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm7 10c0 4.52-2.98 8.69-7 9.93-4.02-1.24-7-5.41-7-9.93V6.3l7-3.11 7 3.11V11zm-11.59.59L6 13l4 4 8-8-1.41-1.42L10 14.17z"></path></svg></button><br><br>
+                                        <button title="Perizinan"><svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 0 24 24" width="36"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm7 10c0 4.52-2.98 8.69-7 9.93-4.02-1.24-7-5.41-7-9.93V6.3l7-3.11 7 3.11V11zm-11.59.59L6 13l4 4 8-8-1.41-1.42L10 14.17z"></path></svg></button><br><br>
                                         <p style="float:center;font-weight:bold;font-size:10px">PERIZINAN</p>
                                     </div>
                                 </form>
@@ -1072,7 +1070,7 @@
                             <div class=" subject-icons">
                                 <a href="peraturan" data-toggle="modal" data-target=".bd-example-modal-md">
                                     <div class="area-box">
-                                        <button style="background-color: transparent; border: none;">
+                                        <button>
                                             <svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 0 24 24" width="36"><path d="M0 0h24v24H0z" fill="none"></path><path d="M17 15h2v2h-2zM17 11h2v2h-2zM17 7h2v2h-2zM13.74 7l1.26.84V7z"></path><path d="M10 3v1.51l2 1.33V5h9v14h-4v2h6V3z"></path><path d="M8.17 5.7L15 10.25V21H1V10.48L8.17 5.7zM10 19h3v-7.84L8.17 8.09 3 11.38V19h3v-6h4v6z"></path></svg></button><br><br>
                                         <p style="float:center;font-weight:bold;font-size:10px">LAINNYA</p>
                                     </div>
@@ -1081,7 +1079,7 @@
                                 <div class=" subject-icons">
                                 <a href="peraturan" data-toggle="modal" data-target=".bd-example-modal-md">
                                     <div class="area-box">
-                                        <button style="background-color: transparent; border: none;"><svg xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 0 24 24" width="36px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M17.81 4.47c-.08 0-.16-.02-.23-.06C15.66 3.42 14 3 12.01 3c-1.98 0-3.86.47-5.57 1.41-.24.13-.54.04-.68-.2-.13-.24-.04-.55.2-.68C7.82 2.52 9.86 2 12.01 2c2.13 0 3.99.47 6.03 1.52.25.13.34.43.21.67-.09.18-.26.28-.44.28zM3.5 9.72c-.1 0-.2-.03-.29-.09-.23-.16-.28-.47-.12-.7.99-1.4 2.25-2.5 3.75-3.27C9.98 4.04 14 4.03 17.15 5.65c1.5.77 2.76 1.86 3.75 3.25.16.22.11.54-.12.7-.23.16-.54.11-.7-.12-.9-1.26-2.04-2.25-3.39-2.94-2.87-1.47-6.54-1.47-9.4.01-1.36.7-2.5 1.7-3.4 2.96-.08.14-.23.21-.39.21zm6.25 12.07c-.13 0-.26-.05-.35-.15-.87-.87-1.34-1.43-2.01-2.64-.69-1.23-1.05-2.73-1.05-4.34 0-2.97 2.54-5.39 5.66-5.39s5.66 2.42 5.66 5.39c0 .28-.22.5-.5.5s-.5-.22-.5-.5c0-2.42-2.09-4.39-4.66-4.39s-4.66 1.97-4.66 4.39c0 1.44.32 2.77.93 3.85.64 1.15 1.08 1.64 1.85 2.42.19.2.19.51 0 .71-.11.1-.24.15-.37.15zm7.17-1.85c-1.19 0-2.24-.3-3.1-.89-1.49-1.01-2.38-2.65-2.38-4.39 0-.28.22-.5.5-.5s.5.22.5.5c0 1.41.72 2.74 1.94 3.56.71.48 1.54.71 2.54.71.24 0 .64-.03 1.04-.1.27-.05.53.13.58.41.05.27-.13.53-.41.58-.57.11-1.07.12-1.21.12zM14.91 22c-.04 0-.09-.01-.13-.02-1.59-.44-2.63-1.03-3.72-2.1-1.4-1.39-2.17-3.24-2.17-5.22 0-1.62 1.38-2.94 3.08-2.94s3.08 1.32 3.08 2.94c0 1.07.93 1.94 2.08 1.94s2.08-.87 2.08-1.94c0-3.77-3.25-6.83-7.25-6.83-2.84 0-5.44 1.58-6.61 4.03-.39.81-.59 1.76-.59 2.8 0 .78.07 2.01.67 3.61.1.26-.03.55-.29.64-.26.1-.55-.04-.64-.29-.49-1.31-.73-2.61-.73-3.96 0-1.2.23-2.29.68-3.24 1.33-2.79 4.28-4.6 7.51-4.6 4.55 0 8.25 3.51 8.25 7.83 0 1.62-1.38 2.94-3.08 2.94s-3.08-1.32-3.08-2.94c0-1.07-.93-1.94-2.08-1.94s-2.08.87-2.08 1.94c0 1.71.66 3.31 1.87 4.51.95.94 1.86 1.46 3.27 1.85.27.07.42.35.35.61-.05.23-.26.38-.47.38z"></path></svg></button><br><br>
+                                        <button><svg xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 0 24 24" width="36px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M17.81 4.47c-.08 0-.16-.02-.23-.06C15.66 3.42 14 3 12.01 3c-1.98 0-3.86.47-5.57 1.41-.24.13-.54.04-.68-.2-.13-.24-.04-.55.2-.68C7.82 2.52 9.86 2 12.01 2c2.13 0 3.99.47 6.03 1.52.25.13.34.43.21.67-.09.18-.26.28-.44.28zM3.5 9.72c-.1 0-.2-.03-.29-.09-.23-.16-.28-.47-.12-.7.99-1.4 2.25-2.5 3.75-3.27C9.98 4.04 14 4.03 17.15 5.65c1.5.77 2.76 1.86 3.75 3.25.16.22.11.54-.12.7-.23.16-.54.11-.7-.12-.9-1.26-2.04-2.25-3.39-2.94-2.87-1.47-6.54-1.47-9.4.01-1.36.7-2.5 1.7-3.4 2.96-.08.14-.23.21-.39.21zm6.25 12.07c-.13 0-.26-.05-.35-.15-.87-.87-1.34-1.43-2.01-2.64-.69-1.23-1.05-2.73-1.05-4.34 0-2.97 2.54-5.39 5.66-5.39s5.66 2.42 5.66 5.39c0 .28-.22.5-.5.5s-.5-.22-.5-.5c0-2.42-2.09-4.39-4.66-4.39s-4.66 1.97-4.66 4.39c0 1.44.32 2.77.93 3.85.64 1.15 1.08 1.64 1.85 2.42.19.2.19.51 0 .71-.11.1-.24.15-.37.15zm7.17-1.85c-1.19 0-2.24-.3-3.1-.89-1.49-1.01-2.38-2.65-2.38-4.39 0-.28.22-.5.5-.5s.5.22.5.5c0 1.41.72 2.74 1.94 3.56.71.48 1.54.71 2.54.71.24 0 .64-.03 1.04-.1.27-.05.53.13.58.41.05.27-.13.53-.41.58-.57.11-1.07.12-1.21.12zM14.91 22c-.04 0-.09-.01-.13-.02-1.59-.44-2.63-1.03-3.72-2.1-1.4-1.39-2.17-3.24-2.17-5.22 0-1.62 1.38-2.94 3.08-2.94s3.08 1.32 3.08 2.94c0 1.07.93 1.94 2.08 1.94s2.08-.87 2.08-1.94c0-3.77-3.25-6.83-7.25-6.83-2.84 0-5.44 1.58-6.61 4.03-.39.81-.59 1.76-.59 2.8 0 .78.07 2.01.67 3.61.1.26-.03.55-.29.64-.26.1-.55-.04-.64-.29-.49-1.31-.73-2.61-.73-3.96 0-1.2.23-2.29.68-3.24 1.33-2.79 4.28-4.6 7.51-4.6 4.55 0 8.25 3.51 8.25 7.83 0 1.62-1.38 2.94-3.08 2.94s-3.08-1.32-3.08-2.94c0-1.07-.93-1.94-2.08-1.94s-2.08.87-2.08 1.94c0 1.71.66 3.31 1.87 4.51.95.94 1.86 1.46 3.27 1.85.27.07.42.35.35.61-.05.23-.26.38-.47.38z"></path></svg></button><br><br>
                                         <p style="float:center;font-weight:bold;font-size:10px">LAINNYA</p>
                                     </div>
                                 </a>
@@ -1090,7 +1088,7 @@
                             <div class=" subject-icons">
                                 <a href="peraturan" data-toggle="modal" data-target=".bd-example-modal-md">
                                     <div class="area-box">
-                                        <button style="background-color: transparent; border: none;"><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 20 20" height="36px" viewBox="0 0 20 20" width="36px" fill="#000000"><rect fill="none" height="20" width="20"></rect><path d="M4.5,14h6v1.5h-6V14z M13.5,8c0,2.09-1.07,3.93-2.69,5H4.19C2.57,11.93,1.5,10.09,1.5,8c0-3.31,2.69-6,6-6S13.5,4.69,13.5,8 z M12,8c0-2.48-2.02-4.5-4.5-4.5S3,5.52,3,8c0,1.37,0.62,2.65,1.67,3.5h5.65C11.38,10.65,12,9.37,12,8z M7.5,18 C8.33,18,9,17.33,9,16.5H6C6,17.33,6.67,18,7.5,18z M18.5,8l0.47-1.03L20,6.5l-1.03-0.47L18.5,5l-0.47,1.03L17,6.5l1.03,0.47L18.5,8 z M15.5,5l0.78-1.72L18,2.5l-1.72-0.78L15.5,0l-0.78,1.72L13,2.5l1.72,0.78L15.5,5z"></path></svg></button><br><br>
+                                        <button><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 20 20" height="36px" viewBox="0 0 20 20" width="36px" fill="#000000"><rect fill="none" height="20" width="20"></rect><path d="M4.5,14h6v1.5h-6V14z M13.5,8c0,2.09-1.07,3.93-2.69,5H4.19C2.57,11.93,1.5,10.09,1.5,8c0-3.31,2.69-6,6-6S13.5,4.69,13.5,8 z M12,8c0-2.48-2.02-4.5-4.5-4.5S3,5.52,3,8c0,1.37,0.62,2.65,1.67,3.5h5.65C11.38,10.65,12,9.37,12,8z M7.5,18 C8.33,18,9,17.33,9,16.5H6C6,17.33,6.67,18,7.5,18z M18.5,8l0.47-1.03L20,6.5l-1.03-0.47L18.5,5l-0.47,1.03L17,6.5l1.03,0.47L18.5,8 z M15.5,5l0.78-1.72L18,2.5l-1.72-0.78L15.5,0l-0.78,1.72L13,2.5l1.72,0.78L15.5,5z"></path></svg></button><br><br>
                                         <p style="float:center;font-weight:bold;font-size:10px">LAINNYA</p>
                                     </div>
                                 </a>
@@ -1262,14 +1260,31 @@
                     <a href="https://kemdikbud.go.id" target="_blank"> Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi.</a>
                     </p>
                 </div>
+                <div id="beruangBottomLogo" class="fixed md:left-4 md:bottom-4 right-0 bottom-[4.3rem] lg:w-24 w-20 sway-animate z-[50]">
+                    {{-- <img src="{{asset('assets/img/logo/helarctos-malayanus.png')}}" alt="gambar beruang"> --}}
+                </div>
+                <script>
+                    window.addEventListener('load', function () {
+                        var beruangBottomLogo = document.getElementById('beruangBottomLogo');
+                        var imageElementBeruang = document.createElement('img');
+
+                        imageElementBeruang.src = "{{ asset('assets/img/logo/helarctos-malayanus.png') }}";
+                        imageElementBeruang.classList.add('opacity-0', 'transition-opacity');
+                        beruangBottomLogo.appendChild(imageElementBeruang);
+
+                        // Set a timeout to remove the fade-in classes after a delay
+                        setTimeout(function () {
+                            imageElementBeruang.classList.remove('opacity-0');
+                        }, 200); // Adjust the delay (in milliseconds) as needed
+                    });
+                </script>
                 <button id="toTopBtn" title="Go to top" class="move-to-top-btn shadow-md z-50">
                     ^
                 </button>
             </section>
             <!-- //copyright -->
         </footer>
-        {{-- top functions --}}
-        {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
+        
         {{-- ANIMATED SELECT OPTIONS --}}
         <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
         <script>

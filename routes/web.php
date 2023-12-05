@@ -162,7 +162,7 @@ Route::get('/inventarisasi', [PublikasiController::class, 'index'])->name('getPu
 Route::get('/berita', [BeritaController::class, 'index'])->name('berita.data');
 Route::get('/detail_berita/{id}', [BeritaController::class, 'GetBeritaDetail'])->name('detail_berita.data');
 // GETTING GALERI
-Route::get('/galeri', [BeritaController::class, 'showGaleri'])->name('getGaleri.data');
+Route::get('/galeri', [BeritaController::class, 'showGaleri'])->name('getGaleri.public');
 // Route::get('/detail_berita', function () {// detail berita page
 //     return view('pages/informasi/detail_berita');
 // });
