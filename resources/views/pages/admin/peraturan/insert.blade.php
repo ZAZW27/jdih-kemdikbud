@@ -15,20 +15,30 @@
             <div class="relative overflow-x-auto sm:rounded-lg py-4 w-full px-6">
                 <form action="{{route('proses-insert-peraturan')}}" method="POST" enctype="multipart/form-data">
                     @csrf
-                        <div class="relative z-0 mb-2 w-full group">                        
+                    <div class="grid md:grid-cols-3 md:gap-6">
+                        <div class="relative col-span-2 z-0 mb-2 w-full group">                        
                             <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Judul</label>
                             <input placeholder="Judul dokumen yang akan dibuat" name="judul" type="text" class="shadow bg-white border border-slate-500 text-gray-900 text-sm rounded-lg focus:ring-blue-300 focus:border-sky-800 block w-full p-2.5  transition-all duration-200 ease-out" required>
                         </div>
-                    <div class="grid md:grid-cols-2 md:gap-6">
                         <div class="relative z-0 w-full mb-2 group">
                             <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Tipe Dokumen</label>
                             <select name="tipe_dok" id="" class="shadow bg-white border border-slate-500 text-gray-900 text-sm rounded-lg focus:ring-blue-300 focus:border-sky-800 block w-full p-2.5  transition-all duration-200 ease-out" required>
                                 <option value="PERATURAN PERUNDANG-UNDANGAN">PERATURAN PERUNDANG-UNDANGAN</option>
                             </select>
                         </div>
+                    </div>
+                    <div class="grid md:grid-cols-3 md:gap-6">
                         <div class="relative z-0 w-full mb-2 group">
                             <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Subjek peraturan</label>
                             <input placeholder="Subjek peraturan" name="subjek" type="text" class="shadow bg-white border border-slate-500 text-gray-900 text-sm rounded-lg focus:ring-blue-300 focus:border-sky-800 block w-full p-2.5  transition-all duration-200 ease-out" required>
+                        </div>
+                        <div class="relative z-0 w-full mb-2 group">
+                            <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Tipe Subjek</label>
+                            <input placeholder="Tipe subjek" name="tipe_subjek" type="text" class="shadow bg-white border border-slate-500 text-gray-900 text-sm rounded-lg focus:ring-blue-300 focus:border-sky-800 block w-full p-2.5  transition-all duration-200 ease-out" required>
+                        </div>
+                        <div class="relative z-0 w-full mb-2 group">
+                            <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Jenis Subjek</label>
+                            <input placeholder="Jenis subjek" name="jenis_subjek" type="text" class="shadow bg-white border border-slate-500 text-gray-900 text-sm rounded-lg focus:ring-blue-300 focus:border-sky-800 block w-full p-2.5  transition-all duration-200 ease-out" required>
                         </div>
                     </div>
                     <div class="grid md:grid-cols-3 md:gap-6">
@@ -55,7 +65,7 @@
                             <select name="jenis_per" id="" class="shadow bg-white border border-slate-500 text-gray-900 text-sm rounded-lg focus:ring-blue-300 focus:border-sky-800 block w-full p-2.5  transition-all duration-200 ease-out" required>
                                 <option value="">Pilih Jenis</option>
                                 @foreach ($groupJenis as $id => $name)
-                                    <option value="{{$name}}">{{$name}}</option>
+                                    <option value="{{$id}}">{{$name}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -96,7 +106,7 @@
                         <div class="relative z-0 w-full mb-2 group"></div>
                         <div class="relative z-0 w-full mb-2 group">
                             <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Bahasa</label>
-                            <select name="status" id="" class="shadow bg-white border border-slate-500 text-gray-900 text-sm rounded-lg focus:ring-blue-300 focus:border-sky-800 block w-full p-2.5  transition-all duration-200 ease-out" required>
+                            <select name="bahasa" id="" class="shadow bg-white border border-slate-500 text-gray-900 text-sm rounded-lg focus:ring-blue-300 focus:border-sky-800 block w-full p-2.5  transition-all duration-200 ease-out" required>
                                 <option value="Bahasa Indonesia">Indonesia</option>
                                 <option value="English">English</option>
                             </select>

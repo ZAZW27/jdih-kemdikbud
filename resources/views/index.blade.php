@@ -71,31 +71,7 @@
                         <img class="w-full h-full object-cover object-right" src="{{asset('assets/img/bg/background.jpg')}}" alt="" loading="lazy">
                     </div>
                 </div>
-                <!-- Slider controls -->
-                {{-- <button type="button" class="absolute top-8 start-0 z-[80] flex items-center justify-center h-full px-0 duration-200 cursor-pointer group focus:outline-none" data-carousel-prev>
-                    <span class="inline-flex items-center justify-center w-6 hover:w-10 h-[15rem] hover:h-[20rem] rounded-br-full rounded-tr-full bg-slate-400/10 backdrop-blur group-hover:bg-slate-50/20 group-focus:ring-1 group-focus:ring-amber-500/20 group-focus:outline-none transition-all duration-300 ease-out">
-                        <svg class="w-4 h-4 text-slate-300  rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                            <path stroke="currentColor"  stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
-                        </svg>
-                        <span class="sr-only">Previous</span>
-                    </span>
-                </button>
-                <button type="button" class="absolute top-8 end-0 z-[80] flex items-center justify-center h-full px-0 duration-200 cursor-pointer group focus:outline-none" data-carousel-next>
-                    <span class="inline-flex items-center justify-center w-6 hover:w-10 h-[15rem] hover:h-[20rem] rounded-tl-full rounded-bl-full bg-slate-400/10 backdrop-blur group-hover:bg-slate-50/20 group-focus:ring-1 group-focus:ring-amber-500/20 group-focus:outline-none transition-all duration-300 ease-out">
-                        <svg class="w-4 h-4 text-slate-300  rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-                        </svg>
-                        <span class="sr-only">Next</span>
-                    </span>
-                </button> --}}
-                {{-- <!-- Slider indicators -->
-                <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
-                    <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-                </div> --}}
-
             </div>
-            
             <div class="absolute top-0 flex justify-center bg-amber-500 w-full h-full">
                 <div class="relative w-[100svw] h-full py-4 px-4 mx-auto max-w-screen-xl text-center pt-16 z-[20]">
                     <div class="col-span-12 md:col-span-12 sm:col-span-12 mt-2 animate__animated animate__fadeInUp" id="detail_peraturan">
@@ -103,33 +79,37 @@
                             <div class="z-[11] absolute top-0 md:-left-[12rem] -left-[0rem] md:w-[130svw] w-[100svw] h-full banner-gradient"></div>
                             <div class="absolute md:flex lg:block justify-end top-0 md:-left-[9rem] -left-[0rem] md:w-[115svw] w-[100svw] h-full">
                                 <div class="mt-[10rem] w-[100vw] flex flex-col items-center justify-start  md:ml-10">
-                                    <div id="beruangMaduImg" for="search-input" class="md:absolute md:bottom-[160px] lg:bottom-[66px] md:left-[37.8vw] lg:left-[17.4vw] md:z-[45] z-[22] md:w-[8rem] lg:w-[20rem] w-[90vw] hover:cursor-text">
-                                        {{-- <img src="{{ asset('assets/img/logo/helarctos-malayanus.png') }}" alt="" style=""> --}}
+                                    <div id="logo-balikpapan-banner" for="search-input" class="md:absolute md:bottom-[160px] lg:bottom-[66px] md:left-[37.8vw] lg:left-[17.4vw] md:z-[45] z-[22] md:w-[8rem] lg:w-[20rem] w-[90vw] hover:cursor-text">
+                                        <img src="{{ asset('assets/img/logo/logo_kota_balikpapan.svg') }}" alt="" style="">
                                         <!-- Placeholder content, e.g., a loading spinner or text -->
                                     </div>
+                                    {{-- <div id="logo-balikpapan-banner" for="search-input" class="md:absolute md:bottom-[160px] lg:bottom-[66px] md:left-[37.8vw] lg:left-[17.4vw] md:z-[45] z-[22] md:w-[8rem] lg:w-[20rem] w-[90vw] hover:cursor-text">
+                                        <img src="{{ asset('assets/img/logo/logo_kota_balikpapan.svg') }}" alt="" style="">
+                                        <!-- Placeholder content, e.g., a loading spinner or text -->
+                                    </div> --}}
                                     <script>
                                         
-                                        window.addEventListener('load', function () {
-                                            var beruangMaduImg = document.getElementById('beruangMaduImg');
-                                            var input = document.getElementById('search-input');
+                                        // window.addEventListener('load', function () {
+                                        //     var beruangMaduImg = document.getElementById('beruangMaduImg');
+                                        //     var input = document.getElementById('search-input');
 
-                                            // Add a click event listener to the image
-                                            beruangMaduImg.addEventListener('click', function() {
-                                                // Set focus on the input when the image is clicked
-                                                input.focus();
-                                            });
+                                        //     // Add a click event listener to the image
+                                        //     beruangMaduImg.addEventListener('click', function() {
+                                        //         // Set focus on the input when the image is clicked
+                                        //         input.focus();
+                                        //     });
 
-                                            var imageElement = document.createElement('img');
-                                            imageElement.src = "{{ asset('assets/img/logo/helarctos-malayanus.png') }}";
+                                        //     var imageElement = document.createElement('img');
+                                        //     imageElement.src = "{{ asset('assets/img/logo/logo_kota_balikpapan.svg') }}";
 
-                                            imageElement.classList.add('opacity-0', 'transition-opacity', 'duration-700', 'ease-in-out');
-                                            beruangMaduImg.appendChild(imageElement);
+                                        //     imageElement.classList.add('opacity-0', 'transition-opacity', 'duration-700', 'ease-in-out');
+                                        //     beruangMaduImg.appendChild(imageElement);
 
-                                            // Set a timeout to remove the fade-in classes after a delay
-                                            setTimeout(function () {
-                                                imageElement.classList.remove('opacity-0');
-                                            }, 200); // Adjust the delay (in milliseconds) as needed
-                                        });
+                                        //     // Set a timeout to remove the fade-in classes after a delay
+                                        //     setTimeout(function () {
+                                        //         imageElement.classList.remove('opacity-0');
+                                        //     }, 200); // Adjust the delay (in milliseconds) as needed
+                                        // });
                                     </script>
                                     <div class="z-[20] absolute  top-4 h-[30rem] banner-title backgdrop-blur-md" >
                                         <div id="text-bpp" class="sticky top-16 font-bold md:relative md:top-[13.5rem] lg:top-[10.5rem] text-[15vw] md:ml-[4rem] lg:ml-0 md:text-[6vw] lg:text-[6rem] text-bpp">
@@ -1282,31 +1262,31 @@
                     <a href="https://kemdikbud.go.id" target="_blank"> Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi.</a>
                     </p>
                 </div>
-                <button onclick="topFunction()" id="movetop" title="Go to top" class="move-to-top-btn shadow-md z-50">
+                <button id="toTopBtn" title="Go to top" class="move-to-top-btn shadow-md z-50">
                     ^
                 </button>
             </section>
             <!-- //copyright -->
         </footer>
         {{-- top functions --}}
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script>
-            $(window).on("scroll", function () {
-                var scroll = $(window).scrollTop();
-    
-                if (scroll >= 5) {
-                    $("#site-header")
-                        .stop()
-                        .animate({ height: "90px"}, 200); // Adjust the target height and margin as needed
-                } else {
-                    $("#site-header")
-                        .stop()
-                        .animate({ height: "100px", marginTop: "0px" }, 200); // Replace "original-height" and "original-margin" with the actual original values
-                }
-            });
-        </script>
+        {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
         {{-- ANIMATED SELECT OPTIONS --}}
         <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function(){ 
+                $(window).scroll(function(){ 
+                    if ($(this).scrollTop() > 100) { 
+                        $('#toTopBtn').fadeIn(); 
+                    } else { 
+                        $('#toTopBtn').fadeOut(); 
+                    } 
+                });
+                $('#toTopBtn').click(function(){ 
+                    $("html, body").animate({ scrollTop: 0 }, 600); 
+                    return false; 
+                }); 
+            });
+        </script>
         <script> // Script untuk modal
             function dialog() {
 

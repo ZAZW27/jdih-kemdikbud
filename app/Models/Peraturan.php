@@ -139,7 +139,7 @@ class Peraturan extends Model
                 DB::raw('2 AS model'),
             )
             ->orderBy('bpp_produk_hukum.tanggal_penetapan', 'desc')
-            ->get();
+            ->paginate(10);
     }
 
     // public function LatestPeraturan(){

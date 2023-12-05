@@ -21,7 +21,7 @@ class AdminPeraturanController extends Controller
     public function index()
     {
         $getPeraturan = new Peraturan();
-        $peraturan = $getPeraturan->latestPeraturan(10);
+        $peraturan = $getPeraturan->getProdukHukum(10);
 
         return view('pages.admin.peraturan.peraturan', [
             'title' => 'JDIH BPP | Admin',
@@ -51,6 +51,8 @@ class AdminPeraturanController extends Controller
         $judul = $request->input('judul');
         $tipe_dok = $request->input('tipe_dok');
         $subjek = $request->input('subjek');
+        $tipe_subjek = $request->input('tipe_subjek');
+        $jenis_subjek = $request->input('jenis_subjek');
         $nama_peng = $request->input('nama_peng');
         $tipe_peng = $request->input('tipe_peng');
         $jenis_peng = $request->input('jenis_peng');
@@ -65,28 +67,38 @@ class AdminPeraturanController extends Controller
         $catatan = $request->input('catatan');
         $sumber = $request->input('sumber');
     
-        $peraturan->tipe_dokumen
-        $peraturan->judul
-        $peraturan->nama_pengarang
-        $peraturan->tipe_pengarang
-        $peraturan->jenis_pengarang
-        $peraturan->nomor_peraturan
-        $peraturan->id_jenis_peraturan
-        $peraturan->tempat_penetapan
-        $peraturan->tanggal_penetapan
-        $peraturan->tanggal_pengundangan
-        $peraturan->id_tahun_peraturan
-        $peraturan->sumber
-        $peraturan->subjek
-        $peraturan->tipe_dokumen
-        $peraturan->tipe_dokumen
-        $peraturan->tipe_dokumen
-        $peraturan->tipe_dokumen
-        $peraturan->tipe_dokumen
+        $peraturan->tipe_dokumen = $tipe_dok;
+        $peraturan->judul = $judul;
+        $peraturan->nama_pengarang = $nama_peng;
+        $peraturan->tipe_pengarang = $tipe_peng;
+        $peraturan->jenis_pengarang = $jenis_peng;
+        $peraturan->nomor_peraturan = $nomor_per;
+        $peraturan->id_jenis_peraturan = $jenis_per;
+        $peraturan->tempat_penetapan = $tempat_penetapan;
+        $peraturan->tanggal_penetapan = $tanggal_penetapan;
+        $peraturan->tanggal_pengundangan = $tanggal_pengundangan;
+        $peraturan->id_tahun_peraturan = $tahun_per;
+        $peraturan->sumber = $sumber;
+        $peraturan->subjek = $subjek;
+        $peraturan->tipe_subjek = $tipe_subjek;
+        $peraturan->jenis_subjek = $jenis_subjek;
+        $peraturan->id_status_peraturan = $status;
+        $peraturan->catatan = $catatan;
+        $peraturan->bahasa = $bahasa;
+        $peraturan->dilihat = '0';
+        $peraturan->diunduh = '0';
 
-        $berita->save();
+        if (!$request->file('file')){
+            $peraturan->file = 'TIdak ada';
+        }else {
+            $peraturan->file = $request->file('file');
+        }
 
-        return redirect()->route('berita-baru');
+        
+
+        $peraturan->save();
+
+        return redirect()->route('getPeraturan.data');
     }
 
     public function edit($id){
