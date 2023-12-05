@@ -78,7 +78,7 @@
                         <div class="row-span-3 col-span-12 ">
                             <div class="z-[11] absolute top-0 md:-left-[12rem] -left-[0rem] md:w-[130svw] w-[100svw] h-full banner-gradient"></div>
                             <div class="absolute md:flex lg:block justify-end top-0 md:-left-[9rem] -left-[0rem] md:w-[115svw] w-[100svw] h-full">
-                                <div class="mt-[9rem] lg:w-[96vw] md:w-[100vw] w-[100vw] flex flex-col items-center justify-start md:ml-10">
+                                <div class="mt-[9rem] lg:w-[96vw] md:w-[100vw] w-[100vw] flex flex-col items-center justify-start md:ml-10 ">
                                     <div id="logo-balikpapan-banner" for="search-input" class="md:absolute md:bottom-[160px] lg:bottom-[70px] md:left-[37.8vw] lg:left-[21vw] lg:z-[22] md:z-[45] z-[22] md:w-[5rem] lg:w-[10rem] w-[50vw] hover:cursor-text">
                                         {{-- <img src="{{ asset('assets/img/logo/logo_kota_balikpapan.svg') }}" alt="" style="filter: grayscale(10%);"> --}}
                                     </div>
@@ -109,9 +109,10 @@
                                             }, 200); // Adjust the delay (in milliseconds) as needed
                                         });
                                     </script>
-                                    <div class="z-[20] absolute  top-4 h-[30rem] banner-title backgdrop-blur-md" >
-                                        <div id="text-bpp" class="sticky top-16 font-bold md:relative md:top-[13.5rem] lg:top-[10.5rem] text-[15vw] md:ml-[0rem] lg:ml-0 md:text-[6vw] lg:text-[6rem] text-bpp">
-                                            BALIKPAPAN
+                                    <div class="z-[45] absolute  top-4 h-[30rem] banner-title backgdrop-blur-md bg-red-600/50" >
+                                        {{-- <div id="text-bpp" class="sticky top-16 font-bold md:relative md:top-[13.5rem] lg:top-[10.5rem] text-[15vw] md:ml-[0rem] lg:ml-0 md:text-[6vw] lg:text-[6rem] text-bpp"> --}}
+                                        <div id="bpp-img" class="sticky md:relative md:top-[2rem] w-[50rem]">
+                                            <img src="{{asset('assets/img/logo/Logo Balikpapan Nyaman light.png')}}" alt="">
                                         </div>
                                     </div>
                                 </div>
@@ -529,7 +530,7 @@
                     prevButton: '#prevBtn',
                     nextButton: '#nextBtn',
                     speed: 1000,
-                    autoplay: false,
+                    autoplay: true,
                     autoplayButtonOutput: false,
                     responsive: {
                         0: {
