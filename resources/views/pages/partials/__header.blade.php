@@ -36,6 +36,7 @@
 
     {{-- MY JS --}}
     <script async src="{{asset('assets/js/main/main.js')}}"></script>
+    <script async src="{{asset('assets/js/main/resize.js')}}"></script>
 </head>
 <body style="background-color: #F1F4FA;">
     <nav class="md:bg-white md:border-gray-200 bg-slate-800/30 shadow-lg fixed top-0 w-full lg:h-[6rem] sm:h-[5rem] backdrop-blur-sm transition-all duration-200 ease-in" id="navbar">
@@ -286,36 +287,36 @@
     </nav>
     <script>
         $(document).ready(function() {
-        var pageTitle = "{{ isset($title) ? $title : 'JDIH Balikpapan' }}";
-        // Function to update navbar styles based on scroll position
-        function updateNavbarStyles() {
-            var scrollPosition = $(window).scrollTop();
-    
-            // Define the scroll threshold for color change
-            var scrollThreshold = pageTitle.toLowerCase().includes('main') ? 627 : 200;
+            var pageTitle = "{{ isset($title) ? $title : 'JDIH Balikpapan' }}";
+            // Function to update navbar styles based on scroll position
+            function updateNavbarStyles() {
+                var scrollPosition = $(window).scrollTop();
+        
+                // Define the scroll threshold for color change
+                var scrollThreshold = pageTitle.toLowerCase().includes('main') ? 627 : 200;
 
-            // Check if the viewport width is less than or equal to 768 pixels (mobile view)
-            if ($(window).width() <= 768) {
-                if (scrollPosition > scrollThreshold) {
-                    // If scrolled beyond the threshold, change background color to white
-                    $('#navbar').removeClass('bg-slate-800/30').addClass('bg-white');
-                    $('#collapse-nav-btn').removeClass('text-white').addClass('text-blue-800');
+                // Check if the viewport width is less than or equal to 768 pixels (mobile view)
+                if ($(window).width() <= 768) {
+                    if (scrollPosition > scrollThreshold) {
+                        // If scrolled beyond the threshold, change background color to white
+                        $('#navbar').removeClass('bg-slate-800/30').addClass('bg-white');
+                        $('#collapse-nav-btn').removeClass('text-white').addClass('text-blue-800');
+                    } else {
+                        // If not scrolled beyond the threshold, revert to the original styles
+                        $('#navbar').removeClass('bg-white').addClass('bg-slate-800/30');
+                        $('#collapse-nav-btn').removeClass('text-blue-800').addClass('text-white');
+                    }
                 } else {
-                    // If not scrolled beyond the threshold, revert to the original styles
-                    $('#navbar').removeClass('bg-white').addClass('bg-slate-800/30');
-                    $('#collapse-nav-btn').removeClass('text-blue-800').addClass('text-white');
+                // If not in mobile view, revert to the original styles
+                $('#navbar').removeClass('bg-white').addClass('bg-slate-800/30');
                 }
-            } else {
-            // If not in mobile view, revert to the original styles
-            $('#navbar').removeClass('bg-white').addClass('bg-slate-800/30');
             }
-        }
-    
-        // Attach the updateNavbarStyles function to the scroll event
-        $(window).scroll(updateNavbarStyles);
-    
-        // Attach the updateNavbarStyles function to the window resize event
-        $(window).resize(updateNavbarStyles);
+        
+            // Attach the updateNavbarStyles function to the scroll event
+            $(window).scroll(updateNavbarStyles);
+        
+            // Attach the updateNavbarStyles function to the window resize event
+            $(window).resize(updateNavbarStyles);
         });
     </script>
     

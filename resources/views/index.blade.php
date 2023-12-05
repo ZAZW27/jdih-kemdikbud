@@ -80,7 +80,10 @@
                         <div class="">
                             <div class="absolute md:flex lg:block justify-end top-0 -left-[0rem] md:w-full w-full h-full ">
                                 <div class=" mt-[12rem] lg:w-full md:w-full w-full flex flex-col items-center justify-start ">
-                                    <div id="logo-sbalikpapan-banner" for="search-input" class="md:absolute md:bottom-[11.8rem] lg:bottom-[7.9rem] md:left-[24vw] lg:left-[10.4vw] z-[30] md:w-[8vw] lg:w-[10rem] w-[180px] ">
+                                    <div id="logo-balikpapan-banner" for="search-input" class="
+                                        relative -bottom-20 w-[170px] z-[30]
+                                        md:absolute md:bottom-[11.8rem]  md:w-[8vw] md:left-[24vw]
+                                        lg:bottom-[7.9rem]  lg:left-[10.4vw]  lg:w-[10rem]  ">
                                         <img src="{{ asset('assets/img/logo/logo_kota_balikpapan.svg') }}" alt="" style="filter: grayscale(10%);">
                                     </div>
                                     {{-- <div id="logo-balikpapan-banner" for="search-input" class="md:absolute md:bottom-[160px] lg:bottom-[66px] md:left-[37.8vw] lg:left-[17.4vw] md:z-[45] z-[22] md:w-[8rem] lg:w-[20rem] w-[90vw] hover:cursor-text">
@@ -110,9 +113,15 @@
                                             }, 200); // Adjust the delay (in milliseconds) as needed
                                         });
                                     </script> --}}
-                                    <div class="absolute top-4 h-[27rem] banner-title backgdrop-blur-md" >
-                                        <div id="bpp-img-container" class="sticky top-[6rem] w-[80vw] md:relative lg:top-[9rem] md:top-[12rem] lg:w-[40rem] md:w-[25rem] md:ml-20 lg:ml-0 md:z-[47] z-[29]">
+                                    <div class="absolute top-4 h-[28.2rem] banner-title backgdrop-blur-md" >
+                                        <div id="bpp-img-container" class="sticky top-[9rem] w-[80vw] md:relative lg:top-[9rem] md:top-[12rem] lg:w-[40rem] md:w-[25rem] md:ml-20 lg:ml-0 md:z-[47] z-[29]">
                                             <img id="bpp-img" src="{{asset('assets/img/logo/Logo Balikpapan Nyaman light.png')}}" style="cursor: text;" alt="">
+                                            <div class="absolute z-[21] h-1
+                                                -bottom-10 w-[11rem]
+                                                md:top-0 md:w-[13rem] md:-right-12 md:-rotate-3 
+                                                lg:top-2 lg:w-[14.5rem] lg:-right-14 lg:-rotate-6 " >
+                                                <img src="{{asset('assets/img/logo/balikpapanNyaman.png')}}" alt="">
+                                            </div>
                                         </div>
                                         <script>
                                             document.addEventListener('DOMContentLoaded', function() {
@@ -133,7 +142,7 @@
                                     <div class="relative md:w-[50%] w-[80%] flex flex-row justify-center md:items-center">
                                         <div class="flex justify-center items-end md:items-center md:space-x-4 tutup animate-slide-left mt-24 w-full  md:h-[20rem] h-[58svh]">
                                             <input name="search-peraturan" type="text" id="search-input" class="w-[100%] pl-2 pr-4 py-3 border-0 rounded-lg focus:outline-none focus:ring focus:border-blue-300" placeholder="Cari peraturan dan dokumen disini">
-                                            <div class="absolute flex md:right-1 md:mb-0 mb-[50px] -right-4 justify-center items-center md:mt-0 " id="filter-button">
+                                            <div class="absolute z-[100] flex md:right-1 md:mb-0 mb-[50px] -right-4 justify-center items-center md:mt-0 " id="filter-button">
                                                 <button type="submit" class="bg-blue-500 text-white px-4 py-2 mr-1 h-10 rounded-r focus:outline-none focus:ring focus:border-blue-300 hover:bg-red-500 rounded-lg">
                                                     <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" width="20"><path d="M0 0h24v24H0z" fill="none"></path><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
                                                 </button>
@@ -1236,142 +1245,10 @@
             <!-- //copyright -->
         </footer>
         
-        {{-- ANIMATED SELECT OPTIONS --}}
-        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-        <script>
-            $(document).ready(function(){ 
-                $(window).scroll(function(){ 
-                    if ($(this).scrollTop() > 100) { 
-                        $('#toTopBtn').fadeIn(); 
-                    } else { 
-                        $('#toTopBtn').fadeOut(); 
-                    } 
-                });
-                $('#toTopBtn').click(function(){ 
-                    $("html, body").animate({ scrollTop: 0 }, 600); 
-                    return false; 
-                }); 
-            });
-        </script>
-        <script> // Script untuk modal
-            function dialog() {
-
-                // Declare variables
-                var dialogBox = $('.dialog'),
-                    dialogTrigger = $('.dialog__trigger'),
-                    dialogClose = $('.dialog__close'),
-                    dialogTitle = $('.dialog__title'),
-                    dialogContent = $('.dialog__content'),
-                    dialogAction = $('.dialog__action');
-
-                // Open the dialog
-                dialogTrigger.on('click', function(e) {
-                dialogBox.toggleClass('dialog--active');
-                e.stopPropagation();
-                });
-
-                // Close the dialog - click close button
-                dialogClose.on('click', function() {
-                dialogBox.removeClass('dialog--active');
-                });
-
-                // Close the dialog - press escape key // key#27
-                $(document).keyup(function(e) {
-                if (e.keyCode === 27) {
-                    dialogBox.removeClass('dialog--active');
-                }
-                });
-
-                // Close the dialog - click outside
-                $(document).on('click', function(e) {
-                if ($(e.target).is(dialogBox) === false &&
-                    $(e.target).is(dialogTitle) === false &&
-                    $(e.target).is(dialogContent) === false &&
-                    $(e.target).is(dialogAction) === false) {
-                    dialogBox.removeClass('dialog--active');   
-                }
-                });
-
-                }
-
-                // Run function
-                $(dialog);
-        </script>
-
-        <script> // script untuk animated select options
-            $(".custom-select").each(function() {
-            var classes = $(this).attr("class"),
-                id = $(this).attr("id"),
-                name = $(this).attr("name");
-            var template = '<div class="' + classes + '">';
-            template +=
-                '<span class="custom-select-trigger">' +
-                $(this).attr("placeholder") +
-                "</span>";
-            template += '<div class="custom-options">';
-            $(this)
-                .find("option")
-                .each(function() {
-                template +=
-                    '<span class="custom-option ' +
-                    $(this).attr("class") +
-                    '" data-value="' +
-                    $(this).attr("value") +
-                    '">' +
-                    $(this).html() +
-                    "</span>";
-                });
-            template += "</div></div>";
-
-            $(this).wrap('<div class="custom-select-wrapper"></div>');
-            $(this).hide();
-            $(this).after(template);
-            });
-            $(".custom-option:first-of-type").hover(
-            function() {
-                $(this)
-                .parents(".custom-options")
-                .addClass("option-hover");
-            },
-            function() {
-                $(this)
-                .parents(".custom-options")
-                .removeClass("option-hover");
-            }
-            );
-            $(".custom-select-trigger").on("click", function() {
-            $("html").one("click", function() {
-                $(".custom-select").removeClass("opened");
-            });
-            $(this)
-                .parents(".custom-select")
-                .toggleClass("opened");
-            event.stopPropagation();
-            });
-            $(".custom-option").on("click", function() {
-            $(this)
-                .parents(".custom-select-wrapper")
-                .find("select")
-                .val($(this).data("value"));
-            $(this)
-                .parents(".custom-options")
-                .find(".custom-option")
-                .removeClass("selection");
-            $(this).addClass("selection");
-            $(this)
-                .parents(".custom-select")
-                .removeClass("opened");
-            $(this)
-                .parents(".custom-select")
-                .find(".custom-select-trigger")
-                .text($(this).text());
-            });
-        
-        </script>
         <script>
             const carouselElement: HTMLElement = document.getElementById('carousel-banner');
-
         </script>
+        @include('pages.partials.__jqueries')
         <!-- AOS CODES -->
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </body>
