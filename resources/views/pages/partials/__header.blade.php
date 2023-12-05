@@ -291,7 +291,7 @@
             // Function to update navbar styles based on scroll position
             function updateNavbarStyles() {
                 var scrollPosition = $(window).scrollTop();
-        
+
                 // Define the scroll threshold for color change
                 var scrollThreshold = pageTitle.toLowerCase().includes('main') ? 627 : 200;
 

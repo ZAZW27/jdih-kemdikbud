@@ -81,7 +81,7 @@
                             <div class="absolute md:flex lg:block justify-end top-0 -left-[0rem] md:w-full w-full h-full ">
                                 <div class=" mt-[12rem] lg:w-full md:w-full w-full flex flex-col items-center justify-start ">
                                     <div id="logo-balikpapan-banner" for="search-input" class="
-                                        relative -bottom-20 w-[170px] z-[30]
+                                        relative -bottom-20 w-[170px] z-[30] transition-all duration-500 ease-out
                                         md:absolute md:bottom-[11.8rem]  md:w-[8vw] md:left-[24vw]
                                         lg:bottom-[7.9rem]  lg:left-[10.4vw]  lg:w-[10rem]  ">
                                         <img src="{{ asset('assets/img/logo/logo_kota_balikpapan.svg') }}" alt="" style="filter: grayscale(10%);">
@@ -114,28 +114,19 @@
                                         });
                                     </script> --}}
                                     <div class="absolute top-4 h-[28.2rem] banner-title backgdrop-blur-md" >
-                                        <div id="bpp-img-container" class="sticky top-[9rem] w-[80vw] md:relative lg:top-[9rem] md:top-[12rem] lg:w-[40rem] md:w-[25rem] md:ml-20 lg:ml-0 md:z-[47] z-[29]">
+                                        <div id="bpp-img-container" class="sticky top-[12rem] w-[80vw] md:relative lg:top-[9rem] md:top-[12rem] lg:w-[40rem] md:w-[25rem] md:ml-20 lg:ml-0 md:z-[47] z-[29]">
                                             <img id="bpp-img" src="{{asset('assets/img/logo/Logo Balikpapan Nyaman light.png')}}" style="cursor: text;" alt="">
-                                            <div class="absolute z-[21] h-1
+                                            <div id="Bppnyaman-logo" class="absolute z-[21] md:h-1  transition-all duration-500 ease-out opacity-0
                                                 -bottom-10 w-[11rem]
                                                 md:top-0 md:w-[13rem] md:-right-12 md:-rotate-3 
                                                 lg:top-2 lg:w-[14.5rem] lg:-right-14 lg:-rotate-6 " >
                                                 <img src="{{asset('assets/img/logo/balikpapanNyaman.png')}}" alt="">
                                             </div>
                                         </div>
-                                        <script>
-                                            document.addEventListener('DOMContentLoaded', function() {
-                                                var bppImg = document.getElementById('bpp-img');
-                                                var input = document.getElementById('search-input');
-
-                                                bppImg.addEventListener('click', function () {
-                                                    input.focus();
-                                                });
-                                            });
-                                        </script>
                                     </div>
                                 </div>
                             </div>
+                            
                             <form class="relative domain-form z-[46]" action="{{route('get_peraturan.data')}}" method="post">
                                 @csrf
                                 <div class="relative flex justify-center items-center">
@@ -515,7 +506,7 @@
                                             <div class="flex items-center absolute bottom-0 right-0">
                                                 <div class="flex items-center">
                                                     <span class="text-xs text-gray-500">{{$per->download}}</span>
-                                                    <div class="flex justify-start ml-1 items-center transition-all duration-500 ease-in-out hover:bg-sky-200 hover:bg-opacity-50 w-10 h-10 rounded-2xl">
+                                                    <div class="flex justify-start ml-1 items-center transition-all duration-500 ease-in-out  w-10 h-10 rounded-2xl">
                                                         <a href="#" class="">
                                                             <svg width="23px" height="23px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#4b3f3f"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path opacity="0.5" d="M3 15C3 17.8284 3 19.2426 3.87868 20.1213C4.75736 21 6.17157 21 9 21H15C17.8284 21 19.2426 21 20.1213 20.1213C21 19.2426 21 17.8284 21 15" stroke="#1C274C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12 3V16M12 16L16 11.625M12 16L8 11.625" stroke="#1C274C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
                                                         </a>
@@ -523,7 +514,7 @@
                                                 </div>
                                                 <div class="flex items-center">
                                                     <span class="text-xs text-gray-500">{{$per->view}}</span>
-                                                    <div class="flex justify-start ml-1 items-center transition-all duration-500 ease-in-out hover:bg-sky-200 hover:bg-opacity-50 w-10 h-10 rounded-2xl">
+                                                    <div class="flex justify-start ml-1 items-center transition-all duration-500 ease-in-out  w-10 h-10 rounded-2xl">
                                                         <a href="#" class="">
                                                             <svg width="23px" height="23px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M15.0007 12C15.0007 13.6569 13.6576 15 12.0007 15C10.3439 15 9.00073 13.6569 9.00073 12C9.00073 10.3431 10.3439 9 12.0007 9C13.6576 9 15.0007 10.3431 15.0007 12Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12.0012 5C7.52354 5 3.73326 7.94288 2.45898 12C3.73324 16.0571 7.52354 19 12.0012 19C16.4788 19 20.2691 16.0571 21.5434 12C20.2691 7.94291 16.4788 5 12.0012 5Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
                                                         </a>

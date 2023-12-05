@@ -127,5 +127,45 @@
         .find(".custom-select-trigger")
         .text($(this).text());
     });
+</script>
 
+<script>
+    $(document).ready(function(){
+        // console.log('scroll jquery is ready')
+        
+        function changeOnScroll() {
+            var scrollPosition = $(window).scrollTop();
+            var scrollThreshold = 200
+
+            // console.log(scrollPosition)
+
+            if ($(window).width() <= 768) {
+                // console.log('small boy?')
+                if (scrollPosition < scrollThreshold) {
+                    // console.log('big boy condition????' + scrollPosition)
+                    console.log(scrollPosition)
+                    $('#logo-balikpapan-banner')
+                    // .removeClass('-bottom-20').addClass('bottom-0')
+                    .addClass('w-[170px]').removeClass('w-[100px]');
+                    $('#Bppnyaman-logo').addClass('opacity-0').removeClass('opacity-1')
+
+                    
+                    
+                }else{
+                    $('#logo-balikpapan-banner')
+                    // .removeClass('-bottom-20').addClass('bottom-0')
+                    .removeClass('w-[170px]').addClass('w-[100px]');
+                    $('#Bppnyaman-logo').removeClass('opacity-0').addClass('opacity-1')
+                    
+                }
+            }
+            else{
+                console.log('big boy')
+            }
+        }
+
+        $(window).scroll(changeOnScroll)
+
+        $(window).resize(changeOnScroll)
+    });
 </script>
