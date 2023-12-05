@@ -116,9 +116,9 @@
                                     <div class="absolute top-4 h-[28.2rem] banner-title backgdrop-blur-md" >
                                         <div id="bpp-img-container" class="sticky top-[12rem] w-[80vw] md:relative lg:top-[9rem] md:top-[12rem] lg:w-[40rem] md:w-[25rem] md:ml-20 lg:ml-0 md:z-[47] z-[29]">
                                             <img id="bpp-img" src="{{asset('assets/img/logo/Logo Balikpapan Nyaman light.png')}}" style="cursor: text;" alt="">
-                                            <div id="Bppnyaman-logo" class="absolute z-[21] md:h-1  transition-all duration-500 ease-out opacity-0
-                                                -bottom-10 w-[11rem]
-                                                md:top-0 md:w-[13rem] md:-right-12 md:-rotate-3 
+                                            <div id="Bppnyaman-logo" class="absolute z-[21] md:h-1  transition-all duration-500 ease-out 
+                                                -bottom-10 w-[11rem] opacity-0
+                                                md:opacity-1! md:top-0 md:w-[13rem] md:-right-12 md:-rotate-3 
                                                 lg:top-2 lg:w-[14.5rem] lg:-right-14 lg:-rotate-6 " >
                                                 <img src="{{asset('assets/img/logo/balikpapanNyaman.png')}}" alt="">
                                             </div>
