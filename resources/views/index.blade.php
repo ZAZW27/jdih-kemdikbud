@@ -72,16 +72,17 @@
                     </div>
                 </div>
             </div>
+            
             <div class="absolute top-0 flex justify-center w-full h-full">
-                <div class="relative w-[100svw] h-full py-4 px-4 mx-auto max-w-screen-xl text-center pt-16 z-[20]">
-                    <div class="col-span-12 md:col-span-12 sm:col-span-12 mt-2 animate__animated animate__fadeInUp" id="detail_peraturan">
-                        <div class="row-span-3 col-span-12 ">
-                            <div class="z-[11] absolute top-0 md:-left-[12rem] -left-[0rem] md:w-[130svw] w-[100svw] h-full banner-gradient"></div>
-                            <div class="absolute md:flex lg:block justify-end top-0 md:-left-[9rem] -left-[0rem] md:w-[115svw] w-[100svw] h-full">
-                                <div class="mt-[9rem] lg:w-[96vw] md:w-[100vw] w-[100vw] flex flex-col items-center justify-start md:ml-10 ">
-                                    <div id="logo-balikpapan-banner" for="search-input" class="md:absolute md:bottom-[160px] lg:bottom-[70px] md:left-[37.8vw] lg:left-[21vw] lg:z-[22] md:z-[45] z-[22] md:w-[5rem] lg:w-[10rem] w-[50vw] hover:cursor-text">
-                                        {{-- <img src="{{ asset('assets/img/logo/logo_kota_balikpapan.svg') }}" alt="" style="filter: grayscale(10%);"> --}}
-                                    </div>
+                <div class="z-[21] absolute top-0 -left-[0rem] md:w-full w-full h-full banner-gradient"></div>
+                <div class="relative w-full h-full py-4 px-4 mx-auto max-w-screen-xl text-center pt-16 ">
+                    <div class="" id="detail_peraturan">
+                        <div class="">
+                            <div class="absolute md:flex lg:block justify-end top-0 -left-[0rem] md:w-full w-full h-full">
+                                <div class=" mt-[9rem] lg:w-full md:w-full w-full flex flex-col items-center justify-start ">
+                                    {{-- <div id="logo-balikpapan-banner" for="search-input" class="md:absolute md:bottom-[160px] lg:bottom-[70px] md:left-[37.8vw] lg:left-[21vw] lg:z-[22] md:z-[45] z-[22] md:w-[5rem] lg:w-[10rem] w-[50vw] hover:cursor-text">
+                                    </div> --}}
+                                    {{-- <img src="{{ asset('assets/img/logo/logo_kota_balikpapan.svg') }}" alt="" style="filter: grayscale(10%);"> --}}
                                     {{-- <div id="logo-balikpapan-banner" for="search-input" class="md:absolute md:bottom-[160px] lg:bottom-[66px] md:left-[37.8vw] lg:left-[17.4vw] md:z-[45] z-[22] md:w-[8rem] lg:w-[20rem] w-[90vw] hover:cursor-text">
                                         <img src="{{ asset('assets/img/logo/logo_kota_balikpapan.svg') }}" alt="" style="">
                                     </div> --}}
@@ -109,15 +110,25 @@
                                             }, 200); // Adjust the delay (in milliseconds) as needed
                                         });
                                     </script>
-                                    <div class="z-[45] absolute  top-4 h-[30rem] banner-title backgdrop-blur-md bg-red-600/50" >
+                                    <div class="absolute  top-4 h-[30rem] banner-title backgdrop-blur-md" >
                                         {{-- <div id="text-bpp" class="sticky top-16 font-bold md:relative md:top-[13.5rem] lg:top-[10.5rem] text-[15vw] md:ml-[0rem] lg:ml-0 md:text-[6vw] lg:text-[6rem] text-bpp"> --}}
-                                        <div id="bpp-img" class="sticky md:relative md:top-[2rem] w-[50rem]">
-                                            <img src="{{asset('assets/img/logo/Logo Balikpapan Nyaman light.png')}}" alt="">
+                                        <div id="bpp-img-container" class="sticky md:relative md:top-[9rem] w-[40rem] z-[47]">
+                                            <img id="bpp-img" src="{{asset('assets/img/logo/Logo Balikpapan Nyaman light.png')}}" style="cursor: text;" alt="">
                                         </div>
+                                        <script>
+                                            document.addEventListener('DOMContentLoaded', function() {
+                                                var bppImg = document.getElementById('bpp-img');
+                                                var input = document.getElementById('search-input');
+
+                                                bppImg.addEventListener('click', function () {
+                                                    input.focus();
+                                                });
+                                            });
+                                        </script>
                                     </div>
                                 </div>
                             </div>
-                            <form class="relative domain-form z-[44]" action="{{route('get_peraturan.data')}}" method="post">
+                            <form class="relative domain-form z-[46]" action="{{route('get_peraturan.data')}}" method="post">
                                 @csrf
                                 <div class="relative flex justify-center items-center">
                                     <div class="relative md:w-[50%] w-[80%] flex flex-row justify-center md:items-center">
@@ -205,91 +216,21 @@
                 </div>
             </div>
         </div>
-        
-        {{-- <div class="py-4 px-4 mx-auto max-w-screen-xl text-center pt-16  relative">
-            <div class="col-span-12 md:col-span-12 sm:col-span-12 mt-2 animate__animated animate__fadeInUp" id="detail_peraturan">
-                <div class="row-span-3 col-span-12 ">
-                    <form class="domain-form" action="{{route('get_peraturan.data')}}" method="post">
-                        @csrf
-                        <div class="md:flex md:items-center md:space-x-4 tutup animate-slide-left">
-                            <input name="search-peraturan" type="text" id="judul" class="w-full px-4 py-6 border-0 rounded-lg focus:outline-none focus:ring focus:border-blue-300" placeholder="Cari peraturan perundang-undangan bidang pendidikan, kebudayaan, riset, dan teknologi">
-                            <div class="absolute right-6 flex md:mt-0" id="filter-button">
-                                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-l focus:outline-none focus:ring focus:border-blue-300 hover:bg-red-500 ">
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" width="30"><path d="M0 0h24v24H0z" fill="none"></path><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
-                                </button>
-                                <button type="reset" style="reset" onclick="showModalFilter()" class="bg-yellow-500 text-slate-800 px-4 py-4 rounded-r focus:outline-none focus:ring focus:border-yellow-300">
-                                    <b>SPESIFIK</b>
-                                </button>
-                            </div>
-                        </div>                        
-                        <div class="absolute w-full flex md:justify-center justify-start md:-mt-14 md:top-[13rem] z-[11] hidden" id="filter-options" >
-                            <div class="bg-white shadow-lg w-[80%] pt-3 pb-1 px-2 rounded-lg">
-                                <div class="peraturan-filter flex flex-col sm:flex-row">
-                                    <div class="flex-1 z-[16]">
-                                        <section class="hidden" id="select-num" disabled>
-                                            <select class="custom-select sources" placeholder="Pilih Nomor" name="nomor-peraturan">
-                                                <option value="">Pilih Nomor</option>
-                                                @foreach ($groupNomor as $id => $name)
-                                                    <option value="{{$name}}">{{$name}}</option>
-                                                @endforeach
-                                            </select>
-                                        </section>
-                                        <section class="" id="type-num">
-                                            <input type="text" name="nomor-peraturan" placeholder="Ketik Nomor Peraturan" class="custom-input w-full focus:ring-white">
-                                        </section>
-                                        <input id="change-num" type="checkbox" value="" class="absolute z-[9999] md:right-40 right-[20px] top-6 w-6 h-6 text-blue-600 bg-white border-gray-600 shadow-md rounded-xl focus:ring-blue-500 ">
-                                    </div>
-                                </div>
-                                <div class="peraturan-filter flex flex-col sm:flex-row">
-                                    <div class=" flex-1 z-[15]">
-                                        <section>
-                                            <select class="custom-select sources" placeholder="Pilih Subjek" name="subjek-peraturan">
-                                                <option value="">Pilih Subjek</option>
-                                                @foreach ($groupSubjek as $id => $name)
-                                                    <option value="{{$name}}">{{$name}}</option>
-                                                @endforeach
-                                            </select>
-                                        </section>
-                                    </div>
-                                    <div class="flex-1 z-[14]">
-                                        <section>
-                                            <select class="custom-select sources" placeholder="Pilih Jenis" name="jenis-peraturan">
-                                                <option value="">Pilih Jenis</option>
-                                                @foreach ($groupJenis as $id => $name)
-                                                    <option value="{{$id}}">{{$name}}</option>
-                                                @endforeach
-                                            </select>
-                                        </section>
-                                    </div>
-                                </div>
-                                <div class="peraturan-filter flex flex-col sm:flex-row">
-                                    <div class="flex-1 z-[13]">
-                                        <section>
-                                            <select class="custom-select sources" placeholder="Pilih Tahun" name="tahun-peraturan">
-                                                <option value="">Pilih Tahun</option>
-                                                @foreach ($groupTahun as $id => $name)
-                                                    <option value="{{$id}}">{{$name}}</option>
-                                                @endforeach
-                                            </select>
-                                        </section>
-                                    </div>
-                                    <div class="flex-1 z-[12]">
-                                        <section>
-                                            <select class="custom-select sources" placeholder="Pilih Status" name="status-peraturan">
-                                                <option value="">Pilih Status</option>
-                                                @foreach ($groupStatus as $id => $name)
-                                                    <option value="{{$id}}">{{$name}}</option>
-                                                @endforeach
-                                            </select>
-                                        </section>
-                                    </div>
-                                </div>
+        <div class="absolute top-0 flex justify-center w-full h-full z-[1000] bg-blue-500 hidden">
+            <div class="relative w-[100svw] h-full py-4 px-4 mx-auto max-w-screen-xl text-center pt-16 bg-indigo-500/50">
+                {{-- <div class="z-[11] absolute top-0 md:-left-[12rem] -left-[0rem] md:w-[130svw] w-[100svw] h-full banner-gradient"></div> --}}
+                <div class="bg-white/60  absolute md:flex lg:block justify-end top-0 -left-[0rem] md:w-full w-full h-full">
+                    <div class=" mt-[9rem] lg:w-full md:w-full w-full flex flex-col items-center justify-start ">
+                        <div class="z-[45] absolute  top-4 h-[30rem] banner-title backgdrop-blur-md bg-red-600/50" >
+                            {{-- <div id="text-bpp" class="sticky top-16 font-bold md:relative md:top-[13.5rem] lg:top-[10.5rem] text-[15vw] md:ml-[0rem] lg:ml-0 md:text-[6vw] lg:text-[6rem] text-bpp"> --}}
+                            <div id="bpp-img" class="sticky md:relative md:top-[2rem] w-[50rem]">
+                                <img src="{{asset('assets/img/logo/Logo Balikpapan Nyaman light.png')}}" alt="">
                             </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
-        </div>  --}}
+        </div>
     </div>
     <div class="containers bg-center md:-mt-[0rem] -mt-[20svh] z-50">
         <div class="py-4 px-4 mx-auto max-w-screen-xl text-center z-1 relative">
@@ -563,12 +504,22 @@
                                     @if ($countPeraturan < 5)
                                         
                                         <div class="relative">
-                                            <div class="flex items-center absolute bottom-0 right-0 ">
-                                                <span class="text-xs text-gray-500">{{$per->download}}</span>
-                                                <div class="flex justify-center items-center transition-all duration-500 ease-in-out hover:bg-sky-200 hover:bg-opacity-50 w-10 h-10 rounded-2xl">
-                                                    <a href="#" class="">
-                                                        <svg width="23px" height="23px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#4b3f3f"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path opacity="0.5" d="M3 15C3 17.8284 3 19.2426 3.87868 20.1213C4.75736 21 6.17157 21 9 21H15C17.8284 21 19.2426 21 20.1213 20.1213C21 19.2426 21 17.8284 21 15" stroke="#1C274C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12 3V16M12 16L16 11.625M12 16L8 11.625" stroke="#1C274C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
-                                                    </a>
+                                            <div class="flex items-center absolute bottom-0 right-0">
+                                                <div class="flex items-center">
+                                                    <span class="text-xs text-gray-500">{{$per->download}}</span>
+                                                    <div class="flex justify-start ml-1 items-center transition-all duration-500 ease-in-out hover:bg-sky-200 hover:bg-opacity-50 w-10 h-10 rounded-2xl">
+                                                        <a href="#" class="">
+                                                            <svg width="23px" height="23px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#4b3f3f"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path opacity="0.5" d="M3 15C3 17.8284 3 19.2426 3.87868 20.1213C4.75736 21 6.17157 21 9 21H15C17.8284 21 19.2426 21 20.1213 20.1213C21 19.2426 21 17.8284 21 15" stroke="#1C274C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12 3V16M12 16L16 11.625M12 16L8 11.625" stroke="#1C274C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <span class="text-xs text-gray-500">{{$per->view}}</span>
+                                                    <div class="flex justify-start ml-1 items-center transition-all duration-500 ease-in-out hover:bg-sky-200 hover:bg-opacity-50 w-10 h-10 rounded-2xl">
+                                                        <a href="#" class="">
+                                                            <svg width="23px" height="23px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M15.0007 12C15.0007 13.6569 13.6576 15 12.0007 15C10.3439 15 9.00073 13.6569 9.00073 12C9.00073 10.3431 10.3439 9 12.0007 9C13.6576 9 15.0007 10.3431 15.0007 12Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12.0012 5C7.52354 5 3.73326 7.94288 2.45898 12C3.73324 16.0571 7.52354 19 12.0012 19C16.4788 19 20.2691 16.0571 21.5434 12C20.2691 7.94291 16.4788 5 12.0012 5Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <a href="{{route('detail_peraturan.data', ['id' => $per->id, 'model' => $per->model])}}">
