@@ -143,7 +143,6 @@
                 // console.log('small boy?')
                 if (scrollPosition < scrollThreshold) {
                     // console.log('big boy condition????' + scrollPosition)
-                    console.log(scrollPosition)
                     $('#logo-balikpapan-banner')
                     // .removeClass('-bottom-20').addClass('bottom-0')
                     .addClass('w-[170px]').removeClass('w-[100px]');
@@ -160,7 +159,7 @@
                 }
             }
             else{
-                console.log('big boy')
+                
             }
         }
 
