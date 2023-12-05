@@ -52,6 +52,7 @@
 document.addEventListener('DOMContentLoaded', function(){
     // UNTUK FILTER SEARCH !!!!!!!!!!!!!!
     document.getElementById("filter-button").addEventListener('click', function () {
+        // console.log('aksi ambil filtering')
         const targetModal = document.getElementById("filter-options");
     
         if (targetModal.classList.contains("block")) {
@@ -64,7 +65,6 @@ document.addEventListener('DOMContentLoaded', function(){
 
     // SHOW MODAL FOR FILTERING
     function showModalFilter(){
-        let Beruang = document.getElementById("beruangMaduImg");
         let banner = document.getElementById("banner-position");
         let funButt = document.getElementById("filter-button");
         let targetModal = document.getElementById("filter-options");
@@ -77,12 +77,10 @@ document.addEventListener('DOMContentLoaded', function(){
             }else{
                 banner.classList.add('z-50');
             }
-            Beruang.classList.remove('md:z-[45]');
             // banner.classList.add("block");
         }, 20);
     }
     function hideModalFilter(){
-        let Beruang = document.getElementById("beruangMaduImg");
         let banner = document.getElementById("banner-position");
         let funButt = document.getElementById("filter-button");
         let targetModal = document.getElementById("filter-options");
@@ -95,7 +93,6 @@ document.addEventListener('DOMContentLoaded', function(){
             }else if(banner.classList.contains('z-50')){
                 banner.classList.remove('z-50');
             }
-            Beruang.classList.add('md:z-[45]');
         }, 20);
     }
 

@@ -17,7 +17,7 @@ function setOpacity(bppText, scrollPosition, topOps, minHeight) {
 
 
 function bannerToggleScreen() {
-    console.log('the resize function is always ready to got ')  
+    // console.log('the resize function is always ready to got ')  
     const banner = document.getElementById('banner-position');
     const bppText = document.getElementById('text-bpp');
 
@@ -28,13 +28,13 @@ function bannerToggleScreen() {
 
     if (window.innerWidth <= 768) { // Adjust the breakpoint as needed
         console.log('MainJs mobile mode ready to go')
-
+        // console.log(window.innerWidth)
         bppText.classList.remove('text-bpp');
         bppText.classList.add('text-white');
         bppText.style.transition = 'opacity 0.3s ease';
         bppText.style.opacity = 0.80
-        if (banner.classList.contains('z-50')) {
-            banner.classList.remove('z-50')
+        if (!banner.classList.contains('z-60')) {
+            banner.classList.remove('z-60')
             hideModalFilter()
         }
         window.addEventListener('scroll', function () {

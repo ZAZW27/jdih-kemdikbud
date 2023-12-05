@@ -50,7 +50,7 @@
 <script async src="{{asset('assets/js/main/modals.js')}}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
     <div class="containers md:h-[30rem] h-[120svh]">
-        <div id="banner-position" class="sticky md:top-24 top-[0px] z-50">
+        <div id="banner-position" class="sticky md:top-24 top-[0px] z-60">
             <div id="carousel-banner" class="relative w-full z-20" data-carousel="slide">
                 <!-- Carousel wrapper -->
                 <div class="relative overflow-hidden rounded-lg md:h-[30rem] h-[100svh]">
@@ -78,15 +78,15 @@
                 <div class="relative w-full h-full py-4 px-4 mx-auto max-w-screen-xl text-center pt-16 ">
                     <div class="" id="detail_peraturan">
                         <div class="">
-                            <div class="absolute md:flex lg:block justify-end top-0 -left-[0rem] md:w-full w-full h-full">
-                                <div class=" mt-[9rem] lg:w-full md:w-full w-full flex flex-col items-center justify-start ">
-                                    {{-- <div id="logo-balikpapan-banner" for="search-input" class="md:absolute md:bottom-[160px] lg:bottom-[70px] md:left-[37.8vw] lg:left-[21vw] lg:z-[22] md:z-[45] z-[22] md:w-[5rem] lg:w-[10rem] w-[50vw] hover:cursor-text">
-                                    </div> --}}
-                                    {{-- <img src="{{ asset('assets/img/logo/logo_kota_balikpapan.svg') }}" alt="" style="filter: grayscale(10%);"> --}}
+                            <div class="absolute md:flex lg:block justify-end top-0 -left-[0rem] md:w-full w-full h-full ">
+                                <div class=" mt-[12rem] lg:w-full md:w-full w-full flex flex-col items-center justify-start ">
+                                    <div id="logo-sbalikpapan-banner" for="search-input" class="md:absolute md:bottom-[11.8rem] lg:bottom-[7.9rem] md:left-[24vw] lg:left-[10.4vw] z-[30] md:w-[8vw] lg:w-[10rem] w-[180px] ">
+                                        <img src="{{ asset('assets/img/logo/logo_kota_balikpapan.svg') }}" alt="" style="filter: grayscale(10%);">
+                                    </div>
                                     {{-- <div id="logo-balikpapan-banner" for="search-input" class="md:absolute md:bottom-[160px] lg:bottom-[66px] md:left-[37.8vw] lg:left-[17.4vw] md:z-[45] z-[22] md:w-[8rem] lg:w-[20rem] w-[90vw] hover:cursor-text">
                                         <img src="{{ asset('assets/img/logo/logo_kota_balikpapan.svg') }}" alt="" style="">
                                     </div> --}}
-                                    <script>
+                                    {{-- <script>
                                         
                                         window.addEventListener('load', function () {
                                             var logoBalikpapan = document.getElementById('logo-balikpapan-banner');
@@ -109,10 +109,9 @@
                                                 imageElement.classList.remove('opacity-0');
                                             }, 200); // Adjust the delay (in milliseconds) as needed
                                         });
-                                    </script>
-                                    <div class="absolute  top-4 h-[30rem] banner-title backgdrop-blur-md" >
-                                        {{-- <div id="text-bpp" class="sticky top-16 font-bold md:relative md:top-[13.5rem] lg:top-[10.5rem] text-[15vw] md:ml-[0rem] lg:ml-0 md:text-[6vw] lg:text-[6rem] text-bpp"> --}}
-                                        <div id="bpp-img-container" class="sticky md:relative md:top-[9rem] w-[40rem] z-[47]">
+                                    </script> --}}
+                                    <div class="absolute top-4 h-[27rem] banner-title backgdrop-blur-md" >
+                                        <div id="bpp-img-container" class="sticky top-[6rem] w-[80vw] md:relative lg:top-[9rem] md:top-[12rem] lg:w-[40rem] md:w-[25rem] md:ml-20 lg:ml-0 md:z-[47] z-[29]">
                                             <img id="bpp-img" src="{{asset('assets/img/logo/Logo Balikpapan Nyaman light.png')}}" style="cursor: text;" alt="">
                                         </div>
                                         <script>
