@@ -21,8 +21,8 @@
                         <div class="flex flex-col flex-wrap justify-start items-start sticky left-0">
                             <div class="sticky left-2 min-w-[74vw]">
                                 <div class="relative right-0 md:-mb-6 mb-0 flex flex-row md:justify-end justify-start align-start items-start">
-                                    <a href="#" class="font-medium text-blue-600 hover:underline">Edit</a>
-                                    <a href="#" class="font-medium text-red-600 hover:underline ms-3">Remove</a>
+                                    <a href="{{route('edit-peraturan/', ['id' => $per->id ])}}" class="font-medium text-blue-600 hover:underline">Edit</a>
+                                    <a href="{{route('proses-delete-peraturan', ['id' => $per->id])}}" class="font-medium text-red-600 hover:underline ms-3">Remove</a>
                                 </div>
                                 <div class="flex flex-col flex-wrap justify-start items-start">
                                     <h6 class="text-yellow-600 font-semibold text-xs">

@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.css"/>
     {{-- Tiny slider --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
     {{-- google charts --}}
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
@@ -295,17 +295,25 @@
                 // Define the scroll threshold for color change
                 var scrollThreshold = pageTitle.toLowerCase().includes('main') ? 627 : 200;
 
+                // meet requirement
+                var FooterSection = $('#footer-section').offset().top - 90;
                 // Check if the viewport width is less than or equal to 768 pixels (mobile view)
                 if ($(window).width() <= 768) {
-                    if (scrollPosition > scrollThreshold) {
-                        // If scrolled beyond the threshold, change background color to white
+                    if (scrollPosition > scrollThreshold && scrollPosition < FooterSection) {
+                        // If scrolled beyond the threshold but not to the footer section, change styles
                         $('#navbar').removeClass('bg-slate-800/30').addClass('bg-white');
                         $('#collapse-nav-btn').removeClass('text-white').addClass('text-blue-800');
+                    } else if (scrollPosition >= FooterSection) {
+                        // If scrolled to or beyond the footer section, change styles accordingly
+                        $('#navbar').addClass('bg-slate-800/30').removeClass('bg-white');
+                        $('#collapse-nav-btn').addClass('text-white').removeClass('text-blue-800');
                     } else {
-                        // If not scrolled beyond the threshold, revert to the original styles
+                        // If not scrolled beyond the threshold or to the footer section, revert to the original styles
                         $('#navbar').removeClass('bg-white').addClass('bg-slate-800/30');
                         $('#collapse-nav-btn').removeClass('text-blue-800').addClass('text-white');
                     }
+
+                    // BOTTOM FUNCTION
                 } else {
                 // If not in mobile view, revert to the original styles
                 $('#navbar').removeClass('bg-white').addClass('bg-slate-800/30');

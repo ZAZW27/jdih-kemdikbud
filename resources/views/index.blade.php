@@ -48,7 +48,6 @@
 
 
 <script async src="{{asset('assets/js/main/modals.js')}}"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
     <div class="containers md:h-[30rem] h-[120svh]">
         <div id="banner-position" class="sticky md:top-24 top-[0px] z-60">
             <div id="carousel-banner" class="relative w-full z-20" data-carousel="slide">
@@ -79,7 +78,7 @@
                     <div class="" id="detail_peraturan">
                         <div class="">
                             <div class="absolute md:flex lg:block justify-end top-0 -left-[0rem] md:w-full w-full h-full ">
-                                <div class=" mt-[12rem] lg:w-full md:w-full w-full flex flex-col items-center justify-start ">
+                                <div class=" mt-[22vh] md:mt-0 lg:w-full md:w-full w-full flex flex-col items-center justify-start ">
                                     <div id="logo-balikpapan-banner" for="search-input" class="
                                         relative -bottom-20 w-[170px] z-[30] transition-all duration-500 ease-out
                                         md:absolute md:bottom-[11.8rem]  md:w-[8vw] md:left-[24vw]
@@ -113,9 +112,9 @@
                                             }, 200); // Adjust the delay (in milliseconds) as needed
                                         });
                                     </script> --}}
-                                    <div class="absolute top-4 h-[65vh] bg-blue-500/50 banner-title backgdrop-blur-md" >
+                                    <div class="absolute top-4 h-[64vh] banner-title backgdrop-blur-md" >
                                         <div id="bpp-img-container" class="
-                                        sticky top-[15svh] w-[80vw] z-[29]
+                                        sticky top-[17svh] w-[80vw] z-[29]
                                         md:relative md:top-[30.8svh] md:w-[25rem] md:ml-20 md:z-[47]
                                         lg:top-[9rem] lg:w-[40vw] lg:ml-0 ">
                                             <img id="bpp-img" src="{{asset('assets/img/logo/Logo Balikpapan Nyaman light.png')}}" style="cursor: text;" alt="">
@@ -136,7 +135,7 @@
                                 </div>
                             </div>
                             
-                            <form class="relative domain-form z-[46]" action="{{route('get_peraturan.data')}}" method="post">
+                            <form class="relative domain-form md:z-[46] z-[80]" action="{{route('get_peraturan.data')}}" method="post">
                                 @csrf
                                 <div class="relative flex justify-center items-center">
                                     <div class="relative md:w-[50%] w-[80%] flex flex-row justify-center md:items-center">
@@ -224,7 +223,7 @@
                 </div>
             </div>
         </div>
-        <div class="absolute top-0 flex justify-center w-full h-full z-[1000] bg-blue-500 hidden">
+        <div class="absolute top-0 flex justify-center w-full h-full z-[100] bg-blue-500 hidden">
             <div class="relative w-[100svw] h-full py-4 px-4 mx-auto max-w-screen-xl text-center pt-16 bg-indigo-500/50">
                 {{-- <div class="z-[11] absolute top-0 md:-left-[12rem] -left-[0rem] md:w-[130svw] w-[100svw] h-full banner-gradient"></div> --}}
                 <div class="bg-white/60  absolute md:flex lg:block justify-end top-0 -left-[0rem] md:w-full w-full h-full">
@@ -240,8 +239,8 @@
             </div>
         </div>
     </div>
-    <div class="containers bg-center md:-mt-[0rem] -mt-[20svh] z-50">
-        <div class="py-4 px-4 mx-auto max-w-screen-xl text-center z-1 relative">
+    <div class="containers bg-center md:-mt-[0rem] -mt-[20svh] z-[50]">
+        <div class="mt-[7svh] md:mt-0 md:py-4 py-0  px-4 mx-auto max-w-screen-xl text-center z-1 relative">
             <div class="col-span-12 md:col-span-12 sm:col-span-12 mt-2 animate__animated animate__fadeInUp" id="detail_peraturan">
                 <div class="grid grid-cols-3 grid-forms md:grid-row gap-4">
                     <!-- ==================== CONTENT: SUBJEK PERATURAN ========================== -->
@@ -1115,7 +1114,12 @@
     <!--========================================================================================================================== 
         =============================== CONTENT: MODAL MODAL MODAL MODAL MODAL MODAL==============================================
         ============================================ END END =================================================================-->
-    <section class="footer-section">
+
+    <!--========================================================================================================================== 
+        =============================== CONTENT: FOOTER FOOTER FOOTER FOOTER ==============================================
+        ============================================ END END =================================================================-->
+
+    <section class="footer-section" id="footer-section">
         <div id="link-terkait-slide" class=" px-2 md:mx-auto mx-8 rounded-xl max-w-screen-md h-[7.8rem] bg-gray-100 text-center z-1 relative left-0">
             <button id="prevLinkTerkait" 
                 class="prev  bg-white border-2 border-amber-600/90 hover:border-yellow-500/50 group hover:bg-yellow-500/50 hover:backdrop-blur-lg duration-300 rounded-full w-12 h-12 flex hidden items-center justify-center absolute left-4 md:left-12 top-1/2 transform -translate-y-1/2  z-50">
@@ -1123,83 +1127,41 @@
             </button>
             <div id="footer-link-terkait" class="slider-container tns-layanan-slider flex space-x-4 rounded-lg text-center">
                 <div
-                    class="slider-item bg-white group hover:drop-shadow-2xl hover:border-2 duration-300 rounded-lg p-2 h-[7.6rem] flex items-center flex-col justify-center m-auto">
+                    class="slider-item bg-white transition-all ease group hover:drop-shadow-2xl hover:border-2 duration-300 rounded-lg p-2 h-[7.6rem] flex items-center flex-col justify-center m-auto">
                     <a href="#" class="flex items-center justify-center h-full">
                         <img class=" h-full object-contain flex-grow" src="{{asset('assets/img/logo/pemerintahanKotaBalikpapan.png')}}" alt="">
                     </a>
                 </div>
                 <div
-                    class="slider-item bg-white group hover:drop-shadow-2xl hover:border-2 duration-300 rounded-lg p-2 h-[7.6rem] flex items-center flex-col justify-center m-auto">
+                    class="slider-item bg-white transition-all ease group hover:drop-shadow-2xl hover:border-2 duration-300 rounded-lg p-2 h-[7.6rem] flex items-center flex-col justify-center m-auto">
                     <a href="#" class="flex items-center justify-center h-full">
                         <img class=" h-full object-contain flex-grow" src="{{asset('assets/img/logo/jdihkaltim.png')}}" alt="">
                     </a>
                 </div>
                 <div
-                    class="slider-item bg-white group hover:drop-shadow-2xl hover:border-2 duration-300 rounded-lg p-2 h-[7.6rem] flex items flex-col-center justify-center m-auto">
+                    class="slider-item bg-white transition-all ease group hover:drop-shadow-2xl hover:border-2 duration-300 rounded-lg p-2 h-[7.6rem] flex items flex-col-center justify-center m-auto">
                     <a href="#" class="flex items-center justify-center h-full">
                         <img class=" h-full object-contain flex-grow" src="{{asset('assets/img/logo/logo_jdih_globe.png')}}" alt="">
                     </a>
                 </div>
                 <div
-                    class="slider-item bg-white group hover:drop-shadow-2xl hover:border-2 duration-300 rounded-lg p-2 h-[7.6rem] flex flex-col items-center justify-center m-auto">
+                    class="slider-item bg-white transition-all ease group hover:drop-shadow-2xl hover:border-2 duration-300 rounded-lg p-2 h-[7.6rem] flex flex-col items-center justify-center m-auto">
                     <a href="#" class="flex items-center justify-center h-full">
                         <img class=" h-full object-contain flex-grow" src="{{asset('assets/img/logo/BPHNExtended.png')}}" alt="">
                     </a>
                 </div>
                 <div
-                    class="slider-item bg-white group hover:drop-shadow-2xl hover:border-2 duration-300 rounded-lg p-2 h-[7.6rem] flex flex-col items-center justify-center m-auto">
+                    class="slider-item bg-white transition-all ease group hover:drop-shadow-2xl hover:border-2 duration-300 rounded-lg p-2 h-[7.6rem] flex flex-col items-center justify-center m-auto">
                     <a href="#" class="flex items-center justify-center h-full">
                         <img class=" h-full object-contain flex-grow" src="{{asset('assets/img/logo/kementrian dalam negeri.png')}}" alt="">
                     </a>
                 </div>
                 <div
-                    class="slider-item bg-white group hover:drop-shadow-2xl hover:border-2 duration-300 rounded-lg p-2 h-[7.6rem] flex flex-col items-center justify-center m-auto">
+                    class="slider-item bg-white transition-all ease group hover:drop-shadow-2xl hover:border-2 duration-300 rounded-lg p-2 h-[7.6rem] flex flex-col items-center justify-center m-auto">
                     <a href="#" class="flex items-center justify-center h-full">
                         <img class=" h-full object-contain flex-grow" src="{{asset('assets/img/logo/kemenkumham_jdih.png')}}" alt="">
                     </a>
                 </div>
-                    {{-- <div class="bg-blue-500/30 group hover:drop-shadow-2xl duration-300 rounded-lg h-full">
-                        <a href="" class=" bg-green-500/60 flex items-center" style="height: inherit;">
-                            <div class="   rounded-full w-64 h-full flex items-center justify-center mx-auto">
-                                <img src="" alt="">
-                            </div>
-                        </a>
-                    </div>
-                    <div class="bg-blue-500/30 group hover:drop-shadow-2xl duration-300 rounded-lg h-full">
-                        <a href="" class=" bg-green-500/60 flex items-center" style="height: inherit;">
-                            <div class="   rounded-full w-64 h-full flex items-center justify-center mx-auto">
-                                <img src="" alt="">
-                            </div>
-                        </a>
-                    </div>
-                    <div class="bg-blue-500/30 group hover:drop-shadow-2xl duration-300 rounded-lg h-full">
-                        <a href="" class=" bg-green-500/60 flex items-center" style="height: inherit;">
-                            <div class="   rounded-full w-[7.8rem] h-full flex items-center justify-center mx-auto">
-                                <img src="" alt="">
-                            </div>
-                        </a>
-                    </div>
-                    <div class="bg-blue-500/30 group hover:drop-shadow-2xl duration-300 rounded-lg h-full">
-                        <a href="" class=" bg-green-500/60 flex items-center" style="height: inherit;">
-                            <div class="   rounded-full w-64 h-full flex items-center justify-center mx-auto">
-                                <img src="" alt="">
-                            </div>
-                        </a>
-                    </div>
-                    <div class="bg-blue-500/30 group hover:drop-shadow-2xl duration-300 rounded-lg h-full">
-                        <a href="" class=" bg-green-500/60 flex items-center" style="height: inherit;">
-                            <div class="rounded-full w-[10rem] h-full flex items-center justify-center mx-auto">
-                                <img src="" alt="">
-                            </div>
-                        </a>
-                    </div>
-                    <div class="bg-blue-500/30 group hover:drop-shadow-2xl duration-300 rounded-lg h-full">
-                        <a href="" class=" bg-green-500/60 flex items-center" style="height: inherit;">
-                            <div class=" rounded-full w-[10rem] h-full flex items-center justify-center mx-auto">
-                                <img src="" alt="">
-                            </div>
-                        </a>
-                    </div> --}}
             </div>
             <button id="nextLinkTerkait"
                 class="next bg-white border-2 border-amber-600/90 hover:border-yellow-500/50 group hover:bg-yellow-500/50 hover:backdrop-blur-lg duration-300 rounded-full w-12 h-12 flex hidden items-center justify-center absolute right-4 md:right-12 top-1/2 transform -translate-y-1/2 z-50">
@@ -1232,36 +1194,8 @@
             });
         </script>
         <footer class="footer-content">
-            
             <div class="footer-29 pt-5">
                 <div class="container ">
-                    {{-- <div class="sub-footer lg:col-span-1 md:col-span-1 sm:col-span-1">
-                        <div class="footer-logo mb-4 flex flex-row justify-center items-center bg-gray-100 rounded-xl relative py-3 no-scrollbar" style="box-shadow: 0 0 8px rgba(255, 255, 255, 0.3); overflow: hidden;">
-                            <div class="flex flex-col  items-center overflow-x-auto h-[7rem]">
-                                <!-- Your content here -->
-                                <a href="https://web.balikpapan.go.id/" class="pb-1">
-                                    <img src="{{asset('assets/img/logo/logo_kota_balikpapan.svg')}}" style="width: 50px;" loading="lazy">
-                                </a>
-                                <a href="https://jdihn.go.id/" class="pb-1">
-                                    <img src="{{asset('assets/img/logo/logo_jdih_globe.png')}}" style="width: 50px;" loading="lazy">
-                                </a>
-                                <a href="https://www.bphn.go.id/" class="pb-1">
-                                    <img src="{{asset('assets/img/logo/Logo_of_the_Ministry_of_Law_and_Human_Rights_of_the_Republic_of_Indonesia.svg')}}" class="rounded-lg" style="width: 50px;" loading="lazy">
-                                </a>
-                                <a href="https://jdih.kaltimprov.go.id/" class="pb-1">
-                                    <img src="{{asset('assets/img/logo/logo_login.png')}}" style="width: 100px;" loading="lazy">
-                                </a>
-                                <a href="https://jdih.kemendagri.go.id/">
-                                    <img src="{{asset('assets/img/logo/jdih_kementrian.svg')}}" style="width: 60px;" loading="lazy">
-                                </a>
-                                <a href="https://kemenkumham.go.id/">
-                                    <img src="{{asset('assets/img/logo/kemenkumham_jdih.png')}}" style="width: 100px;" loading="lazy">
-                                </a>
-                            </div>
-                            <!-- Inset shadow pseudo-element -->
-                            <div class="inset-shadow"></div>
-                        </div>
-                    </div> --}}
                     <div class="grid grid-cols-1 lg:grid-cols34 md:grid-cols-3 sm:grid-cols-3 gap-4">
                         <div class="sub-footer lg:col-span-1 md:col-span-1 sm:col-span-1">
                             <ul id="komponen">

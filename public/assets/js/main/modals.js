@@ -48,20 +48,21 @@
             targetModal.classList.remove("flex");
         }, 500);
     }
-
+console.log('semua modal dapat digunakan')
 document.addEventListener('DOMContentLoaded', function(){
     // UNTUK FILTER SEARCH !!!!!!!!!!!!!!
-    document.getElementById("filter-button").addEventListener('click', function () {
-        // console.log('aksi ambil filtering')
-        const targetModal = document.getElementById("filter-options");
-    
-        if (targetModal.classList.contains("block")) {
-            hideModalFilter();
-        } else {
-            showModalFilter();
-        }
-    });
+    console.log('filter modal siap untuk digunakan')
 })
+document.getElementById("filter-button").addEventListener('click', function () {
+    console.log('aksi ambil filtering')
+    const targetModal = document.getElementById("filter-options");
+
+    if (targetModal.classList.contains("block")) {
+        hideModalFilter();
+    } else {
+        showModalFilter();
+    }
+});
 
     // SHOW MODAL FOR FILTERING
     function showModalFilter(){

@@ -139,7 +139,7 @@
 
             if ($(window).width() <= 768) {
                 // console.log('small boy?')
-                
+                // console.log(scrollPosition)
                 if (scrollPosition < scrollThreshold) {
                     // console.log('big boy condition????' + scrollPosition)
                     $('#logo-balikpapan-banner')

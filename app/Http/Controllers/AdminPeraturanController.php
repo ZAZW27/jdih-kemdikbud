@@ -102,11 +102,18 @@ class AdminPeraturanController extends Controller
     }
 
     public function edit($id){
-        $detail_berita = Berita::where('id', $id)->first();
+        $detail_pereaturan = BppProdukHukum::where('id', $id)->first();
+        $peraturan = new Peraturan();
+        $groupJenis = $peraturan->LatestPeraturan()->groupBy('id_jenis')->pluck('0.jenis_peraturan', '0.id_jenis');
+        $groupTahun = DB::table('tahun_branch')->orderBy('tahun', 'desc')->get();
+        $groupStatus = DB::table('status_branch')->orderBy('id', 'asc')->get();
 
-        return view('pages.admin.berita.update', [
-            'title' => 'JDIH | Update berita', 
-            'berita' => $detail_berita, 
+        return view('pages.admin.peraturan.update', [
+            'title' => 'JDIH | Update peraturan', 
+            'data' => $detail_pereaturan, 
+            'groupJenis' => $groupJenis,
+            'groupTahun' => $groupTahun,
+            'groupStatus' => $groupStatus,
         ]);
     }
 
@@ -115,53 +122,65 @@ class AdminPeraturanController extends Controller
         $validatedData = $request->validate([
             'id' => 'required|integer',
             'judul' => 'required|string',
-            'gambar' => 'image|mimes:jpeg,png,jpg,svg', // Adjust as needed
-            'tema' => 'required|string',
-            'tanggal' => 'required|date',
-            'isi' => 'required|string',
+            'tipe_dok' => 'required|string',
+            'subjek' => 'required|string',
+            'tipe_subjek' => 'required|string',
+            'jenis_subjek' => 'required|string',
+            'nama_peng' => 'required|string',
+            'tipe_peng' => 'required|string',
+            'jenis_peng' => 'required|string',
+            'nomor_per' => 'required|string',
+            'jenis_per' => 'required|string',
+            'tahun_per' => 'required|string',
+            'tempat_penetapan' => 'required|string',
+            'tanggal_penetapan' => 'required|string',
+            'tanggal_pengundangan' => 'required|string',
+            'status' => 'required|string',
+            'bahasa' => 'required|string',
+            'sumber' => 'required|string',
+            'catatan' => 'required|string',
         ]);
+
+        // dd($validatedData);
         $currTimeStamp = now()->toDateTimeString();
 
         $id = $request->id;
 
-        $berita = Berita::findOrFail($id);
+        $peraturan = BppProdukHukum::findOrFail($id);
 
-        // Handle file upload if a new file is provided
-        if ($request->hasfile('gambar')) {
-            $file = $request->file('gambar');
-            $extension = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $extension;
-            // $file->move('uplloads/berita', $filename);
-            $file->move('assets/img/berita', $filename);
-
-            // MASUKKAN BARANG
-            $berita->gambar_berita = $filename;
-        }
-        $berita->judul = $request->judul;
-        $berita->tema = $request->tema;
-        $berita->tanggal = $request->tanggal;
-        $berita->isi = $request->isi;
-        $berita->updated_at = $currTimeStamp;
-
-        
-        // dd($validatedData);
-        // dd($berita);
-
+        $peraturan->judul = $request->judul;
+        $peraturan->tipe_dokumen = $request->tipe_dok;
+        $peraturan->subjek = $request->subjek;
+        $peraturan->tipe_subjek = $request->tipe_subjek;
+        $peraturan->jenis_subjek = $request->jenis_subjek;
+        $peraturan->nama_pengarang = $request->nama_peng;
+        $peraturan->tipe_pengarang = $request->tipe_peng;
+        $peraturan->jenis_pengarang = $request->jenis_peng;
+        $peraturan->nomor_peraturan = $request->nomor_per;
+        $peraturan->id_jenis_peraturan = $request->jenis_per;
+        $peraturan->id_tahun_peraturan = $request->tahun_per;
+        $peraturan->tempat_penetapan = $request->tempat_penetapan;
+        $peraturan->tanggal_penetapan = $request->tanggal_penetapan;
+        $peraturan->tanggal_pengundangan = $request->tanggal_pengundangan;
+        $peraturan->id_status_peraturan = $request->status;
+        $peraturan->bahasa = $request->bahasa;
+        $peraturan->sumber = $request->sumber;
+        $peraturan->catatan = $request->catatan;
 
         // Save the updated berita
-        $berita->save();
-        return redirect()->route('getBerita.data')->with('success', 'Berita updated successfully');
+        $peraturan->save();
+        return redirect()->route('getPeraturan.data')->with('success', 'Berita updated successfully');
     }
 
     public function delete($id){
-        $berita = Berita::find($id);
+        $peraturan = BppProdukHukum::find($id);
 
-        if (!$berita) {
-            return "Berita dengan id $id tidak ada";
+        if (!$peraturan) {
+            return "Peraturan dengan id $id tidak ada";
         }
 
-        $berita->delete();
+        $peraturan->delete();
 
-        return redirect()->route('getBerita.data')->with('success', 'berita telah dihapus');
+        return redirect()->route('getPeraturan.data')->with('success', 'berita telah dihapus');
     }
 }
