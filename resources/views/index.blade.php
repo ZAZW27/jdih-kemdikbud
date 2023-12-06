@@ -1122,48 +1122,84 @@
                 <i class="fa fa-angle-left fa-2x text-yellow-500/90 group-hover:text-white"></i>
             </button>
             <div id="footer-link-terkait" class="slider-container tns-layanan-slider flex space-x-4 rounded-lg text-center">
-                <div class="bg-blue-500/30 group hover:drop-shadow-2xl duration-300 rounded-lg h-full">
-                    <a href="">
-                        <div class="   rounded-full w-64 h-full flex items-center justify-center mx-auto">
-                            <img src="{{asset('assets/img/logo/pemerintahanKotaBalikpapan.png')}}" alt="">
-                        </div>
+                <div
+                    class="slider-item bg-white group hover:drop-shadow-2xl hover:border-2 duration-300 rounded-lg p-2 h-[7.6rem] flex items-center flex-col justify-center m-auto">
+                    <a href="#" class="flex items-center justify-center h-full">
+                        <img class=" h-full object-contain flex-grow" src="{{asset('assets/img/logo/pemerintahanKotaBalikpapan.png')}}" alt="">
                     </a>
                 </div>
-                <div class="bg-blue-500/30 group hover:drop-shadow-2xl duration-300 rounded-lg h-full">
-                    <a href="">
-                        <div class="   rounded-full w-64 h-full flex items-center justify-center mx-auto">
-                            <img src="{{asset('assets/img/logo/jdihkaltim.png')}}" alt="">
-                        </div>
+                <div
+                    class="slider-item bg-white group hover:drop-shadow-2xl hover:border-2 duration-300 rounded-lg p-2 h-[7.6rem] flex items-center flex-col justify-center m-auto">
+                    <a href="#" class="flex items-center justify-center h-full">
+                        <img class=" h-full object-contain flex-grow" src="{{asset('assets/img/logo/jdihkaltim.png')}}" alt="">
                     </a>
                 </div>
-                <div class="bg-blue-500/30 group hover:drop-shadow-2xl duration-300 rounded-lg h-full">
-                    <a href="">
-                        <div class="   rounded-full w-[7.8rem] h-full flex items-center justify-center mx-auto">
-                            <img src="{{asset('assets/img/logo/logo_jdih_globe.png')}}" alt="">
-                        </div>
+                <div
+                    class="slider-item bg-white group hover:drop-shadow-2xl hover:border-2 duration-300 rounded-lg p-2 h-[7.6rem] flex items flex-col-center justify-center m-auto">
+                    <a href="#" class="flex items-center justify-center h-full">
+                        <img class=" h-full object-contain flex-grow" src="{{asset('assets/img/logo/logo_jdih_globe.png')}}" alt="">
                     </a>
                 </div>
-                <div class="bg-blue-500/30 group hover:drop-shadow-2xl duration-300 rounded-lg h-full">
-                    <a href="">
-                        <div class="   rounded-full w-64 h-full flex items-center justify-center mx-auto">
-                            <img src="{{asset('assets/img/logo/BPHNExtended.png')}}" alt="">
-                        </div>
+                <div
+                    class="slider-item bg-white group hover:drop-shadow-2xl hover:border-2 duration-300 rounded-lg p-2 h-[7.6rem] flex flex-col items-center justify-center m-auto">
+                    <a href="#" class="flex items-center justify-center h-full">
+                        <img class=" h-full object-contain flex-grow" src="{{asset('assets/img/logo/BPHNExtended.png')}}" alt="">
                     </a>
                 </div>
-                <div class="bg-blue-500/30 group hover:drop-shadow-2xl duration-300 rounded-lg h-full">
-                    <a href="">
-                        <div class="rounded-full w-[10rem] h-full flex items-center justify-center mx-auto">
-                            <img src="{{asset('assets/img/logo/kementrian dalam negeri.png')}}" alt="">
-                        </div>
+                <div
+                    class="slider-item bg-white group hover:drop-shadow-2xl hover:border-2 duration-300 rounded-lg p-2 h-[7.6rem] flex flex-col items-center justify-center m-auto">
+                    <a href="#" class="flex items-center justify-center h-full">
+                        <img class=" h-full object-contain flex-grow" src="{{asset('assets/img/logo/kementrian dalam negeri.png')}}" alt="">
                     </a>
                 </div>
-                <div class="bg-blue-500/30 group hover:drop-shadow-2xl duration-300 rounded-lg h-full">
-                    <a href="">
-                        <div class=" rounded-full w-[10rem] h-full flex items-center justify-center mx-auto">
-                            <img src="{{asset('assets/img/logo/kemenkumham_jdih.png')}}" alt="">
-                        </div>
+                <div
+                    class="slider-item bg-white group hover:drop-shadow-2xl hover:border-2 duration-300 rounded-lg p-2 h-[7.6rem] flex flex-col items-center justify-center m-auto">
+                    <a href="#" class="flex items-center justify-center h-full">
+                        <img class=" h-full object-contain flex-grow" src="{{asset('assets/img/logo/kemenkumham_jdih.png')}}" alt="">
                     </a>
                 </div>
+                    {{-- <div class="bg-blue-500/30 group hover:drop-shadow-2xl duration-300 rounded-lg h-full">
+                        <a href="" class=" bg-green-500/60 flex items-center" style="height: inherit;">
+                            <div class="   rounded-full w-64 h-full flex items-center justify-center mx-auto">
+                                <img src="" alt="">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="bg-blue-500/30 group hover:drop-shadow-2xl duration-300 rounded-lg h-full">
+                        <a href="" class=" bg-green-500/60 flex items-center" style="height: inherit;">
+                            <div class="   rounded-full w-64 h-full flex items-center justify-center mx-auto">
+                                <img src="" alt="">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="bg-blue-500/30 group hover:drop-shadow-2xl duration-300 rounded-lg h-full">
+                        <a href="" class=" bg-green-500/60 flex items-center" style="height: inherit;">
+                            <div class="   rounded-full w-[7.8rem] h-full flex items-center justify-center mx-auto">
+                                <img src="" alt="">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="bg-blue-500/30 group hover:drop-shadow-2xl duration-300 rounded-lg h-full">
+                        <a href="" class=" bg-green-500/60 flex items-center" style="height: inherit;">
+                            <div class="   rounded-full w-64 h-full flex items-center justify-center mx-auto">
+                                <img src="" alt="">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="bg-blue-500/30 group hover:drop-shadow-2xl duration-300 rounded-lg h-full">
+                        <a href="" class=" bg-green-500/60 flex items-center" style="height: inherit;">
+                            <div class="rounded-full w-[10rem] h-full flex items-center justify-center mx-auto">
+                                <img src="" alt="">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="bg-blue-500/30 group hover:drop-shadow-2xl duration-300 rounded-lg h-full">
+                        <a href="" class=" bg-green-500/60 flex items-center" style="height: inherit;">
+                            <div class=" rounded-full w-[10rem] h-full flex items-center justify-center mx-auto">
+                                <img src="" alt="">
+                            </div>
+                        </a>
+                    </div> --}}
             </div>
             <button id="nextLinkTerkait"
                 class="next bg-white border-2 border-amber-600/90 hover:border-yellow-500/50 group hover:bg-yellow-500/50 hover:backdrop-blur-lg duration-300 rounded-full w-12 h-12 flex hidden items-center justify-center absolute right-4 md:right-12 top-1/2 transform -translate-y-1/2 z-50">
