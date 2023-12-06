@@ -83,7 +83,7 @@
                                     <div id="logo-balikpapan-banner" for="search-input" class="
                                         relative -bottom-20 w-[170px] z-[30] transition-all duration-500 ease-out
                                         md:absolute md:bottom-[11.8rem]  md:w-[8vw] md:left-[24vw]
-                                        lg:bottom-[7.9rem]  lg:left-[10.4vw]  lg:w-[10rem]  ">
+                                        lg:bottom-[7.9rem]  lg:left-[10.4vw]  lg:w-[10.3vw]  ">
                                         <img src="{{ asset('assets/img/logo/logo_kota_balikpapan.svg') }}" alt="" style="filter: grayscale(10%);">
                                     </div>
                                     {{-- <div id="logo-balikpapan-banner" for="search-input" class="md:absolute md:bottom-[160px] lg:bottom-[66px] md:left-[37.8vw] lg:left-[17.4vw] md:z-[45] z-[22] md:w-[8rem] lg:w-[20rem] w-[90vw] hover:cursor-text">
@@ -113,19 +113,22 @@
                                             }, 200); // Adjust the delay (in milliseconds) as needed
                                         });
                                     </script> --}}
-                                    <div class="absolute top-4 h-[28.2rem] banner-title backgdrop-blur-md" >
-                                        <div id="bpp-img-container" class="sticky top-[12rem] w-[80vw] md:relative lg:top-[9rem] md:top-[12rem] lg:w-[40rem] md:w-[25rem] md:ml-20 lg:ml-0 md:z-[47] z-[29]">
+                                    <div class="absolute top-4 h-[26.8rem] bg-blue-600/50 banner-title backgdrop-blur-md" >
+                                        <div id="bpp-img-container" class="
+                                        sticky top-[12rem] w-[80vw] z-[29]
+                                        md:relative md:top-[12rem] md:w-[25rem] md:ml-20 md:z-[47]
+                                        lg:top-[9rem] lg:w-[40vw] lg:ml-0 ">
                                             <img id="bpp-img" src="{{asset('assets/img/logo/Logo Balikpapan Nyaman light.png')}}" style="cursor: text;" alt="">
                                             <div id="Bppnyaman-logo" class="absolute z-[21] md:h-1  transition-all duration-500 ease-out 
-                                                -bottom-10 w-[11rem] opacity-0
+                                                -bottom-10 w-[11rem] opacity-0 md:hidden
                                                 md:opacity-1! md:top-0 md:w-[13rem] md:-right-12 md:-rotate-3 
                                                 lg:top-2 lg:w-[14.5rem] lg:-right-14 lg:-rotate-6 " >
                                                 <img src="{{asset('assets/img/logo/balikpapanNyaman.png')}}" alt="">
                                             </div>
-                                            <div id="" class="absolute z-[21] md:h-1  transition-all duration-500 ease-out 
+                                            <div id="landscape-nyaman-text" class="absolute z-[21] md:h-1  transition-all duration-500 ease-out 
                                                 -bottom-10 w-[11rem]  hidden md:block
                                                 md:opacity-1! md:top-0 md:w-[13rem] md:-right-12 md:-rotate-3 
-                                                lg:top-2 lg:w-[14.5rem] lg:-right-14 lg:-rotate-6 " >
+                                                lg:top-2 lg:w-[14.5vw] lg:-right-14 lg:-rotate-6 " >
                                                 <img src="{{asset('assets/img/logo/balikpapanNyaman.png')}}" alt="">
                                             </div>
                                         </div>
@@ -139,7 +142,7 @@
                                     <div class="relative md:w-[50%] w-[80%] flex flex-row justify-center md:items-center">
                                         <div class="flex justify-center items-end md:items-center md:space-x-4 tutup animate-slide-left mt-24 w-full  md:h-[20rem] h-[58svh]">
                                             <input name="search-peraturan" type="text" id="search-input" class="w-[100%] pl-2 pr-4 py-3 border-0 rounded-lg focus:outline-none focus:ring focus:border-blue-300" placeholder="Cari peraturan dan dokumen disini">
-                                            <div class="absolute z-[100] flex md:right-1 md:mb-0 mb-[50px] -right-4 justify-center items-center md:mt-0 " id="filter-button">
+                                            <div class="absolute z-[100] flex md:right-1 md:mb-0 mb-[50px] -right-4 justify-center items-center md:mt-0 transition-all duration-100 ease-linear" id="filter-button">
                                                 <button type="submit" class="bg-blue-500 text-white px-4 py-2 mr-1 h-10 rounded-r focus:outline-none focus:ring focus:border-blue-300 hover:bg-red-500 rounded-lg">
                                                     <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" width="20"><path d="M0 0h24v24H0z" fill="none"></path><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
                                                 </button>

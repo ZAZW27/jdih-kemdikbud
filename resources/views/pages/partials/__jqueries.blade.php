@@ -139,6 +139,7 @@
 
             if ($(window).width() <= 768) {
                 // console.log('small boy?')
+                
                 if (scrollPosition < scrollThreshold) {
                     // console.log('big boy condition????' + scrollPosition)
                     $('#logo-balikpapan-banner')
@@ -146,13 +147,14 @@
                     .addClass('w-[170px]').removeClass('w-[100px]')
                     .addClass('z-[30]').removeClass('z-[21]');
                     $('#Bppnyaman-logo').addClass('opacity-0').removeClass('opacity-1')
+                    // $('#filter-button').addClass('mb-[50px]').removeClass('mb-[5px]')
                 }else{
                     $('#logo-balikpapan-banner')
                     // .removeClass('-bottom-20').addClass('bottom-0')
                     .removeClass('w-[170px]').addClass('w-[100px]')
                     .removeClass('z-[30]').addClass('z-[21]');;
                     $('#Bppnyaman-logo').removeClass('opacity-0').addClass('opacity-1')
-                    
+                    // $('#filter-button').removeClass('mb-[50px]').addClass('mb-[5px]')
                 }
             }
             else{
