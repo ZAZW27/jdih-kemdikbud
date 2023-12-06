@@ -113,10 +113,10 @@
                                             }, 200); // Adjust the delay (in milliseconds) as needed
                                         });
                                     </script> --}}
-                                    <div class="absolute top-4 h-[26.8rem] banner-title backgdrop-blur-md" >
+                                    <div class="absolute top-4 h-[65vh] bg-blue-500/50 banner-title backgdrop-blur-md" >
                                         <div id="bpp-img-container" class="
-                                        sticky top-[12rem] w-[80vw] z-[29]
-                                        md:relative md:top-[12rem] md:w-[25rem] md:ml-20 md:z-[47]
+                                        sticky top-[15svh] w-[80vw] z-[29]
+                                        md:relative md:top-[30.8svh] md:w-[25rem] md:ml-20 md:z-[47]
                                         lg:top-[9rem] lg:w-[40vw] lg:ml-0 ">
                                             <img id="bpp-img" src="{{asset('assets/img/logo/Logo Balikpapan Nyaman light.png')}}" style="cursor: text;" alt="">
                                             <div id="Bppnyaman-logo" class="absolute z-[21] md:h-1  transition-all duration-500 ease-out 
