@@ -113,7 +113,7 @@
                                             }, 200); // Adjust the delay (in milliseconds) as needed
                                         });
                                     </script> --}}
-                                    <div class="absolute top-4 h-[26.8rem] bg-blue-600/50 banner-title backgdrop-blur-md" >
+                                    <div class="absolute top-4 h-[26.8rem] banner-title backgdrop-blur-md" >
                                         <div id="bpp-img-container" class="
                                         sticky top-[12rem] w-[80vw] z-[29]
                                         md:relative md:top-[12rem] md:w-[25rem] md:ml-20 md:z-[47]
@@ -1122,35 +1122,47 @@
                 <i class="fa fa-angle-left fa-2x text-yellow-500/90 group-hover:text-white"></i>
             </button>
             <div id="footer-link-terkait" class="slider-container tns-layanan-slider flex space-x-4 rounded-lg text-center">
-                <div class="group hover:drop-shadow-2xl duration-300 rounded-lg h-full">
-                    <div class="   rounded-full w-64 h-full flex items-center justify-center mx-auto">
-                        <img src="{{asset('assets/img/logo/pemerintahanKotaBalikpapan.png')}}" alt="">
-                    </div>
+                <div class="bg-blue-500/30 group hover:drop-shadow-2xl duration-300 rounded-lg h-full">
+                    <a href="">
+                        <div class="   rounded-full w-64 h-full flex items-center justify-center mx-auto">
+                            <img src="{{asset('assets/img/logo/pemerintahanKotaBalikpapan.png')}}" alt="">
+                        </div>
+                    </a>
                 </div>
-                <div class="group hover:drop-shadow-2xl duration-300 rounded-lg h-full">
-                    <div class="   rounded-full w-64 h-full flex items-center justify-center mx-auto">
-                        <img src="{{asset('assets/img/logo/jdihkaltim.png')}}" alt="">
-                    </div>
+                <div class="bg-blue-500/30 group hover:drop-shadow-2xl duration-300 rounded-lg h-full">
+                    <a href="">
+                        <div class="   rounded-full w-64 h-full flex items-center justify-center mx-auto">
+                            <img src="{{asset('assets/img/logo/jdihkaltim.png')}}" alt="">
+                        </div>
+                    </a>
                 </div>
-                <div class="group hover:drop-shadow-2xl duration-300 rounded-lg h-full">
-                    <div class="   rounded-full w-[7.8rem] h-full flex items-center justify-center mx-auto">
-                        <img src="{{asset('assets/img/logo/logo_jdih_globe.png')}}" alt="">
-                    </div>
+                <div class="bg-blue-500/30 group hover:drop-shadow-2xl duration-300 rounded-lg h-full">
+                    <a href="">
+                        <div class="   rounded-full w-[7.8rem] h-full flex items-center justify-center mx-auto">
+                            <img src="{{asset('assets/img/logo/logo_jdih_globe.png')}}" alt="">
+                        </div>
+                    </a>
                 </div>
-                <div class="group hover:drop-shadow-2xl duration-300 rounded-lg h-full">
-                    <div class="   rounded-full w-64 h-full flex items-center justify-center mx-auto">
-                        <img src="{{asset('assets/img/logo/BPHNExtended.png')}}" alt="">
-                    </div>
+                <div class="bg-blue-500/30 group hover:drop-shadow-2xl duration-300 rounded-lg h-full">
+                    <a href="">
+                        <div class="   rounded-full w-64 h-full flex items-center justify-center mx-auto">
+                            <img src="{{asset('assets/img/logo/BPHNExtended.png')}}" alt="">
+                        </div>
+                    </a>
                 </div>
-                <div class="group hover:drop-shadow-2xl duration-300 rounded-lg h-full">
-                    <div class="rounded-full w-[10rem] h-full flex items-center justify-center mx-auto">
-                        <img src="{{asset('assets/img/logo/kementrian dalam negeri.png')}}" alt="">
-                    </div>
+                <div class="bg-blue-500/30 group hover:drop-shadow-2xl duration-300 rounded-lg h-full">
+                    <a href="">
+                        <div class="rounded-full w-[10rem] h-full flex items-center justify-center mx-auto">
+                            <img src="{{asset('assets/img/logo/kementrian dalam negeri.png')}}" alt="">
+                        </div>
+                    </a>
                 </div>
-                <div class="group hover:drop-shadow-2xl duration-300 rounded-lg h-full">
-                    <div class=" rounded-full w-[10rem] h-full flex items-center justify-center mx-auto">
-                        <img src="{{asset('assets/img/logo/kemenkumham_jdih.png')}}" alt="">
-                    </div>
+                <div class="bg-blue-500/30 group hover:drop-shadow-2xl duration-300 rounded-lg h-full">
+                    <a href="">
+                        <div class=" rounded-full w-[10rem] h-full flex items-center justify-center mx-auto">
+                            <img src="{{asset('assets/img/logo/kemenkumham_jdih.png')}}" alt="">
+                        </div>
+                    </a>
                 </div>
             </div>
             <button id="nextLinkTerkait"
