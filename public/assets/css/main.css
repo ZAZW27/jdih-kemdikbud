@@ -641,13 +641,17 @@ nav{
    transform: scale(1.1);
 }
 
+.footer-section{
+   background-color: #16417e;
+}
+
 footer{
    display: flex;
    flex-direction: column;
    justify-content: space-between;
    flex-wrap: wrap;
-   background-color: #16417e;
-   padding: 3.1rem 10rem 1.5rem;
+   /* background-color: #16417e; */
+   padding: 0.1rem 10rem 1.5rem;
    min-height: 22rem;
    color: #eae7e7;
    font-weight: 100;
