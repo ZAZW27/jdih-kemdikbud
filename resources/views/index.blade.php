@@ -1122,35 +1122,42 @@
                 <i class="fa fa-angle-left fa-2x text-yellow-500/90 group-hover:text-white"></i>
             </button>
             <div id="footer-link-terkait" class="slider-container tns-layanan-slider flex space-x-4 rounded-lg text-center">
-                <div class="bg-blue-500/30 group hover:drop-shadow-2xl hover:border-2 active:border-solid duration-300 rounded-lg h-full">
-                    <div class="icon border-2  rounded-full w-20 h-20 flex items-center justify-center mx-auto">
-                        <i class="fa-regular fa-address-card fa-3x text-blue-600"></i>
+                <div class="group hover:drop-shadow-2xl duration-300 rounded-lg h-full">
+                    <div class="   rounded-full w-64 h-full flex items-center justify-center mx-auto">
+                        <img src="{{asset('assets/img/logo/pemerintahanKotaBalikpapan.png')}}" alt="">
                     </div>
-                    <h1 class="text-xl font-bold mt-4 group-hover:text-blue-600">Izin Kesehatan</h1>
                 </div>
-                <div class="bg-blue-500/30 group hover:drop-shadow-2xl hover:border-2 active:border-solid duration-300 rounded-lg h-full">
-                    <div class="icon border-2  rounded-full w-20 h-20 flex items-center justify-center mx-auto">
-                        <i class="fa-solid fa-notes-medical fa-3x text-blue-600"></i>
+                <div class="group hover:drop-shadow-2xl duration-300 rounded-lg h-full">
+                    <div class="   rounded-full w-64 h-full flex items-center justify-center mx-auto">
+                        <img src="{{asset('assets/img/logo/jdihkaltim.png')}}" alt="">
                     </div>
-                    <h1 class="text-xl font-bold mt-4 group-hover:text-blue-600">Izin Kesehatan</h1>
                 </div>
-                <div class="bg-blue-500/30 group hover:drop-shadow-2xl hover:border-2 active:border-solid duration-300 rounded-lg h-full">
-                    <div class="icon border-2  rounded-full w-20 h-20 flex items-center justify-center mx-auto">
-                        <i class="fa-solid fa-house-chimney-user fa-3x text-blue-600"></i>
+                <div class="group hover:drop-shadow-2xl duration-300 rounded-lg h-full">
+                    <div class="   rounded-full w-[7.8rem] h-full flex items-center justify-center mx-auto">
+                        <img src="{{asset('assets/img/logo/logo_jdih_globe.png')}}" alt="">
                     </div>
-                    <h1 class="text-xl font-bold mt-4 group-hover:text-blue-600">Pelayanan Kelurahan</h1>
                 </div>
-                <div class="bg-blue-500/30 group hover:drop-shadow-2xl hover:border-2 active:border-solid duration-300 rounded-lg h-full">
-                    <div class="icon border-2  rounded-full w-20 h-20 flex items-center justify-center mx-auto">
-                        <i class="fa-solid fa-ellipsis fa-3x text-blue-600"></i>
+                <div class="group hover:drop-shadow-2xl duration-300 rounded-lg h-full">
+                    <div class="   rounded-full w-64 h-full flex items-center justify-center mx-auto">
+                        <img src="{{asset('assets/img/logo/BPHNExtended.png')}}" alt="">
                     </div>
-                    <h1 class="text-xl font-bold mt-4 group-hover:text-blue-600">Lainnya</h1>
+                </div>
+                <div class="group hover:drop-shadow-2xl duration-300 rounded-lg h-full">
+                    <div class="rounded-full w-[10rem] h-full flex items-center justify-center mx-auto">
+                        <img src="{{asset('assets/img/logo/kementrian dalam negeri.png')}}" alt="">
+                    </div>
+                </div>
+                <div class="group hover:drop-shadow-2xl duration-300 rounded-lg h-full">
+                    <div class=" rounded-full w-[10rem] h-full flex items-center justify-center mx-auto">
+                        <img src="{{asset('assets/img/logo/kemenkumham_jdih.png')}}" alt="">
+                    </div>
                 </div>
             </div>
             <button id="nextLinkTerkait"
                 class="next bg-white border-2 border-amber-600/90 hover:border-yellow-500/50 group hover:bg-yellow-500/50 hover:backdrop-blur-lg duration-300 rounded-full w-12 h-12 flex hidden items-center justify-center absolute right-4 md:right-12 top-1/2 transform -translate-y-1/2 z-50">
                 <i class="fa fa-angle-right fa-2x text-yellow-500/90 group-hover:text-white"></i>
             </button>
+            <div class="inset-shadow"></div>
         </div>
         <script>
             var slider = tns({
