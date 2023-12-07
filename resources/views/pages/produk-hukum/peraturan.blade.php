@@ -1,6 +1,6 @@
 
 @include('pages.partials.__header') 
-<script async src="{{asset('assets/js/main/modals.js')}}"></script>
+{{-- <script async src="{{asset('assets/js/main/modals.js')}}"></script> --}}
     <div class="containers h-64 bkg-bg banner-small">
         <div class="page-routes">
             <a href="/">
@@ -22,7 +22,7 @@
         <div class="py-4 px-4 mx-auto max-w-screen-xl text-center lg:pt-16  relative">
             <div class="col-span-12 md:col-span-12 sm:col-span-12 mt-2 animate__animated animate__fadeInUp" id="detail_peraturan">
                 <div class="row-span-3 shadow-md col-span-12 ">
-                    <form class="domain-form" action="{{route('get_peraturan.data')}}" method="post">
+                    <form class="relative domain-form md:z-[46] z-[80]" action="{{route('get_peraturan.data')}}" method="post">
                         @csrf
                         <div class="md:flex md:items-center md:space-x-4 tutup animate-slide-left">
                             <input value="{{$pastData->searchInput}}" name="search-peraturan" type="text" id="judul" class="w-full px-4 py-6 border-0 rounded-lg focus:outline-none focus:ring focus:border-blue-300" placeholder="Cari peraturan perundang-undangan bidang pendidikan, kebudayaan, riset, dan teknologi">
@@ -40,100 +40,63 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="absolute w-full flex md:justify-center justify-start md:-mt-14 md:top-[13rem] md:w-full w-[21rem] z-[11] hidden" id="filter-options" >
-                            <div class="bg-white shadow-lg md:w-[80%] w-[100%] pt-3 pb-1 px-2 rounded-lg">
+                        <div class="absolute w-full flex hidden md:justify-center justify-center md:-mt-14 md:top-[21.3rem] " id="filter-options" >
+                            <div class="bg-white shadow-lg w-[80%] pt-3 pb-1 px-2 rounded-lg">
                                 <div class="peraturan-filter flex flex-col sm:flex-row">
-                                    <div class="flex-1 z-[16]">
+                                    <div class="flex-1 z-[56]">
                                         <section class="hidden" id="select-num" disabled>
                                             <select class="custom-select sources" placeholder="Pilih Nomor" name="nomor-peraturan">
                                                 <option value="">Pilih Nomor</option>
                                                 @foreach ($groupNomor as $id => $name)
-                                                    <option class="" value="{{$name}}">{{$name}}</option>
+                                                    <option value="{{$name}}">{{$name}}</option>
                                                 @endforeach
                                             </select>
                                         </section>
                                         <section class="" id="type-num">
-                                            <input value="{{$pastData->nomorInput}}" type="text" name="nomor-peraturan" placeholder="Ketik Nomor Peraturan" class="custom-input w-full focus:ring-white">
+                                            <input type="text" name="nomor-peraturan" placeholder="Ketik Nomor Peraturan" class="custom-input w-full focus:ring-white">
                                         </section>
-                                        <input id="change-num" type="checkbox" value="" class="absolute z-[9999] md:right-40 right-[30px]  top-6 w-6 h-6 text-blue-600 bg-white border-gray-600 shadow-md rounded-xl focus:ring-blue-500 ">
+                                        <input id="change-num" type="checkbox" value="" class="absolute z-[9999] md:right-40 right-[20px] top-6 w-6 h-6 text-blue-600 bg-white border-gray-600 shadow-md rounded-xl focus:ring-blue-500 ">
                                     </div>
                                 </div>
                                 <div class="peraturan-filter flex flex-col sm:flex-row">
-                                    <div class=" flex-1 z-[15]">
+                                    <div class=" flex-1 z-[55]">
                                         <section>
-                                            <select class="custom-select sources" placeholder="{{ isset($pastData->subjekInput) ? $pastData->subjekInput : "Pilih Subjek"}}" name="subjek-peraturan">
-                                                <option value="">{{isset($pastData->subjekInput) ? "None" : "Pilih Subjek"}}</option>
+                                            <select class="custom-select sources" placeholder="Pilih Subjek" name="subjek-peraturan">
+                                                <option value="">Pilih Subjek</option>
                                                 @foreach ($groupSubjek as $id => $name)
-                                                    @if ($name == $pastData->subjekInput)
-                                                        <option class="selection" selected value="{{$name}}">{{$name}}</option>
-                                                    @else
-                                                        <option class="" value="{{$name}}">{{$name}}</option>
-                                                    @endif
+                                                    <option value="{{$name}}">{{$name}}</option>
                                                 @endforeach
                                             </select>
                                         </section>
                                     </div>
-                                    <div class="flex-1 z-[14]">
+                                    <div class="flex-1 z-[54]">
                                         <section>
-                                            @foreach ($groupJenis as $id => $name)
-                                                @if ($id == $pastData->jenisInput)
-                                                    @php
-                                                        $selectedJenis = $name;
-                                                    @endphp
-                                                @endif
-                                            @endforeach
-                                            <select class="custom-select sources" placeholder="{{ isset($pastData->jenisInput) ? $selectedJenis : "Pilih Jenis"}}" name="jenis-peraturan">
-                                                <option value="">{{isset($pastData->jenisInput) ? "None" : "Pilih Jenis"}}</option>
+                                            <select class="custom-select sources" placeholder="Pilih Jenis" name="jenis-peraturan">
+                                                <option value="">Pilih Jenis</option>
                                                 @foreach ($groupJenis as $id => $name)
-                                                    @if ($id == $pastData->jenisInput)
-                                                        <option class="selection" selected value="{{$id}}">{{$name}}</option>
-                                                    @else
-                                                        <option class="" value="{{$id}}">{{$name}}</option>
-                                                    @endif
+                                                    <option value="{{$id}}">{{$name}}</option>
                                                 @endforeach
                                             </select>
                                         </section>
                                     </div>
                                 </div>
                                 <div class="peraturan-filter flex flex-col sm:flex-row">
-                                    <div class="flex-1 z-[13]">
+                                    <div class="flex-1 z-[53]">
                                         <section>
-                                            @foreach ($groupTahun as $id => $name)
-                                                @if ($id == $pastData->tahunInput)
-                                                    @php
-                                                        $selectedTahun = $name;
-                                                    @endphp
-                                                @endif
-                                            @endforeach
-                                            <select class="custom-select sources" placeholder="{{ isset($pastData->tahunInput) ? $selectedTahun : "Pilih Tahun"}}" name="tahun-peraturan">
-                                                <option value="">{{isset($pastData->tahunInput) ? "None" : "Pilih Jenis"}}</option>
+                                            <select class="custom-select sources" placeholder="Pilih Tahun" name="tahun-peraturan">
+                                                <option value="">Pilih Tahun</option>
                                                 @foreach ($groupTahun as $id => $name)
-                                                    @if ($id == $pastData->tahunInput)
-                                                        <option class="selection" selected value="{{$id}}">{{$name}}</option>
-                                                    @else
-                                                        <option class="" value="{{$id}}">{{$name}}</option>
-                                                    @endif
+                                                    <option value="{{$id}}">{{$name}}</option>
                                                 @endforeach
                                             </select>
                                         </section>
                                     </div>
-                                    <div class="flex-1 z-[12]">
+                                    <div class="flex-1 z-[52]">
                                         <section>
-                                            @foreach ($groupStatus as $id => $name)
-                                                @if ($id == $pastData->statusInput)
-                                                    @php
-                                                        $selectedStatus = $name;
-                                                    @endphp
-                                                @endif
-                                            @endforeach
-                                            <select class="custom-select sources" placeholder="{{ isset($pastData->statusInput) ? $selectedStatus : "Pilih Status"}}" name="status-peraturan">
-                                                <option value="">{{isset($pastData->statusInput) ? "None" : "Pilih Jenis"}}</option>
+                                            <select class="custom-select sources" placeholder="Pilih Status" name="status-peraturan">
+                                                <option value="">Pilih Status</option>
                                                 @foreach ($groupStatus as $id => $name)
-                                                    @if ($id == $pastData->statusInput)
-                                                        <option class="selection" selected value="{{$id}}">{{$name}}</option>
-                                                    @else
-                                                        <option class="" value="{{$id}}">{{$name}}</option>
-                                                    @endif
+                                                    <option value="{{$id}}">{{$name}}</option>
                                                 @endforeach
                                             </select>
                                         </section>

@@ -149,11 +149,11 @@
                                         </div>                        
                                     </div>
                                 </div>
-                                {{-- prioritas --}}
+                                
                                 <div class="absolute w-full flex hidden md:justify-center justify-center md:-mt-14 md:top-[21.3rem] " id="filter-options" >
                                     <div class="bg-white shadow-lg w-[80%] pt-3 pb-1 px-2 rounded-lg">
                                         <div class="peraturan-filter flex flex-col sm:flex-row">
-                                            <div class="flex-1 z-[55]">
+                                            <div class="flex-1 z-[56]">
                                                 <section class="hidden" id="select-num" disabled>
                                                     <select class="custom-select sources" placeholder="Pilih Nomor" name="nomor-peraturan">
                                                         <option value="">Pilih Nomor</option>
