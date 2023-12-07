@@ -109,12 +109,12 @@
                                             }, 200); // Adjust the delay (in milliseconds) as needed
                                         });
                                     </script> --}}
-                                    <div class="absolute top-4 h-[64vh] banner-title backgdrop-blur-md" >
+                                    <div class="absolute top-4 h-[64vh] banner-title backgdrop-blur-md pointer-events-none" >
                                         <div id="bpp-img-container" class="
                                         sticky top-[17svh] w-[80vw] z-[29]
                                         md:relative md:top-[30.8svh] md:w-[25rem] md:ml-20 md:z-[47]
                                         lg:top-[9rem] lg:w-[40vw] lg:ml-0 ">
-                                            <img id="bpp-img" src="{{asset('assets/img/logo/Logo Balikpapan Nyaman light.png')}}" style="cursor: text;" alt="">
+                                            <img id="bpp-img" class="pointer-events-none " src="{{asset('assets/img/logo/Logo Balikpapan Nyaman light.png')}}" alt="">
                                             <div id="Bppnyaman-logo" class="absolute z-[21] md:h-1  transition-all duration-500 ease-out 
                                                 -bottom-10 w-[11rem] opacity-0 md:hidden
                                                 md:opacity-1! md:top-0 md:w-[13rem] md:-right-12 md:-rotate-3 
@@ -135,8 +135,9 @@
                             <form class="relative domain-form md:z-[46] z-[80]" action="{{route('get_peraturan.data')}}" method="post">
                                 @csrf
                                 <div class="relative flex justify-center items-center">
-                                    <div class="relative md:w-[50%] w-[80%] flex flex-row justify-center md:items-center">
-                                        <div class="flex justify-center items-end md:items-center md:space-x-4 tutup animate-slide-left mt-24 w-full  md:h-[20rem] h-[58svh]">
+                                    <div class="relative md:w-[50%] w-[80%] flex flex-col justify-center md:items-center">
+                                        
+                                        <div class="flex justify-end items-end md:items-center md:space-x-4 tutup animate-slide-left mt-24 w-full  md:h-[20rem] h-[58svh]">
                                             <input name="search-peraturan" type="text" id="search-input" class="w-[100%] pl-2 pr-4 py-3 border-0 rounded-lg focus:outline-none focus:ring focus:border-blue-300" placeholder="Cari peraturan dan dokumen disini">
                                             <div class="absolute z-[100] flex md:right-1 md:mb-0 mb-[50px] -right-4 justify-center items-center md:mt-0 transition-all duration-100 ease-linear opacity-0" id="filter-button">
                                                 <button type="submit" class="bg-blue-500 text-white px-4 py-2 mr-1 h-10 rounded-r focus:outline-none focus:ring focus:border-blue-300 hover:bg-red-500 rounded-lg">
@@ -146,10 +147,10 @@
                                                     <b>SPESIFIK</b>
                                                 </button>
                                             </div>
-                                        </div>                        
+                                        </div>
+                                        <marquee class="absolute -bottom-7 md:bottom-[15svh] bg-gray-50 drop-shadow-md px-2 rounded-sm">wowowoowowowoowowowoowowowoowowowoowowowoowowowoowowo</marquee>
                                     </div>
                                 </div>
-                                
                                 <div class="absolute w-full flex hidden md:justify-center justify-center md:-mt-14 md:top-[21.3rem] " id="filter-options" >
                                     <div class="bg-white shadow-lg w-[80%] pt-3 pb-1 px-2 rounded-lg">
                                         <div class="peraturan-filter flex flex-col sm:flex-row">
@@ -237,7 +238,7 @@
         </div>
     </div>
     <div class="containers bg-center md:-mt-[0rem] -mt-[20svh] z-[50]">
-        <div class="mt-[7svh] md:mt-0 md:py-4 py-0  px-4 mx-auto max-w-screen-xl text-center z-1 relative">
+        <div class="mt-[10.2svh] md:mt-0 md:py-4 py-0  px-4 mx-auto max-w-screen-xl text-center z-1 relative">
             <div class="col-span-12 md:col-span-12 sm:col-span-12 mt-2 animate__animated animate__fadeInUp" id="detail_peraturan">
                 <div class="grid grid-cols-3 grid-forms md:grid-row gap-4">
                     <!-- ==================== CONTENT: SUBJEK PERATURAN ========================== -->

@@ -43,60 +43,97 @@
                         <div class="absolute w-full flex hidden md:justify-center justify-center md:-mt-14 md:top-[21.3rem] " id="filter-options" >
                             <div class="bg-white shadow-lg w-[80%] pt-3 pb-1 px-2 rounded-lg">
                                 <div class="peraturan-filter flex flex-col sm:flex-row">
-                                    <div class="flex-1 z-[56]">
+                                    <div class="flex-1 z-[16]">
                                         <section class="hidden" id="select-num" disabled>
                                             <select class="custom-select sources" placeholder="Pilih Nomor" name="nomor-peraturan">
                                                 <option value="">Pilih Nomor</option>
                                                 @foreach ($groupNomor as $id => $name)
-                                                    <option value="{{$name}}">{{$name}}</option>
+                                                    <option class="" value="{{$name}}">{{$name}}</option>
                                                 @endforeach
                                             </select>
                                         </section>
                                         <section class="" id="type-num">
-                                            <input type="text" name="nomor-peraturan" placeholder="Ketik Nomor Peraturan" class="custom-input w-full focus:ring-white">
+                                            <input value="{{$pastData->nomorInput}}" type="text" name="nomor-peraturan" placeholder="Ketik Nomor Peraturan" class="custom-input w-full focus:ring-white">
                                         </section>
-                                        <input id="change-num" type="checkbox" value="" class="absolute z-[9999] md:right-40 right-[20px] top-6 w-6 h-6 text-blue-600 bg-white border-gray-600 shadow-md rounded-xl focus:ring-blue-500 ">
+                                        <input id="change-num" type="checkbox" value="" class="absolute z-[9999] md:right-40 right-[30px]  top-6 w-6 h-6 text-blue-600 bg-white border-gray-600 shadow-md rounded-xl focus:ring-blue-500 ">
                                     </div>
                                 </div>
                                 <div class="peraturan-filter flex flex-col sm:flex-row">
-                                    <div class=" flex-1 z-[55]">
+                                    <div class=" flex-1 z-[15]">
                                         <section>
-                                            <select class="custom-select sources" placeholder="Pilih Subjek" name="subjek-peraturan">
-                                                <option value="">Pilih Subjek</option>
+                                            <select class="custom-select sources" placeholder="{{ isset($pastData->subjekInput) ? $pastData->subjekInput : "Pilih Subjek"}}" name="subjek-peraturan">
+                                                <option value="">{{isset($pastData->subjekInput) ? "None" : "Pilih Subjek"}}</option>
                                                 @foreach ($groupSubjek as $id => $name)
-                                                    <option value="{{$name}}">{{$name}}</option>
+                                                    @if ($name == $pastData->subjekInput)
+                                                        <option class="selection" selected value="{{$name}}">{{$name}}</option>
+                                                    @else
+                                                        <option class="" value="{{$name}}">{{$name}}</option>
+                                                    @endif
                                                 @endforeach
                                             </select>
                                         </section>
                                     </div>
-                                    <div class="flex-1 z-[54]">
+                                    <div class="flex-1 z-[14]">
                                         <section>
-                                            <select class="custom-select sources" placeholder="Pilih Jenis" name="jenis-peraturan">
-                                                <option value="">Pilih Jenis</option>
+                                            @foreach ($groupJenis as $id => $name)
+                                                @if ($id == $pastData->jenisInput)
+                                                    @php
+                                                        $selectedJenis = $name;
+                                                    @endphp
+                                                @endif
+                                            @endforeach
+                                            <select class="custom-select sources" placeholder="{{ isset($pastData->jenisInput) ? $selectedJenis : "Pilih Jenis"}}" name="jenis-peraturan">
+                                                <option value="">{{isset($pastData->jenisInput) ? "None" : "Pilih Jenis"}}</option>
                                                 @foreach ($groupJenis as $id => $name)
-                                                    <option value="{{$id}}">{{$name}}</option>
+                                                    @if ($id == $pastData->jenisInput)
+                                                        <option class="selection" selected value="{{$id}}">{{$name}}</option>
+                                                    @else
+                                                        <option class="" value="{{$id}}">{{$name}}</option>
+                                                    @endif
                                                 @endforeach
                                             </select>
                                         </section>
                                     </div>
                                 </div>
                                 <div class="peraturan-filter flex flex-col sm:flex-row">
-                                    <div class="flex-1 z-[53]">
+                                    <div class="flex-1 z-[13]">
                                         <section>
-                                            <select class="custom-select sources" placeholder="Pilih Tahun" name="tahun-peraturan">
-                                                <option value="">Pilih Tahun</option>
+                                            @foreach ($groupTahun as $id => $name)
+                                                @if ($id == $pastData->tahunInput)
+                                                    @php
+                                                        $selectedTahun = $name;
+                                                    @endphp
+                                                @endif
+                                            @endforeach
+                                            <select class="custom-select sources" placeholder="{{ isset($pastData->tahunInput) ? $selectedTahun : "Pilih Tahun"}}" name="tahun-peraturan">
+                                                <option value="">{{isset($pastData->tahunInput) ? "None" : "Pilih Jenis"}}</option>
                                                 @foreach ($groupTahun as $id => $name)
-                                                    <option value="{{$id}}">{{$name}}</option>
+                                                    @if ($id == $pastData->tahunInput)
+                                                        <option class="selection" selected value="{{$id}}">{{$name}}</option>
+                                                    @else
+                                                        <option class="" value="{{$id}}">{{$name}}</option>
+                                                    @endif
                                                 @endforeach
                                             </select>
                                         </section>
                                     </div>
-                                    <div class="flex-1 z-[52]">
+                                    <div class="flex-1 z-[12]">
                                         <section>
-                                            <select class="custom-select sources" placeholder="Pilih Status" name="status-peraturan">
-                                                <option value="">Pilih Status</option>
+                                            @foreach ($groupStatus as $id => $name)
+                                                @if ($id == $pastData->statusInput)
+                                                    @php
+                                                        $selectedStatus = $name;
+                                                    @endphp
+                                                @endif
+                                            @endforeach
+                                            <select class="custom-select sources" placeholder="{{ isset($pastData->statusInput) ? $selectedStatus : "Pilih Status"}}" name="status-peraturan">
+                                                <option value="">{{isset($pastData->statusInput) ? "None" : "Pilih Jenis"}}</option>
                                                 @foreach ($groupStatus as $id => $name)
-                                                    <option value="{{$id}}">{{$name}}</option>
+                                                    @if ($id == $pastData->statusInput)
+                                                        <option class="selection" selected value="{{$id}}">{{$name}}</option>
+                                                    @else
+                                                        <option class="" value="{{$id}}">{{$name}}</option>
+                                                    @endif
                                                 @endforeach
                                             </select>
                                         </section>
