@@ -50,11 +50,11 @@
         var modal = document.getElementById('notifModal');
         var whiteBox = modal.querySelector('.modal');
 
-        console.log('ready for modal');
-        console.log(modal);
-
-        modal.classList.remove('z-[0]', 'opacity-0');
+        modal.classList.remove('z-[0]', 'opacity-0')
         modal.classList.add('z-[999]', 'opacity-1');
+        setTimeout(() => {
+            modal.classList.remove('-mt-12');
+        }, 300);
 
         function destroyModal() {
             // Remove notifModal from its parent
@@ -67,11 +67,11 @@
         // Add click event listener to the notifModal
         modal.addEventListener('click', function(e) {
             if (e.target === modal) {
-                modal.classList.add('opacity-0');
+                modal.classList.add('opacity-0', '-mt-64');
                 modal.classList.remove('opacity-1');
                 setTimeout(() => {
                     destroyModal();
-                }, 200);
+                }, 300);
             }
         });
         whiteBox.addEventListener('click', function(e) {
@@ -79,13 +79,42 @@
         });
     });
 </script>
-<div id="notifModal" class="w-full h-full fixed bg-black/40 flex justify-center items-start z-[0] p-8 transition-all duration-200 ease-in opacity-0">
-    <div class="modal bg-white w-72 h-auto rounded-md md:w-[40svw] p-2">
-        <a href="">
-            <img class="rounded-md" src="{{asset('assets/img/galeri/beranda_hut_78.jpg')}}" alt="">
-        </a>
+<div id="notifModal" class="w-full h-[140%] fixed bg-black/40 flex justify-center items-start -mt-12 z-[0] p-8 transition-all duration-300 ease-in opacity-0">
+    <div id="modalSlideContent" class="modal flex items-center  w-72 h-auto rounded-md md:w-[40svw] ">
+        <button id="ModalprevBtn"
+            class="prev group hover:backdrop-blur-lg duration-300 rounded-full w-auto h-auto flex items-center justify-center relative left-4 md:left-0 top-0 transform -translate-y-[30%] z-50">
+            <i class="fa fa-angle-left fa-2x text-white"></i>
+        </button>
+        <div id="modalSlider" class="">
+            <a href="" class="bg-white w-full h-auto p-2 rounded-md">
+                <img class="rounded-md" src="{{asset('assets/img/galeri/beranda_hut_78.jpg')}}" alt="">
+            </a>
+            <a href="" class="bg-white w-full h-auto p-2 rounded-md">
+                <img class="rounded-md" src="{{asset('assets/img/galeri/survey.png')}}" alt="">
+            </a>
+        </div>
+        <button id="ModalnextBtn"
+            class="next group hover:backdrop-blur-lg duration-300 rounded-full w-auto h-auto flex items-center justify-center relative right-4 md:right-0 top-0 transform -translate-y-[30%] z-50">
+            <i class="fa fa-angle-right fa-2x text-white"></i>
+        </button>
     </div>
 </div>
+<script>
+    var modalSlider = tns({
+        container: '#modalSlider',
+        items: 1,
+        nav: false,
+        slideBy: 1,
+        controlsPosition: 'bottom',
+        mouseDrag: true,
+        controlsContainer: '#modalSlideContent',
+        prevButton: '#ModalprevBtn',
+        nextButton: '#ModalnextBtn',
+        speed: 1000,
+        autoplay: true,
+        autoplayButtonOutput: false,
+    });
+</script>
     <div class="containers md:h-[30rem] h-[120svh]">
         <div id="banner-position" class="sticky md:top-24 top-[0px] z-60">
             <div id="carousel-banner" class="relative w-full z-20" data-carousel="slide">
