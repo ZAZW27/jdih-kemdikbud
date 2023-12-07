@@ -45,6 +45,47 @@
 
     window.addEventListener('resize', () => (window.innerWidth > 765 && window.innerHeight < window.innerWidth) ? addAOS() : removeAOS());  
 </script>
+<script defer>
+    document.addEventListener('DOMContentLoaded', function(){
+        var modal = document.getElementById('notifModal');
+        var whiteBox = modal.querySelector('.modal');
+
+        console.log('ready for modal');
+        console.log(modal);
+
+        modal.classList.remove('z-[0]', 'opacity-0');
+        modal.classList.add('z-[999]', 'opacity-1');
+
+        function destroyModal() {
+            // Remove notifModal from its parent
+            var parentElement = modal.parentNode;
+            parentElement.removeChild(modal);
+
+            // Add your desired actions after destroying the modal
+        }
+
+        // Add click event listener to the notifModal
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.classList.add('opacity-0');
+                modal.classList.remove('opacity-1');
+                setTimeout(() => {
+                    destroyModal();
+                }, 200);
+            }
+        });
+        whiteBox.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    });
+</script>
+<div id="notifModal" class="w-full h-full fixed bg-black/40 flex justify-center items-start z-[0] p-8 transition-all duration-200 ease-in opacity-0">
+    <div class="modal bg-white w-72 h-auto rounded-md md:w-[40svw] p-2">
+        <a href="">
+            <img class="rounded-md" src="{{asset('assets/img/galeri/beranda_hut_78.jpg')}}" alt="">
+        </a>
+    </div>
+</div>
     <div class="containers md:h-[30rem] h-[120svh]">
         <div id="banner-position" class="sticky md:top-24 top-[0px] z-60">
             <div id="carousel-banner" class="relative w-full z-20" data-carousel="slide">
@@ -154,8 +195,8 @@
                                             <div class="absolute -left-[5.1rem] bg-red-500 z-50 h-8 hidden md:flex items-center mt-1 px-2 rounded-md text-white font-bold text-sm">
                                                 SEKILAS INFO
                                             </div>
-                                            <div class="relative w-full marquee-body -bottom-2 md:-bottom-[0.5rem] rounded-sm text-white md:text-black">
-                                                <marquee id="marquee">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias id possimus corrupti qui molestias magnam commodi doloribus accusamus at facere reiciendis mollitia, fuga quisquam porro quaerat est facilis repellendus adipisci tempora totam corporis dicta. Facere, quod, minima rerum voluptatum consectetur ad excepturi quo, est suscipit doloremque repellendus harum molestiae nemo repellat aperiam saepe quos ipsum! Magnam ex cum commodi, voluptatum adipisci tenetur possimus consequuntur accusamus nisi animi, maxime expedita. Eaque minus accusamus, sint nam eligendi est eum rerum odit! Ipsam consequuntur, eaque aperiam laudantium rem enim ratione assumenda esse saepe veniam sequi eius dolorum molestiae laboriosam tempora blanditiis at quas, architecto nemo odio? Iste nobis velit culpa temporibus perferendis! Eligendi nostrum earum itaque minus autem sit sint exercitationem, a, molestias impedit libero dolor soluta cumque vitae fuga vel aut velit tenetur, labore ullam repellat deserunt. Obcaecati ullam id accusantium, a nam laudantium earum, aliquid omnis saepe doloremque quisquam consequuntur ratione nostrum voluptates, soluta dolore animi nisi ut. Asperiores eveniet repudiandae dignissimos obcaecati, fugiat ipsa? Placeat dolore quis eius aliquid odio tempora maxime a deleniti facilis reiciendis qui hic dolor aspernatur eum nam nemo impedit, voluptate repellendus quidem? Asperiores amet aspernatur, reprehenderit quas repellendus inventore, itaque modi veniam sit, magni ducimus cumque nostrum animi voluptates odit. Dignissimos, debitis eveniet adipisci minima velit ratione facere quam sapiente cum sit saepe fugit ipsam unde ipsum dolorem iure quia optio aliquam atque nulla nam quaerat aut rem dolores. Repudiandae error excepturi quia architecto blanditiis, quam magni qui. Vitae provident recusandae minima ipsum magni totam cumque, soluta esse pariatur dolores consequuntur eaque quasi aut rem architecto distinctio, iusto numquam necessitatibus accusantium minus reiciendis dolorem impedit nam. Necessitatibus ut officia voluptatum, perspiciatis itaque, accusantium soluta nobis rerum labore minima dolorem quae, autem nostrum cupiditate consequuntur quia quibusdam! Numquam dolor asperiores, id facilis debitis culpa sed velit deleniti cum ex doloribus ipsam excepturi corporis laborum aliquid delectus iure fugiat tempore ea accusantium? Esse quae ipsa corrupti tempora! Quas molestiae sit obcaecati doloremque aspernatur facere quia, veniam odit? Iure non neque, minima sunt corporis nihil error repellendus itaque atque inventore nesciunt quia natus a recusandae incidunt deserunt quod nemo odio voluptatibus beatae consectetur sequi excepturi facere officiis. Laborum eligendi, amet impedit eveniet quidem deleniti, ex dolore mollitia dolorum obcaecati odio nesciunt iure nisi cupiditate? Repellat id laborum exercitationem, nobis quam eveniet fugiat deleniti ex voluptate praesentium, quae illo temporibus eum veritatis aliquam eos doloremque quaerat sequi provident quos velit. Error quae dolorem, quo vero ipsum fuga tempora nobis labore laboriosam sapiente quis, facilis eaque minus. Quam facere numquam porro voluptatibus, expedita corporis ut fugit magnam saepe non maiores cupiditate quia corrupti natus eligendi dignissimos ad! Unde vero dolor rem quod sunt et quisquam harum sed neque, sint atque similique cum assumenda facere itaque accusantium illo deleniti ipsa voluptate ipsam molestias! Dolorem, atque aliquam esse eaque soluta ad laboriosam molestias sed minima minus. Natus nihil cupiditate similique, sit distinctio quos, repudiandae expedita atque unde voluptate non optio hic dolores possimus. Dolor, nulla. Deserunt sequi ea illo, saepe consequatur libero. Ex nostrum eveniet quas dolor error asperiores alias omnis accusantium veniam deserunt, dolores laboriosam excepturi maiores consectetur quibusdam! Cum adipisci molestiae, nisi tempora repudiandae et, placeat beatae illum corporis enim laborum. Odit saepe omnis provident inventore blanditiis ipsam sequi est explicabo nam aut quibusdam neque nihil autem, ab illo fugit dolores laudantium, doloribus numquam harum ad repellendus alias hic atque. Inventore, blanditiis porro magni molestiae alias ea quaerat repellendus deleniti? Repellat ad, unde, repudiandae consectetur qui, harum atque temporibus veritatis nisi soluta eveniet quis. Impedit perferendis ea asperiores sint, enim facilis at ipsum perspiciatis nemo, ad animi fugit. Perspiciatis autem voluptas mollitia magni est earum facere aliquid minima porro quaerat sit repudiandae laborum facilis, sunt aperiam. Ipsa sint voluptate accusantium non ipsam suscipit obcaecati asperiores eligendi magnam. Qui, eligendi tenetur eaque, hic est tempore soluta blanditiis iusto officia sed aspernatur corrupti natus cum et ab perspiciatis quas veritatis, pariatur facilis perferendis iure asperiores culpa necessitatibus? Iusto ratione beatae architecto aliquam corporis quasi officia aliquid, nam, enim fuga, suscipit eligendi! Voluptate repellendus aut sint error tempore tempora fugit, dolorum accusantium unde dignissimos quidem quas minus reprehenderit repellat possimus autem et praesentium accusamus alias! Eos architecto deleniti, at nemo cum fugit fugiat incidunt aliquid corporis sint, autem doloremque neque enim quibusdam sed odio omnis. Aliquid alias quis maxime modi vero vel ex suscipit, impedit dolorum odio velit illo, dolorem hic neque commodi tempore corporis. Est, deserunt commodi? Omnis, natus expedita! Et, incidunt. Magnam blanditiis recusandae repudiandae repellat quasi aut tempora minima? Exercitationem laborum, omnis explicabo quibusdam molestias sunt voluptatibus deleniti maxime eos voluptatum accusamus, adipisci ipsum quidem unde culpa numquam corrupti quo, rerum temporibus deserunt. Earum quidem ipsam tempore culpa eligendi provident blanditiis hic eos quam explicabo vitae, quas impedit odit repellat rerum eaque itaque illo alias dignissimos cumque! A velit porro explicabo consequuntur facere perferendis blanditiis, eaque odit quis delectus tenetur quos accusamus necessitatibus distinctio aspernatur doloremque unde dolore ipsa assumenda dolorum autem officiis magnam repellendus. Neque reprehenderit totam nostrum, exercitationem ipsam ut eos laborum enim architecto ab officia provident. Vitae, dolores! Consequatur sit, optio odio perspiciatis error repudiandae. Dolorem fuga dolore sit eligendi necessitatibus atque et excepturi eos optio, vero quia sed ratione, debitis vitae aperiam inventore reprehenderit repellendus pariatur. Ipsam atque architecto porro omnis similique nobis laudantium cumque minima id sunt totam dolorum distinctio rerum modi vero quo dicta quasi ratione illum ex quia nostrum fuga, beatae aspernatur. Odio unde quibusdam quia asperiores, molestias minima repellendus accusamus debitis ipsam repudiandae sit ut magnam dolor perferendis reprehenderit hic? Aliquam cupiditate, laudantium quae, ipsa itaque, magnam nisi enim voluptatem veniam accusantium dicta odit unde vero hic. Provident tempora veritatis repudiandae quidem pariatur perspiciatis? Dolore voluptatem debitis quasi. Voluptate quibusdam atque possimus consectetur alias deleniti omnis tenetur, magni voluptas iure perferendis assumenda facere reprehenderit inventore blanditiis officia voluptates laborum dolore beatae, odio delectus facilis. Magni aspernatur ipsam quae atque dignissimos, sunt excepturi, repudiandae blanditiis adipisci, nesciunt id in. Eius, eum? Earum qui libero aliquam sapiente delectus reiciendis accusamus eligendi nam. Consequatur, blanditiis!</marquee>
+                                            <div class="relative w-full md:w-[120%] marquee-body -bottom-2 md:-bottom-[0.5rem] rounded-sm text-white md:text-black">
+                                                <marquee id="marquee">Selamat datang di website JDIH kota balikpapan | Pengelola JDIH Kota Balikpapan Mengucapkan Selamat Memperingati Hari HAM SEDUNIA ke-75 "HARMONI DALAM KEBERAGAMAN" #BedaUntukBersatu</marquee>
                                             </div>
                                         </div>
                                     </div>
@@ -910,7 +951,7 @@
     <div id="modal-base" class="p-0 m-0 fixed right-[0] top-0 bg-black bg-opacity-50 w-[100%] h-screen z-[100000] justify-center items-center flex-col opacity-0 hidden transition-opacity duration-500">
         <!-- MODAL UNTUK SUBJECT PERAATURAN -->
         <div id="modalSubjekPeraturan" class="hidden rounded-3xl overflow-hidden justify-center items-center flex-col lg:w-[27rem] md:w-[60%] sm:w-[90%] xs:w-[90%] mt-[6rem]">
-            <div class="top-banner h-14 w-full">
+            <div class="top-banner  h-14 w-full">
                 <h2>SUBJEK PERATURAN</h2>
                 <div class="dots">
                     <button onclick="hideModalSubjekPeraturan()">
