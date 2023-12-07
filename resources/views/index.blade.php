@@ -148,7 +148,21 @@
                                                 </button>
                                             </div>
                                         </div>
-                                        <marquee class="absolute -bottom-7 md:bottom-[15svh] bg-gray-50 drop-shadow-md px-2 rounded-sm">wowowoowowowoowowowoowowowoowowowoowowowoowowowoowowo</marquee>
+                                        {{-- px-0 md:px-[10vw] --}}
+                                        <div class="relative marquee-body -bottom-2 md:bottom-[17svh] rounded-sm ">
+                                            <div class="marquee">
+                                                <div>
+                                                    <div>Selamat datang di website JDIH Balikpapan</div>
+                                                    <div>Selamat datang di website JDIH Balikpapan</div>
+                                                    <div>Selamat datang di website JDIH Balikpapan</div>
+                                                </div>
+                                                <div>
+                                                    <div>Selamat datang di website JDIH Balikpapan</div>
+                                                    <div>Selamat datang di website JDIH Balikpapan</div>
+                                                    <div>Selamat datang di website JDIH Balikpapan</div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="absolute w-full flex hidden md:justify-center justify-center md:-mt-14 md:top-[21.3rem] " id="filter-options" >
@@ -238,7 +252,7 @@
         </div>
     </div>
     <div class="containers bg-center md:-mt-[0rem] -mt-[20svh] z-[50]">
-        <div class="mt-[10.2svh] md:mt-0 md:py-4 py-0  px-4 mx-auto max-w-screen-xl text-center z-1 relative">
+        <div class="mt-[10.8svh] md:mt-0 md:py-4 py-0  px-4 mx-auto max-w-screen-xl text-center z-1 relative">
             <div class="col-span-12 md:col-span-12 sm:col-span-12 mt-2 animate__animated animate__fadeInUp" id="detail_peraturan">
                 <div class="grid grid-cols-3 grid-forms md:grid-row gap-4">
                     <!-- ==================== CONTENT: SUBJEK PERATURAN ========================== -->

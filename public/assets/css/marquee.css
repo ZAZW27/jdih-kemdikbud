@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+:root {
+    --marquee-speed: 20s;
+    --marquee-hover-offset: -40px;
+    --marquee-hover-transition-speed: 1s;
+    --marquee-fade-edges: 50%;
+}
+
+.marquee-body {
+    font-size: 1.1rem;
+    font-family: 'Lora';
+    color: white;
+    width: 100%;
+}
+
+.marquee {
+    /* background-color: white; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%);
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%);
+
+    &,
+    > div {
+        display: flex;
+        white-space: nowrap;
+        gap: 30px;
+    }
+
+    > div {
+        animation: animate-marquee var(--marquee-speed) infinite linear;
+        transition: var(--marquee-hover-transition-speed) margin-left ease-out;
+        will-change: transform, margin-left;
+    }
+
+    &:hover > div {
+        animation-play-state: paused;
+        margin-left: var(--marquee-hover-offset);
+    }
+    }
+
+    @keyframes animate-marquee {
+    0% {
+        transform: translateX(0%) translateZ(0);
+    }
+    100% {
+        transform: translateX(-100%) translateZ(0);
+    }
+}
