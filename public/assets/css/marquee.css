@@ -1,27 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 
 :root {
-    --marquee-speed: 20s;
-    --marquee-hover-offset: -40px;
-    --marquee-hover-transition-speed: 1s;
+    --marquee-speed: ;
+    --marquee-hover-offset: -10px;
+    --marquee-hover-transition-speed: 0.5s;
     --marquee-fade-edges: 50%;
 }
 
 .marquee-body {
     font-size: 1.1rem;
     font-family: 'Lora';
-    color: black;
+    overflow: hidden;
 }
 
-.marquee {
+marquee {
     /* background-color: white; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
     -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%);
     mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%);
-
+/* 
     &,
     > div {
         display: flex;
@@ -47,5 +43,20 @@
     }
     100% {
         transform: translateX(-100%) translateZ(0);
+    } */
+}
+
+.marquee {
+    white-space: nowrap;
+    overflow: hidden;
+    animation: marquee 10s linear infinite;
+}
+
+@keyframes marquee {
+    from {
+    transform: translateX(100%);
+    }
+    to {
+    transform: translateX(-100%);
     }
 }
