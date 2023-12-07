@@ -148,7 +148,7 @@
                                 <div class=" mt-[22vh] md:mt-0 lg:w-full md:w-full w-full flex flex-col items-center justify-start ">
                                     <div id="logoBanner" for="search-input" class="
                                         rounded-full
-                                        relative -bottom-20 w-[170px] z-[30] transition-all duration-500 ease-out
+                                        relative -bottom-12 w-[150px] z-[30] transition-all duration-500 ease-out
                                         md:absolute md:bottom-[4rem]  md:w-[8.3rem] md:left-[7vw] md:h-[40svh]
                                         lg:left-[10.4vw] lg:w-[10.3vw]">
                                         {{-- <img class="object-cover w-full h-full rounded-full" src="{{ asset('assets/img/media/walikota.JPEG') }}" alt=""> --}}
