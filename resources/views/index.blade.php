@@ -77,10 +77,11 @@
                             <div class="absolute md:flex lg:block justify-end top-0 -left-[0rem] md:w-full w-full h-full ">
                                 <div class=" mt-[22vh] md:mt-0 lg:w-full md:w-full w-full flex flex-col items-center justify-start ">
                                     <div id="logo-balikpapan-banner" for="search-input" class="
+                                        bg-white rounded-full border-4 border-white
                                         relative -bottom-20 w-[170px] z-[30] transition-all duration-500 ease-out
-                                        md:absolute md:bottom-[11.8rem]  md:w-[8vw] md:left-[24vw]
-                                        lg:bottom-[7.9rem]  lg:left-[10.4vw]  lg:w-[10.3vw]  ">
-                                        <img src="{{ asset('assets/img/logo/logo_kota_balikpapan.svg') }}" alt="" style="filter: grayscale(10%);">
+                                        md:absolute md:bottom-[4rem]  md:w-[8.3rem] md:left-[7vw] md:h-[40svh]
+                                        lg:left-[10.4vw] lg:w-[10.3vw]">
+                                        <img class="object-cover w-full h-full rounded-full" src="{{ asset('assets/img/media/walikota.JPEG') }}" alt="">
                                     </div>
                                     {{-- <div id="logo-balikpapan-banner" for="search-input" class="md:absolute md:bottom-[160px] lg:bottom-[66px] md:left-[37.8vw] lg:left-[17.4vw] md:z-[45] z-[22] md:w-[8rem] lg:w-[20rem] w-[90vw] hover:cursor-text">
                                         <img src="{{ asset('assets/img/logo/logo_kota_balikpapan.svg') }}" alt="" style="">
@@ -112,8 +113,8 @@
                                     <div class="absolute top-4 h-[64vh] banner-title backgdrop-blur-md pointer-events-none" >
                                         <div id="bpp-img-container" class="
                                         sticky top-[17svh] w-[80vw] z-[29]
-                                        md:relative md:top-[30.8svh] md:w-[25rem] md:ml-20 md:z-[47]
-                                        lg:top-[9rem] lg:w-[40vw] lg:ml-0 ">
+                                        md:relative md:top-[30.8svh] md:w-[25rem] md:z-[47]
+                                        lg:top-[9rem] lg:w-[40vw]">
                                             <img id="bpp-img" class="pointer-events-none " src="{{asset('assets/img/logo/Logo Balikpapan Nyaman light.png')}}" alt="">
                                             <div id="Bppnyaman-logo" class="absolute z-[21] md:h-1  transition-all duration-500 ease-out 
                                                 -bottom-10 w-[11rem] opacity-0 md:hidden
@@ -149,17 +150,20 @@
                                             </div>
                                         </div>
                                         {{-- px-0 md:px-[10vw] --}}
-                                        <div class="relative marquee-body -bottom-2 md:bottom-[17svh] rounded-sm ">
-                                            <div class="marquee">
-                                                <div>
-                                                    <div>Selamat datang di website JDIH Balikpapan</div>
-                                                    <div>Selamat datang di website JDIH Balikpapan</div>
-                                                    <div>Selamat datang di website JDIH Balikpapan</div>
-                                                </div>
-                                                <div>
-                                                    <div>Selamat datang di website JDIH Balikpapan</div>
-                                                    <div>Selamat datang di website JDIH Balikpapan</div>
-                                                    <div>Selamat datang di website JDIH Balikpapan</div>
+                                        <div class="flex w-full md:mt-2">
+                                            <div class="absolute -left-[5.1rem] bg-red-500 z-50 h-8 hidden md:flex items-center mt-1 px-2 rounded-md text-white font-bold text-sm">SEKILAS INFO</div>
+                                            <div class="relative marquee-body w-[100%] md:w-[110%] -bottom-2 md:-bottom-[0.5rem] rounded-sm ">
+                                                <div class="marquee">
+                                                    <div>
+                                                        <div>Selamat datang di website JDIH Balikpapan</div>
+                                                        <div>Selamat datang di website JDIH Balikpapan</div>
+                                                        <div>Selamat datang di website JDIH Balikpapan</div>
+                                                    </div>
+                                                    <div>
+                                                        <div>Selamat datang di website JDIH Balikpapan</div>
+                                                        <div>Selamat datang di website JDIH Balikpapan</div>
+                                                        <div>Selamat datang di website JDIH Balikpapan</div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -251,7 +255,7 @@
             </div>
         </div>
     </div>
-    <div class="containers bg-center md:-mt-[0rem] -mt-[20svh] z-[50]">
+    <div class="containers bg-center md:mt-[2rem] -mt-[20svh] z-[50]">
         <div class="mt-[10.8svh] md:mt-0 md:py-4 py-0  px-4 mx-auto max-w-screen-xl text-center z-1 relative">
             <div class="col-span-12 md:col-span-12 sm:col-span-12 mt-2 animate__animated animate__fadeInUp" id="detail_peraturan">
                 <div class="grid grid-cols-3 grid-forms md:grid-row gap-4">
