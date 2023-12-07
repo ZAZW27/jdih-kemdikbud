@@ -8,77 +8,8 @@
     });
 </script> --}}
 
-<script>
-    // Function to add AOS script and stylesheet
-    function addAOS() {
-        // Load AOS stylesheet dynamically
-        var aosStylesheet = document.createElement('link');
-        aosStylesheet.rel = 'stylesheet';
-        aosStylesheet.href = 'https://unpkg.com/aos@2.3.1/dist/aos.css';
-        document.head.appendChild(aosStylesheet);
+@include('pages.partials.__JavaScriptPart')
 
-        // Load AOS library dynamically
-        var aosScript = document.createElement('script');
-        aosScript.src = 'https://unpkg.com/aos@2.3.1/dist/aos.js';
-        aosScript.onload = function () {
-            // AOS script is loaded, now initialize AOS
-            AOS.init({
-                once: true
-            });
-        };
-        document.head.appendChild(aosScript);
-    }
-
-    // Function to remove AOS script and stylesheet
-    function removeAOS() {
-        // Remove AOS stylesheet
-        var existingStylesheet = document.querySelector('link[href="https://unpkg.com/aos@2.3.1/dist/aos.css"]');
-        existingStylesheet && existingStylesheet.remove(); 
-
-        // Remove AOS script
-        var existingScript = document.querySelector('script[src="https://unpkg.com/aos@2.3.1/dist/aos.js"]');
-        existingScript && existingScript.remove();
-    }
-
-    // Check screen size and orientation on page load
-    (window.innerWidth > 765 && window.innerHeight < window.innerWidth) && addAOS();
-
-    window.addEventListener('resize', () => (window.innerWidth > 765 && window.innerHeight < window.innerWidth) ? addAOS() : removeAOS());  
-</script>
-<script defer>
-    document.addEventListener('DOMContentLoaded', function(){
-        var modal = document.getElementById('notifModal');
-        var whiteBox = modal.querySelector('.modal');
-
-        modal.classList.remove('z-[0]', 'opacity-0')
-        modal.classList.add('z-[999]', 'opacity-1');
-        setTimeout(() => {
-            modal.classList.remove('-mt-12');
-        }, 300);
-
-        function destroyModal() {
-            // Remove notifModal from its parent
-            var parentElement = modal.parentNode;
-            parentElement.removeChild(modal);
-
-            // Add your desired actions after destroying the modal
-        }
-
-        // Add click event listener to the notifModal
-        modal.addEventListener('click', function(e) {
-            if (e.target === modal) {
-                modal.classList.add('opacity-0', '-mt-64');
-                modal.classList.remove('opacity-1');
-                setTimeout(() => {
-                    destroyModal();
-                }, 300);
-            }
-        });
-        whiteBox.addEventListener('click', function(e) {
-            e.stopPropagation();
-        });
-    });
-</script>
 <div id="notifModal" class="w-full h-[140%] fixed bg-black/40 flex justify-center items-start -mt-12 z-[0] p-8 transition-all duration-300 ease-in opacity-0">
     <div id="modalSlideContent" class="modal flex items-center  w-72 h-auto rounded-md md:w-[40svw] ">
         <button id="ModalprevBtn"
@@ -147,7 +78,7 @@
                             <div class="absolute md:flex lg:block justify-end top-0 -left-[0rem] md:w-full w-full h-full ">
                                 <div class=" mt-[22vh] md:mt-0 lg:w-full md:w-full w-full flex flex-col items-center justify-start ">
                                     <div id="logoBanner" for="search-input" class="
-                                        rounded-full
+                                        rounded-full 
                                         relative -bottom-12 w-[150px] z-[30] transition-all duration-500 ease-out
                                         md:absolute md:bottom-[4rem]  md:w-[8.3rem] md:left-[7vw] md:h-[40svh]
                                         lg:left-[10.4vw] lg:w-[10.3vw]">
@@ -156,30 +87,6 @@
                                     {{-- <div id="logoBanner" for="search-input" class="md:absolute md:bottom-[160px] lg:bottom-[66px] md:left-[37.8vw] lg:left-[17.4vw] md:z-[45] z-[22] md:w-[8rem] lg:w-[20rem] w-[90vw] hover:cursor-text">
                                         <img src="{{ asset('assets/img/logo/logo_kota_balikpapan.svg') }}" alt="" style="">
                                     </div> --}}
-                                    <script>
-                                        
-                                        window.addEventListener('load', function () {
-                                            var logoBalikpapan = document.getElementById('logoBanner');
-                                            var input = document.getElementById('search-input');
-
-                                            // Add a click event listener to the image
-                                            logoBalikpapan.addEventListener('click', function() {
-                                                // Set focus on the input when the image is clicked
-                                                input.focus();
-                                            });
-
-                                            var imageElement = document.createElement('img');
-                                            imageElement.src = "{{ asset('assets/img/media/walikota.JPEG') }}";
-
-                                            imageElement.classList.add('opacity-0', 'transition-opacity', 'duration-700', 'ease-in-out', 'object-cover', 'w-full', 'h-full', 'rounded-full');
-                                            logoBalikpapan.appendChild(imageElement);
-
-                                            // Set a timeout to remove the fade-in classes after a delay
-                                            setTimeout(function () {
-                                                imageElement.classList.remove('opacity-0');
-                                            }, 200); // Adjust the delay (in milliseconds) as needed
-                                        });
-                                    </script>
                                     <div class="absolute top-4 h-[64vh] banner-title backgdrop-blur-md pointer-events-none" >
                                         <div id="bpp-img-container" class="
                                         sticky top-[17.5svh] w-[80vw] z-[29]
@@ -468,7 +375,7 @@
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-12 fam-grid">
                                         <a href="https://jdih.kemdikbud.go.id/sjdih/siperpu/login" target="_blank">
-                                          <div class="c-layanan bg-yellow-500 p-2 rounded-xg text-center">SIPERPU</div>
+                                            <div class="c-layanan bg-yellow-500 p-2 rounded-xg text-center">SIPERPU</div>
                                         </a>
                                     </div>
                                     <div class="col-lg-7 col-md-7 col-sm-12 fam-grid">
@@ -1145,7 +1052,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                         </svg>
-                    </butto>
+                    </button>
                 </div>
             </div>
             <div class="bg-white rounded-md shadow-md p-8 w-full h-[30rem] ">
@@ -1159,7 +1066,7 @@
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12 fam-grid">
                                 <a href="https://jdih.kemdikbud.go.id/sjdih/siperpu/login" target="_blank">
-                                  <div class="c-layanan bg-yellow-500 p-2 rounded-xg text-center">SIPERPU</div>
+                                    <div class="c-layanan bg-yellow-500 p-2 rounded-xg text-center">SIPERPU</div>
                                 </a>
                             </div>
                             <div class="col-lg-7 col-md-7 col-sm-12 fam-grid">
@@ -1194,7 +1101,7 @@
 
     <!--========================================================================================================================== 
         =============================== CONTENT: FOOTER FOOTER FOOTER FOOTER ==============================================
-        ============================================ END END =================================================================-->
+        ============================================  START START    =================================================================-->
 
     <section class="footer-section" id="footer-section">
         <div id="link-terkait-slide" class=" px-2 md:mx-auto mx-8 rounded-xl max-w-screen-md h-[7.8rem] bg-gray-100 text-center z-1 relative left-0">
@@ -1206,37 +1113,37 @@
                 <div
                     class=" transition-all ease group duration-300 rounded-lg p-2 h-[7.6rem] flex items-center flex-col justify-center m-auto">
                     <a href="#" class="flex items-center justify-center h-full">
-                        <img class=" h-full object-contain flex-grow" src="{{asset('assets/img/logo/pemerintahanKotaBalikpapan.png')}}" alt="">
+                        <img class=" h-full object-contain flex-grow" src="{{asset('assets/img/logo/pemerintahanKotaBalikpapan.png')}}" alt="" loading="lazy">
                     </a>
                 </div>
                 <div
                     class=" transition-all ease group duration-300 rounded-lg p-2 h-[7.6rem] flex items-center flex-col justify-center m-auto">
                     <a href="#" class="flex items-center justify-center h-full">
-                        <img class=" h-full object-contain flex-grow" src="{{asset('assets/img/logo/jdihkaltim.png')}}" alt="">
+                        <img class=" h-full object-contain flex-grow" src="{{asset('assets/img/logo/jdihkaltim.png')}}" alt="" loading="lazy">
                     </a>
                 </div>
                 <div
                     class=" transition-all ease group duration-300 rounded-lg p-2 h-[7.6rem] flex items flex-col-center justify-center m-auto">
                     <a href="#" class="flex items-center justify-center h-full">
-                        <img class=" h-full object-contain flex-grow" src="{{asset('assets/img/logo/logo_jdih_globe.png')}}" alt="">
+                        <img class=" h-full object-contain flex-grow" src="{{asset('assets/img/logo/logo_jdih_globe.png')}}" alt="" loading="lazy">
                     </a>
                 </div>
                 <div
                     class=" transition-all ease group duration-300 rounded-lg p-2 h-[7.6rem] flex flex-col items-center justify-center m-auto">
                     <a href="#" class="flex items-center justify-center h-full">
-                        <img class=" h-full object-contain flex-grow" src="{{asset('assets/img/logo/BPHNExtended.png')}}" alt="">
+                        <img class=" h-full object-contain flex-grow" src="{{asset('assets/img/logo/BPHNExtended.png')}}" alt="" loading="lazy">
                     </a>
                 </div>
                 <div
                     class=" transition-all ease group duration-300 rounded-lg p-2 h-[7.6rem] flex flex-col items-center justify-center m-auto">
                     <a href="#" class="flex items-center justify-center h-full">
-                        <img class=" h-full object-contain flex-grow" src="{{asset('assets/img/logo/kementrian dalam negeri.png')}}" alt="">
+                        <img class=" h-full object-contain flex-grow" src="{{asset('assets/img/logo/kementrian dalam negeri.png')}}" alt="" loading="lazy">
                     </a>
                 </div>
                 <div
                     class=" transition-all ease group duration-300 rounded-lg p-2 h-[7.6rem] flex flex-col items-center justify-center m-auto">
                     <a href="#" class="flex items-center justify-center h-full">
-                        <img class=" h-full object-contain flex-grow" src="{{asset('assets/img/logo/kemenkumham_jdih.png')}}" alt="">
+                        <img class=" h-full object-contain flex-grow" src="{{asset('assets/img/logo/kemenkumham_jdih.png')}}" alt="" loading="lazy">
                     </a>
                 </div>
             </div>
@@ -1351,21 +1258,6 @@
                 <div id="beruangBottomLogo" class="fixed md:left-4 md:bottom-4 right-0 bottom-[4.3rem] lg:w-24 w-20 sway-animate z-[50]">
                     {{-- <img src="{{asset('assets/img/logo/helarctos-malayanus.png')}}" alt="gambar beruang"> --}}
                 </div>
-                <script>
-                    window.addEventListener('load', function () {
-                        var beruangBottomLogo = document.getElementById('beruangBottomLogo');
-                        var imageElementBeruang = document.createElement('img');
-    
-                        imageElementBeruang.src = "{{ asset('assets/img/logo/helarctos-malayanus.png') }}";
-                        imageElementBeruang.classList.add('opacity-0', 'transition-opacity');
-                        beruangBottomLogo.appendChild(imageElementBeruang);
-    
-                        // Set a timeout to remove the fade-in classes after a delay
-                        setTimeout(function () {
-                            imageElementBeruang.classList.remove('opacity-0');
-                        }, 200); // Adjust the delay (in milliseconds) as needed
-                    });
-                </script>
                 <button id="toTopBtn" title="Go to top" class="move-to-top-btn shadow-md z-50">
                     ^
                 </button>

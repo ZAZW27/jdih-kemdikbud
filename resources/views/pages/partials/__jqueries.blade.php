@@ -144,6 +144,7 @@
                     // console.log('big boy condition????' + scrollPosition)
                     $('#logoBanner')
                     // .removeClass('-bottom-20').addClass('bottom-0')
+                    .removeClass('mt-8')
                     .addClass('w-[170px]').removeClass('w-[100px]')
                     .addClass('z-[30]').removeClass('z-[21]');
                     $('#Bppnyaman-logo').addClass('opacity-0').removeClass('opacity-1')
@@ -151,6 +152,7 @@
                 }else{
                     $('#logoBanner')
                     // .removeClass('-bottom-20').addClass('bottom-0')
+                    .addClass('mt-8')
                     .removeClass('w-[170px]').addClass('w-[100px]')
                     .removeClass('z-[30]').addClass('z-[21]');;
                     $('#Bppnyaman-logo').removeClass('opacity-0').addClass('opacity-1')

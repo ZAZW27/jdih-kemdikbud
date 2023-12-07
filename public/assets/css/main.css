@@ -1121,6 +1121,23 @@ footer .footer-format{
    50%{ transform: rotate(2deg); }
 }
 
+.hoveringAnimation {
+   animation: hovering 3.5s infinite ease-in-out; /* Adjust the duration as needed */
+}
+
+/* .hoveringAnimation:hover {
+   animation-play-state: paused;
+   transform: translateY(0);
+} */
+
+@keyframes hovering {
+   0%, 100% {
+       transform: translateY(0);
+   }
+   50% {
+       transform: translateY(-10px); /* Adjust the value to control the distance of the animation */
+   }
+}
 
 @media screen and (max-width: 1024px) {
    .containers {
