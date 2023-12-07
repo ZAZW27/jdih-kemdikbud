@@ -1094,6 +1094,11 @@ footer .footer-format{
    background:linear-gradient(90deg, rgb(5 33 12 / 80%), rgb(13 50 81 / 80%));
 }
 
+.gradient-edge{
+   -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%);
+   mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%);
+}
+
 .text-bpp{
    /* font-family: 'Hind Guntur'; */
    font-family: 'Viga';

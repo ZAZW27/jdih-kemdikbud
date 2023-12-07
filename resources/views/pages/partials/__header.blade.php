@@ -12,15 +12,15 @@
 
     <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/logo/TutWuriHandayani.png') }}">
     {{-- TAILWIND CDN --}}
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script async src="https://cdn.tailwindcss.com"></script>
     
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
     <!-- Load Flowbite and Alpine.js from CDN -->           
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css">
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
-    <script async src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+    <script  src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
 
     <!-- Load the latest version of Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -51,7 +51,7 @@
                 </svg>
             </button>
             <div class="hidden w-full md:w-auto md:h-auto md:flex md:items-center md:mx-auto lg:mx-0" id="navbar-multi-level">
-                <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-white md:flex-row md:space-x-0 md:mt-0 md:border-0 md:bg-white">
+                <ul class="flex flex-col font-medium p-4 md:p-0 md:shadow-md lg:shadow-none mt-4 border border-gray-100 rounded-lg bg-white md:flex-row md:space-x-0 md:mt-0 md:border-0 md:bg-white">
                     <li>
                         <a href="/" class="text-sm block py-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:px-3 lg:py-4 md:py-1">
                             BERANDA
@@ -267,7 +267,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="md:relative block -right-3">
+                    <li class="md:absolute block right-4">
                         @guest
                             <a href="{{ route('login') }}" class="text-sm block py-2 text-slate-50 hover:text-slate-500 rounded-xl md:font-bold font-semibold hover:font-semibold hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-sky-700 md:p-0 md:px-3 md:py-3 bg-blue-500  transition-all duration-300 ease-in-out">
                                 LOGIN
