@@ -45,9 +45,6 @@
 
     window.addEventListener('resize', () => (window.innerWidth > 765 && window.innerHeight < window.innerWidth) ? addAOS() : removeAOS());  
 </script>
-
-
-<script async src="{{asset('assets/js/main/modals.js')}}"></script>
     <div class="containers md:h-[30rem] h-[120svh]">
         <div id="banner-position" class="sticky md:top-24 top-[0px] z-60">
             <div id="carousel-banner" class="relative w-full z-20" data-carousel="slide">
@@ -141,7 +138,7 @@
                                     <div class="relative md:w-[50%] w-[80%] flex flex-row justify-center md:items-center">
                                         <div class="flex justify-center items-end md:items-center md:space-x-4 tutup animate-slide-left mt-24 w-full  md:h-[20rem] h-[58svh]">
                                             <input name="search-peraturan" type="text" id="search-input" class="w-[100%] pl-2 pr-4 py-3 border-0 rounded-lg focus:outline-none focus:ring focus:border-blue-300" placeholder="Cari peraturan dan dokumen disini">
-                                            <div class="absolute z-[100] flex md:right-1 md:mb-0 mb-[50px] -right-4 justify-center items-center md:mt-0 transition-all duration-100 ease-linear" id="filter-button">
+                                            <div class="absolute z-[100] flex md:right-1 md:mb-0 mb-[50px] -right-4 justify-center items-center md:mt-0 transition-all duration-100 ease-linear opacity-0" id="filter-button">
                                                 <button type="submit" class="bg-blue-500 text-white px-4 py-2 mr-1 h-10 rounded-r focus:outline-none focus:ring focus:border-blue-300 hover:bg-red-500 rounded-lg">
                                                     <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" width="20"><path d="M0 0h24v24H0z" fill="none"></path><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
                                                 </button>
@@ -156,7 +153,7 @@
                                 <div class="absolute w-full flex hidden md:justify-center justify-center md:-mt-14 md:top-[21.3rem] " id="filter-options" >
                                     <div class="bg-white shadow-lg w-[80%] pt-3 pb-1 px-2 rounded-lg">
                                         <div class="peraturan-filter flex flex-col sm:flex-row">
-                                            <div class="flex-1 z-[50]">
+                                            <div class="flex-1 z-[55]">
                                                 <section class="hidden" id="select-num" disabled>
                                                     <select class="custom-select sources" placeholder="Pilih Nomor" name="nomor-peraturan">
                                                         <option value="">Pilih Nomor</option>
