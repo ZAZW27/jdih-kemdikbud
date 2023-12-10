@@ -1112,37 +1112,37 @@
             <div id="footer-link-terkait" class="slider-container gradient-edge tns-layanan-slider flex space-x-4 rounded-lg text-center">
                 <div
                     class=" transition-all ease group duration-300 rounded-lg p-2 h-[7.6rem] flex items-center flex-col justify-center m-auto">
-                    <a href="#" class="flex items-center justify-center h-full">
+                    <a href="https://web.balikpapan.go.id/" class="flex items-center justify-center h-full">
                         <img class=" h-full object-contain flex-grow" src="{{asset('assets/img/logo/pemerintahanKotaBalikpapan.png')}}" alt="" loading="lazy">
                     </a>
                 </div>
                 <div
                     class=" transition-all ease group duration-300 rounded-lg p-2 h-[7.6rem] flex items-center flex-col justify-center m-auto">
-                    <a href="#" class="flex items-center justify-center h-full">
+                    <a href="https://jdih.kaltimprov.go.id/" class="flex items-center justify-center h-full">
                         <img class=" h-full object-contain flex-grow" src="{{asset('assets/img/logo/jdihkaltim.png')}}" alt="" loading="lazy">
                     </a>
                 </div>
                 <div
                     class=" transition-all ease group duration-300 rounded-lg p-2 h-[7.6rem] flex items flex-col-center justify-center m-auto">
-                    <a href="#" class="flex items-center justify-center h-full">
+                    <a href="https://jdihn.go.id/" class="flex items-center justify-center h-full">
                         <img class=" h-full object-contain flex-grow" src="{{asset('assets/img/logo/logo_jdih_globe.png')}}" alt="" loading="lazy">
                     </a>
                 </div>
                 <div
                     class=" transition-all ease group duration-300 rounded-lg p-2 h-[7.6rem] flex flex-col items-center justify-center m-auto">
-                    <a href="#" class="flex items-center justify-center h-full">
+                    <a href="https://www.bphn.go.id/" class="flex items-center justify-center h-full">
                         <img class=" h-full object-contain flex-grow" src="{{asset('assets/img/logo/BPHNExtended.png')}}" alt="" loading="lazy">
                     </a>
                 </div>
                 <div
                     class=" transition-all ease group duration-300 rounded-lg p-2 h-[7.6rem] flex flex-col items-center justify-center m-auto">
-                    <a href="#" class="flex items-center justify-center h-full">
+                    <a href="https://jdih.kemendagri.go.id/" class="flex items-center justify-center h-full">
                         <img class=" h-full object-contain flex-grow" src="{{asset('assets/img/logo/kementrian dalam negeri.png')}}" alt="" loading="lazy">
                     </a>
                 </div>
                 <div
                     class=" transition-all ease group duration-300 rounded-lg p-2 h-[7.6rem] flex flex-col items-center justify-center m-auto">
-                    <a href="#" class="flex items-center justify-center h-full">
+                    <a href="https://kemenkumham.go.id/" class="flex items-center justify-center h-full">
                         <img class=" h-full object-contain flex-grow" src="{{asset('assets/img/logo/kemenkumham_jdih.png')}}" alt="" loading="lazy">
                     </a>
                 </div>
