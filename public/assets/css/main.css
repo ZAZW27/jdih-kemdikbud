@@ -1116,19 +1116,21 @@ footer .footer-format{
    transform-origin: 50% 100% 0;
 }
 
-.parallex-container{}
-.parallex-wrapper{}
-.parallex-section{
-   min-height: 50svh;
-   padding: 50px;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   width: 100vw;
-   position: relative;
+.parallax-image {
+   background-attachment: fixed;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
 }
-.parallex-bg{}
-.parallex-content{}
+/* 
+
+.parallax-container {
+   background-attachment: fixed;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+} */
+
 
 @keyframes sway {
    0%, 100%{ transform: rotate(-2deg);}
