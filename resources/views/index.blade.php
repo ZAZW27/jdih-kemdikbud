@@ -9,6 +9,8 @@
 </script> --}}
 
 @include('pages.partials.__JavaScriptPart')
+<!-- Add these script tags in your HTML file -->
+
 
 <div id="notifModal" class="w-full h-[140%] fixed bg-black/40 flex justify-center items-start -mt-12 z-[0] p-8 transition-all duration-300 ease-in opacity-0">
     <div id="modalSlideContent" class="modal flex items-center  w-72 h-auto rounded-md md:w-[40svw] ">
@@ -477,22 +479,20 @@
         </script>
         <div class="w-full mt-4 relative">
             <div class="parallax-container h-[50vh] relative overflow-hidden" id="scrollContainer">
-                <div class="parallax-image absolute w-full h-full object-cover z-10 transition-all duration-75 ease-linear" id="scrollImage" style="background-image: url('{{asset('assets/img/bg/peraturan.jpg')}}');">
+                <div class="parallax-image absolute w-full h-full object-cover z-10 transition-all duration-75 ease-linear"
+                    id="scrollImage" style="background-image: url('{{asset('assets/img/bg/peraturan.jpg')}}');">
                     <div class="absolute inset-0 bg-black/50 h-full w-full z-20 flex items-center justify-center">
-                        <span class="text-white">aturan penting</span>
+                        <div class="h-full w-full py-12 px-4 col-span-12 md:col-span-12 sm:col-span-12 " id="detail_peraturan">
+                            <div class="h-full w-full grid grid-cols-3 grid-forms md:grid-row gap-4">
+                                <div class="w-full h-full bg-red-400">.</div>
+                                <div class="w-full h-full bg-orange-400">.</div>
+                                <div class="w-full h-full bg-yellow-400">.</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        {{-- <script>
-            const scrollContainer = document.getElementById('scrollContainer');
-            const scrollImage = document.getElementById('scrollImage');
-        
-            scrollContainer.addEventListener('scroll', function () {
-                const scrollTop = scrollContainer.scrollTop;
-                scrollImage.style.transform = `translate3d(0, ${scrollTop * 0.5}px, 0)`;
-            });
-        </script> --}}
         <div class="py-4 px-4 mx-auto max-w-screen-xl text-center z-10 relative">
             <div class="col-span-12 md:col-span-12 sm:col-span-12 mt-2 animate__animated animate__fadeInUp" id="detail_peraturan">
                 <div class="grid grid-cols-3 grid-forms md:grid-row gap-4">

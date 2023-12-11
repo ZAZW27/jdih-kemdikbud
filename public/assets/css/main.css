@@ -1122,6 +1122,10 @@ footer .footer-format{
    background-repeat: no-repeat;
    background-size: cover;
 }
+
+.parallax-image:hover{
+   transform: scale(1.1);
+}
 /* 
 
 .parallax-container {
