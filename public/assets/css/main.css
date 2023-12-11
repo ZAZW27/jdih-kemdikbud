@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Montserrat:ital,wght@0,500;0,600;0,700;0,800;0,900;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Hind+Guntur:wght@400;500;600;700&family=Roboto:ital,wght@0,700;0,900;1,500;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Hind+Guntur:wght@400;500;600;700&family=Roboto:ital,wght@0,700;0,900;1,500;1,700&family=Viga&display=swap');
@@ -1116,16 +1116,24 @@ footer .footer-format{
    transform-origin: 50% 100% 0;
 }
 
-.parallax-image {
-   background-attachment: fixed;
-   background-position: center;
-   background-repeat: no-repeat;
-   background-size: cover;
+.bgImgPeraturan{
+   bottom: 0;
 }
 
-.parallax-image:hover{
-   transform: scale(1.1);
+.detail-peratiran-container{
+   color: white;
+   font-family: Montserrat;
 }
+
+.detail-berita-content .peraturan-nama{
+ 
+}
+.detail-berita-content .peraturan-nomor{
+   font-weight: 400;
+   font-size: 32px;
+}
+
+
 /* 
 
 .parallax-container {

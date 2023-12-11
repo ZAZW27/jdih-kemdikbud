@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Berita;
 use App\Models\Pengumuman;
+use App\Models\BppProdukHukum;
 use App\Models\Peraturan;
 use App\Http\Requests\StoreBeritaRequest;
 use App\Http\Requests\UpdateBeritaRequest;
@@ -60,6 +61,14 @@ class MainPageController extends Controller
         $groupSbjkPer = $peraturan->LatestPeraturan()->groupBy('id_subjek')->pluck('0.subjek', '0.id_subjek');
         $groupStatPer = $peraturan->LatestPeraturan()->groupBy('id_status')->pluck('0.status_peraturan', '0.id_status');
 
+        // Get each main pereaturan
+
+        $countEachPerda = BppProdukHukum::select('id_jenis_peraturan', \DB::raw('COUNT(id_jenis_peraturan) AS count_JP'))->where('id_jenis_peraturan', '=', '16')->groupBy('id_jenis_peraturan')->get();
+        $countEachPerwali = BppProdukHukum::select('id_jenis_peraturan', \DB::raw('COUNT(id_jenis_peraturan) AS count_JP'))->where('id_jenis_peraturan', '=', '17')->groupBy('id_jenis_peraturan')->get();
+        $countEachSU = BppProdukHukum::select('id_jenis_peraturan', \DB::raw('COUNT(id_jenis_peraturan) AS count_JP'))->where('id_jenis_peraturan', '=', '18')->groupBy('id_jenis_peraturan')->get();
+        $countEachInstruksi = BppProdukHukum::select('id_jenis_peraturan', \DB::raw('COUNT(id_jenis_peraturan) AS count_JP'))->where('id_jenis_peraturan', '=', '21')->groupBy('id_jenis_peraturan')->get();
+        $countEachMOU = BppProdukHukum::select('id_jenis_peraturan', \DB::raw('COUNT(id_jenis_peraturan) AS count_JP'))->where('id_jenis_peraturan', '=', '20')->groupBy('id_jenis_peraturan')->get();
+
         return view('index', [
             'title' => 'JDIH BPP | Main Page',
             'berita' => $latestBerita,
@@ -67,6 +76,13 @@ class MainPageController extends Controller
             'peraturan' => $LatestPeraturan,
             'countPer' => $countPeraturan,
             'countView' => $countView,
+
+            // Count each main peraturan
+            'cPerda' => $countEachPerda, 
+            'cPerwal' => $countEachPerwali, 
+            'cSU' => $countEachSU, 
+            'cInstruksi' => $countEachInstruksi, 
+            'cMOU' => $countEachMOU, 
 
             // GROUPD
             'groupNomor' => $groupNmrPer,
