@@ -47,7 +47,7 @@ class DokumenController extends Controller
         $getYear = BppDokumen::selectRaw('YEAR(created_at) as year')->groupBy(DB::Raw('YEAR(created_at)'))->pluck('year');
         
         $pastData = (object)[
-            'SearcehdInput' => $searchInput,
+            'searchInput' => $searchInput,
             'SearcehdPer' => $peraturanInput,
             'SearcehdStatus' => $statusInput,
             'SearcehdTahun' => $tahunInput,

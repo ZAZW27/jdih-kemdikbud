@@ -17,15 +17,16 @@
             </div>
         </div>
     </div>
+    
     <div class="containers bg-center pb-10" >
         <div class="py-4 px-4 mx-auto max-w-screen-xl text-center lg:pt-16  relative">
             <div class="col-span-12 md:col-span-12 sm:col-span-12 mt-2 animate__animated animate__fadeInUp" id="detail_peraturan">
                 <div class="row-span-3 shadow-md col-span-12 ">
-                    <form class="domain-form" action="{{route('filter_dokumen')}}" method="post">
+                    <form class="relative domain-form md:z-[46] z-[50]" action="{{route('filter_dokumen')}}" method="post">
                         @csrf
                         <div class="md:flex md:items-center md:space-x-4 tutup animate-slide-left">
-                            <input value="{{$pastData->SearcehdInput}}" name="search-peraturan" type="text" id="judul" class="w-full px-4 py-6 border-0 rounded-lg focus:outline-none focus:ring focus:border-blue-300" placeholder="Cari Dokumen">
-                            <div class="absolute right-6 flex md:mt-0" id="filter-button">
+                            <input value="{{$pastData->searchInput}}" name="search-peraturan" type="text" id="judul" class="w-full px-4 py-6 border-0 rounded-lg focus:outline-none focus:ring focus:border-blue-300" placeholder="Cari peraturan perundang-undangan bidang pendidikan, kebudayaan, riset, dan teknologi">
+                            <div class="absolute md:right-6 right-4 flex md:mt-0 transition-all duration-200 ease-out" id="filter-button">
                                 <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-l focus:outline-none focus:ring focus:border-blue-300 hover:bg-red-500 ">
                                     <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" width="30"><path d="M0 0h24v24H0z" fill="none"></path><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
                                 </button>
@@ -38,8 +39,24 @@
                                     @endif
                                 </p>
                             </div>
-                        </div>                        
-                        <div class="absolute w-full flex md:justify-center justify-start md:-mt-14 md:top-[13rem] md:w-full w-[21rem] z-[11] hidden" id="filter-options" >
+                        </div>
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function() {
+                                var funButt = document.getElementById('filter-button');
+                                var modal = document.getElementById('filter-options');
+
+                                funButt.addEventListener('click', function() {
+                                    console.log('button clicked');
+                                    if (modal) {
+                                        modal.classList.toggle('hidden');
+                                        funButt.classList.toggle('-mt-16');
+                                    } else {
+                                        console.error('Element with ID "filter-options" not found.');
+                                    }
+                                });
+                            });
+                        </script>
+                        <div class="absolute flex md:justify-center justify-start md:-mt-14 md:top-[20svh] md:w-full w-[21rem] z-[11] hidden" id="filter-options" >
                             <div class="bg-white shadow-lg md:w-[80%] w-[100%] pt-3 pb-1 px-2 rounded-lg">
                                 <div class="peraturan-filter flex flex-col sm:flex-row">
                                     <div class="flex-1 z-[16]">
@@ -99,7 +116,7 @@
             </div>
         </div>
         <div class="pb-4 px-4 mx-auto max-w-screen-xl text-center z-10 relative md:mt-0 mt-12">
-            <div class="col-span-12 md:col-span-12 sm:col-span-12 mt-2 animate__animated animate__fadeInUp pl-4" id="detail_peraturan">
+            <div class="col-span-12 md:col-span-12 sm:col-span-12 mt-2 animate__animated animate__fadeInUp" id="detail_peraturan">
                 <div class="grid grid-cols-12 grid-forms md:grid-row gap-4">
                     <!-- ==================== ISI ========================== -->
                     <div class="row-span-3 col-span-12 ">

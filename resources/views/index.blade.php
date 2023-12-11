@@ -475,6 +475,26 @@
                 },
             });
         </script>
+        <div class="parallex-container">
+            <div class="parallex-wrapper">
+                <div class="parallex-section">
+                    <div class="parallex-bg"></div>
+                    <div class="parallex-content">Peraturan penting</div>
+                </div>
+            </div>
+        </div>
+        <script>
+        $(document).ready(function() {
+            var $scrollContainer = $('#scrollContainer');
+            var $scrollImage = $('#scrollImage');
+
+            $(window).scroll(function() {
+                var scrollOffset = $(window).scrollTop();
+                var maxTop = $scrollContainer.height() - $scrollImage.height();
+                $scrollImage.css('top', Math.min(scrollOffset * 0.5, maxTop) + 'px');
+            });
+        });
+        </script>
         <div class="py-4 px-4 mx-auto max-w-screen-xl text-center z-10 relative">
             <div class="col-span-12 md:col-span-12 sm:col-span-12 mt-2 animate__animated animate__fadeInUp" id="detail_peraturan">
                 <div class="grid grid-cols-3 grid-forms md:grid-row gap-4">
@@ -1142,7 +1162,7 @@
                 </div>
                 <div
                     class=" transition-all ease group duration-300 rounded-lg p-2 h-[7.6rem] flex flex-col items-center justify-center m-auto">
-                    <a href="https://kemenkumham.go.id/" class="flex items-center justify-center h-full">
+                    <a href="https://kemenkumham.go.id/filter-button" class="flex items-center justify-center h-full">
                         <img class=" h-full object-contain flex-grow" src="{{asset('assets/img/logo/kemenkumham_jdih.png')}}" alt="" loading="lazy">
                     </a>
                 </div>
