@@ -267,7 +267,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="relative block -right-4 md:-top-2 lg:-top-0">
+                    <li class="relative block md:-right-4 md:-top-2 lg:-top-0">
                         @guest
                             <a href="{{ route('login') }}" class="text-sm block py-2 text-slate-50 hover:text-slate-500 rounded-xl md:font-bold font-semibold hover:font-semibold hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-sky-700 md:p-0 md:px-3 md:py-3 bg-blue-500  transition-all duration-300 ease-in-out">
                                 LOGIN

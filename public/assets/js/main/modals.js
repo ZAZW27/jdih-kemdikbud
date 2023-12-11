@@ -59,10 +59,13 @@ function showModalFilter(){
         funButt.classList.add('-mt-[4rem]');
         targetModal.classList.remove('hidden');
         targetModal.classList.add("block");
-        if (window.innerWidth <= 768) {
-            banner.classList.remove('sticky');
-        }else{
-            banner.classList.add('z-50');
+
+        if (banner) {
+            if (window.innerWidth <= 768) {
+                banner.classList.contains("sticky") ? banner.classList.remove('sticky') : null;
+            }else{
+                banner.classList.contains('z-50') ? banner.classList.add('z-50') : null;
+            }
         }
         // banner.classList.add("block");
     }, 20);
@@ -75,10 +78,13 @@ function hideModalFilter(){
         funButt.classList.remove('-mt-[4rem]');
         targetModal.classList.add('hidden');
         targetModal.classList.remove("block");
-        if (!banner.classList.contains('sticky')) {
-            banner.classList.add('sticky');
-        }else if(banner.classList.contains('z-50')){
-            banner.classList.remove('z-50');
+
+        if (banner) {
+            if (!banner.classList.contains('sticky')) {
+                banner.classList.contains('sticky') ? banner.classList.add('sticky') : null;
+            }else if(banner.classList.contains('z-50')){
+                banner.classList.contains('z-50') ? banner.classList.remove('z-50') : null;
+            }
         }
     }, 20);
 }
@@ -110,6 +116,8 @@ document.getElementById("change-num").addEventListener("change", function () {
         });
     }
 });
+
+console.log('modal siap digunakan')
 
 document.addEventListener('DOMContentLoaded', function(){
     // UNTUK FILTER SEARCH !!!!!!!!!!!!!!
