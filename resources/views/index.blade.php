@@ -479,7 +479,7 @@
         </script>
         <div class="w-full mt-4 relative">
             <div class="parallax-container  min-height-fit relative overflow-hidden" id="scrollContainer">
-                <img id="peraturanImgBg" class="absolute bgImgPeraturan" src="{{asset('assets/img/bg/peraturan.jpg')}}" alt="">
+                <img id="peraturanImgBg" class="absolute bgImgPeraturan" src="{{asset('assets/img/bg/peraturan3.jpg')}}" alt="">
                 <script>
                     $(document).ready(function () {
                         let peraturanBg = $('#peraturanImgBg');
@@ -531,10 +531,10 @@
                     });
 
                 </script>
-                <div class="relative inset-0 bg-black/60 h-full w-full z-20 flex items-start justify-center">
+                <div class="relative inset-0 bg-black/40 h-full w-full z-20 flex items-start justify-center">
                     <div class="py-4 px-4 md:px-10 lg:px-20 min-h-[60vh] lg:min-h-full h-full w-full flex flex-col items-center justify-between">
                         <div class="flex flex-wrap justify-center items-start w-full h-auto my-2 md:mb-12 md:mt-4">
-                            <div class="w-[12rem] md:w-[13rem] lg:w-[16rem] p-4 m-2 flex flex-col justify-center items-center bg-blue-100/10 shadow-lg rounded-sm backdrop-blur-sm">
+                            <div class="w-[12rem] md:w-[13rem] lg:w-[16rem] p-4 m-2 flex flex-col justify-center items-center bg-blue-100/10 shadow-lg rounded-sm backdrop-blur-none transition-all duration-300 ease-in-out hover:scale-110 z-20 hover:z-30 hover:backdrop-blur-sm hover:bg-blue-50/20 hover:rounded-md">
                                 <div class="peraturan-icon rounded-full max-h-8">
                                     <svg width="2rem" height="2rem" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#fff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>law-building-solid</title> <g id="Layer_2" data-name="Layer 2"> <g id="invisible_box" data-name="invisible box"> <rect width="48" height="48" fill="none"></rect> </g> <g id="Q3_icons" data-name="Q3 icons"> <g> <rect x="5" y="36" width="38" height="4"></rect> <path d="M44,42H4a2,2,0,0,0-2,2v2H46V44A2,2,0,0,0,44,42Z"></path> <rect x="10" y="18" width="4" height="16"></rect> <rect x="22" y="18" width="4" height="16"></rect> <rect x="34" y="18" width="4" height="16"></rect> <path d="M44.9,11.4,24,2,3.1,11.4A2.1,2.1,0,0,0,2,13.2V14a2,2,0,0,0,2,2H44a2,2,0,0,0,2-2v-.8A2.1,2.1,0,0,0,44.9,11.4Z"></path> </g> </g> </g> </g></svg>
                                 </div>
@@ -543,7 +543,7 @@
                                     <div class="peraturan-nama text-[0.7rem] md:text-[0.9rem]  text-center">PERATURAN DAERAH</div>
                                 </div>
                             </div>
-                            <div class="w-[12rem] md:w-[13rem] lg:w-[16rem] p-4 m-2 flex flex-col justify-center items-center bg-blue-100/10 shadow-lg rounded-sm backdrop-blur-sm">
+                            <div class="w-[12rem] md:w-[13rem] lg:w-[16rem] p-4 m-2 flex flex-col justify-center items-center bg-blue-100/10 shadow-lg rounded-sm backdrop-blur-none transition-all duration-300 ease-in-out hover:scale-110 z-20 hover:z-30 hover:backdrop-blur-sm hover:bg-blue-50/20 hover:rounded-md">
                                 <div class="peraturan-icon rounded-full max-h-8">
                                     <svg fill="#ffffff" width="2.8rem" height="2.8rem" viewBox="-2 0 19 19" xmlns="http://www.w3.org/2000/svg" class="cf-icon-svg" transform="matrix(-1, 0, 0, 1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M9.316 14.722a.477.477 0 0 1-.475.475H1.433a.477.477 0 0 1-.475-.475v-.863a.477.477 0 0 1 .475-.475h7.408a.476.476 0 0 1 .475.475zm-2.767-2.587a.552.552 0 0 1-.392-.163L2.96 8.776a.554.554 0 0 1 .784-.784L6.94 11.19a.554.554 0 0 1-.392.946zm7.33.992L9.435 8.682l1.085-1.084-3.173-3.173-2.97 2.97 3.173 3.172 1.102-1.101 4.445 4.445a.554.554 0 1 0 .784-.784zm-2.33-5.993a.552.552 0 0 1-.391-.162L7.96 3.775a.554.554 0 1 1 .784-.784l3.196 3.197a.554.554 0 0 1-.391.946z"></path></g></svg>
                                 </div>
@@ -552,7 +552,7 @@
                                     <div class="peraturan-nama text-[0.7rem] md:text-[0.9rem]  text-center">PERATURAN WALI</div>
                                 </div>
                             </div>
-                            <div class="w-[12rem] md:w-[13rem] lg:w-[16rem] p-4 m-2 flex flex-col justify-center items-center bg-blue-100/10 shadow-lg rounded-sm backdrop-blur-sm">
+                            <div class="w-[12rem] md:w-[13rem] lg:w-[16rem] p-4 m-2 flex flex-col justify-center items-center bg-blue-100/10 shadow-lg rounded-sm backdrop-blur-none transition-all duration-300 ease-in-out hover:scale-110 z-20 hover:z-30 hover:backdrop-blur-sm hover:bg-blue-50/20 hover:rounded-md">
                                 <div class="peraturan-icon rounded-full max-h-8">
                                     <svg width="2rem" height="2rem" viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M8 6H16M8 10H16M8 14H11M6 22H18C19.1046 22 20 21.1046 20 20V4C20 2.89543 19.1046 2 18 2H6C4.89543 2 4 2.89543 4 4V20C4 21.1046 4.89543 22 6 22Z" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
                                 </div>
@@ -561,7 +561,7 @@
                                     <div class="peraturan-nama text-[0.7rem] md:text-[0.9rem]  text-center">SURAT EDARAN WALI </div>
                                 </div>
                             </div>
-                            <div class="w-[12rem] md:w-[13rem] lg:w-[16rem] p-4 m-2 flex flex-col justify-center items-center bg-blue-100/10 shadow-lg rounded-sm backdrop-blur-sm">
+                            <div class="w-[12rem] md:w-[13rem] lg:w-[16rem] p-4 m-2 flex flex-col justify-center items-center bg-blue-100/10 shadow-lg rounded-sm backdrop-blur-none transition-all duration-300 ease-in-out hover:scale-110 z-20 hover:z-30 hover:backdrop-blur-sm hover:bg-blue-50/20 hover:rounded-md">
                                 <div class="peraturan-icon rounded-full max-h-8">
                                     <svg fill="#ffffff" width="2.1rem" height="2.1rem" viewBox="0 0 32 32" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:serif="http://www.serif.com/" xmlns:xlink="http://www.w3.org/1999/xlink" stroke="#ffffff" stroke-width="0.00032"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Layer1"> <path d="M27,3c0,-0.552 -0.448,-1 -1,-1l-20,0c-0.552,0 -1,0.448 -1,1l-0,26c0,0.552 0.448,1 1,1l20,-0c0.552,-0 1,-0.448 1,-1l0,-26Zm-2,1l0,24c-0,-0 -18,-0 -18,-0c-0,-0 -0,-24 -0,-24l18,0Zm-14,22l10,-0c0.552,-0 1,-0.448 1,-1c-0,-0.552 -0.448,-1 -1,-1l-10,-0c-0.552,-0 -1,0.448 -1,1c-0,0.552 0.448,1 1,1Zm2,-3l6,0c0.552,0 1,-0.448 1,-1c0,-0.552 -0.448,-1 -1,-1l-6,0c-0.552,0 -1,0.448 -1,1c0,0.552 0.448,1 1,1Zm2.955,-3.5l0.09,-0c3.843,-0.024 6.955,-3.152 6.955,-7c0,-3.848 -3.112,-6.976 -6.955,-7l-0.09,0c-3.843,0.024 -6.955,3.152 -6.955,7c0,3.848 3.112,6.976 6.955,7Zm0.045,-5.5c0.552,0 1,0.448 1,1c0,0.552 -0.448,1 -1,1c-0.552,-0 -1,-0.448 -1,-1c0,-0.552 0.448,-1 1,-1Zm-1,-4l0,2c-0,0.552 0.448,1 1,1c0.552,0 1,-0.448 1,-1l0,-2c-0,-0.552 -0.448,-1 -1,-1c-0.552,0 -1,0.448 -1,1Z"></path> </g> </g></svg>
                                 </div>
@@ -570,7 +570,7 @@
                                     <div class="peraturan-nama text-[0.7rem] md:text-[0.9rem]  text-center">INSTRUKSI WALI </div>
                                 </div>
                             </div>
-                            <div class="w-[12rem] md:w-[13rem] lg:w-[16rem] p-4 m-2 flex flex-col justify-center items-center bg-blue-100/10 shadow-lg rounded-sm backdrop-blur-sm">
+                            <div class="w-[12rem] md:w-[13rem] lg:w-[16rem] p-4 m-2 flex flex-col justify-center items-center bg-blue-100/10 shadow-lg rounded-sm backdrop-blur-none transition-all duration-300 ease-in-out hover:scale-110 z-20 hover:z-30 hover:backdrop-blur-sm hover:bg-blue-50/20 hover:rounded-md">
                                 <div class="peraturan-icon rounded-full max-h-8">
                                     <svg fill="#ffffff" width="2.2rem" height="2.2rem" viewBox="-2 0 19 19" xmlns="http://www.w3.org/2000/svg" class="cf-icon-svg" stroke="#ffffff" stroke-width="0.38"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M14.443 4.445a1.615 1.615 0 0 1-1.613 1.614h-.506v8.396a1.615 1.615 0 0 1-1.613 1.613H2.17a1.613 1.613 0 1 1 0-3.227h.505V4.445A1.615 1.615 0 0 1 4.289 2.83h8.54a1.615 1.615 0 0 1 1.614 1.614zM2.17 14.96h7.007a1.612 1.612 0 0 1 0-1.01H2.172a.505.505 0 0 0 0 1.01zm9.045-10.515a1.62 1.62 0 0 1 .08-.505H4.29a.5.5 0 0 0-.31.107l-.002.001a.5.5 0 0 0-.193.397v8.396h6.337a.61.61 0 0 1 .6.467.632.632 0 0 1-.251.702.505.505 0 1 0 .746.445zm-.86 1.438h-5.76V6.99h5.76zm0 2.26h-5.76V9.25h5.76zm0 2.26h-5.76v1.108h5.76zm2.979-5.958a.506.506 0 0 0-.505-.505.496.496 0 0 0-.31.107h-.002a.501.501 0 0 0-.194.398v.505h.506a.506.506 0 0 0 .505-.505z"></path></g></svg>
                                 </div>
@@ -581,7 +581,7 @@
                             </div>
                         </div>
                         <div class="text-white font-md mb-12 mt-8">
-                            <a href="">
+                            <a href="/show_peraturan" class="bg-amber-600 text-slate-200 rounded-md py-3 px-5 font-ligth font-mono text-base lg:text-lg">
                                 Lihat Detail
                             </a>
                         </div>
